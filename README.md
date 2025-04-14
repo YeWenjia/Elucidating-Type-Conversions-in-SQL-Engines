@@ -1,10 +1,12 @@
 # Elucidating-Type-Conversions-in-SQL-Engines
 
-1. install python3.10 
+We recommend using PyCharm to run. 
+
+1. install python3.10 and select it as the environment in PyCharm.
 
 2. install packages in `requirements.txt`
 
-3. install the DBMS (Sqlite, Mysql, Postgresql, Mssql, Oracle)
+3. install the DBMS (Sqlite, Mysql, Postgresql, Mssql, Oracle) in the local computer
 
 4. create tables in different engines as in `datasql` folder 
 
