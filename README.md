@@ -14,7 +14,7 @@ We recommend using PyCharm to run.
 
 5. run tests `psql_testing.py`, `mysql_testing.py`, `sqlite_testing.py`, `mssql_testing.py`, `oracle_testing.py` in folder `../Implementation/test/mytesting`.
 
-Please note that folder MyInterpreter-v1.2 supports for Exists, In and NULL while MyInterpreter does not.
+Please note that folder `Implementation` supports for Exists, In and NULL while `MyInterpreter` does not.
 
 
 

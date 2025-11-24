@@ -12,7 +12,7 @@ We recommend using PyCharm to run.
 
 4. fill in the username, password ... in configuration file `config.yml` which is located at `../Implementation/test/mytesting/config.yml`.
 
-5. run tests `psql_testing.py`, `mysql_testing.py`, `sqlite_testing.py`, `mssql_testing.py`, `oracle_testing.py` in folder `../Implementation/test/mytesting`
+5. run tests `psql_testing.py`, `mysql_testing.py`, `sqlite_testing.py`, `mssql_testing.py`, `oracle_testing.py` in folder `../Implementation/test/mytesting`.
 
 
 
