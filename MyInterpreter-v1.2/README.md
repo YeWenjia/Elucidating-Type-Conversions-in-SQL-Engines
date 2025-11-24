@@ -12,9 +12,7 @@ We recommend using PyCharm to run.
 
 4. fill in the username, password ... in configuration file `config.yml` which is located at `../Implementation/test/mytesting/config.yml`.
 
-5. run tests `psql_testing.py`, `mysql_testing.py`, `sqlite_testing.py`, `mssql_testing.py`, `oracle_testing.py` in folder `../Implementation/test/mytesting`.
-
-Please note that folder MyInterpreter-v1.2 supports for Exists, In and NULL while MyInterpreter does not.
+5. run tests `psql_testing.py`, `mysql_testing.py`, `sqlite_testing.py`, `mssql_testing.py`, `oracle_testing.py` in folder `../Implementation/test/mytesting`
 
 
 

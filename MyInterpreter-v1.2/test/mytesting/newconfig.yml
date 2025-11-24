@@ -1,0 +1,31 @@
+postgres:
+  host: localhost
+  port: 5432
+  database: newinterpreter
+  username: newmyuser
+  password: newmyuser
+
+mysql:
+  host: localhost
+  port: 3306
+  database: newmysqldb
+  username: root
+  password: password
+
+sqlite:
+  driver: sqlite3
+  database: /Users/ywj/newmydatabase.db
+
+oracle:
+  password: password
+  user: myuser
+  dsn: localhost:1521/MYDB
+
+mssql:
+  driver: ODBC Driver 17 for SQL Server
+  server: 127.0.0.1, 1433
+  database: newmssqldb
+  username: sa
+  password: reallyStrongPwd123
+
+

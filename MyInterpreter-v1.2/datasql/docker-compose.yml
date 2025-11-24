@@ -1,0 +1,45 @@
+
+version: "3.1"
+
+networks:
+  docker-network:  
+
+services:
+  mysql:
+    image: wenjiaye/mysql:v1
+    container_name: mysql_b
+    ports:
+      - "3306:3306"  # host port: container port
+    networks:
+      - docker-network
+
+  mssql:
+    image: wenjiaye/mssql:v1
+    container_name: mssql_b
+    environment:
+      - SA_PASSWORD=reallyStrongPwd123
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    networks:
+      - docker-network
+
+  oracle:
+    image: wenjiaye/oracle:v1
+    container_name: oracle_b
+    ports:
+      - "1521:1521"
+    networks:
+      - docker-network
+
+  postgres:
+    image: wenjiaye/postgres:v1
+    container_name: postgres_b
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/pgdata
+    ports:
+      - "5432:5432"
+    networks:
+      - docker-network
+
