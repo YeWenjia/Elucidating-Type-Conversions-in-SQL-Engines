@@ -1,4 +1,4 @@
-# Elucidating-Type-Conversions-in-SQL-Engines
+# A Formal Framework for Typing and Cast Semantics in SQL Engines
 
 We recommend using PyCharm to run. 
 
