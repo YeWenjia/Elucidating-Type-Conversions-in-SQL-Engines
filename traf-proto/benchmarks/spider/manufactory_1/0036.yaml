@@ -1,0 +1,15 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0036.csv
+functions:
+- avg
+columns:
+- price
+sql: |-
+  SELECT avg(t1.price),
+         t2.name
+  FROM products AS t1
+  JOIN manufacturers AS t2 ON t1.manufacturer = t2.code
+  GROUP BY t2.name

@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ((734800198)<>('-152514463'))"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

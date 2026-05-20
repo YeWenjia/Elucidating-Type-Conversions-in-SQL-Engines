@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((623608594) IS NOT NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows: []

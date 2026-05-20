@@ -1,0 +1,16 @@
+db: tests-examples/spider/medicine_enzyme_interaction/tables/db.sqlite
+inputs:
+- tests-examples/spider/medicine_enzyme_interaction/tables/enzyme.csv
+- tests-examples/spider/medicine_enzyme_interaction/tables/medicine_enzyme_interaction.csv
+output: tests-examples/spider/medicine_enzyme_interaction/tables/0017.csv
+constants:
+- inhibitor
+columns:
+- interaction_type
+sql: |-
+  SELECT DISTINCT t1.name,
+                  t1.location,
+                  t1.product
+  FROM enzyme AS t1
+  JOIN medicine_enzyme_interaction AS t2 ON t2.enzyme_id = t1.id
+  WHERE t2.interaction_type = 'inhibitor'

@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1311522546", null]
+    - ["-1020663942", null]
+    - ["⩭y", null]
+  database0_t0:
+    - [231214075, "-727026085", 525161554]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'bE'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"bE\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-727026085"]

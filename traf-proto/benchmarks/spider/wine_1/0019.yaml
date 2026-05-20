@@ -1,0 +1,11 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0019.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         grape
+  FROM wine
+  GROUP BY grape

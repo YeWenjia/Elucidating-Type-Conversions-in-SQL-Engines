@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [-7548254, 847687323, "5㋽LH!xv"]
+    - [-4090076, -444040980, "5㋽LH!xv"]
+    - [2008462336, 1428400327, "5㋽LH!xv"]
+    - [-58911928, 1235657398, "5㋽LH!xv"]
+    - [null, 1699565337, "5㋽LH!xv"]
+    - [1804551272, -1790883840, "5㋽LH!xv"]
+    - [null, 1734624884, "2048072145"]
+    - [null, 116605656, "-88915418"]
+    - [-1722647003, -1684923321, "152244684"]
+    - [null, -1562523611, ",r"]
+    - [null, 1091493275, "C"]
+    - [null, -890771740, "889638185"]
+sql: "SELECT database0_t0.c2, database0_t0.c1 FROM database0_t0 WHERE -17401958"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c2, database0_t0.c1]
+traf_rows:
+  - ["5㋽LH!xv", "847687323"]
+  - ["5㋽LH!xv", "-444040980"]
+  - ["5㋽LH!xv", "1428400327"]
+  - ["5㋽LH!xv", "1235657398"]
+  - ["5㋽LH!xv", "1699565337"]
+  - ["5㋽LH!xv", "-1790883840"]
+  - ["2048072145", "1734624884"]
+  - ["-88915418", "116605656"]
+  - ["152244684", "-1684923321"]
+  - [",r", "-1562523611"]
+  - ["C", "1091493275"]
+  - ["889638185", "-890771740"]

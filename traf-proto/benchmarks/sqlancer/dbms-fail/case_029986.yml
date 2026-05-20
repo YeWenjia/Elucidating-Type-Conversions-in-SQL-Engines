@@ -1,0 +1,48 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["", null]
+    - ["-61662114", null]
+    - ["-671035743", -1554526165]
+    - ["<ag", null]
+    - ["1207290642", null]
+    - ["h_S G(p'", null]
+    - ["Z#K17i0.<", -1077277231]
+    - ["bp", -699965208]
+    - ["A1.'", -391236664]
+  database0_t0:
+    - ["-1531790370", null]
+    - ["-639173391", -740908556]
+    - ["", -1041688005]
+    - ["-88915418", -954151410]
+    - ["B7", 2131576533]
+    - ["j+", null]
+    - ["-773587990", null]
+    - ["976935660", 0]
+    - ["z", -1831624141]
+    - ["1065570664", null]
+    - ["1699565337", -1844130917]
+sql: "SELECT * FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-1531790370", "NULL"]
+  - ["-639173391", "-740908556"]
+  - ["-88915418", "-954151410"]
+  - ["B7", "2131576533"]
+  - ["j+", "NULL"]
+  - ["-773587990", "NULL"]
+  - ["976935660", "0"]
+  - ["z", "-1831624141"]
+  - ["1065570664", "NULL"]
+  - ["1699565337", "-1844130917"]

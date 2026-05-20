@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["2D", "-1020663942"]
+    - ["1489138842", null]
+    - ["", null]
+    - ["-2087893705", "B7"]
+    - ["-339580836", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE (('w9s꣇AwD6')<>('\nA'))"
+columns:
+  - "c0"
+rows:
+  - ["2D"]
+  - ["1489138842"]
+  - [""]
+  - ["-2087893705"]
+  - ["-339580836"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["2D"]
+  - ["1489138842"]
+  - [""]
+  - ["-2087893705"]
+  - ["-339580836"]

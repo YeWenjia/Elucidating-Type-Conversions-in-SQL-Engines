@@ -1,0 +1,12 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/marketing_regions.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0009.csv
+constants:
+- China
+columns:
+- marketing_region_name
+sql: |-
+  SELECT marketing_region_descriptrion
+  FROM marketing_regions
+  WHERE marketing_region_name = 'China'

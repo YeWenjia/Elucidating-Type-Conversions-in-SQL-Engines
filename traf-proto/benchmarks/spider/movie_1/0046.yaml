@@ -1,0 +1,19 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/reviewer.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0046.csv
+constants:
+- Brittany Harris
+- '2000'
+columns:
+- name
+- year
+sql: |-
+  SELECT DISTINCT t2.title
+  FROM rating AS t1
+  JOIN movie AS t2 ON t1.mid = t2.mid
+  JOIN reviewer AS t3 ON t1.rid = t3.rid
+  WHERE t3.name = 'Brittany Harris'
+    OR t2.year > 2000

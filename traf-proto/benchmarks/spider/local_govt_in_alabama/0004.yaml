@@ -1,0 +1,9 @@
+db: tests-examples/spider/local_govt_in_alabama/tables/db.sqlite
+inputs:
+- tests-examples/spider/local_govt_in_alabama/tables/participants.csv
+output: tests-examples/spider/local_govt_in_alabama/tables/0004.csv
+sql: |-
+  SELECT participant_id,
+         participant_type_code,
+         participant_details
+  FROM participants

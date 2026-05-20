@@ -1,0 +1,13 @@
+db: tests-examples/spider/student_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_1/tables/list.csv
+output: tests-examples/spider/student_1/tables/0029.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT classroom
+  FROM list
+  GROUP BY classroom
+  ORDER BY count(*) DESC

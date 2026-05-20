@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["-444040980", -2135386045, null]
+    - ["+R楙_g", -2135386045, null]
+    - ["-883264523", -2135386045, null]
+    - ["j誃&>|b[E", -2135386045, null]
+    - ["PRᗬ<-!4B}", -2135386045, null]
+    - ["1708405439", -2135386045, null]
+    - ["e튊Ug", -2135386045, null]
+    - ["", -2135386045, null]
+    - ["-1118684320", -2135386045, null]
+    - ["4x(", -2135386045, null]
+    - ["-876441658", -2135386045, null]
+    - ["稬#fi", -2135386045, null]
+    - ["Hi}'iY", -2135386045, null]
+    - ["-1104779761", -2135386045, null]
+    - ["-1791268570", null, null]
+    - ["qTLY\\D-", null, 1506804512]
+    - ["-186716307", null, 402431241]
+    - ["2039814783", null, null]
+    - ["\nB", null, null]
+    - ["-596599025", null, null]
+sql: "SELECT * FROM database0_t1 WHERE ((((((database0_t1.c1)>(database0_t1.c1)))NOT LIKE(database0_t1.c1)))NOT LIKE((((('') IS NULL))<>(((-916640154)<=(database0_t1.c2))))))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: operator does not exist: boolean !~~ integer\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 76"
+traf_error: "Best candidate (String, String) -> Bool does not match the types Bool, Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 106, in best_candidate\n    raise TypeError(f\"Best candidate {candidate} does not match the types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Best candidate (String, String) -> Bool does not match the types Bool, Int\n"
+traf_columns: []
+traf_rows: []

@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t7:
+    - ["-796866968", "A"]
+    - ["-1041688005", "A"]
+    - ["-", "A"]
+    - ["1386728733", ""]
+    - ["0oH>", "4/nD"]
+    - ["-339580836", "864003423"]
+    - [" So9", ""]
+    - ["-321449634", ""]
+    - ["1869355061", ""]
+    - ["1387612188", "312477042"]
+    - ["-833856855", "1745841682"]
+sql: "SELECT database0_t7.c0 FROM database0_t7 WHERE '稬#fi'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"稬#fi\"\n  Position: 48"
+traf_columns: [database0_t7.c0]
+traf_rows:
+  - ["-796866968"]
+  - ["-1041688005"]
+  - ["-"]
+  - ["1386728733"]
+  - ["0oH>"]
+  - ["-339580836"]
+  - [" So9"]
+  - ["-321449634"]
+  - ["1869355061"]
+  - ["1387612188"]
+  - ["-833856855"]

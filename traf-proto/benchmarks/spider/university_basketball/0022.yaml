@@ -1,0 +1,7 @@
+db: tests-examples/spider/university_basketball/tables/db.sqlite
+inputs:
+- tests-examples/spider/university_basketball/tables/basketball_match.csv
+output: tests-examples/spider/university_basketball/tables/0022.csv
+sql: |-
+  SELECT *
+  FROM basketball_match

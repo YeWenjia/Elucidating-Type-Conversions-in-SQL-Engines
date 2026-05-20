@@ -1,0 +1,68 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["R]joi", -339580836, null]
+    - ["UM.", null, null]
+    - ["", null, null]
+    - ["1708405439", null, null]
+    - ["lD", 583782443, null]
+    - ["-316874230", null, null]
+    - ["{3bh3O", null, null]
+    - ["-1279472365", null, null]
+    - ["-1242084353", 1174750745, null]
+    - ["_BHwAlGJ2", 1731937909, null]
+    - ["250848919", -360666222, "-1289420016"]
+    - ["M‎NH", 1558322816, null]
+    - ["e튊ug", 826266973, null]
+    - ["1195584752", 787934722, "-1574083986"]
+    - ["1", null, null]
+    - ["-1794531683", null, "-273085966"]
+  database0_t0:
+    - ["F￿", -833856855, null]
+    - ["j", 1894499120, 1242577457]
+sql: "SELECT database0_t1.c1, database0_t1.c0, database0_t0.c0 FROM database0_t1, database0_t0 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t1.c1, database0_t1.c0, database0_t0.c0]
+traf_rows:
+  - ["-339580836", "R]joi", "F￿"]
+  - ["-339580836", "R]joi", "j"]
+  - ["NULL", "UM.", "F￿"]
+  - ["NULL", "UM.", "j"]
+  - ["NULL", "1708405439", "F￿"]
+  - ["NULL", "1708405439", "j"]
+  - ["583782443", "lD", "F￿"]
+  - ["583782443", "lD", "j"]
+  - ["NULL", "-316874230", "F￿"]
+  - ["NULL", "-316874230", "j"]
+  - ["NULL", "{3bh3O", "F￿"]
+  - ["NULL", "{3bh3O", "j"]
+  - ["NULL", "-1279472365", "F￿"]
+  - ["NULL", "-1279472365", "j"]
+  - ["1174750745", "-1242084353", "F￿"]
+  - ["1174750745", "-1242084353", "j"]
+  - ["1731937909", "_BHwAlGJ2", "F￿"]
+  - ["1731937909", "_BHwAlGJ2", "j"]
+  - ["-360666222", "250848919", "F￿"]
+  - ["-360666222", "250848919", "j"]
+  - ["1558322816", "M‎NH", "F￿"]
+  - ["1558322816", "M‎NH", "j"]
+  - ["826266973", "e튊ug", "F￿"]
+  - ["826266973", "e튊ug", "j"]
+  - ["787934722", "1195584752", "F￿"]
+  - ["787934722", "1195584752", "j"]
+  - ["NULL", "1", "F￿"]
+  - ["NULL", "1", "j"]
+  - ["NULL", "-1794531683", "F￿"]
+  - ["NULL", "-1794531683", "j"]

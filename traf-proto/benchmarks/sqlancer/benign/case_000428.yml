@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [" pYp"]
+    - [" pYp"]
+    - [" pYp"]
+    - [" pYp"]
+    - ["258057159"]
+    - ["1073999771"]
+sql: "SELECT * FROM database0_t0 WHERE (('ἳF肪I') IS NULL)"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

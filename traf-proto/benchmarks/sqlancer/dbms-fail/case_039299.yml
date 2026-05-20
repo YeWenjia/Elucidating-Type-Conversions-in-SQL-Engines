@@ -1,0 +1,51 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["w1N<", "-657850939", null, "1411313689"]
+    - ["w1N<", "M", null, "1411313689"]
+    - ["w1N<", "440833260", null, "1411313689"]
+    - ["w1N<", "H뽍^jGP", null, "1411313689"]
+    - ["w1N<", "-316874230", null, "1411313689"]
+    - ["w1N<", "ꈳKL", null, "1411313689"]
+    - ["w1N<", "-1469104416", null, "1411313689"]
+    - ["w1N<", "449488638", null, "1411313689"]
+    - ["564354047", "]#FI", null, null]
+    - [null, "-420727782", null, " q䒥E3xV"]
+    - [null, "-444040980", null, "3"]
+    - ["\r/7Ui!B'", "6984250", "\tG", "880330817"]
+  database0_t0:
+    - ["-1865412983", "1264846530"]
+    - ["-1794475476", "1264846530"]
+    - ["369297413", "1264846530"]
+    - ["-2136480703", "1264846530"]
+    - ["", "-1087160292"]
+    - ["6984250", "-1639114736"]
+    - ["8jrR", "9582910"]
+    - ["-1994236958", "-3890461"]
+    - ["-1173634146", "55889804"]
+sql: "SELECT database0_t1.c0, database0_t1.c3, database0_t1.c2 FROM database0_t1 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 82"
+traf_columns: [database0_t1.c0, database0_t1.c3, database0_t1.c2]
+traf_rows:
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["w1N<", "1411313689", "NULL"]
+  - ["564354047", "NULL", "NULL"]
+  - ["\r/7Ui!B'", "880330817", "\tG"]

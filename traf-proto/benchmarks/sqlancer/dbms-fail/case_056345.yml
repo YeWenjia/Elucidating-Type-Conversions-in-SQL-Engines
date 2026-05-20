@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+data:
+  database0_t7:
+    - [1589366091]
+    - [455120199]
+    - [169597911]
+    - [-735480765]
+    - [-1684923321]
+    - [1565370594]
+    - [1635776983]
+    - [-657850939]
+    - [1510524639]
+    - [1299578065]
+    - [623156499]
+    - [1588128946]
+sql: "SELECT database0_t7.c0 FROM database0_t7 WHERE 'cy뉇Wg/'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"cy뉇Wg/\"\n  Position: 48"
+traf_columns: [database0_t7.c0]
+traf_rows:
+  - ["1589366091"]
+  - ["455120199"]
+  - ["169597911"]
+  - ["-735480765"]
+  - ["-1684923321"]
+  - ["1565370594"]
+  - ["1635776983"]
+  - ["-657850939"]
+  - ["1510524639"]
+  - ["1299578065"]
+  - ["623156499"]
+  - ["1588128946"]

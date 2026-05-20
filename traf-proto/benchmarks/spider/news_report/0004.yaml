@@ -1,0 +1,14 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+output: tests-examples/spider/news_report/tables/0004.csv
+constants:
+- England
+- Wales
+columns:
+- nationality
+sql: |-
+  SELECT name
+  FROM journalist
+  WHERE nationality = 'England'
+    OR nationality = 'Wales'

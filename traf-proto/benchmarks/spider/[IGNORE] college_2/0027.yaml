@@ -1,0 +1,9 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/course.csv
+output: tests-examples/spider/college_2/tables/0027.csv
+sql: |-
+  SELECT title
+  FROM course
+  ORDER BY title,
+           credits

@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [1894499120, "-420727782", 1809108251]
+    - [136340427, "-1077277231", -1724310134]
+    - [-759808593, "-354425506", 314522573]
+    - [-1513964145, "1377170989", null]
+    - [1672289660, "1070544412", null]
+    - [-54028438, "4k7(gv)", null]
+    - [723249712, "945001674", -2087893705]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '5pNbg'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"5pNbg\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["1894499120"]
+  - ["136340427"]
+  - ["-759808593"]
+  - ["-1513964145"]
+  - ["1672289660"]
+  - ["-54028438"]
+  - ["723249712"]

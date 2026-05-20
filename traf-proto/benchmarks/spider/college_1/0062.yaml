@@ -1,0 +1,19 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/enroll.csv
+- tests-examples/spider/college_1/tables/student.csv
+output: tests-examples/spider/college_1/tables/0062.csv
+constants:
+- ACCT-211
+functions:
+- avg
+columns:
+- stu_gpa
+- crs_code
+sql: |-
+  SELECT avg(t2.stu_gpa)
+  FROM enroll AS t1
+  JOIN student AS t2 ON t1.stu_num = t2.stu_num
+  JOIN class AS t3 ON t1.class_code = t3.class_code
+  WHERE t3.crs_code = 'ACCT-211'

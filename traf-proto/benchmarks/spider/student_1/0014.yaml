@@ -1,0 +1,8 @@
+db: tests-examples/spider/student_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_1/tables/teachers.csv
+output: tests-examples/spider/student_1/tables/0014.csv
+sql: |-
+  SELECT DISTINCT firstname,
+                  lastname
+  FROM teachers

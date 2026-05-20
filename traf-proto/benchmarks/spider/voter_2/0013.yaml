@@ -1,0 +1,8 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0013.csv
+sql: |-
+  SELECT DISTINCT registration_date,
+                  election_cycle
+  FROM voting_record

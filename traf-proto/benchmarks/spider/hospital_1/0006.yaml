@@ -1,0 +1,11 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/appointment.csv
+output: tests-examples/spider/hospital_1/tables/0006.csv
+constants:
+- '1'
+sql: |-
+  SELECT appointmentid
+  FROM appointment
+  ORDER BY
+  start DESC

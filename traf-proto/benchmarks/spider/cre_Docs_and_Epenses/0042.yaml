@@ -1,0 +1,19 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/accounts.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0042.csv
+constants:
+- '5'
+functions:
+- max
+columns:
+- account_details
+filters:
+- like
+sql: |-
+  SELECT max(account_details)
+  FROM accounts
+  UNION
+  SELECT account_details
+  FROM accounts
+  WHERE account_details LIKE '%5%'

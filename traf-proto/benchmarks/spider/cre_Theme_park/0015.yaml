@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/ref_hotel_star_ratings.csv
+- tests-examples/spider/cre_Theme_park/tables/hotels.csv
+output: tests-examples/spider/cre_Theme_park/tables/0015.csv
+constants:
+- '10000'
+columns:
+- price_range
+sql: |-
+  SELECT t2.star_rating_description
+  FROM hotels AS t1
+  JOIN ref_hotel_star_ratings AS t2 ON t1.star_rating_code = t2.star_rating_code
+  WHERE t1.price_range > 10000

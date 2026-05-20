@@ -1,0 +1,14 @@
+db: tests-examples/spider/manufacturer/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufacturer/tables/furniture.csv
+output: tests-examples/spider/manufacturer/tables/0003.csv
+constants:
+- '2'
+functions:
+- sum
+columns:
+- market_rate
+sql: |-
+  SELECT sum(market_rate)
+  FROM furniture
+  ORDER BY sum(market_rate) DESC

@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [647394976, -1279472365, "733919376"]
+    - [1014163171, -1279472365, "733919376"]
+    - [-2011765295, 1792575010, null]
+    - [1777398138, null, null]
+    - [1682588192, -91834572, null]
+    - [886922283, null, null]
+  database0_t6:
+    - ["v2AJ䏝~", null]
+    - ["1412584746", null]
+    - ["-53689045", "-733733552"]
+    - ["1355911006", "T\\"]
+    - ["᱇{ez쐏XN", "881398867"]
+    - ["W%J鴓", "!r5ꃫhZ"]
+    - ["O\rP'", "-121526841"]
+    - [" 4YDt", ""]
+    - ["0]HH", "-1980936731"]
+    - ["-115721671", null]
+    - ["1489138842", "-1862442225"]
+    - ["1588128946", "614523751"]
+    - ["-273085966", ""]
+    - ["", "n3cQO%"]
+    - ["-1186313300", "-2003502077"]
+    - ["-278911135", "388449173"]
+sql: "SELECT * FROM database0_t0, database0_t6 WHERE ((79768289)AND(''))"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of AND must be type boolean, not type integer\n  Position: 50"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2, database0_t6.c0, database0_t6.c1]
+traf_rows: []

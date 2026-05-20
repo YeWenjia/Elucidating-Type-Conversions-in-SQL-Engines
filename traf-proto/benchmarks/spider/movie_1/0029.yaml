@@ -1,0 +1,13 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+output: tests-examples/spider/movie_1/tables/0029.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT director
+  FROM movie
+  GROUP BY director
+  HAVING count(*) = 1

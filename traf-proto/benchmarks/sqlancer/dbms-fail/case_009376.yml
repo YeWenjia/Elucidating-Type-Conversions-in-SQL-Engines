@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["", -420727782]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '##\rT]aB'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"##\rT]aB\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-420727782"]

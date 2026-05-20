@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1: []
+sql: "SELECT * FROM database0_t1 WHERE 'Mf.Y'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Mf.Y\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2, database0_t1.c3]
+traf_rows: []

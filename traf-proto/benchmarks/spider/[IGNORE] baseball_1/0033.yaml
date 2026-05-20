@@ -1,0 +1,21 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/home_game.csv
+- tests-examples/spider/baseball_1/tables/team.csv
+output: tests-examples/spider/baseball_1/tables/0033.csv
+constants:
+- Boston Red Stockings
+- '2000'
+- '2010'
+functions:
+- sum
+columns:
+- attendance
+- name
+- year
+sql: |-
+  SELECT sum(t1.attendance)
+  FROM home_game AS t1
+  JOIN team AS t2 ON t1.team_id = t2.team_id_br
+  WHERE t2.name = 'Boston Red Stockings'
+    AND t1.year BETWEEN 2000 AND 2010;

@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["u S\nෑZ+", -948742844, "4k7(gv)"]
+    - ["}qe|P1", -294595303, "E'JWh0!"]
+    - ["1777398138", 1530020466, null]
+    - ["n\nG", 2131576533, "-1088951240"]
+    - ["av5SWO", null, null]
+    - ["-1657577908", null, null]
+    - ["-888677811", -804341004, null]
+  database0_t0:
+    - [-1330192941, null]
+    - [-827854841, null]
+    - [-1745773939, "q{"]
+    - [1302265430, "IPaQ)y"]
+sql: "SELECT database0_t0.c1, database0_t1.c0 FROM database0_t1, database0_t0 WHERE ((database0_t1.c0)>(database0_t0.c1))"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - ["q{", "u S\nෑZ+"]
+  - ["IPaQ)y", "u S\nෑZ+"]
+  - ["q{", "}qe|P1"]
+  - ["IPaQ)y", "}qe|P1"]
+  - ["IPaQ)y", "n\nG"]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t1.c0]
+traf_rows:
+  - ["q{", "u S\nෑZ+"]
+  - ["IPaQ)y", "u S\nෑZ+"]
+  - ["q{", "}qe|P1"]
+  - ["IPaQ)y", "}qe|P1"]
+  - ["IPaQ)y", "n\nG"]
+  - ["IPaQ)y", "av5SWO"]

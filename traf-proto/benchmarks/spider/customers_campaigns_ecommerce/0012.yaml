@@ -1,0 +1,10 @@
+db: tests-examples/spider/customers_campaigns_ecommerce/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_campaigns_ecommerce/tables/premises.csv
+- tests-examples/spider/customers_campaigns_ecommerce/tables/customer_addresses.csv
+output: tests-examples/spider/customers_campaigns_ecommerce/tables/0012.csv
+sql: |-
+  SELECT t2.premises_type,
+         t1.address_type_code
+  FROM customer_addresses AS t1
+  JOIN premises AS t2 ON t1.premise_id = t2.premise_id

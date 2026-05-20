@@ -1,0 +1,15 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/customers.csv
+output: tests-examples/spider/department_store/tables/0025.csv
+constants:
+- TN
+columns:
+- customer_address
+filters:
+- like
+sql: |-
+  SELECT customer_name,
+         customer_id, customer_address
+  FROM customers
+  WHERE customer_address LIKE '%TN%'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/behavior_incident.csv
+output: tests-examples/spider/behavior_monitoring/tables/0006.csv
+constants:
+- NOISE
+columns:
+- incident_type_code
+sql: |-
+  SELECT date_incident_start,
+         date_incident_end
+  FROM behavior_incident
+  WHERE incident_type_code = 'NOISE'

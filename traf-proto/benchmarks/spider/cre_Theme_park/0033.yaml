@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+output: tests-examples/spider/cre_Theme_park/tables/0033.csv
+functions:
+- count
+sql: |-
+  SELECT how_to_get_there,
+         COUNT(*)
+  FROM tourist_attractions
+  GROUP BY how_to_get_there

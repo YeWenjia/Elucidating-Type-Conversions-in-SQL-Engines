@@ -1,0 +1,11 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/student.csv
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0019.csv
+constants:
+- Professor
+columns:
+- rank_col
+sql: "SELECT t2.stuid\nFROM faculty AS t1\nJOIN student AS t2 ON t1.facid = t2.advisor\n\
+  WHERE t1.rank_col = 'Professor'"

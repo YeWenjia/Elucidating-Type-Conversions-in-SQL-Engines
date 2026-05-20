@@ -1,0 +1,13 @@
+db: tests-examples/spider/department_management/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_management/tables/department.csv
+output: tests-examples/spider/department_management/tables/0004.csv
+functions:
+- max
+- min
+columns:
+- budget_in_billions
+sql: |-
+  SELECT max(budget_in_billions),
+         min(budget_in_billions)
+  FROM department

@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t7:
+    - [742921267]
+    - [-420727782]
+    - [-569483123]
+    - [-832607484]
+  database0_t3:
+    - [1161815015, "m!C470-"]
+    - [-759808593, "m!C470-"]
+    - [1031205164, "8/[pHPG"]
+sql: "SELECT database0_t3.c1, database0_t3.c0 FROM database0_t3 WHERE NULL"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t3.c1, database0_t3.c0]
+traf_rows: []

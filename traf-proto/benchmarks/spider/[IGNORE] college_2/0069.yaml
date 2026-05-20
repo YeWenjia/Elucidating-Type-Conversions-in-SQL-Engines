@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/course.csv
+- tests-examples/spider/college_2/tables/student.csv
+- tests-examples/spider/college_2/tables/takes.csv
+output: tests-examples/spider/college_2/tables/0069.csv
+constants:
+- Statistics
+columns:
+- dept_name
+sql: |-
+  SELECT t3.name
+  FROM course AS t1
+  JOIN takes AS t2 ON t1.course_id = t2.course_id
+  JOIN student AS t3 ON t2.id = t3.id
+  WHERE t1.dept_name = 'Statistics'

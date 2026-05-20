@@ -1,0 +1,12 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/actor.csv
+output: tests-examples/spider/musical/tables/0004.csv
+constants:
+- '20'
+columns:
+- age
+sql: |-
+  SELECT name
+  FROM actor
+  WHERE age != 20

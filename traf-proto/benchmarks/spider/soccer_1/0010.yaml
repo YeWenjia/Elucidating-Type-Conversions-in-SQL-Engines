@@ -1,0 +1,16 @@
+db: tests-examples/spider/soccer_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_1/tables/player_attributes.csv
+output: tests-examples/spider/soccer_1/tables/0010.csv
+constants:
+- '80'
+functions:
+- count
+columns:
+- overall_rating
+sql: |-
+  SELECT preferred_foot,
+         count(*)
+  FROM player_attributes
+  WHERE overall_rating > 80
+  GROUP BY preferred_foot

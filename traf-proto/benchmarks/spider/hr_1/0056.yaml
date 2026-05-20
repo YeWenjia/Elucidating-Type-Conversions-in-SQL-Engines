@@ -1,0 +1,11 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/locations.csv
+output: tests-examples/spider/hr_1/tables/0056.csv
+sql: |-
+  SELECT t1.department_name,
+         t2.city,
+         t2.state_province
+  FROM departments AS t1
+  JOIN locations AS t2 ON t2.location_id = t1.location_id

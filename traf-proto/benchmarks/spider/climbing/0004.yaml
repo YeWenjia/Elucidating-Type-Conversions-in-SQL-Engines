@@ -1,0 +1,15 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/climber.csv
+output: tests-examples/spider/climbing/tables/0004.csv
+constants:
+- United Kingdom
+functions:
+- max
+columns:
+- points
+- country
+sql: |-
+  SELECT max(points)
+  FROM climber
+  WHERE country = 'United Kingdom'

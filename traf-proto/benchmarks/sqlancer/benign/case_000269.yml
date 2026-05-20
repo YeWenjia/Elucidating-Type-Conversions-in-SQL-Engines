@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [312477042, "387959454"]
+    - [623156499, "387959454"]
+    - [null, "387959454"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE (('dhVQ') IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - [312477042]
+  - [623156499]
+  - [null]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["312477042"]
+  - ["623156499"]
+  - ["NULL"]

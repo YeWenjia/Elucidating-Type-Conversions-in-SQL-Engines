@@ -1,0 +1,53 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [null]
+    - [-32977303]
+    - [-1498438495]
+    - [null]
+    - [369297413]
+    - [198770837]
+    - [625572473]
+    - [-1077277231]
+  database0_t0:
+    - ["", "945001674", null]
+    - ["<>yj*]", "-657850939", null]
+    - ["", "-420727782", "1635776983"]
+sql: "SELECT database0_t1.c0, database0_t0.c2, database0_t0.c0 FROM database0_t1, database0_t0 WHERE 'E'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"E\"\n  Position: 96"
+traf_columns: [database0_t1.c0, database0_t0.c2, database0_t0.c0]
+traf_rows:
+  - ["NULL", "NULL", ""]
+  - ["NULL", "NULL", "<>yj*]"]
+  - ["NULL", "1635776983", ""]
+  - ["-32977303", "NULL", ""]
+  - ["-32977303", "NULL", "<>yj*]"]
+  - ["-32977303", "1635776983", ""]
+  - ["-1498438495", "NULL", ""]
+  - ["-1498438495", "NULL", "<>yj*]"]
+  - ["-1498438495", "1635776983", ""]
+  - ["NULL", "NULL", ""]
+  - ["NULL", "NULL", "<>yj*]"]
+  - ["NULL", "1635776983", ""]
+  - ["369297413", "NULL", ""]
+  - ["369297413", "NULL", "<>yj*]"]
+  - ["369297413", "1635776983", ""]
+  - ["198770837", "NULL", ""]
+  - ["198770837", "NULL", "<>yj*]"]
+  - ["198770837", "1635776983", ""]
+  - ["625572473", "NULL", ""]
+  - ["625572473", "NULL", "<>yj*]"]
+  - ["625572473", "1635776983", ""]
+  - ["-1077277231", "NULL", ""]
+  - ["-1077277231", "NULL", "<>yj*]"]
+  - ["-1077277231", "1635776983", ""]

@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [2050734730, 1786692936, "i0", "-316874230"]
+    - [-1702357106, 415234902, "", "605741184"]
+    - [-1437636343, -632382568, "z", "-1419784440"]
+  database0_t0:
+    - [-273085966, 880330817]
+    - [-1877002239, null]
+    - [1373452691, null]
+    - [150440970, null]
+    - [1622400286, 915954605]
+    - [878771492, null]
+    - [891084879, -340779590]
+    - [388449173, 1041138677]
+sql: "SELECT * FROM database0_t1 WHERE (((('W[X\\Fp,')<=(-1543326592)))<>(database0_t1.c2))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: invalid input syntax for type integer: \"W[X\\Fp,\"\n  Position: 38"
+traf_error: "icast fails W[X\\Fp, to Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 47, in resolve\n    self.icast(e2, t.dom[1])\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 178, in icast\n    raise TypeError(f\"icast fails {e} to {t}\")\ninterpreter.Typechecker.TypeError: icast fails W[X\\Fp, to Int\n"
+traf_columns: []
+traf_rows: []

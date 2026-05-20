@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1: []
+  database0_t0: []
+sql: "SELECT database0_t0.c2, database0_t0.c1 FROM database0_t0 WHERE (('1302265430') IS NULL)"
+columns:
+  - "c2"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c2, database0_t0.c1]
+traf_rows: []

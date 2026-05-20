@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [932686427, "-2017303777"]
+    - [-1244842411, "␩"]
+sql: "SELECT database0_t0.c0, database0_t1.c0 FROM database0_t0, database0_t1 WHERE ((-2001604061) IS NULL)"
+columns:
+  - "c0"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t1.c0]
+traf_rows: []

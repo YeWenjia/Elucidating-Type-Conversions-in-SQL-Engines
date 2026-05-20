@@ -1,0 +1,15 @@
+db: tests-examples/spider/product_catalog/tables/db.sqlite
+inputs:
+- tests-examples/spider/product_catalog/tables/catalog_contents.csv
+output: tests-examples/spider/product_catalog/tables/0016.csv
+constants:
+- '3'
+- '5'
+columns:
+- length
+- width
+sql: |-
+  SELECT catalog_entry_name
+  FROM catalog_contents
+  WHERE length < 3
+    OR width > 5

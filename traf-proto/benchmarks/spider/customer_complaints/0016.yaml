@@ -1,0 +1,14 @@
+db: tests-examples/spider/customer_complaints/tables/db.sqlite
+inputs:
+- tests-examples/spider/customer_complaints/tables/staff.csv
+output: tests-examples/spider/customer_complaints/tables/0016.csv
+constants:
+- wrau
+columns:
+- email_address
+filters:
+- like
+sql: |-
+  SELECT last_name
+  FROM staff
+  WHERE email_address LIKE '%wrau%'

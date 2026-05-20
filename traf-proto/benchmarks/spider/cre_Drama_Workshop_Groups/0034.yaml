@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/drama_workshop_groups.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0034.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT marketing_region_code
+  FROM drama_workshop_groups
+  GROUP BY marketing_region_code
+  ORDER BY count(*) DESC

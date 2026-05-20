@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-214983414", "2131576533"]
+    - ["u7", "2131576533"]
+    - ["1708405439", "2131576533"]
+    - ["", "2131576533"]
+    - ["2ﳱ", "-166515376"]
+    - ["1794094756", ""]
+    - ["-1684923321", "ln䷥ST-G"]
+    - ["573344343", null]
+    - ["1<", ""]
+  database0_t0:
+    - [1161815015, 112015855]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'e튊Ug'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"e튊Ug\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["112015855"]

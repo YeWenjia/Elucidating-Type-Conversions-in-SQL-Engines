@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/accounts.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0006.csv
+functions:
+- count
+sql: |-
+  SELECT statement_id,
+         count(*)
+  FROM accounts
+  GROUP BY statement_id

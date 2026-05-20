@@ -1,0 +1,13 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'Mv'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Mv\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows: []

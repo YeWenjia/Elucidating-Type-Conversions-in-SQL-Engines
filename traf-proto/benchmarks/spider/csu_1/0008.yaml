@@ -1,0 +1,17 @@
+db: tests-examples/spider/csu_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/csu_1/tables/campuses.csv
+- tests-examples/spider/csu_1/tables/csu_fees.csv
+output: tests-examples/spider/csu_1/tables/0008.csv
+constants:
+- San Francisco State University
+- '1996'
+columns:
+- campus
+- year
+sql: |-
+  SELECT campusfee
+  FROM campuses AS t1
+  JOIN csu_fees AS t2 ON t1.id = t2.campus
+  WHERE t1.campus = 'San Francisco State University'
+    AND t2.year = 1996

@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/student.csv
+- tests-examples/spider/college_2/tables/takes.csv
+output: tests-examples/spider/college_2/tables/0024.csv
+constants:
+- '2009'
+- '2010'
+columns:
+- year
+sql: |-
+  SELECT DISTINCT t1.name
+  FROM student AS t1
+  JOIN takes AS t2 ON t1.id = t2.id
+  WHERE year = 2009
+    OR year = 2010

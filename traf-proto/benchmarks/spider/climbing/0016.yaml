@@ -1,0 +1,13 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+output: tests-examples/spider/climbing/tables/0016.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT country
+  FROM mountain
+  GROUP BY country
+  HAVING COUNT(*) > 1

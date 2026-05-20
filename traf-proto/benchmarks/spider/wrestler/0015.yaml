@@ -1,0 +1,13 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+output: tests-examples/spider/wrestler/tables/0015.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT reign
+  FROM wrestler
+  GROUP BY reign
+  ORDER BY COUNT(*) DESC

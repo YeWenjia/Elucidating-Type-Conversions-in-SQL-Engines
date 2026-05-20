@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["-339580836", 1486103084]
+    - ["543985007", 1486103084]
+    - ["'EBXM", -2087893705]
+    - ["-857515939", -439635302]
+    - ["-1554526165", null]
+    - ["838073728", null]
+    - ["\tt", null]
+    - ["Ntw8?d\r穹", null]
+    - ["1575351401", 382978157]
+    - ["4KfVI8mGi", -1554526165]
+    - ["23017163", null]
+    - ["-1073664262", 2128458931]
+    - ["-292088730", null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE 589301084"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-339580836", "1486103084"]
+  - ["543985007", "1486103084"]
+  - ["'EBXM", "-2087893705"]
+  - ["-857515939", "-439635302"]
+  - ["-1554526165", "NULL"]
+  - ["838073728", "NULL"]
+  - ["\tt", "NULL"]
+  - ["Ntw8?d\r穹", "NULL"]
+  - ["1575351401", "382978157"]
+  - ["4KfVI8mGi", "-1554526165"]
+  - ["23017163", "NULL"]
+  - ["-1073664262", "2128458931"]
+  - ["-292088730", "NULL"]

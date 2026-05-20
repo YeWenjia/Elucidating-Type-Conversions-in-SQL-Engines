@@ -1,0 +1,15 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/course.csv
+- tests-examples/spider/college_3/tables/enrolled_in.csv
+output: tests-examples/spider/college_3/tables/0025.csv
+constants:
+- '5'
+functions:
+- count
+sql: |-
+  SELECT t1.cname
+  FROM course AS t1
+  JOIN enrolled_in AS t2 ON t1.cid = t2.cid
+  GROUP BY t2.cid, t1.cname
+  HAVING COUNT(*) >= 5

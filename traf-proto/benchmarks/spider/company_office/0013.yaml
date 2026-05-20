@@ -1,0 +1,13 @@
+db: tests-examples/spider/company_office/tables/db.sqlite
+inputs:
+- tests-examples/spider/company_office/tables/buildings.csv
+output: tests-examples/spider/company_office/tables/0013.csv
+constants:
+- on-hold
+columns:
+- status
+sql: |-
+  SELECT name
+  FROM buildings
+  WHERE status = 'on-hold'
+  ORDER BY stories ASC

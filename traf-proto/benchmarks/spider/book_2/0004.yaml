@@ -1,0 +1,12 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/book.csv
+output: tests-examples/spider/book_2/tables/0004.csv
+constants:
+- Elaine Lee
+columns:
+- writer
+sql: |-
+  SELECT title
+  FROM book
+  WHERE writer != 'Elaine Lee'

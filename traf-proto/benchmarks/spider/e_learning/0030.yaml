@@ -1,0 +1,13 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/courses.csv
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+output: tests-examples/spider/e_learning/tables/0030.csv
+functions:
+- count
+sql: |-
+  SELECT t1.course_name,
+         COUNT(*)
+  FROM courses AS t1
+  JOIN student_course_enrolment AS t2 ON t1.course_id = t2.course_id
+  GROUP BY t1.course_name

@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1780060321", 232191734]
+    - ["1705638633", 1760205465]
+    - ["0\\?uTr", 312477042]
+    - ["-454391803", -303896481]
+    - ["2105665065", 139527751]
+    - ["-2031645740", -546214360]
+    - ["]xsa", null]
+    - ["-1353991089", null]
+    - ["1014163171", null]
+    - ["623156499", null]
+    - ["", null]
+  database0_t0:
+    - ["L )R~", "-717809554", null]
+sql: "SELECT * FROM database0_t1 WHERE '2+&n'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"2+&n\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["1780060321", "232191734"]
+  - ["1705638633", "1760205465"]
+  - ["0\\?uTr", "312477042"]
+  - ["-454391803", "-303896481"]
+  - ["2105665065", "139527751"]
+  - ["-2031645740", "-546214360"]
+  - ["]xsa", "NULL"]
+  - ["-1353991089", "NULL"]
+  - ["1014163171", "NULL"]
+  - ["623156499", "NULL"]
+  - ["", "NULL"]

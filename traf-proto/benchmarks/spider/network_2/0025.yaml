@@ -1,0 +1,27 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0025.csv
+constants:
+- '40'
+- '30'
+columns:
+- friend
+- age
+sql: |-
+  SELECT t1.name
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.name
+  WHERE t2.friend IN
+      (SELECT name
+       FROM person
+       WHERE age > 40)
+  EXCEPT
+  SELECT t1.name
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.name
+  WHERE t2.friend IN
+      (SELECT name
+       FROM person
+       WHERE age < 30)

@@ -1,0 +1,11 @@
+db: tests-examples/spider/school_player/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_player/tables/school.csv
+output: tests-examples/spider/school_player/tables/0005.csv
+functions:
+- avg
+columns:
+- enrollment
+sql: |-
+  SELECT avg(enrollment)
+  FROM school

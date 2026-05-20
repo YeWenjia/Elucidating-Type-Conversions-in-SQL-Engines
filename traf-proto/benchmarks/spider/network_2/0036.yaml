@@ -1,0 +1,19 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0036.csv
+constants:
+- Zach
+functions:
+- max
+columns:
+- name
+- year
+sql: |-
+  SELECT friend
+  FROM personfriend
+  WHERE name = 'Zach'
+    AND year =
+      (SELECT max(year)
+       FROM personfriend
+       WHERE name = 'Zach')

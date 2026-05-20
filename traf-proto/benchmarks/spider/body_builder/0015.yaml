@@ -1,0 +1,13 @@
+db: tests-examples/spider/body_builder/tables/db.sqlite
+inputs:
+  - tests-examples/spider/body_builder/tables/people.csv
+output: tests-examples/spider/body_builder/tables/0015.csv
+constants:
+  - "1"
+functions:
+  - count
+sql: |-
+  SELECT birth_place
+  FROM people
+  GROUP BY birth_place
+  ORDER BY COUNT(*) DESC

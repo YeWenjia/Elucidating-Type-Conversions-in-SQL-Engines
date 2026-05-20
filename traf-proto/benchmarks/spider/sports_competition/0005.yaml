@@ -1,0 +1,12 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/competition.csv
+output: tests-examples/spider/sports_competition/tables/0005.csv
+constants:
+- Tournament
+columns:
+- competition_type
+sql: |-
+  SELECT DISTINCT year
+  FROM competition
+  WHERE competition_type != 'Tournament'

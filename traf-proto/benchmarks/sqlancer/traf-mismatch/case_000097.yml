@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t6:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [897917532, 678687013]
+    - [1780384750, null]
+    - [-968726316, null]
+  database0_t6:
+    - [1630653945, "-833856855"]
+    - [1630653945, "-283834520"]
+    - [1630653945, "2131576533"]
+sql: "SELECT database0_t6.c1, database0_t6.c0 FROM database0_t6 WHERE ((database0_t6.c1)<=('%B'))"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - ["-833856855", 1630653945]
+  - ["-283834520", 1630653945]
+  - ["2131576533", 1630653945]
+kind: traf-mismatch
+traf_columns: [database0_t6.c1, database0_t6.c0]
+traf_rows: []

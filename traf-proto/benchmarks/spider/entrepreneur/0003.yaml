@@ -1,0 +1,8 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+output: tests-examples/spider/entrepreneur/tables/0003.csv
+sql: |-
+  SELECT company,
+         investor
+  FROM entrepreneur

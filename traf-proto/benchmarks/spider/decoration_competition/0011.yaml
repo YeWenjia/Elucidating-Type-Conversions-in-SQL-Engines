@@ -1,0 +1,14 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/college.csv
+- tests-examples/spider/decoration_competition/tables/member.csv
+output: tests-examples/spider/decoration_competition/tables/0011.csv
+constants:
+- Canada
+columns:
+- country
+sql: |-
+  SELECT DISTINCT t1.leader_name
+  FROM college AS t1
+  JOIN member AS t2 ON t1.college_id = t2.college_id
+  WHERE t2.country = 'Canada'

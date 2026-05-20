@@ -1,0 +1,13 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/film.csv
+output: tests-examples/spider/film_rank/tables/0016.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT studio
+  FROM film
+  GROUP BY studio
+  ORDER BY COUNT(*) DESC

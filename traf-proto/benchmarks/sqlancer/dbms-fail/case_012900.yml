@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "string"}
+data:
+  database0_t0:
+    - [317682242, "", -1937058642, "", "-339580836"]
+    - [880330817, "(s9p4\\", 828307300, null, "-1077277231"]
+    - [-1761397223, "2125840910", -501811782, "2140174157", "-838866776"]
+    - [1428400327, "", 1720408790, "728492750", null]
+    - [1031453162, "1290975598", -2087893705, "-892846577", "I#YL3r#K㶯"]
+    - [-1084107463, "136563700", 1639124197, "2009506418", "졁p樰l(Nm}2"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'ig<'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"ig<\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["317682242"]
+  - ["880330817"]
+  - ["-1761397223"]
+  - ["1428400327"]
+  - ["1031453162"]
+  - ["-1084107463"]

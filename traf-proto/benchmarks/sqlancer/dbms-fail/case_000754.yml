@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", null]
+    - ["-1831624141", null]
+    - ["930061686", null]
+  database0_t0:
+    - [null, "-191312372"]
+    - [null, "\nۂ'?~!9L"]
+    - [null, "ࠅ1"]
+sql: "SELECT * FROM database0_t0 WHERE '2f'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"2f\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["NULL", "-191312372"]
+  - ["NULL", "\nۂ'?~!9L"]
+  - ["NULL", "ࠅ1"]

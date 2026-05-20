@@ -1,0 +1,15 @@
+db: tests-examples/spider/customers_and_invoices/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_invoices/tables/orders.csv
+- tests-examples/spider/customers_and_invoices/tables/products.csv
+- tests-examples/spider/customers_and_invoices/tables/order_items.csv
+output: tests-examples/spider/customers_and_invoices/tables/0038.csv
+functions:
+- count
+sql: |-
+  SELECT t2.product_name,
+         count(*)
+  FROM order_items AS t1
+  JOIN products AS t2 ON t1.product_id = t2.product_id
+  JOIN orders AS t3 ON t3.order_id = t1.order_id
+  GROUP BY t2.product_name

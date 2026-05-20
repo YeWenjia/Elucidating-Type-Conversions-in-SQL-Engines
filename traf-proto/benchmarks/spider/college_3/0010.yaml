@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/faculty.csv
+output: tests-examples/spider/college_3/tables/0010.csv
+constants:
+- M
+- NEB
+columns:
+- sex
+- building
+sql: |-
+  SELECT fname,
+         lname
+  FROM faculty
+  WHERE sex = 'M'
+    AND building = 'NEB'

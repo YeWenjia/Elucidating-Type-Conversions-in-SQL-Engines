@@ -1,0 +1,16 @@
+db: tests-examples/spider/store_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_1/tables/invoices.csv
+output: tests-examples/spider/store_1/tables/0002.csv
+constants:
+- '8'
+functions:
+- sum
+columns:
+- total
+sql: |-
+  SELECT billing_country,
+         SUM(total)
+  FROM invoices
+  GROUP BY billing_country
+  ORDER BY SUM(total) DESC;

@@ -1,0 +1,22 @@
+db: tests-examples/spider/school_finance/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_finance/tables/school.csv
+- tests-examples/spider/school_finance/tables/budget.csv
+- tests-examples/spider/school_finance/tables/endowment.csv
+output: tests-examples/spider/school_finance/tables/0021.csv
+constants:
+- '100'
+- '10'
+functions:
+- sum
+columns:
+- budgeted
+- amount
+sql: |-
+  SELECT t2.school_name
+  FROM budget AS t1
+  JOIN school AS t2 ON t1.school_id = t2.school_id
+  JOIN endowment AS t3 ON t2.school_id = t3.school_id
+  GROUP BY t2.school_name
+  HAVING sum(t1.budgeted) > 100
+  OR sum(t3.amount) > 10

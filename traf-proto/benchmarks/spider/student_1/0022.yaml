@@ -1,0 +1,19 @@
+db: tests-examples/spider/student_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_1/tables/list.csv
+- tests-examples/spider/student_1/tables/teachers.csv
+output: tests-examples/spider/student_1/tables/0022.csv
+constants:
+- TARRING
+- LEIA
+functions:
+- count
+columns:
+- firstname
+- lastname
+sql: |-
+  SELECT count(*)
+  FROM list AS t1
+  JOIN teachers AS t2 ON t1.classroom = t2.classroom
+  WHERE t2.firstname = 'TARRING'
+    AND t2.lastname = 'LEIA'

@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t5:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0: []
+  database0_t5:
+    - [-566613860, "1426080665"]
+    - [-1206694315, "-1279472365"]
+    - [null, "Ჱ嗈]\tNg^"]
+    - [null, "-324336525"]
+sql: "SELECT database0_t5.c0 FROM database0_t5 WHERE (('') IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - [-566613860]
+  - [-1206694315]
+  - [null]
+  - [null]
+kind: benign
+traf_columns: [database0_t5.c0]
+traf_rows:
+  - ["-566613860"]
+  - ["-1206694315"]
+  - ["NULL"]
+  - ["NULL"]

@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1:
+    - [1161798939, null]
+    - [-1722647003, "440833260"]
+    - [-316874230, ""]
+    - [null, "IG<"]
+    - [null, "2139057994"]
+    - [null, "1707357091"]
+    - [null, "68DPTW铬VD"]
+    - [920392336, null]
+    - [null, "621135497"]
+    - [null, "-1077277231"]
+    - [null, null]
+  database0_t0:
+    - ["s*&~YD/", "-1220582247", "0oh>", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((1708405439)<=(-199683926))"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

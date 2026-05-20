@@ -1,0 +1,11 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/gymnast.csv
+output: tests-examples/spider/gymnast/tables/0004.csv
+functions:
+- avg
+columns:
+- horizontal_bar_points
+sql: |-
+  SELECT avg(horizontal_bar_points)
+  FROM gymnast

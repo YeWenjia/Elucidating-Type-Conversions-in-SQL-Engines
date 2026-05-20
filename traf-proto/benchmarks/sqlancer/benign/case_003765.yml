@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [1431461282]
+sql: "SELECT * FROM database0_t0 WHERE (('-760757233')<=(database0_t0.c1))"
+columns:
+  - "c1"
+rows:
+  - [1431461282]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1431461282"]

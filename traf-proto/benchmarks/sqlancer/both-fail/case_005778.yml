@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["378690887", "-929713484", "55089763"]
+    - ["-1238471188", "-474927268", "kWJS"]
+    - ["-2011765295", "1368777822", null]
+    - ["XP緦ut'뼑]x", "-339580836", "쥡95&j8"]
+    - ["-513819843", "", "Q4)7"]
+    - ["_u", "-1279472365", null]
+    - [">[d7nd", "1264846530", "-285784552"]
+    - ["-2144705434", "1661665722", "\nPP0◍'"]
+    - ["897917532", "369297413", "543985007"]
+    - ["1012131589", "-444040980", "-1377847098"]
+    - [".<鑱16\r)wF", "k)*etm೥1", ">g'}}smQ"]
+    - ["-1326636315", "-152514463", "-1041688005"]
+    - ["1486103084", "", "915954605"]
+    - ["'l\tff!", "-1790883840", "-1020663942"]
+    - ["k꺛*vF(", "", "8f국g"]
+    - ["-1143545628", "?r", null]
+    - ["", "878771492", null]
+    - ["", "1635776983", null]
+    - ["140693744", "2131576533", "}ꨒ"]
+    - ["1457260430", "1032130594", "413308902"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE ((((((1935041358)<>(database0_t0.c2)))<=((('3촓KU9')<>('\\y')))))<>(((((-1093540002)<>(-152514463)))<>((('')<=(1661665722))))))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: operator does not exist: integer <> character varying\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 82"
+traf_error: "Best candidate (Int, Int) -> Bool does not match the types Int, String"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 216, in typecheck_expr\n    t2, e2p = self.typecheck_expr(schema, T, e.e2)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 106, in best_candidate\n    raise TypeError(f\"Best candidate {candidate} does not match the types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Best candidate (Int, Int) -> Bool does not match the types Int, String\n"
+traf_columns: []
+traf_rows: []

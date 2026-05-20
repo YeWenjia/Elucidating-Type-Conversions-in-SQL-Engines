@@ -1,0 +1,13 @@
+engine: postgres
+schema:
+  database0_t9:
+    - {name: "c0", type: "string"}
+data:
+  database0_t9: []
+sql: "SELECT database0_t9.c0 FROM database0_t9 WHERE 'H[䑨rl'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"H[䑨rl\"\n  Position: 48"
+traf_columns: [database0_t9.c0]
+traf_rows: []

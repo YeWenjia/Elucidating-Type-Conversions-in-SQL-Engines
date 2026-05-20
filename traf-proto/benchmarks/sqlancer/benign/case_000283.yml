@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["S<V5?\tIj", ""]
+    - ["-1248237454", ""]
+    - ["zꞻMN욛", ""]
+    - ["745116816", ""]
+    - ["369297413", ""]
+    - ["282894691", ""]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE 'FALSE'"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["S<V5?\tIj", ""]
+  - ["-1248237454", ""]
+  - ["zꞻMN욛", ""]
+  - ["745116816", ""]
+  - ["369297413", ""]
+  - ["282894691", ""]

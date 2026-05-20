@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT * FROM database0_t0 WHERE '3촓ku9'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"3촓ku9\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

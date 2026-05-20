@@ -1,0 +1,11 @@
+db: tests-examples/spider/game_injury/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_injury/tables/game.csv
+- tests-examples/spider/game_injury/tables/injury_accident.csv
+output: tests-examples/spider/game_injury/tables/0018.csv
+sql: |-
+  SELECT t1.date,
+         t2.player
+  FROM game AS t1
+  JOIN injury_accident AS t2 ON t1.id = t2.game_id
+  ORDER BY t1.season DESC

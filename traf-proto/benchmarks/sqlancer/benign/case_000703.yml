@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["", -420727782]
+sql: "SELECT * FROM database0_t0 WHERE ((-453741757) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["", -420727782]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["", "-420727782"]

@@ -1,0 +1,12 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/course.csv
+output: tests-examples/spider/college_3/tables/0003.csv
+constants:
+- '1'
+columns:
+- credits
+sql: |-
+  SELECT cname
+  FROM course
+  WHERE credits = 1

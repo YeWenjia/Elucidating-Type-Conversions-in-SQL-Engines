@@ -1,0 +1,16 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/products.csv
+- tests-examples/spider/department_store/tables/product_suppliers.csv
+output: tests-examples/spider/department_store/tables/0012.csv
+constants:
+- '3'
+columns:
+- supplier_id
+sql: |-
+  SELECT t2.product_type_code,
+         t2.product_name,
+         t2.product_price
+  FROM product_suppliers AS t1
+  JOIN products AS t2 ON t1.product_id = t2.product_id
+  WHERE t1.supplier_id = 3

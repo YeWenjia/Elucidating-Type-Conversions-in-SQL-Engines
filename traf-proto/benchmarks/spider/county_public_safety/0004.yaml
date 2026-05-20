@@ -1,0 +1,13 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+output: tests-examples/spider/county_public_safety/tables/0004.csv
+functions:
+- min
+- max
+columns:
+- crime_rate
+sql: |-
+  SELECT min(crime_rate),
+         max(crime_rate)
+  FROM county_public_safety

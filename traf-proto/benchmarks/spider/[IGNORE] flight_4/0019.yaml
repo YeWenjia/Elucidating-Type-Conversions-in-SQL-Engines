@@ -1,0 +1,17 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/routes.csv
+- tests-examples/spider/flight_4/tables/airlines.csv
+output: tests-examples/spider/flight_4/tables/0019.csv
+constants:
+- American Airlines
+functions:
+- count
+columns:
+- dst_apid
+- name
+sql: |-
+  SELECT count(DISTINCT dst_apid)
+  FROM airlines AS t1
+  JOIN routes AS t2 ON t1.alid = t2.alid
+  WHERE t1.name = 'American Airlines'

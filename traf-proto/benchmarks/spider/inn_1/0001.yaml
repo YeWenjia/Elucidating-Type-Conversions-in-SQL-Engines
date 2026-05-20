@@ -1,0 +1,18 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+output: tests-examples/spider/inn_1/tables/0001.csv
+constants:
+- '160'
+- '2'
+- modern
+columns:
+- baseprice
+- beds
+- decor
+sql: |-
+  SELECT roomname
+  FROM rooms
+  WHERE baseprice < 160
+    AND beds = 2
+    AND decor = 'modern';

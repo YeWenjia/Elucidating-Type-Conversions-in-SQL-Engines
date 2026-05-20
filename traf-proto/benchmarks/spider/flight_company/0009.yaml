@@ -1,0 +1,16 @@
+db: tests-examples/spider/flight_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_company/tables/operate_company.csv
+- tests-examples/spider/flight_company/tables/flight.csv
+output: tests-examples/spider/flight_company/tables/0009.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name
+  FROM operate_company AS t1
+  JOIN flight AS t2 ON t1.id = t2.company_id
+  GROUP BY t1.id, t1.name
+  HAVING count(*) > 1

@@ -1,0 +1,16 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+- tests-examples/spider/behavior_monitoring/tables/assessment_notes.csv
+output: tests-examples/spider/behavior_monitoring/tables/0020.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t1.teacher_id,
+         t2.first_name
+  FROM assessment_notes AS t1
+  JOIN teachers AS t2 ON t1.teacher_id = t2.teacher_id
+  GROUP BY t1.teacher_id, t2.first_name
+  ORDER BY count(*) DESC

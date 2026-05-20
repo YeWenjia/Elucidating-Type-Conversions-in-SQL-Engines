@@ -1,0 +1,12 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0021.csv
+constants:
+- '1004'
+columns:
+- stuid
+sql: |-
+  select advisor
+  from student
+  where stuid = 1004

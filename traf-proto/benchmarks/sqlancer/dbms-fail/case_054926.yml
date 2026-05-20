@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c50", type: "string"}
+data:
+  database0_t0:
+    - ["-1980936731", 1636420860, "-929713484"]
+    - ["-316874230", null, ""]
+    - ["", -1794475476, "1445138642"]
+    - [".", 0, "2014338899"]
+sql: "SELECT * FROM database0_t0 WHERE 'nM햰0?C0'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"nM햰0?C0\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c50]
+traf_rows:
+  - ["-1980936731", "1636420860", "-929713484"]
+  - ["-316874230", "NULL", ""]
+  - ["", "-1794475476", "1445138642"]
+  - [".", "0", "2014338899"]

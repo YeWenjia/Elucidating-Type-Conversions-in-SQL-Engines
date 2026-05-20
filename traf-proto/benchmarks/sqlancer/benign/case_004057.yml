@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [769672084]
+    - [null]
+    - [1205289235]
+    - [-1779974519]
+    - [1486103084]
+    - [-1790883840]
+    - [440833260]
+    - [1486103084]
+    - [-3890461]
+    - [-1073664262]
+    - [-914776490]
+    - [30495702]
+    - [-515077743]
+    - [-1056561715]
+    - [232191734]
+    - [308925607]
+sql: "SELECT * FROM database0_t0 WHERE ((854537440) IS NULL)"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

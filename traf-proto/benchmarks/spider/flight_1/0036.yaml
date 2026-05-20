@@ -1,0 +1,14 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/flight.csv
+- tests-examples/spider/flight_1/tables/aircraft.csv
+output: tests-examples/spider/flight_1/tables/0036.csv
+constants:
+- Airbus A340-300
+columns:
+- name
+sql: |-
+  SELECT t1.flno
+  FROM flight AS t1
+  JOIN aircraft AS t2 ON t1.aid = t2.aid
+  WHERE t2.name = 'Airbus A340-300'

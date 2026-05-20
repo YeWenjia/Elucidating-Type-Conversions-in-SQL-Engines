@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-194244097, null]
+    - [-1980936731, null]
+    - [-428151007, "]rFxi"]
+    - [388449173, null]
+    - [1592784704, "2017042834"]
+    - [1708405439, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (('Z9zKu')<>(database0_t0.c1))"
+columns:
+  - "c1"
+rows:
+  - ["]rFxi"]
+  - ["2017042834"]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["]rFxi"]
+  - ["2017042834"]

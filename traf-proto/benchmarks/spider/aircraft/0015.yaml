@@ -1,0 +1,13 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+  - tests-examples/spider/aircraft/tables/aircraft.csv
+  - tests-examples/spider/aircraft/tables/match.csv
+output: tests-examples/spider/aircraft/tables/0015.csv
+functions:
+  - count
+sql: |-
+  SELECT t1.aircraft,
+         COUNT(*)
+  FROM aircraft AS t1
+  JOIN match AS t2 ON t1.aircraft_id = t2.winning_aircraft
+  GROUP BY t1.aircraft_id, t1.aircraft

@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [null]
+    - [221221009]
+    - [null]
+    - [null]
+    - [1558684248]
+    - [-294102262]
+    - [null]
+    - [null]
+    - [null]
+    - [-1316488284]
+sql: "SELECT * FROM database0_t0 WHERE NULL"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

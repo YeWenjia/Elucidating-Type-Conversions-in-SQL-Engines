@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/ref_document_types.csv
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/all_documents.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0010.csv
+constants:
+- How to read a book
+columns:
+- document_name
+sql: |-
+  SELECT t2.document_type_name
+  FROM all_documents AS t1
+  JOIN ref_document_types AS t2 ON t1.document_type_code = t2.document_type_code
+  WHERE t1.document_name = 'How to read a book'

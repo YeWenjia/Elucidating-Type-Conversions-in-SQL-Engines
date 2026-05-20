@@ -1,0 +1,12 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0007.csv
+constants:
+- '10'
+columns:
+- black
+sql: |-
+  SELECT hispanic
+  FROM city
+  WHERE black > 10

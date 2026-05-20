@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - ["-278911135", null]
+    - ["暤'", "-2111419871"]
+  database0_t0:
+    - ["1364026798", "RH~qcT]G", 1804551272, "1007395322"]
+sql: "SELECT database0_t0.c2, database0_t1.c1, database0_t0.c0 FROM database0_t0, database0_t1 WHERE '|땿X'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"|땿X\"\n  Position: 96"
+traf_columns: [database0_t0.c2, database0_t1.c1, database0_t0.c0]
+traf_rows:
+  - ["1804551272", "NULL", "1364026798"]
+  - ["1804551272", "-2111419871", "1364026798"]

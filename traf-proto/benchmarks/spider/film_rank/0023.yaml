@@ -1,0 +1,12 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/film.csv
+- tests-examples/spider/film_rank/tables/film_market_estimation.csv
+output: tests-examples/spider/film_rank/tables/0023.csv
+constants:
+- '1'
+sql: |-
+  SELECT t1.title
+  FROM film AS t1
+  JOIN film_market_estimation AS t2 ON t1.film_id = t2.film_id
+  ORDER BY high_estimate DESC

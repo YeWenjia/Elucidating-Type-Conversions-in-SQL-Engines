@@ -1,0 +1,13 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+output: tests-examples/spider/network_2/tables/0015.csv
+functions:
+- min
+columns:
+- age
+sql: |-
+  SELECT min(age),
+         job
+  FROM person
+  GROUP BY job

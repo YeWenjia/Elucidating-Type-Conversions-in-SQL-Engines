@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [61776763, null]
+    - [-531896775, "803241765"]
+    - [-636562884, "907309538"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'i58\rU(&C'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"i58\rU(&C\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["61776763"]
+  - ["-531896775"]
+  - ["-636562884"]

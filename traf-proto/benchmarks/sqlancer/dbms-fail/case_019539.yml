@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0:
+    - ["623156499", null, -3890461, "239734007"]
+    - ["623156499", 1635776983, -3890461, null]
+    - ["623156499", -523847717, -3890461, null]
+    - ["623156499", 1460910376, -3890461, ""]
+sql: "SELECT * FROM database0_t0 WHERE 'iUoL'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"iUoL\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2, database0_t0.c3]
+traf_rows:
+  - ["623156499", "NULL", "-3890461", "239734007"]
+  - ["623156499", "1635776983", "-3890461", "NULL"]
+  - ["623156499", "-523847717", "-3890461", "NULL"]
+  - ["623156499", "1460910376", "-3890461", ""]

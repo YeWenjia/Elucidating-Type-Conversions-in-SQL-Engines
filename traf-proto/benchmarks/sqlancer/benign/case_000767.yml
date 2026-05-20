@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-145000641]
+    - [-145000641]
+    - [-145000641]
+sql: "SELECT * FROM database0_t0 WHERE (((((('1e500')<=('.w'))) IS NOT NULL)) IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - [-145000641]
+  - [-145000641]
+  - [-145000641]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-145000641"]
+  - ["-145000641"]
+  - ["-145000641"]

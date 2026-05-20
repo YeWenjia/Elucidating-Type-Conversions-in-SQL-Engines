@@ -1,0 +1,8 @@
+db: tests-examples/spider/candidate_poll/tables/db.sqlite
+inputs:
+- tests-examples/spider/candidate_poll/tables/people.csv
+output: tests-examples/spider/candidate_poll/tables/0007.csv
+sql: |-
+  SELECT name
+  FROM people
+  ORDER BY date_of_birth

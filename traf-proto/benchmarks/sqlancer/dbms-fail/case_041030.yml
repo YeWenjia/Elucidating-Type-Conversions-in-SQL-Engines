@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [1529675822, "292999869", 1425223159]
+    - [-1684923321, "8캩I灄", -1]
+    - [-468160241, "Ox", null]
+    - [-1779974519, "1489138842", null]
+    - [-1020663942, "302155834", null]
+    - [-2103035971, "KQqm", null]
+    - [152053110, null, 1428400327]
+  database0_t0:
+    - ["w9*Xu\n[lf", -639173391, 1242577457]
+sql: "SELECT database0_t1.c1, database0_t1.c2, database0_t0.c1, database0_t0.c0 FROM database0_t0, database0_t1 WHERE database0_t0.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 113"
+traf_columns: [database0_t1.c1, database0_t1.c2, database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["292999869", "1425223159", "-639173391", "w9*Xu\n[lf"]
+  - ["8캩I灄", "-1", "-639173391", "w9*Xu\n[lf"]
+  - ["Ox", "NULL", "-639173391", "w9*Xu\n[lf"]
+  - ["1489138842", "NULL", "-639173391", "w9*Xu\n[lf"]
+  - ["302155834", "NULL", "-639173391", "w9*Xu\n[lf"]
+  - ["KQqm", "NULL", "-639173391", "w9*Xu\n[lf"]
+  - ["NULL", "1428400327", "-639173391", "w9*Xu\n[lf"]

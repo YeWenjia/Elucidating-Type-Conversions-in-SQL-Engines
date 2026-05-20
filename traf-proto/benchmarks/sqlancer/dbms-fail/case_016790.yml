@@ -1,0 +1,52 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", -713281657]
+    - ["1264846530", null]
+    - ["-1889681374", null]
+    - ["-0.0", null]
+  database0_t0:
+    - [-947019641, null]
+    - [-833856855, ""]
+    - [236801830, "ZE"]
+    - [-759808593, "9J縥\t"]
+    - [-1775103535, "1881839463"]
+    - [-787897258, "{u"]
+sql: "SELECT database0_t0.c1, database0_t1.c1 FROM database0_t0, database0_t1 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 79"
+traf_columns: [database0_t0.c1, database0_t1.c1]
+traf_rows:
+  - ["NULL", "-713281657"]
+  - ["NULL", "NULL"]
+  - ["NULL", "NULL"]
+  - ["NULL", "NULL"]
+  - ["", "-713281657"]
+  - ["", "NULL"]
+  - ["", "NULL"]
+  - ["", "NULL"]
+  - ["ZE", "-713281657"]
+  - ["ZE", "NULL"]
+  - ["ZE", "NULL"]
+  - ["ZE", "NULL"]
+  - ["9J縥\t", "-713281657"]
+  - ["9J縥\t", "NULL"]
+  - ["9J縥\t", "NULL"]
+  - ["9J縥\t", "NULL"]
+  - ["1881839463", "-713281657"]
+  - ["1881839463", "NULL"]
+  - ["1881839463", "NULL"]
+  - ["1881839463", "NULL"]
+  - ["{u", "-713281657"]
+  - ["{u", "NULL"]
+  - ["{u", "NULL"]
+  - ["{u", "NULL"]

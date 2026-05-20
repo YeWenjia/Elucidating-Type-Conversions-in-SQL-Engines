@@ -1,0 +1,12 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/course.csv
+output: tests-examples/spider/college_3/tables/0004.csv
+constants:
+- MTW
+columns:
+- days
+sql: |-
+  SELECT cname
+  FROM course
+  WHERE days = 'MTW'

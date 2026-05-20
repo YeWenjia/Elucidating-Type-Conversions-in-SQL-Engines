@@ -1,0 +1,18 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/flight.csv
+output: tests-examples/spider/flight_1/tables/0026.csv
+constants:
+- Los Angeles
+- Honolulu
+functions:
+- avg
+columns:
+- price
+- origin
+- destination
+sql: |-
+  SELECT avg(price)
+  FROM flight
+  WHERE origin = 'Los Angeles'
+    AND destination = 'Honolulu'

@@ -1,0 +1,15 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+output: tests-examples/spider/book_2/tables/0018.csv
+constants:
+- '10000000'
+- '5000000'
+columns:
+- price
+sql: |-
+  SELECT publisher
+  FROM publication
+  WHERE price > 10000000 INTERSECT
+    SELECT publisher
+    FROM publication WHERE price < 5000000

@@ -1,0 +1,12 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0024.csv
+functions:
+  - min
+columns:
+  - age
+sql: |-
+  select lname
+  from student
+  where age = (select min(age) from student)

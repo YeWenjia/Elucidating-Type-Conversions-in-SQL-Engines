@@ -1,0 +1,13 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+- tests-examples/spider/book_2/tables/book.csv
+output: tests-examples/spider/book_2/tables/0017.csv
+columns:
+- book_id
+sql: |-
+  SELECT title
+  FROM book
+  WHERE book_id NOT IN
+      (SELECT book_id
+       FROM publication)

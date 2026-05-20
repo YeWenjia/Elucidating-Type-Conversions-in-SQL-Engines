@@ -1,0 +1,10 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/invoice.csv
+output: tests-examples/spider/chinook_1/tables/0005.csv
+functions: []
+columns:
+- billingcountry
+sql: |-
+  SELECT distinct(billingcountry)
+  FROM invoice

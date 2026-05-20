@@ -1,0 +1,14 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/mission.csv
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0013.csv
+constants:
+- United States
+columns:
+- nationality
+sql: |-
+  SELECT DISTINCT t1.fate
+  FROM mission AS t1
+  JOIN ship AS t2 ON t1.ship_id = t2.ship_id
+  WHERE t2.nationality = 'United States'

@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [600969771, null]
+    - [-632382568, "1810367629"]
+    - [-31667871, null]
+    - [-138436352, null]
+    - [-88915418, "LQaY"]
+    - [-2020873312, "239734007"]
+  database0_t0:
+    - ["1529296124", 1899020895]
+    - ["-0.0", 1899020895]
+    - ["-316874230", null]
+    - ["G%%2mkq", null]
+sql: "SELECT * FROM database0_t1 WHERE '915954605'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"915954605\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["600969771", "NULL"]
+  - ["-632382568", "1810367629"]
+  - ["-31667871", "NULL"]
+  - ["-138436352", "NULL"]
+  - ["-88915418", "LQaY"]
+  - ["-2020873312", "239734007"]

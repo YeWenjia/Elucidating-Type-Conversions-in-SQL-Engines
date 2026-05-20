@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["S/", -1860230507]
+    - ["/k]\ru먄s", -1860230507]
+    - ["_wa", -1860230507]
+    - ["-1996282919", -1860230507]
+    - ["625572473", -1860230507]
+    - ["jw", -1860230507]
+    - ["", -1860230507]
+    - ["-1664356665", -1860230507]
+    - ["-773587990", -1860230507]
+    - ["167802204", -1860230507]
+    - ["366745332", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '()'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"()\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["S/"]
+  - ["/k]\ru먄s"]
+  - ["_wa"]
+  - ["-1996282919"]
+  - ["625572473"]
+  - ["jw"]
+  - [""]
+  - ["-1664356665"]
+  - ["-773587990"]
+  - ["167802204"]
+  - ["366745332"]

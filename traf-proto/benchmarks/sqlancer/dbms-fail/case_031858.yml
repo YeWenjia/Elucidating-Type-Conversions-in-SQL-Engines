@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["1588128946", "Gd*](V\nH"]
+    - ["1919206390", "304705413"]
+    - ["-66797058", "1666072709"]
+    - ["381286968", ""]
+    - ["-680318109", null]
+    - ["902268814", null]
+    - ["239734007", null]
+    - [",3Sq,QzN", "-1781350639"]
+sql: "SELECT * FROM database0_t0 WHERE 'amngt-媩'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"amngt-媩\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["1588128946", "Gd*](V\nH"]
+  - ["1919206390", "304705413"]
+  - ["-66797058", "1666072709"]
+  - ["381286968", ""]
+  - ["-680318109", "NULL"]
+  - ["902268814", "NULL"]
+  - ["239734007", "NULL"]
+  - [",3Sq,QzN", "-1781350639"]

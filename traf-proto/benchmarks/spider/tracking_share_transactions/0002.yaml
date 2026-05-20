@@ -1,0 +1,7 @@
+db: tests-examples/spider/tracking_share_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_share_transactions/tables/investors.csv
+output: tests-examples/spider/tracking_share_transactions/tables/0002.csv
+sql: |-
+  SELECT investor_details
+  FROM investors

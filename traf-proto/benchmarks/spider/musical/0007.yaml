@@ -1,0 +1,12 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+output: tests-examples/spider/musical/tables/0007.csv
+constants:
+- Bob Fosse
+columns:
+- nominee
+sql: |-
+  SELECT name
+  FROM musical
+  WHERE nominee = 'Bob Fosse'

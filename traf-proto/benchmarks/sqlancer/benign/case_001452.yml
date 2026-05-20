@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["p{", 723249712]
+sql: "SELECT * FROM database0_t0 WHERE ((-281703303) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["p{", 723249712]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["p{", "723249712"]

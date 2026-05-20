@@ -1,0 +1,12 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+output: tests-examples/spider/wrestler/tables/0004.csv
+constants:
+- Tokyo , Japan
+columns:
+- location
+sql: |-
+  SELECT DISTINCT reign
+  FROM wrestler
+  WHERE location != 'Tokyo , Japan'

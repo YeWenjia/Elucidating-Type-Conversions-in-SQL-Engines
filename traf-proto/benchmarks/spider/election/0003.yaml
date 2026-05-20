@@ -1,0 +1,11 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/county.csv
+output: tests-examples/spider/election/tables/0003.csv
+functions:
+- avg
+columns:
+- population
+sql: |-
+  SELECT avg(population)
+  FROM county

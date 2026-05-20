@@ -1,0 +1,20 @@
+db: tests-examples/spider/dorm_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/dorm_1/tables/student.csv
+- tests-examples/spider/dorm_1/tables/dorm.csv
+- tests-examples/spider/dorm_1/tables/lives_in.csv
+output: tests-examples/spider/dorm_1/tables/0039.csv
+functions:
+- avg
+- max
+columns:
+- age
+- student_capacity
+sql: |-
+  SELECT avg(t1.age)
+  FROM student AS t1
+  JOIN lives_in AS t2 ON t1.stuid = t2.stuid
+  JOIN dorm AS t3 ON t3.dormid = t2.dormid
+  WHERE t3.student_capacity =
+      (SELECT max(student_capacity)
+       FROM dorm)

@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t7:
+    - [742921267]
+    - [-420727782]
+    - [-569483123]
+    - [-832607484]
+  database0_t3:
+    - [1161815015, "m!C470-"]
+    - [-759808593, "m!C470-"]
+    - [1031205164, "8/[pHPG"]
+sql: "SELECT * FROM database0_t3, database0_t7 WHERE 398509175"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t3.c0, database0_t3.c1, database0_t7.c0]
+traf_rows:
+  - ["1161815015", "m!C470-", "742921267"]
+  - ["1161815015", "m!C470-", "-420727782"]
+  - ["1161815015", "m!C470-", "-569483123"]
+  - ["1161815015", "m!C470-", "-832607484"]
+  - ["-759808593", "m!C470-", "742921267"]
+  - ["-759808593", "m!C470-", "-420727782"]
+  - ["-759808593", "m!C470-", "-569483123"]
+  - ["-759808593", "m!C470-", "-832607484"]
+  - ["1031205164", "8/[pHPG", "742921267"]
+  - ["1031205164", "8/[pHPG", "-420727782"]
+  - ["1031205164", "8/[pHPG", "-569483123"]
+  - ["1031205164", "8/[pHPG", "-832607484"]

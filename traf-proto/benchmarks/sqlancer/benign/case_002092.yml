@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t8:
+    - [null, "-297344416", null]
+sql: "SELECT database0_t8.c1, database0_t8.c0 FROM database0_t8 WHERE ((((((428936774)<=(1025193431))) IS NOT NULL)) IS NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t8.c1, database0_t8.c0]
+traf_rows: []

@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1311522546", null]
+    - ["-1020663942", null]
+    - ["⩭y", null]
+  database0_t0:
+    - [231214075, "-727026085", 525161554]
+sql: "SELECT * FROM database0_t1 WHERE '+3szhLa'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"+3szhLa\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["1311522546", "NULL"]
+  - ["-1020663942", "NULL"]
+  - ["⩭y", "NULL"]

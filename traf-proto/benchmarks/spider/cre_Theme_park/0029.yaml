@@ -1,0 +1,10 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/hotels.csv
+output: tests-examples/spider/cre_Theme_park/tables/0029.csv
+constants:
+- '3'
+sql: |-
+  SELECT other_hotel_details
+  FROM hotels
+  ORDER BY price_range DESC

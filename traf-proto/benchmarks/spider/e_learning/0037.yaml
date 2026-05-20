@@ -1,0 +1,16 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/students.csv
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+output: tests-examples/spider/e_learning/tables/0037.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.student_id,
+         t2.middle_name
+  FROM student_course_enrolment AS t1
+  JOIN students AS t2 ON t1.student_id = t2.student_id
+  GROUP BY t1.student_id, t2.middle_name
+  HAVING COUNT(*) <= 2

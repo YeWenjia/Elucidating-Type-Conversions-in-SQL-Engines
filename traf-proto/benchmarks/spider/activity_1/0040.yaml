@@ -1,0 +1,15 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/activity.csv
+- tests-examples/spider/activity_1/tables/participates_in.csv
+output: tests-examples/spider/activity_1/tables/0040.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.activity_name
+  FROM activity AS t1
+  JOIN participates_in AS t2 ON t1.actid = t2.actid
+  GROUP BY t1.actid, t1.activity_name
+  ORDER BY count(*) DESC

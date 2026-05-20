@@ -1,0 +1,16 @@
+db: tests-examples/spider/cinema/tables/db.sqlite
+inputs:
+- tests-examples/spider/cinema/tables/film.csv
+output: tests-examples/spider/cinema/tables/0022.csv
+constants:
+- Dummy
+functions:
+- count
+columns:
+- title
+filters:
+- like
+sql: |-
+  SELECT count(*)
+  FROM film
+  WHERE title LIKE '%Dummy%'

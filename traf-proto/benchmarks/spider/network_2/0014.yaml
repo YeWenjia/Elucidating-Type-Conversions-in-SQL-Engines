@@ -1,0 +1,17 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+output: tests-examples/spider/network_2/tables/0014.csv
+constants:
+- male
+functions:
+- avg
+columns:
+- age
+- gender
+sql: |-
+  SELECT avg(age),
+         job
+  FROM person
+  WHERE gender = 'male'
+  GROUP BY job

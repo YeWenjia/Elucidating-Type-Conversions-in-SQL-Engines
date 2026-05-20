@@ -1,0 +1,20 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0028.csv
+constants:
+- '2009'
+- Zinfandel
+functions:
+- avg
+columns:
+- price
+- cases
+- year
+- grape
+sql: |-
+  SELECT AVG(price),
+         AVG(cases)
+  FROM wine
+  WHERE year = 2009
+    AND grape = 'Zinfandel'

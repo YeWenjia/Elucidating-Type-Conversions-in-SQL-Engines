@@ -1,0 +1,8 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/member.csv
+output: tests-examples/spider/decoration_competition/tables/0002.csv
+sql: |-
+  SELECT name
+  FROM member
+  ORDER BY name ASC

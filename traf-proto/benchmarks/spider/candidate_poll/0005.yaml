@@ -1,0 +1,10 @@
+db: tests-examples/spider/candidate_poll/tables/db.sqlite
+inputs:
+- tests-examples/spider/candidate_poll/tables/candidate.csv
+output: tests-examples/spider/candidate_poll/tables/0005.csv
+sql: |-
+  SELECT support_rate,
+         consider_rate,
+         oppose_rate
+  FROM candidate
+  ORDER BY unsure_rate

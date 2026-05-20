@@ -1,0 +1,47 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-1415286729", ""]
+    - ["440833260", ""]
+    - ["976935660", ""]
+    - ["^zv('碁꺛j", ""]
+    - ["1348780045", ""]
+    - ["IG<", ""]
+    - ["-2136856705", ""]
+    - ["z)b_r", null]
+    - ["1777398138", "33N30"]
+  database0_t0:
+    - ["-279937498", 878771492]
+    - ["1", 878771492]
+    - ["", 878771492]
+    - ["168541884", 878771492]
+    - ["-152514463", 878771492]
+    - ["90257357", 878771492]
+    - ["1204273530", null]
+    - ["&VY_", null]
+    - ["1161798939", null]
+    - ["K)*ETM೥1", -1020663942]
+sql: "SELECT * FROM database0_t0 WHERE 'o9'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"o9\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-279937498", "878771492"]
+  - ["1", "878771492"]
+  - ["", "878771492"]
+  - ["168541884", "878771492"]
+  - ["-152514463", "878771492"]
+  - ["90257357", "878771492"]
+  - ["1204273530", "NULL"]
+  - ["&VY_", "NULL"]
+  - ["1161798939", "NULL"]
+  - ["K)*ETM೥1", "-1020663942"]

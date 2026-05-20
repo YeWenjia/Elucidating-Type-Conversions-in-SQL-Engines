@@ -1,0 +1,80 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [-1894520833, "-278911135"]
+    - [83638508, "jkkZr"]
+    - [-1486166840, null]
+    - [-1760387882, null]
+  database0_t0:
+    - [null, -1041688005, "", null]
+    - [null, 1874395605, null, null]
+    - [null, -1007638754, null, null]
+    - [null, -420727782, null, null]
+    - [null, -531409021, null, null]
+    - [null, 667226769, "h", null]
+sql: "SELECT database0_t0.c1, database0_t0.c3, database0_t0.c2 FROM database0_t0, database0_t1 WHERE ((-1563857896) IS NOT NULL)"
+columns:
+  - "c1"
+  - "c3"
+  - "c2"
+rows:
+  - [-1041688005, null, ""]
+  - [-1041688005, null, ""]
+  - [-1041688005, null, ""]
+  - [-1041688005, null, ""]
+  - [1874395605, null, null]
+  - [1874395605, null, null]
+  - [1874395605, null, null]
+  - [1874395605, null, null]
+  - [-1007638754, null, null]
+  - [-1007638754, null, null]
+  - [-1007638754, null, null]
+  - [-1007638754, null, null]
+  - [-420727782, null, null]
+  - [-420727782, null, null]
+  - [-420727782, null, null]
+  - [-420727782, null, null]
+  - [-531409021, null, null]
+  - [-531409021, null, null]
+  - [-531409021, null, null]
+  - [-531409021, null, null]
+  - [667226769, null, "h"]
+  - [667226769, null, "h"]
+  - [667226769, null, "h"]
+  - [667226769, null, "h"]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c3, database0_t0.c2]
+traf_rows:
+  - ["-1041688005", "NULL", ""]
+  - ["-1041688005", "NULL", ""]
+  - ["-1041688005", "NULL", ""]
+  - ["-1041688005", "NULL", ""]
+  - ["1874395605", "NULL", "NULL"]
+  - ["1874395605", "NULL", "NULL"]
+  - ["1874395605", "NULL", "NULL"]
+  - ["1874395605", "NULL", "NULL"]
+  - ["-1007638754", "NULL", "NULL"]
+  - ["-1007638754", "NULL", "NULL"]
+  - ["-1007638754", "NULL", "NULL"]
+  - ["-1007638754", "NULL", "NULL"]
+  - ["-420727782", "NULL", "NULL"]
+  - ["-420727782", "NULL", "NULL"]
+  - ["-420727782", "NULL", "NULL"]
+  - ["-420727782", "NULL", "NULL"]
+  - ["-531409021", "NULL", "NULL"]
+  - ["-531409021", "NULL", "NULL"]
+  - ["-531409021", "NULL", "NULL"]
+  - ["-531409021", "NULL", "NULL"]
+  - ["667226769", "NULL", "h"]
+  - ["667226769", "NULL", "h"]
+  - ["667226769", "NULL", "h"]
+  - ["667226769", "NULL", "h"]

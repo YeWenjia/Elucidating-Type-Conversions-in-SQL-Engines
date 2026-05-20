@@ -1,0 +1,8 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/allergy_type.csv
+output: tests-examples/spider/allergy_1/tables/0004.csv
+sql: |-
+  select allergy,
+         allergytype
+  from allergy_type

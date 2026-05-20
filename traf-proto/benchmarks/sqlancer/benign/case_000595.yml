@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["Nx&>", null]
+    - ["髑s맫N", null]
+    - ["&23鈺&cfyi", "稬#FI"]
+    - ["l*", "-989056462"]
+    - ["Oy", "-64780862"]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((-833856855)<>('2'))"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - [null, "Nx&>"]
+  - [null, "髑s맫N"]
+  - ["稬#FI", "&23鈺&cfyi"]
+  - ["-989056462", "l*"]
+  - ["-64780862", "Oy"]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["NULL", "Nx&>"]
+  - ["NULL", "髑s맫N"]
+  - ["稬#FI", "&23鈺&cfyi"]
+  - ["-989056462", "l*"]
+  - ["-64780862", "Oy"]

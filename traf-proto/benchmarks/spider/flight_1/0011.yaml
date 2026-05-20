@@ -1,0 +1,9 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/employee.csv
+output: tests-examples/spider/flight_1/tables/0011.csv
+sql: |-
+  SELECT name,
+         salary
+  FROM employee
+  ORDER BY salary

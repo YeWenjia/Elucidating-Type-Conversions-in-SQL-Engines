@@ -1,0 +1,15 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/student.csv
+output: tests-examples/spider/restaurant_1/tables/0007.csv
+constants:
+- Linda
+- Smith
+columns:
+- fname
+- lname
+sql: |-
+  SELECT age
+  FROM student
+  WHERE fname = 'Linda'
+    AND lname = 'Smith';

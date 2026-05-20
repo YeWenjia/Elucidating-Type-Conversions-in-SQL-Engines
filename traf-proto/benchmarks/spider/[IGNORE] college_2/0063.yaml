@@ -1,0 +1,18 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/department.csv
+- tests-examples/spider/college_2/tables/instructor.csv
+output: tests-examples/spider/college_2/tables/0063.csv
+constants:
+- '1'
+functions:
+- avg
+- count
+columns:
+- salary
+sql: |-
+  SELECT avg(t1.salary),
+         count(*)
+  FROM instructor AS t1
+  JOIN department AS t2 ON t1.dept_name = t2.dept_name
+  ORDER BY t2.budget DESC

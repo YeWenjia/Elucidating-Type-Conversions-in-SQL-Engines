@@ -1,0 +1,19 @@
+db: tests-examples/spider/csu_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/csu_1/tables/campuses.csv
+- tests-examples/spider/csu_1/tables/degrees.csv
+- tests-examples/spider/csu_1/tables/faculty.csv
+output: tests-examples/spider/csu_1/tables/0027.csv
+constants:
+- '2002'
+- '1'
+columns:
+- year
+sql: |-
+  SELECT t2.faculty
+  FROM campuses AS t1
+  JOIN faculty AS t2 ON t1.id = t2.campus
+  JOIN degrees AS t3 ON t1.id = t3.campus
+  AND t2.year = t3.year
+  WHERE t2.year = 2002
+  ORDER BY t3.degrees DESC

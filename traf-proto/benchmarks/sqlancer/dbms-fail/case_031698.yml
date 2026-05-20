@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0: []
+sql: "SELECT * FROM database0_t0 WHERE 'pk0\\+s'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"pk0\\+s\"\n  Position: 34"
+traf_columns: [database0_t0.c1, database0_t0.c2]
+traf_rows: []

@@ -1,0 +1,13 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/professor.csv
+output: tests-examples/spider/college_1/tables/0019.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         t1.school_code
+  FROM department AS t1
+  JOIN professor AS t2 ON t1.dept_code = t2.dept_code
+  GROUP BY t1.school_code

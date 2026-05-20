@@ -1,0 +1,22 @@
+db: tests-examples/spider/customers_card_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_card_transactions/tables/customers.csv
+- tests-examples/spider/customers_card_transactions/tables/customers_cards.csv
+output: tests-examples/spider/customers_card_transactions/tables/0022.csv
+constants:
+- Blanche
+- Huels
+- Credit
+functions:
+- count
+columns:
+- customer_first_name
+- customer_last_name
+- card_type_code
+sql: |-
+  SELECT count(*)
+  FROM customers_cards AS t1
+  JOIN customers AS t2 ON t1.customer_id = t2.customer_id
+  WHERE t2.customer_first_name = 'Blanche'
+    AND t2.customer_last_name = 'Huels'
+    AND t1.card_type_code = 'Credit'

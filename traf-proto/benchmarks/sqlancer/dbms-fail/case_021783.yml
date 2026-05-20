@@ -1,0 +1,49 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["1386841611", -296926994, null, 402146878]
+    - ["{_", 152063824, 90257357, null]
+    - ["w9*Xu\n[lf", 976935660, 1486103084, null]
+  database0_t0:
+    - ["", null, "⥆#7*<\rXwI"]
+    - ["-457118126", null, "⥆#7*<\rXwI"]
+    - ["753552745", null, "⥆#7*<\rXwI"]
+    - ["Wf", "", "⥆#7*<\rXwI"]
+    - ["-951583415", "䔷fMB33", "⥆#7*<\rXwI"]
+    - ["877368723", "hq", "⥆#7*<\rXwI"]
+    - ["*Xmq", null, "⥆#7*<\rXwI"]
+    - ["2132858417", "p.", "⥆#7*<\rXwI"]
+    - ["-1779974519", "285314990", "⥆#7*<\rXwI"]
+    - ["1428400327", null, "⥆#7*<\rXwI"]
+    - ["Ror.Hl", null, "⥆#7*<\rXwI"]
+    - ["T4!I\n4[", null, null]
+    - ["976935660", null, "消9hsNKv"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-457118126", "NULL"]
+  - ["753552745", "NULL"]
+  - ["Wf", ""]
+  - ["-951583415", "䔷fMB33"]
+  - ["877368723", "hq"]
+  - ["*Xmq", "NULL"]
+  - ["2132858417", "p."]
+  - ["-1779974519", "285314990"]
+  - ["1428400327", "NULL"]
+  - ["Ror.Hl", "NULL"]
+  - ["T4!I\n4[", "NULL"]
+  - ["976935660", "NULL"]

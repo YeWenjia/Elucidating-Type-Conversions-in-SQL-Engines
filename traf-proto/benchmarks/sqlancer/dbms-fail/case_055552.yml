@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-1343168801, 7]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ',V'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \",V\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["7"]

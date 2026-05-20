@@ -1,0 +1,13 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/has_allergy.csv
+output: tests-examples/spider/allergy_1/tables/0038.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  select allergy
+  from has_allergy
+  group by allergy
+  order by count(*) desc

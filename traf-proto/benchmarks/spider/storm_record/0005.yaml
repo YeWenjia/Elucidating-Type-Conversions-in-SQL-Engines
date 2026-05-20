@@ -1,0 +1,14 @@
+db: tests-examples/spider/storm_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/storm_record/tables/storm.csv
+output: tests-examples/spider/storm_record/tables/0005.csv
+constants:
+- '0'
+functions:
+- count
+columns:
+- number_deaths
+sql: |-
+  SELECT count(*)
+  FROM storm
+  WHERE number_deaths > 0

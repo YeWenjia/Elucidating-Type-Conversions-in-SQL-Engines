@@ -1,0 +1,11 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+output: tests-examples/spider/entrepreneur/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT investor,
+         COUNT(*)
+  FROM entrepreneur
+  GROUP BY investor

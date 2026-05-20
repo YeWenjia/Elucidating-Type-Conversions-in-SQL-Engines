@@ -1,0 +1,14 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+output: tests-examples/spider/musical/tables/0020.csv
+constants:
+- Tony Award
+- Cleavant Derricks
+columns:
+- award
+sql: |-
+  SELECT nominee
+  FROM musical
+  WHERE award = 'Tony Award'
+    OR award = 'Cleavant Derricks'

@@ -1,0 +1,9 @@
+db: tests-examples/spider/body_builder/tables/db.sqlite
+inputs:
+- tests-examples/spider/body_builder/tables/body_builder.csv
+output: tests-examples/spider/body_builder/tables/0003.csv
+sql: |-
+  SELECT snatch,
+         clean_jerk
+  FROM body_builder
+  ORDER BY snatch ASC

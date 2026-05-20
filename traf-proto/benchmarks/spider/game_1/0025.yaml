@@ -1,0 +1,16 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0025.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.fname,
+         t2.lname
+  FROM sportsinfo AS t1
+  JOIN student AS t2 ON t1.stuid = t2.stuid
+  GROUP BY t1.stuid, t2.fname, t2.lname
+  ORDER BY count(*) DESC

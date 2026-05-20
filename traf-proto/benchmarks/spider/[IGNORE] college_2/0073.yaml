@@ -1,0 +1,10 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/instructor.csv
+- tests-examples/spider/college_2/tables/teaches.csv
+output: tests-examples/spider/college_2/tables/0073.csv
+sql: |-
+  SELECT name,
+         course_id
+  FROM instructor AS t1
+  JOIN teaches AS t2 ON t1.id = t2.id

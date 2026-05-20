@@ -1,0 +1,23 @@
+db: tests-examples/spider/tracking_software_problems/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_software_problems/tables/staff.csv
+- tests-examples/spider/tracking_software_problems/tables/problems.csv
+output: tests-examples/spider/tracking_software_problems/tables/0018.csv
+constants:
+- Christop
+- Berge
+- Ashley
+- Medhurst
+columns:
+- staff_first_name
+- staff_last_name
+sql: |-
+  SELECT product_id
+  FROM problems AS t1
+  JOIN staff AS t2 ON t1.reported_by_staff_id = t2.staff_id
+  WHERE t2.staff_first_name = 'Christop'
+    AND t2.staff_last_name = 'Berge' INTERSECT
+    SELECT product_id
+    FROM problems AS t1
+    JOIN staff AS t2 ON t1.closure_authorised_by_staff_id = t2.staff_id WHERE t2.staff_first_name = 'Ashley'
+    AND t2.staff_last_name = 'Medhurst'

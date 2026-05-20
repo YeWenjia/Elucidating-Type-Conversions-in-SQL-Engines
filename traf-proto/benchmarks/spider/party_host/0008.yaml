@@ -1,0 +1,13 @@
+db: tests-examples/spider/party_host/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_host/tables/host.csv
+output: tests-examples/spider/party_host/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT nationality
+  FROM host
+  GROUP BY nationality
+  ORDER BY COUNT(*) DESC

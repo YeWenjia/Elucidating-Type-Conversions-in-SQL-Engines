@@ -1,0 +1,15 @@
+db: tests-examples/spider/medicine_enzyme_interaction/tables/db.sqlite
+inputs:
+- tests-examples/spider/medicine_enzyme_interaction/tables/medicine.csv
+- tests-examples/spider/medicine_enzyme_interaction/tables/medicine_enzyme_interaction.csv
+output: tests-examples/spider/medicine_enzyme_interaction/tables/0010.csv
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name,
+         t1.fda_approved
+  FROM medicine AS t1
+  JOIN medicine_enzyme_interaction AS t2 ON t2.medicine_id = t1.id
+  GROUP BY t1.id, t1.name, t1.fda_approved
+  ORDER BY count(*) DESC

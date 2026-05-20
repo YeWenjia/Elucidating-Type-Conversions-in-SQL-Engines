@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["-1104779761", "51900400", null]
+    - ["-1790883840", "辮KJ,X>0鮘", "[㊿"]
+    - ["b", null, null]
+    - ["-1944931769", "m|", "2064645420"]
+    - ["-1118684320", "", "1e500"]
+    - ["-1567360911", "1383121448", null]
+    - ["Q", "-1775103535", null]
+    - ["熢k", null, null]
+    - ["0.0", null, null]
+    - ["}V^dZXT", null, null]
+    - ["*GQO\\6raI", "-1566261496", "-319395954"]
+    - ["-1901286445", "-1944931769", "-511083047"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE 'Q\n*鶝'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Q\n*鶝\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-1104779761", "51900400"]
+  - ["-1790883840", "辮KJ,X>0鮘"]
+  - ["b", "NULL"]
+  - ["-1944931769", "m|"]
+  - ["-1118684320", ""]
+  - ["-1567360911", "1383121448"]
+  - ["Q", "-1775103535"]
+  - ["熢k", "NULL"]
+  - ["0.0", "NULL"]
+  - ["}V^dZXT", "NULL"]
+  - ["*GQO\\6raI", "-1566261496"]
+  - ["-1901286445", "-1944931769"]

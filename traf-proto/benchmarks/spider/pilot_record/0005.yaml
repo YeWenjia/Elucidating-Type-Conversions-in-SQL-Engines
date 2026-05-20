@@ -1,0 +1,14 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+output: tests-examples/spider/pilot_record/tables/0005.csv
+constants:
+- Bradley
+- Fordham
+columns:
+- team
+sql: |-
+  SELECT pilot_name
+  FROM pilot
+  WHERE team = 'Bradley'
+    OR team = 'Fordham'

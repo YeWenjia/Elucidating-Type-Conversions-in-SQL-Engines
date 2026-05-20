@@ -1,0 +1,16 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/artist.csv
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0041.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t1.artist_name,
+         count(*)
+  FROM artist AS t1
+  JOIN song AS t2 ON t1.artist_name = t2.artist_name
+  GROUP BY t1.artist_name
+  ORDER BY count(*) DESC

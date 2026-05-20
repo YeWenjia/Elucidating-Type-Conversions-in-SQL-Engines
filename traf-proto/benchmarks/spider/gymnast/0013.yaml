@@ -1,0 +1,13 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/gymnast.csv
+- tests-examples/spider/gymnast/tables/people.csv
+output: tests-examples/spider/gymnast/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t2.hometown,
+         COUNT(*)
+  FROM gymnast AS t1
+  JOIN people AS t2 ON t1.gymnast_id = t2.people_id
+  GROUP BY t2.hometown

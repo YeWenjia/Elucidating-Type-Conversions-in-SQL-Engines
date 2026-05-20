@@ -1,0 +1,13 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+output: tests-examples/spider/climbing/tables/0019.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT range
+  FROM mountain
+  GROUP BY range
+  ORDER BY COUNT(*) DESC

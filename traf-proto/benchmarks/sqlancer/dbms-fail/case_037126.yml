@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-1781350639", 232191734]
+    - ["", -1639913083]
+  database0_t0:
+    - ["_?", null]
+    - ["2075487153", null]
+    - ["m)", -1554526165]
+sql: "SELECT database0_t0.c0 FROM database0_t0, database0_t1 WHERE '369297413'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"369297413\"\n  Position: 62"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["_?"]
+  - ["_?"]
+  - ["2075487153"]
+  - ["2075487153"]
+  - ["m)"]
+  - ["m)"]

@@ -1,0 +1,13 @@
+db: tests-examples/spider/soccer_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_1/tables/player_attributes.csv
+output: tests-examples/spider/soccer_1/tables/0009.csv
+functions:
+- avg
+columns:
+- overall_rating
+sql: |-
+  SELECT preferred_foot,
+         avg(overall_rating)
+  FROM player_attributes
+  GROUP BY preferred_foot

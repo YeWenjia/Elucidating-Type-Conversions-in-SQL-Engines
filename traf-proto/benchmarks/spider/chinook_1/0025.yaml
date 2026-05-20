@@ -1,0 +1,17 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/customer.csv
+- tests-examples/spider/chinook_1/tables/invoice.csv
+output: tests-examples/spider/chinook_1/tables/0025.csv
+constants:
+- Astrid
+- Gruber
+columns:
+- firstname
+- lastname
+sql: |-
+  SELECT t2.invoicedate
+  FROM customer AS t1
+  JOIN invoice AS t2 ON t1.customerid = t2.customerid
+  WHERE t1.firstname = 'Astrid'
+    AND lastname = 'Gruber'

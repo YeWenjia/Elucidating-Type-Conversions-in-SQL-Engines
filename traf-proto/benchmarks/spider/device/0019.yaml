@@ -1,0 +1,13 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/device.csv
+- tests-examples/spider/device/tables/stock.csv
+output: tests-examples/spider/device/tables/0019.csv
+columns:
+- device_id
+sql: |-
+  SELECT carrier
+  FROM device
+  WHERE device_id NOT IN
+      (SELECT device_id
+       FROM stock)

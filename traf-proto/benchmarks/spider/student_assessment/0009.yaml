@@ -1,0 +1,16 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/courses.csv
+- tests-examples/spider/student_assessment/tables/student_course_attendance.csv
+output: tests-examples/spider/student_assessment/tables/0009.csv
+constants:
+- '171'
+functions:
+- count
+columns:
+- student_id
+sql: |-
+  SELECT count(*)
+  FROM courses AS t1
+  JOIN student_course_attendance AS t2 ON t1.course_id = t2.course_id
+  WHERE t2.student_id = 171

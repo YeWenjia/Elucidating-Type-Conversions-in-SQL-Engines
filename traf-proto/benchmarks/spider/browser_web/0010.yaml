@@ -1,0 +1,18 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/web_client_accelerator.csv
+- tests-examples/spider/browser_web/tables/browser.csv
+- tests-examples/spider/browser_web/tables/accelerator_compatible_browser.csv
+output: tests-examples/spider/browser_web/tables/0010.csv
+constants:
+- CACHEbox
+- Internet Explorer
+columns:
+- name
+sql: |-
+  SELECT t1.compatible_since_year
+  FROM accelerator_compatible_browser AS t1
+  JOIN browser AS t2 ON t1.browser_id = t2.id
+  JOIN web_client_accelerator AS t3 ON t1.accelerator_id = t3.id
+  WHERE t3.name = 'CACHEbox'
+    AND t2.name = 'Internet Explorer'

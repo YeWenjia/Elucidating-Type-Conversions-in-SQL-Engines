@@ -1,0 +1,12 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0045.csv
+constants:
+- '4'
+columns:
+- stars
+sql: |-
+  SELECT rid
+  FROM rating
+  WHERE stars != 4

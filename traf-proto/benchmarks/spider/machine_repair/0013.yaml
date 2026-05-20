@@ -1,0 +1,13 @@
+db: tests-examples/spider/machine_repair/tables/db.sqlite
+inputs:
+- tests-examples/spider/machine_repair/tables/technician.csv
+- tests-examples/spider/machine_repair/tables/repair_assignment.csv
+output: tests-examples/spider/machine_repair/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t2.name,
+         COUNT(*)
+  FROM repair_assignment AS t1
+  JOIN technician AS t2 ON t1.technician_id = t2.technician_id
+  GROUP BY t2.name

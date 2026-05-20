@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["l\\T", null, ""]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (((((('R*k8(Jh')<>(database0_t0.c2))) IS NULL)) IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - [null]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]

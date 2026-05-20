@@ -1,0 +1,11 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+output: tests-examples/spider/farm/tables/0007.csv
+functions:
+- count
+columns:
+- status
+sql: |-
+  SELECT count(DISTINCT status)
+  FROM city

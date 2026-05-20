@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0: []
+  database0_t6:
+    - ["^}M n2U", "lD"]
+    - ["1304199792", "2?-gnp"]
+    - ["Fx㟍ﴤz|xƺ", "撲[*["]
+sql: "SELECT database0_t6.c0 FROM database0_t6 WHERE ((database0_t6.c1)<>(''))"
+columns:
+  - "c0"
+rows:
+  - ["^}M n2U"]
+  - ["1304199792"]
+  - ["Fx㟍ﴤz|xƺ"]
+kind: benign
+traf_columns: [database0_t6.c0]
+traf_rows:
+  - ["^}M n2U"]
+  - ["1304199792"]
+  - ["Fx㟍ﴤz|xƺ"]

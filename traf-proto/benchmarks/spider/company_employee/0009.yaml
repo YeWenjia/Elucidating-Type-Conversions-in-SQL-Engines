@@ -1,0 +1,13 @@
+db: tests-examples/spider/company_employee/tables/db.sqlite
+inputs:
+- tests-examples/spider/company_employee/tables/company.csv
+output: tests-examples/spider/company_employee/tables/0009.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT headquarters
+  FROM company
+  GROUP BY headquarters
+  HAVING COUNT(*) >= 2

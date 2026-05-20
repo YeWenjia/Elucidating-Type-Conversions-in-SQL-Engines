@@ -1,0 +1,13 @@
+db: tests-examples/spider/race_track/tables/db.sqlite
+inputs:
+- tests-examples/spider/race_track/tables/race.csv
+output: tests-examples/spider/race_track/tables/0013.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT class
+  FROM race
+  GROUP BY class
+  HAVING count(*) >= 2

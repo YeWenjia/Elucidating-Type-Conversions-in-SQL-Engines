@@ -1,0 +1,11 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/student.csv
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0025.csv
+sql: |-
+  SELECT facid
+  FROM faculty
+  EXCEPT
+  SELECT advisor
+  FROM student

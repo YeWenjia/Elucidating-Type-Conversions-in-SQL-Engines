@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [null]
+    - [-32977303]
+    - [-1498438495]
+    - [null]
+    - [369297413]
+    - [198770837]
+    - [625572473]
+    - [-1077277231]
+  database0_t0:
+    - ["", "945001674", null]
+    - ["<>yj*]", "-657850939", null]
+    - ["", "-420727782", "1635776983"]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE NULL"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0]
+traf_rows: []

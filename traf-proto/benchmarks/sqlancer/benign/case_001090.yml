@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t7:
+    - ["992697611", -596599025, "-1408501980", 1693941516]
+    - ["dOI|{\\a?", -596599025, "-1408501980", 1693941516]
+    - ["-578267362", -596599025, "-1408501980", 1693941516]
+sql: "SELECT database0_t7.c0, database0_t7.c3, database0_t7.c1 FROM database0_t7 WHERE (('AISn竬M#3R') IS NULL)"
+columns:
+  - "c0"
+  - "c3"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t7.c0, database0_t7.c3, database0_t7.c1]
+traf_rows: []

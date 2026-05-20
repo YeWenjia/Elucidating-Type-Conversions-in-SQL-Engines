@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["1342189099", "1294682843"]
+    - ["CB", "1294682843"]
+    - ["915954605", "1294682843"]
+    - ["(1 \t", "1294682843"]
+    - ["", "1294682843"]
+    - ["-1306634862", "1294682843"]
+    - ["^}M n2U", null]
+    - ["697603514", ""]
+    - [">7Gd?[xJ", null]
+    - ["aqDt'촓ꈳzD", ""]
+    - ["803476746", ""]
+    - ["1974422617", null]
+    - [",l", "0\\?uTr"]
+    - ["1804551272", null]
+    - ["-220308301", null]
+    - ["amngt-媩", "g觋'*"]
+    - ["1741605790", null]
+    - ["%B", null]
+    - ["*b}Q*F<", "-374962031"]
+    - ["-1056561715", null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1294682843"]
+  - ["1294682843"]
+  - ["1294682843"]
+  - ["1294682843"]
+  - ["1294682843"]
+  - ["1294682843"]
+  - ["0\\?uTr"]
+  - ["g觋'*"]
+  - ["-374962031"]

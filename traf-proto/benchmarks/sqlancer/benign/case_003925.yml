@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["440833260", "-1030884076"]
+    - ["1224560581", "sC\rUK~2%"]
+    - ["1486103084", "1817578299"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((2131576533) IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - ["440833260"]
+  - ["1224560581"]
+  - ["1486103084"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["440833260"]
+  - ["1224560581"]
+  - ["1486103084"]

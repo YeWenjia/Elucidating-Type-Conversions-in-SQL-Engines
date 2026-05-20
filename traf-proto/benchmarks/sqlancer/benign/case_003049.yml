@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [1019635521, "LL"]
+    - [1491203209, null]
+    - [-1980936731, "1803926042"]
+    - [-152514463, null]
+    - [2138365892, "-237799081"]
+  database0_t0:
+    - ["", 736741116]
+    - ["-1346415917", -444578923]
+    - ["~U", -339580836]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE ((-596599025)<>(database0_t1.c0))"
+columns:
+  - "c0"
+rows:
+  - [1019635521]
+  - [1491203209]
+  - [-1980936731]
+  - [-152514463]
+  - [2138365892]
+kind: benign
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - ["1019635521"]
+  - ["1491203209"]
+  - ["-1980936731"]
+  - ["-152514463"]
+  - ["2138365892"]

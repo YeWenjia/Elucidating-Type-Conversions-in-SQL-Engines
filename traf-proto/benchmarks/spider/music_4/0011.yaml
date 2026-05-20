@@ -1,0 +1,11 @@
+db: tests-examples/spider/music_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_4/tables/volume.csv
+output: tests-examples/spider/music_4/tables/0011.csv
+functions:
+- count
+columns:
+- artist_id
+sql: |-
+  SELECT COUNT(DISTINCT artist_id)
+  FROM volume

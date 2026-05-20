@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["232404069", 1869901495]
+    - ["", 1869901495]
+    - ["169281962", 1869901495]
+    - ["-1724310134", 1869901495]
+    - ["-553901468", 1869901495]
+    - ["1406672030", 1869901495]
+    - ["878771492", 1869901495]
+    - ["~>", 1869901495]
+    - ["_zb0sY", 1869901495]
+    - ["bX", 1869901495]
+    - ["-1684923321", 1869901495]
+    - ["-1279472365", 1869901495]
+    - ["AAM5ꉓR*%", 1869901495]
+    - ["V37᱇\r~꣇≜T", 1869901495]
+    - ["-475300207", 1869901495]
+    - ["1e500", 1869901495]
+    - ["-621562082", 1869901495]
+    - ["1606945446", 1869901495]
+    - ["-639173391", null]
+    - ["623156499", 1486103084]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE CAST(((((database0_t0.c1)<=(database0_t0.c1)))>((('')=('Us()?F')))) AS VARCHAR(500))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_error: "Ambiguous best candidate for the given types Bool, Bool"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 209, in typecheck_expr\n    tp, ep = self.typecheck_expr(schema, T, e.e)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 108, in best_candidate\n    raise TypeError(f\"Ambiguous best candidate for the given types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Ambiguous best candidate for the given types Bool, Bool\n"
+traf_columns: []
+traf_rows: []

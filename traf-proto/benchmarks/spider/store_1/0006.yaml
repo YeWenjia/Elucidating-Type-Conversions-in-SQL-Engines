@@ -1,0 +1,19 @@
+db: tests-examples/spider/store_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_1/tables/customers.csv
+- tests-examples/spider/store_1/tables/invoices.csv
+output: tests-examples/spider/store_1/tables/0006.csv
+constants:
+- '10'
+functions:
+- sum
+columns:
+- total
+sql: |-
+  SELECT t1.first_name,
+         t1.last_name,
+         SUM(t2.total)
+  FROM customers AS t1
+  JOIN invoices AS t2 ON t2.customer_id = t1.id
+  GROUP BY t1.id, t1.first_name, t1.last_name
+  ORDER BY SUM(t2.total) DESC;

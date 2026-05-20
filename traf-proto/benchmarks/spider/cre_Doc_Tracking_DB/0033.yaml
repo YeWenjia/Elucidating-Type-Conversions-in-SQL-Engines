@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/all_documents.csv
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/document_locations.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0033.csv
+constants:
+- Robin CV
+columns:
+- document_name
+sql: |-
+  SELECT t1.date_in_location_from,
+         t1.date_in_locaton_to
+  FROM document_locations AS t1
+  JOIN all_documents AS t2 ON t1.document_id = t2.document_id
+  WHERE t2.document_name = 'Robin CV'

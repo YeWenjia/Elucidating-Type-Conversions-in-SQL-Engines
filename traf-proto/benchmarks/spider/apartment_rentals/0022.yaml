@@ -1,0 +1,15 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/guests.csv
+- tests-examples/spider/apartment_rentals/tables/apartment_bookings.csv
+output: tests-examples/spider/apartment_rentals/tables/0022.csv
+constants:
+- Confirmed
+columns:
+- booking_status_code
+sql: |-
+  SELECT t2.guest_first_name,
+         t2.guest_last_name
+  FROM apartment_bookings AS t1
+  JOIN guests AS t2 ON t1.guest_id = t2.guest_id
+  WHERE t1.booking_status_code = 'Confirmed'

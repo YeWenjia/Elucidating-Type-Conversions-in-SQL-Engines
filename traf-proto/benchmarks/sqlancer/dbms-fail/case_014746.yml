@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["72590037", 503638720]
+  database0_t0:
+    - ["1302265430", "1375984971"]
+    - ["_TTXPV", "1375984971"]
+    - ["-1074676425", "1375984971"]
+    - ["127083095", "1375984971"]
+    - ["-496988634", "1375984971"]
+    - ["T\\", "1375984971"]
+    - ["a", "1375984971"]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE database0_t1.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t1.c0, database0_t1.c2, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["72590037", "503638720", "1302265430", "1375984971"]
+  - ["72590037", "503638720", "_TTXPV", "1375984971"]
+  - ["72590037", "503638720", "-1074676425", "1375984971"]
+  - ["72590037", "503638720", "127083095", "1375984971"]
+  - ["72590037", "503638720", "-496988634", "1375984971"]
+  - ["72590037", "503638720", "T\\", "1375984971"]
+  - ["72590037", "503638720", "a", "1375984971"]

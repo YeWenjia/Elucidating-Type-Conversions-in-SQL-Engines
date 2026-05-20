@@ -1,0 +1,17 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0043.csv
+constants:
+- Alice
+columns:
+- name
+sql: |-
+  SELECT DISTINCT t4.name
+  FROM personfriend AS t1
+  JOIN person AS t2 ON t1.name = t2.name
+  JOIN personfriend AS t3 ON t1.friend = t3.name
+  JOIN personfriend AS t4 ON t3.friend = t4.name
+  WHERE t2.name = 'Alice'
+    AND t4.name != 'Alice'

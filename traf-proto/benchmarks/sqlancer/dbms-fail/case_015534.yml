@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["", "-147033945"]
+    - ["4U^IimGzm", "2069154664"]
+    - ["84ᨻS꼂\\獷!c", "jzs~"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 232191734"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-147033945"]
+  - ["2069154664"]
+  - ["jzs~"]

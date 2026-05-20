@@ -1,0 +1,9 @@
+db: tests-examples/spider/manufacturer/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufacturer/tables/manufacturer.csv
+output: tests-examples/spider/manufacturer/tables/0009.csv
+sql: |-
+  SELECT name,
+         manufacturer_id
+  FROM manufacturer
+  ORDER BY open_year

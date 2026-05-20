@@ -1,0 +1,11 @@
+db: tests-examples/spider/mountain_photos/tables/db.sqlite
+inputs:
+- tests-examples/spider/mountain_photos/tables/camera_lens.csv
+output: tests-examples/spider/mountain_photos/tables/0011.csv
+functions:
+- count
+columns:
+- brand
+sql: |-
+  SELECT count(DISTINCT brand)
+  FROM camera_lens

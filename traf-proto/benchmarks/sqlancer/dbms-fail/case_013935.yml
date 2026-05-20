@@ -1,0 +1,57 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-1250596785, null]
+    - [-381128447, null]
+    - [915954605, null]
+    - [-632382568, null]
+    - [1891222169, -3890461]
+    - [-1636094194, 535180345]
+    - [-339580836, null]
+  database0_t3:
+    - ["駶|", null]
+    - ["", null]
+    - ["-0.0", null]
+    - ["-2076258273", 134080043]
+    - ["-278911135", null]
+    - ["e튊Ug", null]
+    - ["1547197720", null]
+    - ["1869479299", null]
+    - ["-412528900", null]
+    - ["-1894460089", null]
+    - ["wRZ뼎a", null]
+    - ["N ", -914726699]
+    - ["-1041688005", null]
+    - ["MyJ*5", null]
+    - ["2102189385", null]
+    - ["/t", null]
+sql: "SELECT * FROM database0_t3 WHERE '-1779974519'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-1779974519\"\n  Position: 34"
+traf_columns: [database0_t3.c0, database0_t3.c1]
+traf_rows:
+  - ["駶|", "NULL"]
+  - ["", "NULL"]
+  - ["-0.0", "NULL"]
+  - ["-2076258273", "134080043"]
+  - ["-278911135", "NULL"]
+  - ["e튊Ug", "NULL"]
+  - ["1547197720", "NULL"]
+  - ["1869479299", "NULL"]
+  - ["-412528900", "NULL"]
+  - ["-1894460089", "NULL"]
+  - ["wRZ뼎a", "NULL"]
+  - ["N ", "-914726699"]
+  - ["-1041688005", "NULL"]
+  - ["MyJ*5", "NULL"]
+  - ["2102189385", "NULL"]
+  - ["/t", "NULL"]

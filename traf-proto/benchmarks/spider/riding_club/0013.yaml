@@ -1,0 +1,13 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+- tests-examples/spider/riding_club/tables/coach.csv
+- tests-examples/spider/riding_club/tables/player_coach.csv
+output: tests-examples/spider/riding_club/tables/0013.csv
+sql: |-
+  SELECT t3.player_name,
+         t2.coach_name
+  FROM player_coach AS t1
+  JOIN coach AS t2 ON t1.coach_id = t2.coach_id
+  JOIN player AS t3 ON t1.player_id = t3.player_id
+  ORDER BY t3.votes DESC

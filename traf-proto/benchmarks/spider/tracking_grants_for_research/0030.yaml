@@ -1,0 +1,10 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/project_staff.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0030.csv
+constants:
+- '1'
+sql: |-
+  SELECT date_to
+  FROM project_staff
+  ORDER BY date_to DESC

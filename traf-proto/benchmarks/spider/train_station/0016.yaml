@@ -1,0 +1,18 @@
+db: tests-examples/spider/train_station/tables/db.sqlite
+inputs:
+- tests-examples/spider/train_station/tables/station.csv
+- tests-examples/spider/train_station/tables/train.csv
+- tests-examples/spider/train_station/tables/train_station.csv
+output: tests-examples/spider/train_station/tables/0016.csv
+constants:
+- London
+columns:
+- location
+sql: |-
+  SELECT t3.name,
+         t3.time
+  FROM train_station AS t1
+  JOIN station AS t2 ON t1.station_id = t2.station_id
+  JOIN train AS t3 ON t3.train_id = t1.train_id
+  WHERE t2.location = 'London'
+  ORDER BY t3.time DESC

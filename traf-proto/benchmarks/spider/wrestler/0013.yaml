@@ -1,0 +1,8 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+output: tests-examples/spider/wrestler/tables/0013.csv
+sql: |-
+  SELECT reign,
+         days_held
+  FROM wrestler

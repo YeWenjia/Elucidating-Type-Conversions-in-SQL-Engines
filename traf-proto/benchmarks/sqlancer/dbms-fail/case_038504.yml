@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [650520942, "೷听Xpe", -1049391471]
+    - [-1781350639, "೷听Xpe", -1049391471]
+    - [-420727782, "೷听Xpe", -1049391471]
+    - [-760757233, "1242577457", null]
+    - [581967713, "1661665722", null]
+  database0_t0:
+    - ["", "1645732225", "ZKz3wr1", ""]
+    - ["-!mL", "1645732225", "^}M n2U", ""]
+    - ["-405567423", null, null, "e튊Ug"]
+    - ["-58938003", "741508471", "", "-665322239"]
+    - ["湞/pF(gG", "1279275861", "_ttxPv", "463483875"]
+    - ["-290618149", "", null, "j21UO"]
+sql: "SELECT database0_t0.c3, database0_t0.c2 FROM database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t0.c3, database0_t0.c2]
+traf_rows:
+  - ["", "ZKz3wr1"]
+  - ["", "^}M n2U"]
+  - ["-665322239", ""]
+  - ["463483875", "_ttxPv"]

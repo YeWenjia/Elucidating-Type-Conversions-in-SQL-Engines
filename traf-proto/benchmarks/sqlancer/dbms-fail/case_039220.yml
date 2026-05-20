@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["稬#FI", "\n￠\r"]
+    - ["285314990", "1302265430"]
+    - ["-1310504294", "880330817"]
+    - ["-1957040493", "-1944931769"]
+    - ["Q\n*鶝", "5洟Qm"]
+sql: "SELECT * FROM database0_t0 WHERE -546992861"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["稬#FI", "\n￠\r"]
+  - ["285314990", "1302265430"]
+  - ["-1310504294", "880330817"]
+  - ["-1957040493", "-1944931769"]
+  - ["Q\n*鶝", "5洟Qm"]

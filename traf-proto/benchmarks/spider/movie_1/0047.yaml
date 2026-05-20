@@ -1,0 +1,15 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+output: tests-examples/spider/movie_1/tables/0047.csv
+constants:
+- James Cameron
+- '1980'
+columns:
+- director
+- year
+sql: |-
+  SELECT title
+  FROM movie
+  WHERE director = 'James Cameron'
+    OR year < 1980

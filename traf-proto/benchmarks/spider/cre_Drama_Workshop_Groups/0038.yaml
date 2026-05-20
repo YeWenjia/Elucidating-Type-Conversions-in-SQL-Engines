@@ -1,0 +1,12 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/clients.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/bookings.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0038.csv
+sql: |-
+  SELECT customer_name
+  FROM clients
+  EXCEPT
+  SELECT t2.customer_name
+  FROM bookings AS t1
+  JOIN clients AS t2 ON t1.customer_id = t2.client_id

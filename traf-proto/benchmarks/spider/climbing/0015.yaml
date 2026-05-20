@@ -1,0 +1,11 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/climber.csv
+output: tests-examples/spider/climbing/tables/0015.csv
+functions:
+- count
+sql: |-
+  SELECT country,
+         COUNT(*)
+  FROM climber
+  GROUP BY country

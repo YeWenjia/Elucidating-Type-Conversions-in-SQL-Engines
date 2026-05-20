@@ -1,0 +1,13 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/airport.csv
+output: tests-examples/spider/aircraft/tables/0006.csv
+functions:
+- max
+- min
+columns:
+- transit_passengers
+sql: |-
+  SELECT max(transit_passengers),
+         min(transit_passengers)
+  FROM airport

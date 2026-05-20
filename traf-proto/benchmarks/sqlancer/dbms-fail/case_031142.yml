@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [1193935309, "?5", -58938003]
+    - [309253473, "?5", -58938003]
+    - [-523810466, "?5", 777966094]
+    - [-512724729, "?5", 1608012643]
+    - [991149750, "?5", null]
+    - [-1042823525, "?5", null]
+    - [-1041688005, "?5", null]
+    - [-639173391, "?5", null]
+    - [-360343613, "?5", 1483215836]
+    - [-1860230507, "?5", 1930758213]
+    - [-978031215, "0*EBT", 369297413]
+    - [-1955830374, "ࠅ1", -1012962488]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '-773587990'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-773587990\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["?5"]
+  - ["0*EBT"]
+  - ["ࠅ1"]

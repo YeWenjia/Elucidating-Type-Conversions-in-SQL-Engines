@@ -1,0 +1,18 @@
+db: tests-examples/spider/entertainment_awards/tables/db.sqlite
+inputs:
+- tests-examples/spider/entertainment_awards/tables/festival_detail.csv
+- tests-examples/spider/entertainment_awards/tables/artwork.csv
+- tests-examples/spider/entertainment_awards/tables/nomination.csv
+output: tests-examples/spider/entertainment_awards/tables/0014.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.festival_id,
+         t3.festival_name
+  FROM nomination AS t1
+  JOIN artwork AS t2 ON t1.artwork_id = t2.artwork_id
+  JOIN festival_detail AS t3 ON t1.festival_id = t3.festival_id
+  GROUP BY t1.festival_id, t3.festival_name
+  HAVING COUNT(*) >= 2

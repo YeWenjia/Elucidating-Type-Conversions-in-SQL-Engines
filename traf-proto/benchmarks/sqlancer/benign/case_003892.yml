@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t7:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-2087893705, null]
+    - [2123549899, null]
+    - [1699565337, null]
+    - [625572473, null]
+  database0_t7:
+    - [-913599578, "-1344652955"]
+    - [-1241568075, "vm"]
+sql: "SELECT database0_t0.c0 FROM database0_t0, database0_t7 WHERE ((database0_t7.c0) IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - [-2087893705]
+  - [-2087893705]
+  - [2123549899]
+  - [2123549899]
+  - [1699565337]
+  - [1699565337]
+  - [625572473]
+  - [625572473]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-2087893705"]
+  - ["-2087893705"]
+  - ["2123549899"]
+  - ["2123549899"]
+  - ["1699565337"]
+  - ["1699565337"]
+  - ["625572473"]
+  - ["625572473"]

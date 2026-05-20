@@ -1,0 +1,11 @@
+db: tests-examples/spider/university_basketball/tables/db.sqlite
+inputs:
+- tests-examples/spider/university_basketball/tables/university.csv
+output: tests-examples/spider/university_basketball/tables/0016.csv
+functions:
+- count
+columns:
+- affiliation
+sql: |-
+  SELECT count(DISTINCT affiliation)
+  FROM university

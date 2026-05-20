@@ -1,0 +1,13 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0016.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT rank_col
+  FROM faculty
+  GROUP BY rank_col
+  ORDER BY count(*) ASC

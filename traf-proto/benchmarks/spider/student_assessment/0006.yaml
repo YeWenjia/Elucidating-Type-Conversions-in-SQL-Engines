@@ -1,0 +1,10 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/courses.csv
+- tests-examples/spider/student_assessment/tables/student_course_registrations.csv
+output: tests-examples/spider/student_assessment/tables/0006.csv
+sql: |-
+  SELECT t1.student_id,
+         t2.course_name
+  FROM student_course_registrations AS t1
+  JOIN courses AS t2 ON t1.course_id = t2.course_id

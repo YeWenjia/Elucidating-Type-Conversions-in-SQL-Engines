@@ -1,0 +1,17 @@
+db: tests-examples/spider/gas_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/gas_company/tables/company.csv
+output: tests-examples/spider/gas_company/tables/0009.csv
+constants:
+- '1'
+functions:
+- count
+- sum
+columns:
+- market_value
+sql: |-
+  SELECT main_industry,
+         count(*)
+  FROM company
+  GROUP BY main_industry
+  ORDER BY sum(market_value) DESC

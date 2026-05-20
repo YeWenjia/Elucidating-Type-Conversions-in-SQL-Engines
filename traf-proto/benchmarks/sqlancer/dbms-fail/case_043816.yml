@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["ln䷥st-g", "-1973729121"]
+    - ["1745345166", "-1973729121"]
+    - ["-2133068948", "-1973729121"]
+    - ["296401031", "-1973729121"]
+    - ["-2011765295", "}\t7"]
+    - ["1489138842", "r]joi"]
+    - ["", "l?"]
+  database0_t0:
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["219940278"]
+    - ["-1056561715"]
+sql: "SELECT database0_t0.c1, database0_t1.c0, database0_t1.c1 FROM database0_t1, database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 96"
+traf_columns: [database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows: []

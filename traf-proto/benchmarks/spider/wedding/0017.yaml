@@ -1,0 +1,14 @@
+db: tests-examples/spider/wedding/tables/db.sqlite
+inputs:
+- tests-examples/spider/wedding/tables/wedding.csv
+output: tests-examples/spider/wedding/tables/0017.csv
+constants:
+- '2016'
+functions:
+- count
+columns:
+- year
+sql: |-
+  SELECT count(*)
+  FROM wedding
+  WHERE year = 2016

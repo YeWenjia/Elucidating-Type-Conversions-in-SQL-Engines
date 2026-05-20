@@ -1,0 +1,11 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/elimination.csv
+output: tests-examples/spider/wrestler/tables/0011.csv
+functions:
+- count
+sql: |-
+  SELECT team,
+         COUNT(*)
+  FROM elimination
+  GROUP BY team

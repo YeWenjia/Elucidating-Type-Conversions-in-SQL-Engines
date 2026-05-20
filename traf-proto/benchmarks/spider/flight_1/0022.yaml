@@ -1,0 +1,12 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/flight.csv
+output: tests-examples/spider/flight_1/tables/0022.csv
+constants:
+- Los Angeles
+columns:
+- origin
+sql: |-
+  SELECT flno
+  FROM flight
+  WHERE origin = 'Los Angeles'

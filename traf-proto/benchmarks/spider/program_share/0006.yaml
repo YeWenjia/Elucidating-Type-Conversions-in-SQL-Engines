@@ -1,0 +1,9 @@
+db: tests-examples/spider/program_share/tables/db.sqlite
+inputs:
+- tests-examples/spider/program_share/tables/program.csv
+output: tests-examples/spider/program_share/tables/0006.csv
+sql: |-
+  SELECT name,
+         origin,
+         owner
+  FROM program

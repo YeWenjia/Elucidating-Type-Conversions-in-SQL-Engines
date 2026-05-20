@@ -1,0 +1,8 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/college.csv
+output: tests-examples/spider/soccer_2/tables/0017.csv
+sql: |-
+  SELECT *
+  FROM college
+  ORDER BY enr

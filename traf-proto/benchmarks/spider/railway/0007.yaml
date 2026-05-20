@@ -1,0 +1,8 @@
+db: tests-examples/spider/railway/tables/db.sqlite
+inputs:
+- tests-examples/spider/railway/tables/train.csv
+output: tests-examples/spider/railway/tables/0007.csv
+sql: |-
+  SELECT name,
+         arrival
+  FROM train

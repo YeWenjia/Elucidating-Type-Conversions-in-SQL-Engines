@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1:
+    - ["1264846530", "", "", "\ri"]
+    - ["", "4k7(GV)", "", null]
+    - ["-2087893705", "1347965706", "369297413", "|"]
+  database0_t0:
+    - ["S볣", 1894499120, "", 1]
+    - ["-1860230507", 151166272, null, 880330817]
+    - ["\rL", -1548118581, null, -346683370]
+sql: "SELECT database0_t0.c3, database0_t1.c3, database0_t1.c2, database0_t0.c1, database0_t0.c2, database0_t1.c0, database0_t1.c1, database0_t0.c0 FROM database0_t0, database0_t1 WHERE '|S8'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"|S8\"\n  Position: 181"
+traf_columns: [database0_t0.c3, database0_t1.c3, database0_t1.c2, database0_t0.c1, database0_t0.c2, database0_t1.c0, database0_t1.c1, database0_t0.c0]
+traf_rows:
+  - ["1", "\ri", "", "1894499120", "", "1264846530", "", "S볣"]
+  - ["1", "NULL", "", "1894499120", "", "", "4k7(GV)", "S볣"]
+  - ["1", "|", "369297413", "1894499120", "", "-2087893705", "1347965706", "S볣"]
+  - ["880330817", "\ri", "", "151166272", "NULL", "1264846530", "", "-1860230507"]
+  - ["880330817", "NULL", "", "151166272", "NULL", "", "4k7(GV)", "-1860230507"]
+  - ["880330817", "|", "369297413", "151166272", "NULL", "-2087893705", "1347965706", "-1860230507"]
+  - ["-346683370", "\ri", "", "-1548118581", "NULL", "1264846530", "", "\rL"]
+  - ["-346683370", "NULL", "", "-1548118581", "NULL", "", "4k7(GV)", "\rL"]
+  - ["-346683370", "|", "369297413", "-1548118581", "NULL", "-2087893705", "1347965706", "\rL"]

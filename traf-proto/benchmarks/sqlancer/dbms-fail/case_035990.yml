@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c97", type: "string"}
+data:
+  database0_t0:
+    - ["vW", "Tk", "p7麚", null]
+    - ["^\n^WY", "Tk", "p7麚", null]
+    - ["1161815015", "Tk", "p7麚", null]
+    - ["440833260", "Tk", "p7麚", null]
+    - ["1227795673", "Tk", "p7麚", null]
+    - ["6&", "Tk", "p7麚", null]
+    - [" 㤣Yv?", null, null, "(S9P4\\"]
+    - ["-1980936731", null, null, "-50627290"]
+sql: "SELECT database0_t0.c0, database0_t0.c2 FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["vW", "p7麚"]
+  - ["^\n^WY", "p7麚"]
+  - ["1161815015", "p7麚"]
+  - ["440833260", "p7麚"]
+  - ["1227795673", "p7麚"]
+  - ["6&", "p7麚"]
+  - [" 㤣Yv?", "NULL"]
+  - ["-1980936731", "NULL"]

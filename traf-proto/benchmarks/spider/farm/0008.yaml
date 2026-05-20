@@ -1,0 +1,8 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+output: tests-examples/spider/farm/tables/0008.csv
+sql: |-
+  SELECT official_name
+  FROM city
+  ORDER BY population DESC

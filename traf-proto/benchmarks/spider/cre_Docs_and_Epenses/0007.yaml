@@ -1,0 +1,16 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/statements.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/accounts.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0007.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.statement_id,
+         t2.statement_details
+  FROM accounts AS t1
+  JOIN statements AS t2 ON t1.statement_id = t2.statement_id
+  GROUP BY t1.statement_id, t2.statement_details
+  ORDER BY count(*) DESC

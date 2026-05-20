@@ -1,0 +1,9 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/students.csv
+output: tests-examples/spider/e_learning/tables/0016.csv
+sql: |-
+  SELECT personal_name,
+         family_name
+  FROM students
+  ORDER BY family_name

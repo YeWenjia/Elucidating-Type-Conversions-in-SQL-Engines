@@ -1,0 +1,7 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0015.csv
+sql: |-
+  select distinct city_code
+  from student

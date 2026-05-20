@@ -1,0 +1,13 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/employee.csv
+output: tests-examples/spider/flight_1/tables/0015.csv
+functions:
+- avg
+- max
+columns:
+- salary
+sql: |-
+  SELECT avg(salary),
+         max(salary)
+  FROM employee

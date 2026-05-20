@@ -1,0 +1,14 @@
+db: tests-examples/spider/phone_market/tables/db.sqlite
+inputs:
+- tests-examples/spider/phone_market/tables/phone.csv
+output: tests-examples/spider/phone_market/tables/0005.csv
+constants:
+- Sprint
+- TMobile
+columns:
+- carrier
+sql: |-
+  SELECT name
+  FROM phone
+  WHERE carrier = 'Sprint'
+    OR carrier = 'TMobile'

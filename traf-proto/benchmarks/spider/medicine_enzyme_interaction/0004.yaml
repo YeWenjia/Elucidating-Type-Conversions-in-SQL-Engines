@@ -1,0 +1,11 @@
+db: tests-examples/spider/medicine_enzyme_interaction/tables/db.sqlite
+inputs:
+- tests-examples/spider/medicine_enzyme_interaction/tables/enzyme.csv
+output: tests-examples/spider/medicine_enzyme_interaction/tables/0004.csv
+functions:
+- max
+columns:
+- omim
+sql: |-
+  SELECT max(omim)
+  FROM enzyme

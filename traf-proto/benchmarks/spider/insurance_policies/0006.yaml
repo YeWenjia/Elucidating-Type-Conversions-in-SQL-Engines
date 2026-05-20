@@ -1,0 +1,15 @@
+db: tests-examples/spider/insurance_policies/tables/db.sqlite
+inputs:
+- tests-examples/spider/insurance_policies/tables/claims.csv
+output: tests-examples/spider/insurance_policies/tables/0006.csv
+functions:
+- avg
+columns:
+- amount_claimed
+sql: |-
+  SELECT date_claim_made,
+         date_claim_settled
+  FROM claims
+  WHERE amount_claimed >
+      (SELECT avg(amount_claimed)
+       FROM claims)

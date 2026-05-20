@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/statements.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0020.csv
+constants:
+- Private Project
+columns:
+- statement_details
+sql: |-
+  SELECT t1.statement_details,
+         t2.document_name
+  FROM statements AS t1
+  JOIN documents AS t2 ON t1.statement_id = t2.document_id
+  WHERE t1.statement_details = 'Private Project'

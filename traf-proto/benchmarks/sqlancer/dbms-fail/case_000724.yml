@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", null]
+    - ["-1831624141", null]
+    - ["930061686", null]
+  database0_t0:
+    - [null, "-191312372"]
+    - [null, "\nۂ'?~!9L"]
+    - [null, "ࠅ1"]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE '㐚'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"㐚\"\n  Position: 48"
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - [""]
+  - ["-1831624141"]
+  - ["930061686"]

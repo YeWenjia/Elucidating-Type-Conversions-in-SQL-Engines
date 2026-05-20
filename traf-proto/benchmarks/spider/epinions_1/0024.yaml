@@ -1,0 +1,17 @@
+db: tests-examples/spider/epinions_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/epinions_1/tables/useracct.csv
+- tests-examples/spider/epinions_1/tables/trust.csv
+output: tests-examples/spider/epinions_1/tables/0024.csv
+constants:
+- '1'
+functions:
+- avg
+columns:
+- trust
+sql: |-
+  SELECT t1.name
+  FROM useracct AS t1
+  JOIN trust AS t2 ON t1.u_id = t2.source_u_id
+  GROUP BY t2.source_u_id, t1.name
+  ORDER BY avg(trust) DESC

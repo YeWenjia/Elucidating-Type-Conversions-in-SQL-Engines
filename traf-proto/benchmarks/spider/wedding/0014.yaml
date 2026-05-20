@@ -1,0 +1,17 @@
+db: tests-examples/spider/wedding/tables/db.sqlite
+inputs:
+- tests-examples/spider/wedding/tables/church.csv
+- tests-examples/spider/wedding/tables/wedding.csv
+output: tests-examples/spider/wedding/tables/0014.csv
+constants:
+- '2015'
+columns:
+- year
+sql: |-
+  SELECT name
+  FROM church
+  EXCEPT
+  SELECT t1.name
+  FROM church AS t1
+  JOIN wedding AS t2 ON t1.church_id = t2.church_id
+  WHERE t2.year = 2015

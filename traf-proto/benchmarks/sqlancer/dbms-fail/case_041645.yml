@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-806217418, "-1957763906"]
+    - [358085873, ""]
+    - [2000915543, ""]
+    - [880330817, "<cuu7q>\r"]
+    - [1894499120, ""]
+  database0_t0:
+    - ["-918703120", "-88915418"]
+    - ["-392442686", "-88915418"]
+    - ["gLI)Gvl", "-88915418"]
+    - ["-1088803618", "-88915418"]
+    - ["-1996021291", "-88915418"]
+    - ["", "-420727782"]
+    - ["N", "6M"]
+    - ["239734007", ""]
+    - ["剪", "-479154174"]
+    - ["4N蘜_MT3혩s", "R*k8(Jh"]
+    - ["-1118684320", ""]
+sql: "SELECT database0_t1.c0, database0_t1.c1 FROM database0_t1 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-806217418", "-1957763906"]
+  - ["358085873", ""]
+  - ["2000915543", ""]
+  - ["880330817", "<cuu7q>\r"]
+  - ["1894499120", ""]

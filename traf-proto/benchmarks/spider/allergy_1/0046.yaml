@@ -1,0 +1,24 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/allergy_1/tables/allergy_type.csv
+  - tests-examples/spider/allergy_1/tables/has_allergy.csv
+  - tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0046.csv
+constants:
+  - M
+  - food
+functions:
+  - count
+columns:
+  - sex
+  - stuid
+  - allergytype
+sql: |-
+  select count(*)
+  from student
+  where sex = 'M'
+    and stuid in
+      (select stuid
+       from has_allergy t1
+       join allergy_type t2 on t1.allergy = t2.allergy
+       where t2.allergytype = 'food')

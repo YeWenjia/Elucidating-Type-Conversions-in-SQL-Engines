@@ -1,0 +1,62 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [543985007, null]
+    - [945001674, 723249712]
+    - [-354425506, null]
+    - [1164114913, null]
+    - [-964429290, null]
+    - [-1898829329, 1090748384]
+    - [878771492, -152514463]
+    - [-1927402226, 331844549]
+  database0_t2:
+    - ["", "-35721955"]
+    - ["O9^UI", "-1887367284"]
+    - ["897917532", "-1296635178"]
+    - ["-186716307", null]
+    - ["-31667871", "-2087893705"]
+    - ["H*2INK", "-1073664262"]
+    - ["qᇑ%jA6&?芉", "-338722063"]
+    - ["!\th⠕\\1GU", "1,Sh\tS"]
+    - ["^", null]
+    - ["523665544", null]
+    - ["'l\tff!", null]
+    - ["945001674", null]
+    - ["-905542144", null]
+    - ["1661665722", null]
+    - ["-1887367284", null]
+    - ["-550594965", "-1309053775"]
+    - ["2", "2?-gnp"]
+    - ["w9*xu\n[lf", ""]
+sql: "SELECT database0_t2.c0, database0_t2.c1 FROM database0_t2 WHERE -663008748"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t2.c0, database0_t2.c1]
+traf_rows:
+  - ["", "-35721955"]
+  - ["O9^UI", "-1887367284"]
+  - ["897917532", "-1296635178"]
+  - ["-186716307", "NULL"]
+  - ["-31667871", "-2087893705"]
+  - ["H*2INK", "-1073664262"]
+  - ["qᇑ%jA6&?芉", "-338722063"]
+  - ["!\th⠕\\1GU", "1,Sh\tS"]
+  - ["^", "NULL"]
+  - ["523665544", "NULL"]
+  - ["'l\tff!", "NULL"]
+  - ["945001674", "NULL"]
+  - ["-905542144", "NULL"]
+  - ["1661665722", "NULL"]
+  - ["-1887367284", "NULL"]
+  - ["-550594965", "-1309053775"]
+  - ["2", "2?-gnp"]
+  - ["w9*xu\n[lf", ""]

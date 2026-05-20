@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-58938003, ""]
+    - [440833260, ""]
+    - [-1218573520, null]
+    - [-3890461, "-354425506"]
+    - [723249712, "-753465173"]
+    - [2131576533, "LN䷥ST-G"]
+    - [1723301077, "369297413"]
+    - [-1042823525, null]
+  database0_t0:
+    - ["a4", null]
+    - ["-1779974519", -653396821]
+sql: "SELECT database0_t1.c0, database0_t0.c0, database0_t0.c1 FROM database0_t1, database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t1.c0, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-58938003", "a4", "NULL"]
+  - ["-58938003", "-1779974519", "-653396821"]
+  - ["440833260", "a4", "NULL"]
+  - ["440833260", "-1779974519", "-653396821"]
+  - ["-1218573520", "a4", "NULL"]
+  - ["-1218573520", "-1779974519", "-653396821"]
+  - ["-3890461", "a4", "NULL"]
+  - ["-3890461", "-1779974519", "-653396821"]
+  - ["723249712", "a4", "NULL"]
+  - ["723249712", "-1779974519", "-653396821"]
+  - ["2131576533", "a4", "NULL"]
+  - ["2131576533", "-1779974519", "-653396821"]
+  - ["1723301077", "a4", "NULL"]
+  - ["1723301077", "-1779974519", "-653396821"]
+  - ["-1042823525", "a4", "NULL"]
+  - ["-1042823525", "-1779974519", "-653396821"]

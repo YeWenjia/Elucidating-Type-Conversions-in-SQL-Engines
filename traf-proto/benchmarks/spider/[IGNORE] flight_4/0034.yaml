@@ -1,0 +1,16 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/routes.csv
+- tests-examples/spider/flight_4/tables/airports.csv
+output: tests-examples/spider/flight_4/tables/0034.csv
+constants:
+- Italy
+functions:
+- count
+columns:
+- country
+sql: |-
+  SELECT count(*)
+  FROM routes AS t1
+  JOIN airports AS t2 ON t1.dst_apid = t2.apid
+  WHERE t2.country = 'Italy'

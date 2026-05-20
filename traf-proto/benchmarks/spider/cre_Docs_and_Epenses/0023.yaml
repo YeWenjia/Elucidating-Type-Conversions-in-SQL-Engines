@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/ref_document_types.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0023.csv
+sql: |-
+  SELECT t1.document_type_name,
+         t1.document_type_description,
+         t2.document_date
+  FROM ref_document_types AS t1
+  JOIN documents AS t2 ON t1.document_type_code = t2.document_type_code

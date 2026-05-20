@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["Ra", "", null]
+    - ["kG+SB(", "RGun㒅2Jྌh", "1008539548"]
+    - ["2052598044", null, "71166105"]
+    - ["\nPP0◍'", "1486103084", "-657850939"]
+  database0_t0:
+    - ["೷)閣D0N2絮?", "2081145170"]
+    - ["2080559274", "ꈳKL"]
+    - ["-278911135", null]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE 415328666"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["Ra", "", "NULL", "೷)閣D0N2絮?", "2081145170"]
+  - ["Ra", "", "NULL", "2080559274", "ꈳKL"]
+  - ["Ra", "", "NULL", "-278911135", "NULL"]
+  - ["kG+SB(", "RGun㒅2Jྌh", "1008539548", "೷)閣D0N2絮?", "2081145170"]
+  - ["kG+SB(", "RGun㒅2Jྌh", "1008539548", "2080559274", "ꈳKL"]
+  - ["kG+SB(", "RGun㒅2Jྌh", "1008539548", "-278911135", "NULL"]
+  - ["2052598044", "NULL", "71166105", "೷)閣D0N2絮?", "2081145170"]
+  - ["2052598044", "NULL", "71166105", "2080559274", "ꈳKL"]
+  - ["2052598044", "NULL", "71166105", "-278911135", "NULL"]
+  - ["\nPP0◍'", "1486103084", "-657850939", "೷)閣D0N2絮?", "2081145170"]
+  - ["\nPP0◍'", "1486103084", "-657850939", "2080559274", "ꈳKL"]
+  - ["\nPP0◍'", "1486103084", "-657850939", "-278911135", "NULL"]

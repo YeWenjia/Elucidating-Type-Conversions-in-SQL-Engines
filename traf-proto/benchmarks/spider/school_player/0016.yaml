@@ -1,0 +1,10 @@
+db: tests-examples/spider/school_player/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_player/tables/school.csv
+output: tests-examples/spider/school_player/tables/0016.csv
+constants:
+- '1'
+sql: |-
+  SELECT school_colors
+  FROM school
+  ORDER BY enrollment DESC

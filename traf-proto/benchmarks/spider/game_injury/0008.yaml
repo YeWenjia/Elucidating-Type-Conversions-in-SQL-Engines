@@ -1,0 +1,17 @@
+db: tests-examples/spider/game_injury/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_injury/tables/game.csv
+- tests-examples/spider/game_injury/tables/injury_accident.csv
+output: tests-examples/spider/game_injury/tables/0008.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.score,
+         t1.date
+  FROM game AS t1
+  JOIN injury_accident AS t2 ON t2.game_id = t1.id
+  GROUP BY t1.id, t1.score, t1.date
+  HAVING count(*) >= 2

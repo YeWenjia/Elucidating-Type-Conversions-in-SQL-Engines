@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/enroll.csv
+- tests-examples/spider/college_1/tables/student.csv
+output: tests-examples/spider/college_1/tables/0056.csv
+constants:
+- Smithson
+columns:
+- stu_lname
+sql: |-
+  SELECT t1.crs_code
+  FROM class AS t1
+  JOIN enroll AS t2 ON t1.class_code = t2.class_code
+  JOIN student AS t3 ON t3.stu_num = t2.stu_num
+  WHERE t3.stu_lname = 'Smithson'

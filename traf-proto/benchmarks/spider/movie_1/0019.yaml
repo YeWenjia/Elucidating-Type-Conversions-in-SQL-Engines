@@ -1,0 +1,22 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0019.csv
+constants:
+- James Cameron
+functions:
+- avg
+columns:
+- stars
+- director
+sql: |-
+  SELECT t2.title,
+         t2.director
+  FROM rating AS t1
+  JOIN movie AS t2 ON t1.mid = t2.mid
+  WHERE t1.stars >
+      (SELECT avg(t1.stars)
+       FROM rating AS t1
+       JOIN movie AS t2 ON t1.mid = t2.mid
+       WHERE t2.director = 'James Cameron')

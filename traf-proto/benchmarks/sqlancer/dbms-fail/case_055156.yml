@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t2:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [1370989809, "-1209706311", null]
+    - [-657850939, null, 443216999]
+  database0_t2:
+    - [915954605, ""]
+sql: "SELECT database0_t2.c1, database0_t0.c0 FROM database0_t0, database0_t2 WHERE 'Y-<{,P'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Y-<{,P\"\n  Position: 79"
+traf_columns: [database0_t2.c1, database0_t0.c0]
+traf_rows:
+  - ["", "1370989809"]
+  - ["", "-657850939"]

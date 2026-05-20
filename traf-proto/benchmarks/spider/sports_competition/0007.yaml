@@ -1,0 +1,14 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/club_rank.csv
+output: tests-examples/spider/sports_competition/tables/0007.csv
+constants:
+- '10'
+functions:
+- count
+columns:
+- total
+sql: |-
+  SELECT count(*)
+  FROM club_rank
+  WHERE total < 10

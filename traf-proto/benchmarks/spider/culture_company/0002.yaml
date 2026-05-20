@@ -1,0 +1,13 @@
+db: tests-examples/spider/culture_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/culture_company/tables/book_club.csv
+output: tests-examples/spider/culture_company/tables/0002.csv
+constants:
+- '1989'
+columns:
+- year
+sql: |-
+  SELECT book_title,
+         author_or_editor
+  FROM book_club
+  WHERE year > 1989

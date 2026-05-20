@@ -1,0 +1,19 @@
+db: tests-examples/spider/game_injury/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_injury/tables/stadium.csv
+- tests-examples/spider/game_injury/tables/game.csv
+- tests-examples/spider/game_injury/tables/injury_accident.csv
+output: tests-examples/spider/game_injury/tables/0010.csv
+constants:
+- Foot injury
+- Knee problem
+columns:
+- injury
+sql: |-
+  SELECT t1.season,
+         t2.name
+  FROM game AS t1
+  JOIN stadium AS t2 ON t1.stadium_id = t2.id
+  JOIN injury_accident AS t3 ON t1.id = t3.game_id
+  WHERE t3.injury = 'Foot injury'
+    OR t3.injury = 'Knee problem'

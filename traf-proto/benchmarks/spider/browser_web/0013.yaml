@@ -1,0 +1,16 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/web_client_accelerator.csv
+- tests-examples/spider/browser_web/tables/browser.csv
+- tests-examples/spider/browser_web/tables/accelerator_compatible_browser.csv
+output: tests-examples/spider/browser_web/tables/0013.csv
+constants:
+- '15'
+columns:
+- market_share
+sql: |-
+  SELECT DISTINCT t1.name
+  FROM web_client_accelerator AS t1
+  JOIN accelerator_compatible_browser AS t2 ON t2.accelerator_id = t1.id
+  JOIN browser AS t3 ON t2.browser_id = t3.id
+  WHERE t3.market_share > 15;

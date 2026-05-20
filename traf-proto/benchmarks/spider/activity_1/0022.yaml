@@ -1,0 +1,13 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/student.csv
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0022.csv
+functions:
+- count
+sql: |-
+  SELECT t1.rank_col,
+         count(*)
+  FROM faculty AS t1
+  JOIN student AS t2 ON t1.facid = t2.advisor
+  GROUP BY t1.rank_col

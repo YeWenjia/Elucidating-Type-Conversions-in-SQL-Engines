@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-372689180, null]
+    - [420595982, null]
+    - [-278911135, "723249712"]
+  database0_t0:
+    - [-825043685, -1860173349]
+    - [1783748652, null]
+    - [1777398138, 1161798939]
+    - [859565074, 1699565337]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '昏u'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"昏u\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-825043685"]
+  - ["1783748652"]
+  - ["1777398138"]
+  - ["859565074"]

@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-214983414", "2131576533"]
+    - ["u7", "2131576533"]
+    - ["1708405439", "2131576533"]
+    - ["", "2131576533"]
+    - ["2ﳱ", "-166515376"]
+    - ["1794094756", ""]
+    - ["-1684923321", "ln䷥ST-G"]
+    - ["573344343", null]
+    - ["1<", ""]
+  database0_t0:
+    - [1161815015, 112015855]
+sql: "SELECT database0_t0.c1, database0_t1.c0, database0_t0.c0, database0_t1.c1 FROM database0_t0, database0_t1 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 113"
+traf_columns: [database0_t0.c1, database0_t1.c0, database0_t0.c0, database0_t1.c1]
+traf_rows:
+  - ["112015855", "-214983414", "1161815015", "2131576533"]
+  - ["112015855", "u7", "1161815015", "2131576533"]
+  - ["112015855", "1708405439", "1161815015", "2131576533"]
+  - ["112015855", "2ﳱ", "1161815015", "-166515376"]
+  - ["112015855", "1794094756", "1161815015", ""]
+  - ["112015855", "-1684923321", "1161815015", "ln䷥ST-G"]
+  - ["112015855", "573344343", "1161815015", "NULL"]
+  - ["112015855", "1<", "1161815015", ""]

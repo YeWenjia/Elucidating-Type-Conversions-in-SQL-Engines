@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t2:
+    - ["", "", null]
+    - ["9-", "g^R\rx)9v\r", "-632382568"]
+sql: "SELECT database0_t2.c0 FROM database0_t2 WHERE '-354425506'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-354425506\"\n  Position: 48"
+traf_columns: [database0_t2.c0]
+traf_rows:
+  - [""]
+  - ["9-"]

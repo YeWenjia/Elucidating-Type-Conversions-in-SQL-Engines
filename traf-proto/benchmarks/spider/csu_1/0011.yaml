@@ -1,0 +1,15 @@
+db: tests-examples/spider/csu_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/csu_1/tables/degrees.csv
+output: tests-examples/spider/csu_1/tables/0011.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- degrees
+sql: |-
+  SELECT year
+  FROM degrees
+  GROUP BY year
+  ORDER BY sum(degrees) DESC

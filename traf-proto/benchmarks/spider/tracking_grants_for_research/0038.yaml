@@ -1,0 +1,9 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/project_outcomes.csv
+- tests-examples/spider/tracking_grants_for_research/tables/research_outcomes.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0038.csv
+sql: |-
+  SELECT t1.outcome_description
+  FROM research_outcomes AS t1
+  JOIN project_outcomes AS t2 ON t1.outcome_code = t2.outcome_code

@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t2:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["(ղ'xVO", ""]
+    - ["", ""]
+    - ["-1020663942", ""]
+    - ["yzL\r89!I7", ""]
+    - ["k)*ETm೥1", ""]
+    - ["k1", null]
+    - ["]XsA", "^}M n2U"]
+    - ["1202837033", "-640974991"]
+    - ["1161798939", "-150982912"]
+    - ["KX", "591929964"]
+    - ["2131576533", null]
+    - ["1428400327", null]
+    - [".Bh.{", null]
+    - ["-226931928", null]
+    - [",3Sq,QzN", null]
+  database0_t2:
+    - [-1426579112, "2}", ""]
+    - [90257357, "2}", ""]
+    - [-1740691702, "2}", ""]
+    - [-1888846418, "2}", ""]
+    - [1437999574, "866108555", "1611489943"]
+    - [-186716307, "_'(qZ熢J9p", "-1948631099"]
+    - [1448649787, "-1e500", "1242577457"]
+    - [250658228, "1<<KoR%(>", "-217979594"]
+sql: "SELECT * FROM database0_t0, database0_t2 WHERE (('H*꺛INK')<=(database0_t2.c0))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: invalid input syntax for type integer: \"H*꺛INK\"\n  Position: 50"
+traf_error: "icast fails H*꺛INK to Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 47, in resolve\n    self.icast(e2, t.dom[1])\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 178, in icast\n    raise TypeError(f\"icast fails {e} to {t}\")\ninterpreter.Typechecker.TypeError: icast fails H*꺛INK to Int\n"
+traf_columns: []
+traf_rows: []

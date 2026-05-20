@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["<7*]졁nGK", "-444040980", null]
+    - ["<7*]졁nGK", "", null]
+    - ["<7*]졁nGK", "-148654081", -1887367284]
+  database0_t0:
+    - ["351224024", 1079222877]
+    - ["830955504", 1079222877]
+    - ["-2033106582", -2120642138]
+    - ["", -902835763]
+    - ["^}m n2u", 1264846530]
+sql: "SELECT database0_t1.c0, database0_t1.c2, database0_t0.c1 FROM database0_t0, database0_t1 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t1.c0, database0_t1.c2, database0_t0.c1]
+traf_rows:
+  - ["<7*]졁nGK", "NULL", "1079222877"]
+  - ["<7*]졁nGK", "NULL", "1079222877"]
+  - ["<7*]졁nGK", "-1887367284", "1079222877"]
+  - ["<7*]졁nGK", "NULL", "1079222877"]
+  - ["<7*]졁nGK", "NULL", "1079222877"]
+  - ["<7*]졁nGK", "-1887367284", "1079222877"]
+  - ["<7*]졁nGK", "NULL", "-2120642138"]
+  - ["<7*]졁nGK", "NULL", "-2120642138"]
+  - ["<7*]졁nGK", "-1887367284", "-2120642138"]
+  - ["<7*]졁nGK", "NULL", "-902835763"]
+  - ["<7*]졁nGK", "NULL", "-902835763"]
+  - ["<7*]졁nGK", "-1887367284", "-902835763"]
+  - ["<7*]졁nGK", "NULL", "1264846530"]
+  - ["<7*]졁nGK", "NULL", "1264846530"]
+  - ["<7*]졁nGK", "-1887367284", "1264846530"]

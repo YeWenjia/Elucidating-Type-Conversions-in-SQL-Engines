@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [1019635521, "LL"]
+    - [1491203209, null]
+    - [-1980936731, "1803926042"]
+    - [-152514463, null]
+    - [2138365892, "-237799081"]
+  database0_t0:
+    - ["", 736741116]
+    - ["-1346415917", -444578923]
+    - ["~U", -339580836]
+sql: "SELECT database0_t1.c0, database0_t0.c0 FROM database0_t0, database0_t1 WHERE 'lg*'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"lg*\"\n  Position: 79"
+traf_columns: [database0_t1.c0, database0_t0.c0]
+traf_rows:
+  - ["1019635521", ""]
+  - ["1491203209", ""]
+  - ["-1980936731", ""]
+  - ["-152514463", ""]
+  - ["2138365892", ""]
+  - ["1019635521", "-1346415917"]
+  - ["1491203209", "-1346415917"]
+  - ["-1980936731", "-1346415917"]
+  - ["-152514463", "-1346415917"]
+  - ["2138365892", "-1346415917"]
+  - ["1019635521", "~U"]
+  - ["1491203209", "~U"]
+  - ["-1980936731", "~U"]
+  - ["-152514463", "~U"]
+  - ["2138365892", "~U"]

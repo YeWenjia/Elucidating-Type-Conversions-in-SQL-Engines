@@ -1,0 +1,63 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["-1419393204", 1300733341]
+    - ["}/rcx|_U4", -420727782]
+    - ["1300733341", null]
+  database0_t6:
+    - ["3e", "-278911135"]
+    - ["3e", "-656845703"]
+    - ["3e", "15924986"]
+    - [null, "-802211838"]
+    - [null, "㡭H"]
+    - ["", "Al"]
+    - ["AMNGT-媩", "TRUE"]
+    - ["-444040980", null]
+    - ["239734007", "-990806093"]
+    - ["113716230", "-346299155"]
+    - [null, "1428400327"]
+    - ["1428400327", null]
+sql: "SELECT database0_t0.c0, database0_t6.c0 FROM database0_t0, database0_t6 WHERE database0_t6.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 79"
+traf_columns: [database0_t0.c0, database0_t6.c0]
+traf_rows:
+  - ["-1419393204", "3e"]
+  - ["-1419393204", "3e"]
+  - ["-1419393204", "3e"]
+  - ["-1419393204", "NULL"]
+  - ["-1419393204", "NULL"]
+  - ["-1419393204", ""]
+  - ["-1419393204", "AMNGT-媩"]
+  - ["-1419393204", "239734007"]
+  - ["-1419393204", "113716230"]
+  - ["-1419393204", "NULL"]
+  - ["}/rcx|_U4", "3e"]
+  - ["}/rcx|_U4", "3e"]
+  - ["}/rcx|_U4", "3e"]
+  - ["}/rcx|_U4", "NULL"]
+  - ["}/rcx|_U4", "NULL"]
+  - ["}/rcx|_U4", ""]
+  - ["}/rcx|_U4", "AMNGT-媩"]
+  - ["}/rcx|_U4", "239734007"]
+  - ["}/rcx|_U4", "113716230"]
+  - ["}/rcx|_U4", "NULL"]
+  - ["1300733341", "3e"]
+  - ["1300733341", "3e"]
+  - ["1300733341", "3e"]
+  - ["1300733341", "NULL"]
+  - ["1300733341", "NULL"]
+  - ["1300733341", ""]
+  - ["1300733341", "AMNGT-媩"]
+  - ["1300733341", "239734007"]
+  - ["1300733341", "113716230"]
+  - ["1300733341", "NULL"]

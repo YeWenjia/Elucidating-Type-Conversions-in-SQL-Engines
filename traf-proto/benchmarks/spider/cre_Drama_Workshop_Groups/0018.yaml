@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/marketing_regions.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/stores.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0018.csv
+constants:
+- Rob Dinning
+columns:
+- store_name
+sql: |-
+  SELECT t1.marketing_region_name
+  FROM marketing_regions AS t1
+  JOIN stores AS t2 ON t1.marketing_region_code = t2.marketing_region_code
+  WHERE t2.store_name = 'Rob Dinning'

@@ -1,0 +1,11 @@
+db: tests-examples/spider/entertainment_awards/tables/db.sqlite
+inputs:
+- tests-examples/spider/entertainment_awards/tables/festival_detail.csv
+output: tests-examples/spider/entertainment_awards/tables/0008.csv
+functions:
+- avg
+columns:
+- num_of_audience
+sql: |-
+  SELECT avg(num_of_audience)
+  FROM festival_detail

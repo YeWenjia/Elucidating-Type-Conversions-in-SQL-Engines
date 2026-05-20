@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c12", type: "string"}
+data:
+  database0_t1:
+    - ["6984250", "-420727782", "-639173391"]
+    - ["V6", "gSbR\tuR", "3Ui)"]
+    - ["625572473", "", "g^Dyꋣ"]
+    - ["-536793084", "-402134003", null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE '-444040980'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-444040980\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["-420727782"]
+  - ["gSbR\tuR"]
+  - [""]
+  - ["-402134003"]

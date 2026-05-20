@@ -1,0 +1,20 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0015.csv
+functions:
+- avg
+- min
+columns:
+- stars
+- year
+sql: |-
+  SELECT avg(t1.stars),
+         t2.title
+  FROM rating AS t1
+  JOIN movie AS t2 ON t1.mid = t2.mid
+  WHERE t2.year =
+      (SELECT min(year)
+       FROM movie)
+  GROUP BY t2.title

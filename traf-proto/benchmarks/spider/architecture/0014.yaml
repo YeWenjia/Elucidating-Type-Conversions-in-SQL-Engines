@@ -1,0 +1,16 @@
+db: tests-examples/spider/architecture/tables/db.sqlite
+inputs:
+- tests-examples/spider/architecture/tables/architect.csv
+- tests-examples/spider/architecture/tables/bridge.csv
+- tests-examples/spider/architecture/tables/mill.csv
+output: tests-examples/spider/architecture/tables/0014.csv
+constants:
+- '80'
+columns:
+- length_meters
+sql: |-
+  SELECT DISTINCT t1.name
+  FROM mill AS t1
+  JOIN architect AS t2 ON t1.architect_id = t2.id
+  JOIN bridge AS t3 ON t3.architect_id = t2.id
+  WHERE t3.length_meters > 80

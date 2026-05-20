@@ -1,0 +1,10 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0010.csv
+sql: |-
+  SELECT t1.name,
+         t2.name
+  FROM city AS t1
+  JOIN county_public_safety AS t2 ON t1.county_id = t2.county_id

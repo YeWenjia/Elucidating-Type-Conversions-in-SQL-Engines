@@ -1,0 +1,16 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/browser.csv
+- tests-examples/spider/browser_web/tables/accelerator_compatible_browser.csv
+output: tests-examples/spider/browser_web/tables/0009.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name
+  FROM browser AS t1
+  JOIN accelerator_compatible_browser AS t2 ON t1.id = t2.browser_id
+  GROUP BY t1.id, t1.name
+  ORDER BY count(*) DESC

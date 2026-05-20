@@ -1,0 +1,45 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [-785558052, null]
+    - [-240663224, "847687323"]
+    - [-1104779761, "-521520604"]
+    - [-1743256489, "-929713484"]
+    - [-1384980351, "M5"]
+    - [-639173391, "1471628400"]
+    - [-1279472365, "1699565337"]
+    - [369297413, "9223372036854775807"]
+    - [-273085966, null]
+    - [1699719056, null]
+  database0_t0:
+    - [1198936513, "1894499120", null]
+    - [null, "", null]
+    - [-1794475476, "", null]
+    - [622456626, "847687323", null]
+    - [10744829, ".y", null]
+    - [null, "1428400327", null]
+    - [null, "-962128265", null]
+    - [null, "-1653346572", null]
+    - [null, "i", null]
+    - [null, null, "1573116726"]
+    - [2, "1689378437", null]
+    - [null, "1765777634", "X^ZK/&N"]
+    - [null, "(", null]
+    - [null, "-388391201", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE database0_t0.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]

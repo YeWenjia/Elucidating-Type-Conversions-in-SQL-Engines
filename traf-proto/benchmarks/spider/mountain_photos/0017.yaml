@@ -1,0 +1,14 @@
+db: tests-examples/spider/mountain_photos/tables/db.sqlite
+inputs:
+- tests-examples/spider/mountain_photos/tables/camera_lens.csv
+- tests-examples/spider/mountain_photos/tables/photos.csv
+output: tests-examples/spider/mountain_photos/tables/0017.csv
+functions:
+- count
+sql: |-
+  SELECT t1.name,
+         count(*)
+  FROM camera_lens AS t1
+  JOIN photos AS t2 ON t1.id = t2.camera_lens_id
+  GROUP BY t1.id, t1.name
+  ORDER BY count(*)

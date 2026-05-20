@@ -1,0 +1,14 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+- tests-examples/spider/apartment_rentals/tables/apartment_facilities.csv
+output: tests-examples/spider/apartment_rentals/tables/0023.csv
+constants:
+- '4'
+columns:
+- bedroom_count
+sql: |-
+  SELECT t1.facility_code
+  FROM apartment_facilities AS t1
+  JOIN apartments AS t2 ON t1.apt_id = t2.apt_id
+  WHERE t2.bedroom_count > 4

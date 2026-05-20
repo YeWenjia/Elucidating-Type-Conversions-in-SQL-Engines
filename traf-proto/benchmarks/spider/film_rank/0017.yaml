@@ -1,0 +1,13 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/film.csv
+output: tests-examples/spider/film_rank/tables/0017.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT studio
+  FROM film
+  GROUP BY studio
+  HAVING COUNT(*) >= 2

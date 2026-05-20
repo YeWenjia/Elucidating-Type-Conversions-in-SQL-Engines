@@ -1,0 +1,46 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["", "-210423192", null]
+    - [null, "akEV", null]
+    - ["-1831624141", null, null]
+    - ["Oz_zpaf", null, null]
+    - ["e튊ug", "1264846530", 807577708]
+    - [null, "988242961", null]
+    - [null, "4fI", null]
+    - ["991149750", "뼑m", -163621249]
+    - ["zank", "0", 96763064]
+    - ["%uA/LM2g", "Q>", 616788468]
+    - ["1923711083", "", null]
+    - ["-202120602", "-3890461", null]
+    - ["q{", "(s9p4\\", null]
+    - [null, null, -468903275]
+    - [null, null, 835079313]
+    - ["-1256252638", null, 2090365346]
+    - ["", "543985007", null]
+    - ["-1886725408", null, null]
+    - ["880472650", null, null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-1831624141"]
+  - ["Oz_zpaf"]
+  - ["e튊ug"]
+  - ["991149750"]
+  - ["zank"]
+  - ["%uA/LM2g"]
+  - ["1923711083"]
+  - ["-202120602"]
+  - ["q{"]
+  - ["-1256252638"]
+  - ["-1886725408"]
+  - ["880472650"]

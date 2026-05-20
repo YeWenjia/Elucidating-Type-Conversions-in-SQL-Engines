@@ -1,0 +1,18 @@
+db: tests-examples/spider/scientist_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/scientist_1/tables/projects.csv
+- tests-examples/spider/scientist_1/tables/assignedto.csv
+output: tests-examples/spider/scientist_1/tables/0015.csv
+constants:
+- '300'
+functions:
+- count
+columns:
+- hours
+sql: |-
+  SELECT count(*),
+         t1.name
+  FROM projects AS t1
+  JOIN assignedto AS t2 ON t1.code = t2.project
+  WHERE t1.hours > 300
+  GROUP BY t1.name

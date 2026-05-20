@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [-1422714704, "593622352", null]
+    - [355010182, "8b2.", null]
+    - [null, "1712709689", null]
+    - [-1722647003, "-660022406", null]
+    - [-1658330186, "-1077277231", null]
+    - [-1781350639, "", null]
+    - [1125552872, "1302265430", null]
+    - [null, "-1073664262", null]
+sql: "SELECT * FROM database0_t0 WHERE 1105214836"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows:
+  - ["-1422714704", "593622352", "NULL"]
+  - ["355010182", "8b2.", "NULL"]
+  - ["NULL", "1712709689", "NULL"]
+  - ["-1722647003", "-660022406", "NULL"]
+  - ["-1658330186", "-1077277231", "NULL"]
+  - ["-1781350639", "", "NULL"]
+  - ["1125552872", "1302265430", "NULL"]
+  - ["NULL", "-1073664262", "NULL"]

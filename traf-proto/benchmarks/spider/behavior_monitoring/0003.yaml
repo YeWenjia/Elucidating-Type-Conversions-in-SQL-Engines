@@ -1,0 +1,14 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/addresses.csv
+output: tests-examples/spider/behavior_monitoring/tables/0003.csv
+constants:
+- '197'
+functions:
+- count
+columns:
+- zip_postcode
+sql: |-
+  SELECT count(*)
+  FROM addresses
+  WHERE zip_postcode = '197'

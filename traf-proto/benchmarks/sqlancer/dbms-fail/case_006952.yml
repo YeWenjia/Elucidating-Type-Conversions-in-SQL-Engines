@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [null, -1554526165]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+  database0_t0:
+    - ["ieP", -753303948, null]
+sql: "SELECT database0_t0.c2, database0_t0.c0, database0_t0.c1 FROM database0_t1, database0_t0 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t0.c2, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["NULL", "ieP", "-753303948"]
+  - ["NULL", "ieP", "-753303948"]
+  - ["NULL", "ieP", "-753303948"]
+  - ["NULL", "ieP", "-753303948"]

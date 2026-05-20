@@ -1,0 +1,15 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+output: tests-examples/spider/riding_club/tables/0015.csv
+constants:
+- M
+- F
+columns:
+- gender
+sql: |-
+  SELECT residence
+  FROM player
+  WHERE gender = 'M' INTERSECT
+    SELECT residence
+    FROM player WHERE gender = 'F'

@@ -1,0 +1,16 @@
+db: tests-examples/spider/theme_gallery/tables/db.sqlite
+inputs:
+- tests-examples/spider/theme_gallery/tables/exhibition.csv
+- tests-examples/spider/theme_gallery/tables/exhibition_record.csv
+output: tests-examples/spider/theme_gallery/tables/0016.csv
+constants:
+- '2004'
+columns:
+- year
+sql: |-
+  SELECT t2.theme,
+         t1.date,
+         t1.attendance
+  FROM exhibition_record AS t1
+  JOIN exhibition AS t2 ON t1.exhibition_id = t2.exhibition_id
+  WHERE t2.year = 2004

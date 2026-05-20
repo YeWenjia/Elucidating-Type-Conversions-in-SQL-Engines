@@ -1,0 +1,12 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/students.csv
+- tests-examples/spider/behavior_monitoring/tables/student_addresses.csv
+output: tests-examples/spider/behavior_monitoring/tables/0032.csv
+constants:
+- '1'
+sql: |-
+  SELECT t2.cell_mobile_number
+  FROM student_addresses AS t1
+  JOIN students AS t2 ON t1.student_id = t2.student_id
+  ORDER BY t1.monthly_rental ASC

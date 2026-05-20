@@ -1,0 +1,15 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/reservations.csv
+output: tests-examples/spider/inn_1/tables/0004.csv
+constants:
+- ROY
+- SWEAZY
+columns:
+- firstname
+- lastname
+sql: |-
+  SELECT kids
+  FROM reservations
+  WHERE firstname = 'ROY'
+    AND lastname = 'SWEAZY';

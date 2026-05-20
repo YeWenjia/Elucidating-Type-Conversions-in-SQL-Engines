@@ -1,0 +1,9 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/hotels.csv
+output: tests-examples/spider/cre_Theme_park/tables/0028.csv
+sql: |-
+  SELECT hotel_id,
+         star_rating_code
+  FROM hotels
+  ORDER BY price_range ASC

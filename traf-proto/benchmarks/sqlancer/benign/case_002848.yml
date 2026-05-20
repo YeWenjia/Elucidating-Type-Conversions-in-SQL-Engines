@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [847198242, "489263177"]
+    - [-948742844, "Fx㟍ﴤz|xƺ"]
+sql: "SELECT * FROM database0_t0 WHERE ((791648288)<>(-1265794330))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - [847198242, "489263177"]
+  - [-948742844, "Fx㟍ﴤz|xƺ"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["847198242", "489263177"]
+  - ["-948742844", "Fx㟍ﴤz|xƺ"]

@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [",*f", "uxdAQD䋗D", null]
+    - [">\\F7Q灥퍨", null, null]
+    - ["t\\", "1486103084", null]
+    - ["-1843484432", "%h(趱", -476804132]
+    - ["", " U)", -2107985862]
+    - ["9", "878771492", -561427093]
+    - ["CIgU~U", null, null]
+    - ["-1643474846", null, null]
+    - ["-741289025", "", 1557136750]
+    - ["_wa", "", 2038737607]
+    - ["1108105011", "", -579973557]
+    - ["-146882612", null, 1804551272]
+    - ["-1914399474", null, null]
+    - ["k3}BxH!5", null, 991149750]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE -896889909"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["uxdAQD䋗D", ",*f"]
+  - ["NULL", ">\\F7Q灥퍨"]
+  - ["1486103084", "t\\"]
+  - ["%h(趱", "-1843484432"]
+  - [" U)", ""]
+  - ["878771492", "9"]
+  - ["NULL", "CIgU~U"]
+  - ["NULL", "-1643474846"]
+  - ["", "-741289025"]
+  - ["", "_wa"]
+  - ["", "1108105011"]
+  - ["NULL", "-146882612"]
+  - ["NULL", "-1914399474"]
+  - ["NULL", "k3}BxH!5"]

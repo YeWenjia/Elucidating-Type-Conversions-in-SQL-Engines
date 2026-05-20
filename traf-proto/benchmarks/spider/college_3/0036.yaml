@@ -1,0 +1,20 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/department.csv
+output: tests-examples/spider/college_3/tables/0036.csv
+constants:
+- AS
+- EN
+- NEB
+columns:
+- division
+- building
+sql: |-
+  SELECT dname
+  FROM department
+  WHERE division = 'AS'
+  UNION
+  SELECT dname
+  FROM department
+  WHERE division = 'EN'
+    AND building = 'NEB'

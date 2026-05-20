@@ -1,0 +1,12 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+output: tests-examples/spider/climbing/tables/0007.csv
+constants:
+- '5000'
+columns:
+- height
+sql: |-
+  SELECT country
+  FROM mountain
+  WHERE height > 5000

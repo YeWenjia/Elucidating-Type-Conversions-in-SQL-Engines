@@ -1,0 +1,11 @@
+db: tests-examples/spider/phone_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/phone_1/tables/chip_model.csv
+output: tests-examples/spider/phone_1/tables/0002.csv
+constants:
+- '1'
+sql: |-
+  SELECT model_name,
+         ram_mib
+  FROM chip_model
+  ORDER BY ram_mib ASC;

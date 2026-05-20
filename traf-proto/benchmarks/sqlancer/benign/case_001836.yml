@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["D_", 1214310062, null]
+    - ["", null, null]
+    - ["je#쭄*(N", null, null]
+    - ["^}M n2U", null, null]
+    - ["-316874230", -1041688005, null]
+    - ["-803759267", -998473893, -265594065]
+    - ["55061168", 1573309848, 1300733341]
+    - ["1004877479", null, -3890461]
+    - ["8iAl", null, -1077277231]
+    - ["-339580836", null, null]
+    - ["-515855997", -632382568, null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((-990333777) IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

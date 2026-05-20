@@ -1,0 +1,14 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/appellations.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0010.csv
+constants:
+- North Coast
+columns:
+- area
+sql: |-
+  SELECT DISTINCT t2.name
+  FROM appellations AS t1
+  JOIN wine AS t2 ON t1.appelation = t2.appelation
+  WHERE t1.area = 'North Coast'

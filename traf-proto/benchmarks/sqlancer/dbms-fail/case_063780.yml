@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t7: []
+sql: "SELECT database0_t7.c0 FROM database0_t7 WHERE 'm]mղzI'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"m]mղzI\"\n  Position: 48"
+traf_columns: [database0_t7.c0]
+traf_rows: []

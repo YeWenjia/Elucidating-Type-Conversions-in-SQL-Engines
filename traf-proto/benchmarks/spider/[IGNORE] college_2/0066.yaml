@@ -1,0 +1,18 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/department.csv
+- tests-examples/spider/college_2/tables/instructor.csv
+- tests-examples/spider/college_2/tables/student.csv
+output: tests-examples/spider/college_2/tables/0066.csv
+functions:
+- count
+columns:
+- id
+sql: |-
+  SELECT count(DISTINCT t2.id),
+         count(DISTINCT t3.id),
+         t3.dept_name
+  FROM department AS t1
+  JOIN student AS t2 ON t1.dept_name = t2.dept_name
+  JOIN instructor AS t3 ON t1.dept_name = t3.dept_name
+  GROUP BY t3.dept_name

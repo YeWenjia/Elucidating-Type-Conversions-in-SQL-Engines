@@ -1,0 +1,12 @@
+db: tests-examples/spider/journal_committee/tables/db.sqlite
+inputs:
+- tests-examples/spider/journal_committee/tables/editor.csv
+output: tests-examples/spider/journal_committee/tables/0004.csv
+constants:
+- '25'
+columns:
+- age
+sql: |-
+  SELECT name
+  FROM editor
+  WHERE age > 25

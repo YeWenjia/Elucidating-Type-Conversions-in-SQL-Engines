@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t0:
+    - ["1023640062"]
+    - [",l"]
+    - ["()"]
+    - ["694537050"]
+    - ["n0bW*ro"]
+    - ["paL"]
+    - ["/"]
+    - [""]
+    - ["-1229202921"]
+    - ["iB"]
+sql: "SELECT * FROM database0_t0 WHERE 'FALSE'"
+columns:
+  - "c0"
+rows: []
+kind: traf-mismatch
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["1023640062"]
+  - [",l"]
+  - ["()"]
+  - ["694537050"]
+  - ["n0bW*ro"]
+  - ["paL"]
+  - ["/"]
+  - [""]
+  - ["-1229202921"]
+  - ["iB"]

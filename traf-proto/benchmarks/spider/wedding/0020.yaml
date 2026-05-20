@@ -1,0 +1,15 @@
+db: tests-examples/spider/wedding/tables/db.sqlite
+inputs:
+- tests-examples/spider/wedding/tables/wedding.csv
+output: tests-examples/spider/wedding/tables/0020.csv
+constants:
+- '2016'
+functions:
+- count
+columns:
+- church_id
+- year
+sql: |-
+  SELECT COUNT (DISTINCT church_id)
+  FROM wedding
+  WHERE year = 2016

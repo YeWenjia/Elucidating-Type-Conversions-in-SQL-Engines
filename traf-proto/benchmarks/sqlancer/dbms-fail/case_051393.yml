@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["", "-234592069"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'j+'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"j+\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - [""]

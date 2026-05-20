@@ -1,0 +1,8 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+output: tests-examples/spider/county_public_safety/tables/0005.csv
+sql: |-
+  SELECT crime_rate
+  FROM county_public_safety
+  ORDER BY police_officers ASC

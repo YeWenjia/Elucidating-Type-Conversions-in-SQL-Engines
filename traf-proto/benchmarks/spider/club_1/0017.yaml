@@ -1,0 +1,12 @@
+db: tests-examples/spider/club_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/club_1/tables/club.csv
+output: tests-examples/spider/club_1/tables/0017.csv
+constants:
+- Pen and Paper Gaming
+columns:
+- clubname
+sql: |-
+  SELECT clubdesc
+  FROM club
+  WHERE clubname = 'Pen and Paper Gaming'

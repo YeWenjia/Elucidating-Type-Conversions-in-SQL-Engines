@@ -1,0 +1,26 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/allergy_type.csv
+- tests-examples/spider/allergy_1/tables/has_allergy.csv
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0048.csv
+constants:
+- '18'
+- food
+- animal
+functions:
+- count
+columns:
+- age
+- stuid
+- allergytype
+sql: |-
+  select count(*)
+  from student
+  where age > 18
+    and stuid not in
+      (select stuid
+       from has_allergy as t1
+       join allergy_type as t2 on t1.allergy = t2.allergy
+       where t2.allergytype = 'food'
+         or t2.allergytype = 'animal')

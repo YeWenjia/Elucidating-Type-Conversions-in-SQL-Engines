@@ -1,0 +1,18 @@
+db: tests-examples/spider/local_govt_in_alabama/tables/db.sqlite
+inputs:
+- tests-examples/spider/local_govt_in_alabama/tables/participants.csv
+- tests-examples/spider/local_govt_in_alabama/tables/events.csv
+- tests-examples/spider/local_govt_in_alabama/tables/participants_in_events.csv
+output: tests-examples/spider/local_govt_in_alabama/tables/0012.csv
+constants:
+- Kenyatta Kuhn
+columns:
+- participant_details
+sql: |-
+  SELECT event_id
+  FROM events
+  EXCEPT
+  SELECT t1.event_id
+  FROM participants_in_events AS t1
+  JOIN participants AS t2 ON t1.participant_id = t2.participant_id
+  WHERE participant_details = 'Kenyatta Kuhn'

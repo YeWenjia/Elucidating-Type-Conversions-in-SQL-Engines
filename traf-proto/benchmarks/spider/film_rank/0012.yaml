@@ -1,0 +1,17 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/market.csv
+- tests-examples/spider/film_rank/tables/film_market_estimation.csv
+output: tests-examples/spider/film_rank/tables/0012.csv
+constants:
+- '10000'
+functions:
+- avg
+columns:
+- number_cities
+- low_estimate
+sql: |-
+  SELECT avg(t2.number_cities)
+  FROM film_market_estimation AS t1
+  JOIN market AS t2 ON t1.market_id = t2.market_id
+  WHERE t1.low_estimate > 10000

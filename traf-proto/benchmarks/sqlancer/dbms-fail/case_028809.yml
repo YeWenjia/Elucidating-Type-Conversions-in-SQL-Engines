@@ -1,0 +1,48 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["-1574094250", 805082834]
+    - ["-20517253", null]
+    - ["ꈳKL", null]
+    - ["", 12797932]
+    - ["486414984", -218504493]
+    - ["1836986809", null]
+  database0_t9:
+    - ["-1980936731", "n&q["]
+    - ["1777398138", "n&q["]
+    - ["494694827", "n&q["]
+    - ["63826970", "n&q["]
+    - ["-1188142662", "n&q["]
+    - ["2131576533", "n&q["]
+    - ["]XsA", "n&q["]
+    - ["㙄nU.1\r", "n&q["]
+    - ["1", "n&q["]
+    - ["-1970617015", "n&q["]
+    - ["]{GIu", null]
+    - ["-657850939", null]
+sql: "SELECT * FROM database0_t9 WHERE 867747234"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t9.c0, database0_t9.c1]
+traf_rows:
+  - ["-1980936731", "n&q["]
+  - ["1777398138", "n&q["]
+  - ["494694827", "n&q["]
+  - ["63826970", "n&q["]
+  - ["-1188142662", "n&q["]
+  - ["2131576533", "n&q["]
+  - ["]XsA", "n&q["]
+  - ["㙄nU.1\r", "n&q["]
+  - ["1", "n&q["]
+  - ["-1970617015", "n&q["]
+  - ["]{GIu", "NULL"]
+  - ["-657850939", "NULL"]

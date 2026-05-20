@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/ref_budget_codes.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents_with_expenses.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0033.csv
+sql: |-
+  SELECT t2.budget_type_code,
+         t2.budget_type_description,
+         t1.document_id
+  FROM documents_with_expenses AS t1
+  JOIN ref_budget_codes AS t2 ON t1.budget_type_code = t2.budget_type_code

@@ -1,0 +1,12 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0003.csv
+constants:
+- '2008'
+columns:
+- year
+sql: |-
+  SELECT name
+  FROM wine
+  WHERE year = '2008'

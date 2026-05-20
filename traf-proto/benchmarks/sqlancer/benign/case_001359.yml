@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1: []
+sql: "SELECT database0_t1.c0, database0_t1.c3 FROM database0_t1 WHERE ((((((-1684923321)<>(database0_t1.c0))) IS NULL)) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c3"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0, database0_t1.c3]
+traf_rows: []

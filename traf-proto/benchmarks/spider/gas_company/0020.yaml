@@ -1,0 +1,17 @@
+db: tests-examples/spider/gas_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/gas_company/tables/gas_station.csv
+output: tests-examples/spider/gas_company/tables/0020.csv
+constants:
+- '2000'
+- '1'
+functions:
+- count
+columns:
+- open_year
+sql: |-
+  SELECT manager_name
+  FROM gas_station
+  WHERE open_year > 2000
+  GROUP BY manager_name
+  ORDER BY count(*) DESC

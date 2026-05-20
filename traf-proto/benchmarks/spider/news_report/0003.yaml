@@ -1,0 +1,8 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+output: tests-examples/spider/news_report/tables/0003.csv
+sql: |-
+  SELECT nationality,
+         age
+  FROM journalist

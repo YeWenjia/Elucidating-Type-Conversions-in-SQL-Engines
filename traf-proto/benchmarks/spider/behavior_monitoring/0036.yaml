@@ -1,0 +1,14 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/addresses.csv
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+output: tests-examples/spider/behavior_monitoring/tables/0036.csv
+constants:
+- Lyla
+columns:
+- first_name
+sql: |-
+  SELECT t1.zip_postcode
+  FROM addresses AS t1
+  JOIN teachers AS t2 ON t1.address_id = t2.address_id
+  WHERE t2.first_name = 'Lyla'

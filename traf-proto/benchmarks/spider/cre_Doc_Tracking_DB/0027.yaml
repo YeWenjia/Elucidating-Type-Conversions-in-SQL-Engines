@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/roles.csv
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/employees.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0027.csv
+constants:
+- Ebba
+columns:
+- employee_name
+sql: |-
+  SELECT t2.role_name,
+         t2.role_description
+  FROM employees AS t1
+  JOIN roles AS t2 ON t1.role_code = t2.role_code
+  WHERE t1.employee_name = 'Ebba'

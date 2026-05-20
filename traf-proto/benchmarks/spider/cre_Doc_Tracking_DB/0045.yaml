@@ -1,0 +1,10 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/documents_to_be_destroyed.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0045.csv
+sql: |-
+  SELECT destroyed_by_employee_id
+  FROM documents_to_be_destroyed
+  UNION
+  SELECT destruction_authorised_by_employee_id
+  FROM documents_to_be_destroyed

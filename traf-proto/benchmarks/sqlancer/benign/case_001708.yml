@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c12", type: "string"}
+data:
+  database0_t1:
+    - ["6984250", "-420727782", "-639173391"]
+    - ["V6", "gSbR\tuR", "3Ui)"]
+    - ["625572473", "", "g^Dyꋣ"]
+    - ["-536793084", "-402134003", null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE ((database0_t1.c12)<>(' uu'))"
+columns:
+  - "c1"
+rows:
+  - ["-420727782"]
+  - ["gSbR\tuR"]
+  - [""]
+kind: benign
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["-420727782"]
+  - ["gSbR\tuR"]
+  - [""]

@@ -1,0 +1,19 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/video_games.csv
+- tests-examples/spider/game_1/tables/plays_games.csv
+output: tests-examples/spider/game_1/tables/0040.csv
+constants:
+- Smith
+- Linda
+columns:
+- lname
+- fname
+sql: |-
+  SELECT gname
+  FROM plays_games AS t1
+  JOIN video_games AS t2 ON t1.gameid = t2.gameid
+  JOIN student AS t3 ON t3.stuid = t1.stuid
+  WHERE t3.lname = 'Smith'
+    AND t3.fname = 'Linda'

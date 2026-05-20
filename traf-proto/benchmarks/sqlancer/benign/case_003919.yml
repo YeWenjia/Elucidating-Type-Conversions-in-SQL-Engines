@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t0:
+    - ["fp*Wu,2"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE (((((('oᠾZ_T,䷥.')<=(database0_t0.c0))) IS NOT NULL)) IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

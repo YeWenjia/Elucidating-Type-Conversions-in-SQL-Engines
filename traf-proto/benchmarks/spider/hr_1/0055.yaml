@@ -1,0 +1,20 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/employees.csv
+- tests-examples/spider/hr_1/tables/locations.csv
+output: tests-examples/spider/hr_1/tables/0055.csv
+constants:
+- z
+columns:
+- first_name
+filters:
+- like
+sql: |-
+  SELECT t1.first_name,
+         t1.last_name,
+         t3.city
+  FROM employees AS t1
+  JOIN departments AS t2 ON t1.department_id = t2.department_id
+  JOIN locations AS t3 ON t2.location_id = t3.location_id
+  WHERE t1.first_name LIKE '%z%'

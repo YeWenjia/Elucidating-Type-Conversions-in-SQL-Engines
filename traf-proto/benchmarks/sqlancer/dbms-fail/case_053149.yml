@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [-822502080, -657850939]
+    - [-815869550, -657850939]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE '285314990'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"285314990\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows: []

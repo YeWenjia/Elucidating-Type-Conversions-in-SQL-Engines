@@ -1,0 +1,18 @@
+db: tests-examples/spider/cre_Doc_Control_Systems/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Control_Systems/tables/employees.csv
+- tests-examples/spider/cre_Doc_Control_Systems/tables/circulation_history.csv
+output: tests-examples/spider/cre_Doc_Control_Systems/tables/0032.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT employees.employee_name,
+         count(*)
+  FROM employees
+  JOIN circulation_history ON circulation_history.employee_id = employees.employee_id
+  GROUP BY circulation_history.document_id,
+           circulation_history.draft_number,
+           circulation_history.copy_number, employees.employee_name
+  ORDER BY count(*) DESC;

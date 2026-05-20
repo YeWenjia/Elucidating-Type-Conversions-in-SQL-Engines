@@ -1,0 +1,18 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/projects.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0033.csv
+constants:
+- '1'
+functions:
+- count
+columns:
+- organisation_id
+sql: |-
+  SELECT project_details
+  FROM projects
+  WHERE organisation_id IN
+      (SELECT organisation_id
+       FROM projects
+       GROUP BY organisation_id, project_details
+       ORDER BY count(*) DESC)

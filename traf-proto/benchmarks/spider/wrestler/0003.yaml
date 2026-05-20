@@ -1,0 +1,10 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+output: tests-examples/spider/wrestler/tables/0003.csv
+constants:
+- '1'
+sql: |-
+  SELECT name
+  FROM wrestler
+  ORDER BY days_held ASC

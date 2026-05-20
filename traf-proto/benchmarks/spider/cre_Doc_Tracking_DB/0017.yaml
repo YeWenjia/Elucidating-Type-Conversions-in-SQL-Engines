@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/roles.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0017.csv
+constants:
+- MG
+columns:
+- role_code
+sql: |-
+  SELECT role_name,
+         role_description
+  FROM roles
+  WHERE role_code = 'MG'

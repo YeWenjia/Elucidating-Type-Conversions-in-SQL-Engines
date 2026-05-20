@@ -1,0 +1,18 @@
+db: tests-examples/spider/cre_Doc_Control_Systems/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Control_Systems/tables/roles.csv
+- tests-examples/spider/cre_Doc_Control_Systems/tables/employees.csv
+output: tests-examples/spider/cre_Doc_Control_Systems/tables/0013.csv
+constants:
+- '1'
+functions:
+- count
+columns:
+- employee_id
+sql: |-
+  SELECT roles.role_description,
+         count(employees.employee_id)
+  FROM roles
+  JOIN employees ON employees.role_code = roles.role_code
+  GROUP BY employees.role_code, roles.role_description
+  HAVING count(employees.employee_id) > 1;

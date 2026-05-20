@@ -1,0 +1,14 @@
+db: tests-examples/spider/debate/tables/db.sqlite
+inputs:
+- tests-examples/spider/debate/tables/people.csv
+- tests-examples/spider/debate/tables/debate.csv
+- tests-examples/spider/debate/tables/debate_people.csv
+output: tests-examples/spider/debate/tables/0011.csv
+sql: |-
+  SELECT t3.name,
+         t2.date,
+         t2.venue
+  FROM debate_people AS t1
+  JOIN debate AS t2 ON t1.debate_id = t2.debate_id
+  JOIN people AS t3 ON t1.negative = t3.people_id
+  ORDER BY t3.name ASC

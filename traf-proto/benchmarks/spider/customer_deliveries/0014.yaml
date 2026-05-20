@@ -1,0 +1,8 @@
+db: tests-examples/spider/customer_deliveries/tables/db.sqlite
+inputs:
+- tests-examples/spider/customer_deliveries/tables/delivery_routes.csv
+output: tests-examples/spider/customer_deliveries/tables/0014.csv
+sql: |-
+  SELECT route_name
+  FROM delivery_routes
+  ORDER BY route_name

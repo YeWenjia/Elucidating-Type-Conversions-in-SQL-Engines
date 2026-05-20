@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-338278495, "萊?", null]
+    - [139213821, "萊?", null]
+  database0_t0: []
+sql: "SELECT database0_t1.c1, database0_t1.c2, database0_t1.c0 FROM database0_t1 WHERE -2102556245"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 82"
+traf_columns: [database0_t1.c1, database0_t1.c2, database0_t1.c0]
+traf_rows:
+  - ["萊?", "NULL", "-338278495"]
+  - ["萊?", "NULL", "139213821"]

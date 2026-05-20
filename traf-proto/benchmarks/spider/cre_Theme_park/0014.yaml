@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+output: tests-examples/spider/cre_Theme_park/tables/0014.csv
+constants:
+- bus
+- walk
+columns:
+- how_to_get_there
+sql: |-
+  SELECT name,
+         opening_hours
+  FROM tourist_attractions
+  WHERE how_to_get_there = 'bus'
+    OR how_to_get_there = 'walk'

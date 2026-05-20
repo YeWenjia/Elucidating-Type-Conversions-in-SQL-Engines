@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["Eb", -1823514307]
+    - ["-1063374482", -1823514307]
+    - ["-44308309", -1823514307]
+    - ["", -1823514307]
+    - ["-256473479", -1823514307]
+    - ["PM꺛7", -1823514307]
+    - ["1894499120", -1823514307]
+    - ["1635776983", -1823514307]
+    - ["1819960876", -1823514307]
+    - ["-1724310134", -1823514307]
+  database0_t0:
+    - [976935660, "-1860230507"]
+    - [-257958408, "-1860230507"]
+    - [1348319989, "-1860230507"]
+    - [1562259034, "-31667871"]
+    - [-291455977, "V5"]
+    - [1661665722, "vu&"]
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows: []

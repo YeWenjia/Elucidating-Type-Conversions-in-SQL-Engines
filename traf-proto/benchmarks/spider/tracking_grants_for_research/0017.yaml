@@ -1,0 +1,12 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/staff_roles.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0017.csv
+constants:
+- researcher
+columns:
+- role_code
+sql: |-
+  SELECT role_description
+  FROM staff_roles
+  WHERE role_code = 'researcher'

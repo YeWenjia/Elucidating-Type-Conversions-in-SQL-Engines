@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [543840937]
+    - [-1708812916]
+    - [null]
+    - [-635476060]
+    - [543985007]
+    - [null]
+    - [-3890461]
+    - [-773587990]
+  database0_t0:
+    - ["-387227714", ""]
+    - ["", ""]
+    - ["2060951313", "723249712"]
+    - ["_wa", "1411307542"]
+    - ["e]", ".w"]
+    - ["av5SWO", null]
+    - ["1489138842", "1945974524"]
+    - ["819794117", "-1073664262"]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE 'b4<n2a*'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"b4<n2a*\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["543840937"]
+  - ["-1708812916"]
+  - ["NULL"]
+  - ["-635476060"]
+  - ["543985007"]
+  - ["NULL"]
+  - ["-3890461"]
+  - ["-773587990"]

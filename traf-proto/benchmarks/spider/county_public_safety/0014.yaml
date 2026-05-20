@@ -1,0 +1,14 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0014.csv
+constants:
+- '90'
+columns:
+- white
+sql: |-
+  SELECT t2.crime_rate
+  FROM city AS t1
+  JOIN county_public_safety AS t2 ON t1.county_id = t2.county_id
+  WHERE t1.white > 90

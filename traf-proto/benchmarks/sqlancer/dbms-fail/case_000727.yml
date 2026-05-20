@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", null]
+    - ["-1831624141", null]
+    - ["930061686", null]
+  database0_t0:
+    - [null, "-191312372"]
+    - [null, "\nۂ'?~!9L"]
+    - [null, "ࠅ1"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE ((CAST(((database0_t0.c0)>(database0_t0.c0)) AS INT))AND(607463724))"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of AND must be type boolean, not type integer\n  Position: 67"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

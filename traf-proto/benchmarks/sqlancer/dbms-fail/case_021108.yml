@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0:
+    - ["365512192", ""]
+    - ["-595276677", "-1831624141"]
+    - ["e(", "-1073664262"]
+  database0_t6: []
+sql: "SELECT * FROM database0_t6 WHERE '-428151007'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-428151007\"\n  Position: 34"
+traf_columns: [database0_t6.c0, database0_t6.c1, database0_t6.c2, database0_t6.c3]
+traf_rows: []

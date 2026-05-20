@@ -1,0 +1,13 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/employees.csv
+output: tests-examples/spider/hr_1/tables/0039.csv
+columns:
+- employee_id
+- manager_id
+sql: |-
+  SELECT DISTINCT *
+  FROM employees AS t1
+  JOIN departments AS t2 ON t1.department_id = t2.department_id
+  WHERE t1.employee_id = t2.manager_id

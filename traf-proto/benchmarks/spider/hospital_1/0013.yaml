@@ -1,0 +1,18 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/patient.csv
+- tests-examples/spider/hospital_1/tables/medication.csv
+- tests-examples/spider/hospital_1/tables/prescribes.csv
+- tests-examples/spider/hospital_1/tables/stay.csv
+output: tests-examples/spider/hospital_1/tables/0013.csv
+constants:
+- '111'
+columns:
+- room
+sql: |-
+  SELECT t4.name
+  FROM stay AS t1
+  JOIN patient AS t2 ON t1.patient = t2.ssn
+  JOIN prescribes AS t3 ON t3.patient = t2.ssn
+  JOIN medication AS t4 ON t3.medication = t4.code
+  WHERE room = 111

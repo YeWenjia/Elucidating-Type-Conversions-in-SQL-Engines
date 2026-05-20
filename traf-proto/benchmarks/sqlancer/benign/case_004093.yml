@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["nw!yu", "]xsa"]
+    - [",輪X", "]xsa"]
+    - ["-948742844", "-316874230"]
+    - ["#.", ""]
+    - ["W9*XU\n[LF", "-815674688"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE ((database0_t0.c0)<=(database0_t0.c0))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["nw!yu", "]xsa"]
+  - [",輪X", "]xsa"]
+  - ["-948742844", "-316874230"]
+  - ["#.", ""]
+  - ["W9*XU\n[LF", "-815674688"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["nw!yu", "]xsa"]
+  - [",輪X", "]xsa"]
+  - ["-948742844", "-316874230"]
+  - ["#.", ""]
+  - ["W9*XU\n[LF", "-815674688"]

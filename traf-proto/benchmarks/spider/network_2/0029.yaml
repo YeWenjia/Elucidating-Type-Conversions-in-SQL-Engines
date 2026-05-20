@@ -1,0 +1,14 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0029.csv
+constants:
+- Bob
+columns:
+- friend
+sql: |-
+  SELECT t1.name
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.name
+  WHERE t2.friend = 'Bob'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/architecture/tables/db.sqlite
+inputs:
+- tests-examples/spider/architecture/tables/mill.csv
+output: tests-examples/spider/architecture/tables/0005.csv
+constants:
+- Grondzeiler
+columns:
+- type
+sql: |-
+  SELECT name,
+         built_year
+  FROM mill
+  WHERE type = 'Grondzeiler'

@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t9:
+    - ["1804551272", "ln䷥ST-G", "1300733341", "-63640941"]
+    - ["1804551272", "322596655", "1300733341", null]
+    - ["1804551272", "728112712", "1804551272", "S㶯"]
+    - ["1804551272", "388449173", "358318539", "y*"]
+    - ["1804551272", "-2123738433", "", "-2039227553"]
+    - ["ktv", "-447723445", "-1331189205", "%Sgiy"]
+sql: "SELECT * FROM database0_t9 WHERE -1285555222"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t9.c0, database0_t9.c1, database0_t9.c2, database0_t9.c3]
+traf_rows:
+  - ["1804551272", "ln䷥ST-G", "1300733341", "-63640941"]
+  - ["1804551272", "322596655", "1300733341", "NULL"]
+  - ["1804551272", "728112712", "1804551272", "S㶯"]
+  - ["1804551272", "388449173", "358318539", "y*"]
+  - ["1804551272", "-2123738433", "", "-2039227553"]
+  - ["ktv", "-447723445", "-1331189205", "%Sgiy"]

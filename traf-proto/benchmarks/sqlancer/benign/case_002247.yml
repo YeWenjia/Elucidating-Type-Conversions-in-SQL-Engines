@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((-845261986)<>('1242577457'))"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

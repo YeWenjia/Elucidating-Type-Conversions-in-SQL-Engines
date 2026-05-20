@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+  database0_t4:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - [-58180930, -2123641175, "xH#", null]
+    - [945654094, -1007125222, "xH#", null]
+  database0_t4:
+    - [-596599025, 1708405439, -151484338, 232191734]
+sql: "SELECT database0_t0.c3, database0_t0.c0 FROM database0_t0 WHERE (('d#\n0)') IS NOT NULL)"
+columns:
+  - "c3"
+  - "c0"
+rows:
+  - [null, -58180930]
+  - [null, 945654094]
+kind: benign
+traf_columns: [database0_t0.c3, database0_t0.c0]
+traf_rows:
+  - ["NULL", "-58180930"]
+  - ["NULL", "945654094"]

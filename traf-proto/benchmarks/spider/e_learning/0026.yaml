@@ -1,0 +1,14 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/courses.csv
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+output: tests-examples/spider/e_learning/tables/0026.csv
+constants:
+- Spanish
+columns:
+- course_name
+sql: |-
+  SELECT t2.date_of_enrolment
+  FROM courses AS t1
+  JOIN student_course_enrolment AS t2 ON t1.course_id = t2.course_id
+  WHERE t1.course_name = 'Spanish'

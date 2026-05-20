@@ -1,0 +1,11 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/restaurant.csv
+output: tests-examples/spider/restaurant_1/tables/0006.csv
+constants:
+- '1'
+sql: |-
+  SELECT resname,
+         rating
+  FROM restaurant
+  ORDER BY rating DESC;

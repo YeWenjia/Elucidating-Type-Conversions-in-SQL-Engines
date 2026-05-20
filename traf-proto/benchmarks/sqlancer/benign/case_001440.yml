@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [993176729, "1917035439"]
+    - [1202465363, "1631402068"]
+    - [-1259879249, "-1724310134"]
+sql: "SELECT * FROM database0_t0 WHERE ((-1251762378) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - [993176729, "1917035439"]
+  - [1202465363, "1631402068"]
+  - [-1259879249, "-1724310134"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["993176729", "1917035439"]
+  - ["1202465363", "1631402068"]
+  - ["-1259879249", "-1724310134"]

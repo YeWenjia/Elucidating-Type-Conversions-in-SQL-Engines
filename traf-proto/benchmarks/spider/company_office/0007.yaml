@@ -1,0 +1,11 @@
+db: tests-examples/spider/company_office/tables/db.sqlite
+inputs:
+- tests-examples/spider/company_office/tables/companies.csv
+output: tests-examples/spider/company_office/tables/0007.csv
+functions:
+- count
+columns:
+- industry
+sql: |-
+  SELECT count(DISTINCT industry)
+  FROM companies

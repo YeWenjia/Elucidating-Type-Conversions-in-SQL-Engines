@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t7:
+    - ["-1057309607", "1291443655"]
+    - ["1723261208", "1291443655"]
+    - ["-629790858", "1291443655"]
+    - ["", "1291443655"]
+    - ["239734007", "1291443655"]
+    - ["7F㡜Yu6s", "-1668951223"]
+    - ["33n30", ".8hDAM#9,"]
+    - ["-1077277231", null]
+    - ["-58938003", null]
+sql: "SELECT * FROM database0_t7 WHERE 'o~Dr4'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"o~Dr4\"\n  Position: 34"
+traf_columns: [database0_t7.c0, database0_t7.c1]
+traf_rows:
+  - ["-1057309607", "1291443655"]
+  - ["1723261208", "1291443655"]
+  - ["-629790858", "1291443655"]
+  - ["", "1291443655"]
+  - ["239734007", "1291443655"]
+  - ["7F㡜Yu6s", "-1668951223"]
+  - ["33n30", ".8hDAM#9,"]
+  - ["-1077277231", "NULL"]
+  - ["-58938003", "NULL"]

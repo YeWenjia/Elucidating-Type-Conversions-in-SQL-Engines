@@ -1,0 +1,12 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/guests.csv
+output: tests-examples/spider/apartment_rentals/tables/0037.csv
+functions:
+- count
+sql: |-
+  SELECT gender_code,
+         COUNT(*)
+  FROM guests
+  GROUP BY gender_code
+  ORDER BY COUNT(*) DESC

@@ -1,0 +1,14 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/album.csv
+- tests-examples/spider/chinook_1/tables/artist.csv
+output: tests-examples/spider/chinook_1/tables/0007.csv
+constants:
+- AC/DC
+columns:
+- name
+sql: |-
+  SELECT title
+  FROM album AS t1
+  JOIN artist AS t2 ON t1.artistid = t2.artistid
+  WHERE t2.name = 'AC/DC'

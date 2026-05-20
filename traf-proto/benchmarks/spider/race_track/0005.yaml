@@ -1,0 +1,15 @@
+db: tests-examples/spider/race_track/tables/db.sqlite
+inputs:
+- tests-examples/spider/race_track/tables/track.csv
+output: tests-examples/spider/race_track/tables/0005.csv
+functions:
+- min
+- max
+- avg
+columns:
+- seating
+sql: |-
+  SELECT min(seating),
+         max(seating),
+         avg(seating)
+  FROM track

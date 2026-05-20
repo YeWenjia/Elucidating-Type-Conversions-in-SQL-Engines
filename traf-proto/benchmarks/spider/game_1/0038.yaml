@@ -1,0 +1,17 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/video_games.csv
+- tests-examples/spider/game_1/tables/plays_games.csv
+output: tests-examples/spider/game_1/tables/0038.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- hours_played
+sql: |-
+  SELECT gname
+  FROM plays_games AS t1
+  JOIN video_games AS t2 ON t1.gameid = t2.gameid
+  GROUP BY t1.gameid, gname
+  ORDER BY sum(hours_played) DESC

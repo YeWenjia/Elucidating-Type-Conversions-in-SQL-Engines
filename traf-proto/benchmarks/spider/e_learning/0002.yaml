@@ -1,0 +1,12 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/courses.csv
+output: tests-examples/spider/e_learning/tables/0002.csv
+constants:
+- database
+columns:
+- course_name
+sql: |-
+  SELECT course_description
+  FROM courses
+  WHERE course_name = 'database'

@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [",s"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (('lD') IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - [",s"]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - [",s"]

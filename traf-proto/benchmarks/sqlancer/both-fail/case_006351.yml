@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["2106807445", "232191734"]
+    - ["", "232191734"]
+    - ["-s", "232191734"]
+    - ["kZA,", "232191734"]
+    - ["WScu翤g%A", "232191734"]
+    - ["FALSE", "232191734"]
+    - ["409415621", null]
+    - ["-428151007", "665556133"]
+    - ["1242577457", "A(U'S*"]
+    - ["481967175", "637190006"]
+    - ["-2011765295", "-1781350639"]
+  database0_t0:
+    - [-3890461, "-1471917450"]
+    - [-219609362, "-1471917450"]
+    - [828496287, "-1471917450"]
+    - [-1135599990, "-1471917450"]
+    - [-1042823525, "-1471917450"]
+    - [-1722647003, "-1471917450"]
+    - [-1753162513, "-1471917450"]
+    - [723249712, "-1471917450"]
+    - [-641513259, "-1471917450"]
+    - [-773587990, "-1471917450"]
+    - [1351117322, "-1471917450"]
+    - [-1980936731, "-1471917450"]
+sql: "SELECT * FROM database0_t0 WHERE ((((((database0_t0.c1)<>(database0_t0.c1)))<=((('Zc')<>(database0_t0.c0)))))<=(2090365346))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: invalid input syntax for type integer: \"Zc\"\n  Position: 82"
+traf_error: "icast fails Zc to Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 216, in typecheck_expr\n    t2, e2p = self.typecheck_expr(schema, T, e.e2)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 43, in resolve\n    self.icast(e1, t.dom[0])\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 178, in icast\n    raise TypeError(f\"icast fails {e} to {t}\")\ninterpreter.Typechecker.TypeError: icast fails Zc to Int\n"
+traf_columns: []
+traf_rows: []

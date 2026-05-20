@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["72590037", 503638720]
+  database0_t0:
+    - ["1302265430", "1375984971"]
+    - ["_TTXPV", "1375984971"]
+    - ["-1074676425", "1375984971"]
+    - ["127083095", "1375984971"]
+    - ["-496988634", "1375984971"]
+    - ["T\\", "1375984971"]
+    - ["a", "1375984971"]
+sql: "SELECT database0_t1.c0, database0_t0.c1, database0_t0.c0, database0_t1.c2 FROM database0_t0, database0_t1 WHERE ((database0_t1.c0)<=(database0_t0.c0))"
+columns:
+  - "c0"
+  - "c1"
+  - "c0"
+  - "c2"
+rows:
+  - ["72590037", "1375984971", "_TTXPV", 503638720]
+  - ["72590037", "1375984971", "T\\", 503638720]
+  - ["72590037", "1375984971", "a", 503638720]
+kind: benign
+traf_columns: [database0_t1.c0, database0_t0.c1, database0_t0.c0, database0_t1.c2]
+traf_rows:
+  - ["72590037", "1375984971", "_TTXPV", "503638720"]
+  - ["72590037", "1375984971", "T\\", "503638720"]
+  - ["72590037", "1375984971", "a", "503638720"]

@@ -1,0 +1,17 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/student.csv
+output: tests-examples/spider/restaurant_1/tables/0014.csv
+constants:
+- '2'
+- '30'
+functions:
+- count
+columns:
+- major
+sql: |-
+  SELECT major,
+         count(*)
+  FROM student
+  GROUP BY major
+  HAVING count(major) BETWEEN 2 AND 30;

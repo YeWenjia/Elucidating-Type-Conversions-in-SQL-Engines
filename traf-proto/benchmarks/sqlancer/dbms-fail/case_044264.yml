@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-1724310134, "312477042"]
+    - [108434982, null]
+  database0_t0:
+    - [-1039077916, null]
+    - [-246670224, "-983413443"]
+    - [-1225136706, "-639173391"]
+    - [-1148152677, null]
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE 'X5'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"X5\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-1039077916", "NULL", "-1724310134", "312477042"]
+  - ["-1039077916", "NULL", "108434982", "NULL"]
+  - ["-246670224", "-983413443", "-1724310134", "312477042"]
+  - ["-246670224", "-983413443", "108434982", "NULL"]
+  - ["-1225136706", "-639173391", "-1724310134", "312477042"]
+  - ["-1225136706", "-639173391", "108434982", "NULL"]
+  - ["-1148152677", "NULL", "-1724310134", "312477042"]
+  - ["-1148152677", "NULL", "108434982", "NULL"]

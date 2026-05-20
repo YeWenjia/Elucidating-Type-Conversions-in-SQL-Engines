@@ -1,0 +1,8 @@
+db: tests-examples/spider/race_track/tables/db.sqlite
+inputs:
+- tests-examples/spider/race_track/tables/race.csv
+output: tests-examples/spider/race_track/tables/0010.csv
+sql: |-
+  SELECT name,
+         class , date
+  FROM race

@@ -1,0 +1,13 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+- tests-examples/spider/musical/tables/actor.csv
+output: tests-examples/spider/musical/tables/0012.csv
+functions:
+- count
+sql: |-
+  SELECT t2.name,
+         COUNT(*)
+  FROM actor AS t1
+  JOIN musical AS t2 ON t1.musical_id = t2.musical_id
+  GROUP BY t1.musical_id, t2.name

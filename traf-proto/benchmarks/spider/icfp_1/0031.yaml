@@ -1,0 +1,8 @@
+db: tests-examples/spider/icfp_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/icfp_1/tables/authors.csv
+output: tests-examples/spider/icfp_1/tables/0031.csv
+sql: |-
+  SELECT fname
+  FROM authors
+  ORDER BY fname

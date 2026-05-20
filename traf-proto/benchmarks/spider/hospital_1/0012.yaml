@@ -1,0 +1,19 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/physician.csv
+- tests-examples/spider/hospital_1/tables/patient.csv
+- tests-examples/spider/hospital_1/tables/prescribes.csv
+output: tests-examples/spider/hospital_1/tables/0012.csv
+constants:
+- John Dorian
+functions:
+- count
+columns:
+- ssn
+- name
+sql: |-
+  SELECT count(t1.ssn)
+  FROM patient AS t1
+  JOIN prescribes AS t2 ON t1.ssn = t2.patient
+  JOIN physician AS t3 ON t2.physician = t3.employeeid
+  WHERE t3.name = 'John Dorian'

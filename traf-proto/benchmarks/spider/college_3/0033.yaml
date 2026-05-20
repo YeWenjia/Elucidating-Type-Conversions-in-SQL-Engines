@@ -1,0 +1,19 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/student.csv
+- tests-examples/spider/college_3/tables/enrolled_in.csv
+- tests-examples/spider/college_3/tables/gradeconversion.csv
+output: tests-examples/spider/college_3/tables/0033.csv
+constants:
+- Smith
+functions:
+- avg
+columns:
+- gradepoint
+- lname
+sql: |-
+  SELECT avg(t2.gradepoint)
+  FROM enrolled_in AS t1 
+  JOIN gradeconversion AS t2 ON t1.grade = t2.lettergrade
+  JOIN student AS t3 ON t1.stuid = t3.stuid
+  WHERE t3.lname = 'Smith' 

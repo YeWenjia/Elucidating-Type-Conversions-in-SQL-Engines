@@ -1,0 +1,29 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/project_outcomes.csv
+- tests-examples/spider/tracking_grants_for_research/tables/projects.csv
+- tests-examples/spider/tracking_grants_for_research/tables/tasks.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0011.csv
+constants:
+- omnis
+- '2'
+functions:
+- count
+columns:
+- project_details
+sql: |-
+  SELECT t1.task_details,
+         t1.task_id,
+         t2.project_id
+  FROM tasks AS t1
+  JOIN projects AS t2 ON t1.project_id = t2.project_id
+  WHERE t2.project_details = 'omnis'
+  UNION
+  SELECT t1.task_details,
+         t1.task_id,
+         t2.project_id
+  FROM tasks AS t1
+  JOIN projects AS t2 ON t1.project_id = t2.project_id
+  JOIN project_outcomes AS t3 ON t2.project_id = t3.project_id
+  GROUP BY t2.project_id, t1.task_details, t1.task_id
+  HAVING count(*) > 2

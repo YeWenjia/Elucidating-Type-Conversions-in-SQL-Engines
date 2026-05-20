@@ -1,0 +1,20 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/course.csv
+output: tests-examples/spider/college_3/tables/0035.csv
+constants:
+- '3'
+- '1'
+- '4'
+columns:
+- credits
+- hours
+sql: |-
+  SELECT cname
+  FROM course
+  WHERE credits = 3
+  UNION
+  SELECT cname
+  FROM course
+  WHERE credits = 1
+    AND hours = 4

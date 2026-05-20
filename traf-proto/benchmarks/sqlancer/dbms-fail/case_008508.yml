@@ -1,0 +1,45 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["RH~qcT]G", "2145192496", "-1781350639"]
+    - ["RH~qcT]G", "1699565337", "-1781350639"]
+    - ["RH~qcT]G", "hEa", "-1781350639"]
+    - ["RH~qcT]G", "뺉]'9'#", "-1781350639"]
+    - ["RH~qcT]G", "885437192", "-1781350639"]
+    - ["RH~qcT]G", "-1554526165", "-1781350639"]
+    - ["RH~qcT]G", "-764952204", null]
+    - ["RH~qcT]G", "-363998460", "-285784552"]
+    - ["RH~qcT]G", "1448178456", "lD"]
+    - ["RH~qcT]G", "312399324", "285314990"]
+    - ["RH~qcT]G", "", "-1775103535"]
+    - ["RH~qcT]G", "ddCC)~V)", null]
+    - ["RH~qcT]G", "-19363009", null]
+    - ["RH~qcT]G", "3촓KU9", "1804551272"]
+    - ["RH~qcT]G", "-642161540", "1012864434"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 1428400327"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]
+  - ["RH~qcT]G"]

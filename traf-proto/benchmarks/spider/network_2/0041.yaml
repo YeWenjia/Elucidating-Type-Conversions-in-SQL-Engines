@@ -1,0 +1,18 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0041.csv
+constants:
+- '1'
+functions:
+- avg
+columns:
+- age
+sql: |-
+  SELECT t2.name,
+         avg(t1.age)
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.friend
+  GROUP BY t2.name
+  ORDER BY avg(t1.age) DESC

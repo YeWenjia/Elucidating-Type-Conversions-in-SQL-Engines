@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [343635193]
+    - [1242577457]
+    - [-948742844]
+    - [-31667871]
+    - [-2087893705]
+    - [1777398138]
+    - [1302265430]
+    - [-1041688005]
+    - [1401049057]
+    - [1583801722]
+sql: "SELECT * FROM database0_t0 WHERE '-639173391'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-639173391\"\n  Position: 34"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["343635193"]
+  - ["1242577457"]
+  - ["-948742844"]
+  - ["-31667871"]
+  - ["-2087893705"]
+  - ["1777398138"]
+  - ["1302265430"]
+  - ["-1041688005"]
+  - ["1401049057"]
+  - ["1583801722"]

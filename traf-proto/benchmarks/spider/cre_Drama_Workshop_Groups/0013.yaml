@@ -1,0 +1,12 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/performers.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0013.csv
+constants:
+- Ashley
+columns:
+- customer_name
+sql: |-
+  SELECT customer_phone
+  FROM performers
+  WHERE customer_name = 'Ashley'

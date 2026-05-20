@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["", -1694549738]
+    - ["446605386", null]
+    - ["Qk4x_%!]圱", -285784552]
+    - ["369297413", 815739883]
+  database0_t0:
+    - ["-632382568", 1507101721, "73729229"]
+    - ["-2074063360", 1656328305, "1140181590"]
+    - ["8b2.", 369297413, "-2087893705"]
+    - ["*)*ETm೥g", 767326354, "-636814783"]
+sql: "SELECT database0_t1.c0, database0_t0.c2, database0_t0.c0, database0_t1.c1 FROM database0_t1, database0_t0 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 113"
+traf_columns: [database0_t1.c0, database0_t0.c2, database0_t0.c0, database0_t1.c1]
+traf_rows:
+  - ["446605386", "73729229", "-632382568", "NULL"]
+  - ["446605386", "1140181590", "-2074063360", "NULL"]
+  - ["446605386", "-2087893705", "8b2.", "NULL"]
+  - ["446605386", "-636814783", "*)*ETm೥g", "NULL"]
+  - ["Qk4x_%!]圱", "73729229", "-632382568", "-285784552"]
+  - ["Qk4x_%!]圱", "1140181590", "-2074063360", "-285784552"]
+  - ["Qk4x_%!]圱", "-2087893705", "8b2.", "-285784552"]
+  - ["Qk4x_%!]圱", "-636814783", "*)*ETm೥g", "-285784552"]
+  - ["369297413", "73729229", "-632382568", "815739883"]
+  - ["369297413", "1140181590", "-2074063360", "815739883"]
+  - ["369297413", "-2087893705", "8b2.", "815739883"]
+  - ["369297413", "-636814783", "*)*ETm೥g", "815739883"]

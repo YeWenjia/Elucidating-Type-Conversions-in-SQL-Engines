@@ -1,0 +1,18 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/course.csv
+- tests-examples/spider/college_2/tables/prereq.csv
+output: tests-examples/spider/college_2/tables/0057.csv
+constants:
+- Mobile Computing
+columns:
+- course_id
+- title
+sql: |-
+  SELECT title
+  FROM course
+  WHERE course_id IN
+      (SELECT t1.prereq_id
+       FROM prereq AS t1
+       JOIN course AS t2 ON t1.course_id = t2.course_id
+       WHERE t2.title = 'Mobile Computing')

@@ -1,0 +1,12 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/employee.csv
+output: tests-examples/spider/flight_1/tables/0012.csv
+constants:
+- '100000'
+columns:
+- salary
+sql: |-
+  SELECT eid
+  FROM employee
+  WHERE salary > 100000

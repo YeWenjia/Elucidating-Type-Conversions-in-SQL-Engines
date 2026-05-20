@@ -1,0 +1,12 @@
+db: tests-examples/spider/mountain_photos/tables/db.sqlite
+inputs:
+- tests-examples/spider/mountain_photos/tables/mountain.csv
+output: tests-examples/spider/mountain_photos/tables/0006.csv
+constants:
+- Aberdare Range
+sql: |-
+  SELECT name,
+         height,
+         prominence
+  FROM mountain
+  WHERE range != 'Aberdare Range'

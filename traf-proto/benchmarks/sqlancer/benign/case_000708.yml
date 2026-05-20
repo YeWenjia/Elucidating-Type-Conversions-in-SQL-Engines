@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["", -420727782]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c0)<=(database0_t0.c0))"
+columns:
+  - "c0"
+rows:
+  - [""]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - [""]

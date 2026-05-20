@@ -1,0 +1,14 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0005.csv
+constants:
+- United States
+- United Kingdom
+columns:
+- nationality
+sql: |-
+  SELECT name
+  FROM ship
+  WHERE nationality = 'United States'
+    OR nationality = 'United Kingdom'

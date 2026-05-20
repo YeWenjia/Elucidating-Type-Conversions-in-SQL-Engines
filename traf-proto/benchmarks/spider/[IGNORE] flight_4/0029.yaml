@@ -1,0 +1,13 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/routes.csv
+- tests-examples/spider/flight_4/tables/airports.csv
+output: tests-examples/spider/flight_4/tables/0029.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         t1.name
+  FROM airports AS t1
+  JOIN routes AS t2 ON t1.apid = t2.src_apid
+  GROUP BY t1.name

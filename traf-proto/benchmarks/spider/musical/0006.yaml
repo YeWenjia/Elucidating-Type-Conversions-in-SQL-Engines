@@ -1,0 +1,10 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/actor.csv
+output: tests-examples/spider/musical/tables/0006.csv
+constants:
+- '1'
+sql: |-
+  SELECT duration
+  FROM actor
+  ORDER BY age DESC

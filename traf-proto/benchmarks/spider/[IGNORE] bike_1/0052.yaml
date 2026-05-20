@@ -1,0 +1,15 @@
+db: tests-examples/spider/bike_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/bike_1/tables/station.csv
+- tests-examples/spider/bike_1/tables/trip.csv
+output: tests-examples/spider/bike_1/tables/0052.csv
+functions:
+- avg
+columns:
+- lat
+- long
+sql: |-
+  SELECT avg(t1.lat),
+         avg(t1.long)
+  FROM station AS t1
+  JOIN trip AS t2 ON t1.id = t2.start_station_id

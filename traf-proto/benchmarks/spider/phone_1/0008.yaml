@@ -1,0 +1,15 @@
+db: tests-examples/spider/phone_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/phone_1/tables/phone.csv
+output: tests-examples/spider/phone_1/tables/0008.csv
+constants:
+- Full
+columns:
+- accreditation_type
+filters:
+- like
+sql: |-
+  SELECT hardware_model_name,
+         company_name
+  FROM phone
+  WHERE accreditation_type LIKE 'Full';

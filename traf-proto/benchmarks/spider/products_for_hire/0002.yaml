@@ -1,0 +1,14 @@
+db: tests-examples/spider/products_for_hire/tables/db.sqlite
+inputs:
+- tests-examples/spider/products_for_hire/tables/customers.csv
+- tests-examples/spider/products_for_hire/tables/bookings.csv
+output: tests-examples/spider/products_for_hire/tables/0002.csv
+functions:
+- count
+sql: |-
+  SELECT t1.customer_id,
+         t1.first_name,
+         count(*)
+  FROM customers AS t1
+  JOIN bookings AS t2 ON t1.customer_id = t2.customer_id
+  GROUP BY t1.customer_id, t1.first_name

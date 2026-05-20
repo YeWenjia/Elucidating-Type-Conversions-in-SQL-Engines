@@ -1,0 +1,13 @@
+db: tests-examples/spider/roller_coaster/tables/db.sqlite
+inputs:
+- tests-examples/spider/roller_coaster/tables/roller_coaster.csv
+output: tests-examples/spider/roller_coaster/tables/0010.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT status
+  FROM roller_coaster
+  GROUP BY status
+  HAVING COUNT(*) > 2

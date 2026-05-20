@@ -1,0 +1,9 @@
+mysql-connector-python
+pytest
+PyYAML
+psycopg2-binary
+numpy
+cx_Oracle
+pyodbc
+
+

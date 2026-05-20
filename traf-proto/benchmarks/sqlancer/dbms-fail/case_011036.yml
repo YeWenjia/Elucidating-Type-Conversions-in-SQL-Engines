@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["{\t", null]
+    - ["{'", "1416140800"]
+    - ["-1324222012", "625572473"]
+    - ["Vg~D", "-186716307"]
+    - ["", "1/"]
+    - ["b\t9\rM", null]
+    - ["1699565337", null]
+    - ["-908512578", null]
+    - ["-501811782", null]
+    - ["hv", null]
+    - ["-1400261900", "IS5ꢙ| "]
+    - ["1242577457", "725020138"]
+    - ["-544328256", "2072104998"]
+    - ["305400833", ""]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '粐|'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"粐|\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["{\t"]
+  - ["{'"]
+  - ["-1324222012"]
+  - ["Vg~D"]
+  - [""]
+  - ["b\t9\rM"]
+  - ["1699565337"]
+  - ["-908512578"]
+  - ["-501811782"]
+  - ["hv"]
+  - ["-1400261900"]
+  - ["1242577457"]
+  - ["-544328256"]
+  - ["305400833"]

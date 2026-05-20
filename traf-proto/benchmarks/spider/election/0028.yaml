@@ -1,0 +1,13 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/party.csv
+output: tests-examples/spider/election/tables/0028.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT party
+  FROM party
+  GROUP BY party
+  HAVING COUNT(*) >= 2

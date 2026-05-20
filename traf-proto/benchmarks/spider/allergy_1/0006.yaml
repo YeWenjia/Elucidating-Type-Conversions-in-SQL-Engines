@@ -1,0 +1,12 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/allergy_type.csv
+output: tests-examples/spider/allergy_1/tables/0006.csv
+constants:
+- Cat
+columns:
+- allergy
+sql: |-
+  select allergytype
+  from allergy_type
+  where allergy = 'Cat'

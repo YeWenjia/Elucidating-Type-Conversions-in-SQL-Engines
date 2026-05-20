@@ -1,0 +1,10 @@
+db: tests-examples/spider/culture_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/culture_company/tables/movie.csv
+output: tests-examples/spider/culture_company/tables/0011.csv
+sql: |-
+  SELECT title,
+         year,
+         director
+  FROM movie
+  ORDER BY budget_million

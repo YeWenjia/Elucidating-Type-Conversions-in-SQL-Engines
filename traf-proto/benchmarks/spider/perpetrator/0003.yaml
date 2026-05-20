@@ -1,0 +1,8 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+output: tests-examples/spider/perpetrator/tables/0003.csv
+sql: |-
+  SELECT injured
+  FROM perpetrator
+  ORDER BY injured ASC

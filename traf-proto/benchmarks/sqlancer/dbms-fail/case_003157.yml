@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["1716693832", "y*", "-1395294905"]
+  database0_t0:
+    - ["{}", "ZwQ"]
+    - [".3?鲠-쐏*9勔", "᱇'"]
+    - ["-?6\r䘘", "1635776983"]
+    - ["734800198", "-501811782"]
+    - [null, "-1104779761"]
+    - [null, "1968246041"]
+    - [null, "Ev^"]
+    - ["1022646191", ""]
+    - ["-88915418", null]
+sql: "SELECT database0_t0.c2, database0_t0.c1 FROM database0_t0 WHERE 'w/'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"w/\"\n  Position: 65"
+traf_columns: [database0_t0.c2, database0_t0.c1]
+traf_rows:
+  - ["ZwQ", "{}"]
+  - ["᱇'", ".3?鲠-쐏*9勔"]
+  - ["1635776983", "-?6\r䘘"]
+  - ["-501811782", "734800198"]
+  - ["-1104779761", "NULL"]
+  - ["1968246041", "NULL"]
+  - ["Ev^", "NULL"]
+  - ["", "1022646191"]
+  - ["NULL", "-88915418"]

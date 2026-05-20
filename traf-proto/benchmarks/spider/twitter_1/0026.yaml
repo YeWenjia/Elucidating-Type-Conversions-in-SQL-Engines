@@ -1,0 +1,16 @@
+db: tests-examples/spider/twitter_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/twitter_1/tables/tweets.csv
+- tests-examples/spider/twitter_1/tables/user_profiles.csv
+output: tests-examples/spider/twitter_1/tables/0026.csv
+functions:
+- avg
+columns:
+- followers
+- uid
+sql: |-
+  SELECT avg(followers)
+  FROM user_profiles
+  WHERE uid IN
+      (SELECT uid
+       FROM tweets)

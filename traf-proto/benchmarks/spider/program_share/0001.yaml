@@ -1,0 +1,10 @@
+db: tests-examples/spider/program_share/tables/db.sqlite
+inputs:
+- tests-examples/spider/program_share/tables/channel.csv
+output: tests-examples/spider/program_share/tables/0001.csv
+constants:
+- CCTV
+sql: |-
+  SELECT name
+  FROM channel
+  WHERE owner != 'CCTV'

@@ -1,0 +1,22 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/college.csv
+output: tests-examples/spider/soccer_2/tables/0041.csv
+constants:
+- '13000'
+- AZ
+- '15000'
+- LA
+columns:
+- enr
+- state
+sql: |-
+  SELECT cname
+  FROM college
+  WHERE enr < 13000
+    AND state = 'AZ'
+  UNION
+  SELECT cname
+  FROM college
+  WHERE enr > 15000
+    AND state = 'LA'

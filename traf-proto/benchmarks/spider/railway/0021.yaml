@@ -1,0 +1,14 @@
+db: tests-examples/spider/railway/tables/db.sqlite
+inputs:
+- tests-examples/spider/railway/tables/manager.csv
+output: tests-examples/spider/railway/tables/0021.csv
+constants:
+- '50'
+- '46'
+columns:
+- age
+sql: |-
+  SELECT country
+  FROM manager
+  WHERE age > 50
+    OR age < 46

@@ -1,0 +1,11 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/project_staff.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0013.csv
+functions:
+- count
+columns:
+- role_code
+sql: |-
+  SELECT count(DISTINCT role_code)
+  FROM project_staff

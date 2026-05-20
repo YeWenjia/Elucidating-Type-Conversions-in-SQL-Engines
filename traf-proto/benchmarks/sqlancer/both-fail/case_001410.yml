@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1:
+    - [1635776983, -1105321002]
+    - [-1237379307, -1105321002]
+    - [388449173, -1105321002]
+    - [-167917894, -1105321002]
+    - [-937104031, -1105321002]
+    - [-690326208, -1105321002]
+    - [-1887367284, -1105321002]
+    - [1639360173, -1105321002]
+    - [-3890461, -1105321002]
+    - [-1382135099, -1105321002]
+    - [625572473, -1105321002]
+    - [1302265430, -1105321002]
+    - [-2011765295, null]
+    - [-1056561715, -186716307]
+    - [878771492, null]
+  database0_t0:
+    - [94773112, "-1307170876", -760757233, -1722647003]
+    - [897917532, "-1984736236", -1077090031, -1724310134]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ((((((database0_t0.c0)<>(512010845)))<=(database0_t0.c2))) IS NULL)"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: operator does not exist: boolean <= integer\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 85"
+traf_error: "Best candidate (Int, Int) -> Bool does not match the types Int, Bool"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 288, in typecheck_expr\n    t, ep = self.typecheck_expr(schema, T, e.e)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 106, in best_candidate\n    raise TypeError(f\"Best candidate {candidate} does not match the types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Best candidate (Int, Int) -> Bool does not match the types Int, Bool\n"
+traf_columns: []
+traf_rows: []

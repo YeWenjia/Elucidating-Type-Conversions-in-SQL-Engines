@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "int"}
+data:
+  database0_t1:
+    - ["6984250", "9I", 1051722190]
+    - ["6984250", "-1664079710", 1051722190]
+    - ["6984250", "-834882752", 1051722190]
+    - ["6984250", "1123650488", 1051722190]
+    - ["6984250", "1459110119", 1051722190]
+    - ["6984250", "543985007", 1051722190]
+    - ["6984250", "jWrV걿s2", 1051722190]
+    - ["6984250", "[]", 1051722190]
+    - ["6984250", "-1860230507", 1051722190]
+    - ["6984250", "틺go,bK7SA", 1051722190]
+    - ["6984250", "945001674", 1051722190]
+    - ["6984250", "ZYrn_", 1051722190]
+    - ["-1944931769", "tRY0", null]
+    - [null, "1519520167", null]
+    - [null, "sIBeCy4", null]
+  database0_t0:
+    - [null, null, null, "912731600", null]
+    - ["836285117", "-354425506", -535009796, "1777398138", 847687323]
+    - [null, "-1177812943", -611293829, "-880149540", 922439746]
+    - ["'tS[E", null, -639173391, "1635776983", null]
+    - ["", null, -152514463, "1681466181", null]
+    - ["%b", null, 239734007, "WNb7c-O<", null]
+    - ["498956269", null, null, "543985007", null]
+sql: "SELECT database0_t0.c0, database0_t0.c3 FROM database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c3]
+traf_rows: []

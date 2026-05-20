@@ -1,0 +1,18 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/activity_1/tables/activity.csv
+  - tests-examples/spider/activity_1/tables/faculty_participates_in.csv
+  - tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0041.csv
+constants:
+  - Canoeing
+  - Kayaking
+columns:
+  - activity_name
+sql: |-
+  SELECT DISTINCT t1.lname
+  FROM faculty AS t1
+  JOIN faculty_participates_in AS t2 ON t1.facid = t2.facid
+  JOIN activity AS t3 ON t2.actid = t2.actid
+  WHERE t3.activity_name = 'Canoeing'
+    OR t3.activity_name = 'Kayaking'

@@ -1,0 +1,15 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/salary.csv
+output: tests-examples/spider/baseball_1/tables/0027.csv
+constants:
+- '2001'
+- '3'
+columns:
+- year
+sql: |-
+  SELECT salary
+  FROM salary
+  WHERE year = 2001
+  ORDER BY salary DESC
+  LIMIT 3;

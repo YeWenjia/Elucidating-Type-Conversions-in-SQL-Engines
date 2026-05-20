@@ -1,0 +1,17 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/locations.csv
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+output: tests-examples/spider/cre_Theme_park/tables/0039.csv
+constants:
+- 254 Ottilie Junction
+- bus
+columns:
+- address
+- how_to_get_there
+sql: |-
+  SELECT t2.name
+  FROM locations AS t1
+  JOIN tourist_attractions AS t2 ON t1.location_id = t2.location_id
+  WHERE t1.address = '254 Ottilie Junction'
+    OR t2.how_to_get_there = 'bus'

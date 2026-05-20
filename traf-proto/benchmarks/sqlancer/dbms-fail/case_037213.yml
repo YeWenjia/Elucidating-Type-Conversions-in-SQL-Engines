@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["iKf<\nd70(", -948742844]
+    - ["623729064", 440833260]
+    - ["-929713484", 247430992]
+    - ["90257357", 915954605]
+    - ["TRUE", null]
+    - ["408048053", null]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1 WHERE -776728266"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["-948742844", "iKf<\nd70("]
+  - ["440833260", "623729064"]
+  - ["247430992", "-929713484"]
+  - ["915954605", "90257357"]
+  - ["NULL", "TRUE"]
+  - ["NULL", "408048053"]

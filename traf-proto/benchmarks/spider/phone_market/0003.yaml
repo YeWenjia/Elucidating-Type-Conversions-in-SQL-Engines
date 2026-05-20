@@ -1,0 +1,8 @@
+db: tests-examples/spider/phone_market/tables/db.sqlite
+inputs:
+- tests-examples/spider/phone_market/tables/phone.csv
+output: tests-examples/spider/phone_market/tables/0003.csv
+sql: |-
+  SELECT memory_in_g,
+         carrier
+  FROM phone

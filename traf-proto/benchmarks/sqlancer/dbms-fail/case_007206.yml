@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [1302265430, -1670340391]
+    - [1894499120, null]
+    - [-1982463583, null]
+  database0_t0:
+    - [897917532, "]BMtm\\&z{"]
+    - [976935660, "-1790883840"]
+    - [-772205188, ""]
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE '\nX0<R응'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\nX0<R응\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["897917532", "]BMtm\\&z{", "1302265430", "-1670340391"]
+  - ["897917532", "]BMtm\\&z{", "1894499120", "NULL"]
+  - ["897917532", "]BMtm\\&z{", "-1982463583", "NULL"]
+  - ["976935660", "-1790883840", "1302265430", "-1670340391"]
+  - ["976935660", "-1790883840", "1894499120", "NULL"]
+  - ["976935660", "-1790883840", "-1982463583", "NULL"]
+  - ["-772205188", "", "1302265430", "-1670340391"]
+  - ["-772205188", "", "1894499120", "NULL"]
+  - ["-772205188", "", "-1982463583", "NULL"]

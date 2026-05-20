@@ -1,0 +1,12 @@
+db: tests-examples/spider/epinions_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/epinions_1/tables/review.csv
+- tests-examples/spider/epinions_1/tables/useracct.csv
+output: tests-examples/spider/epinions_1/tables/0023.csv
+constants:
+- '1'
+sql: |-
+  SELECT t1.name
+  FROM useracct AS t1
+  JOIN review AS t2 ON t1.u_id = t2.u_id
+  ORDER BY t2.rating DESC

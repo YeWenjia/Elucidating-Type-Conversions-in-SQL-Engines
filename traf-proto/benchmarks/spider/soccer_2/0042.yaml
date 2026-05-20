@@ -1,0 +1,15 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/tryout.csv
+output: tests-examples/spider/soccer_2/tables/0042.csv
+constants:
+- goalie
+- mid
+columns:
+- ppos
+sql: |-
+  SELECT cname
+  FROM tryout
+  WHERE ppos = 'goalie' INTERSECT
+    SELECT cname
+    FROM tryout WHERE ppos = 'mid'

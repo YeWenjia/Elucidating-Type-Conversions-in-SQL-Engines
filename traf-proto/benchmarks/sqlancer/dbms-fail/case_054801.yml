@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["Uw_021z䖄", 1302265430, null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE '8>C0a^C.'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"8>C0a^C.\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["Uw_021z䖄", "1302265430"]

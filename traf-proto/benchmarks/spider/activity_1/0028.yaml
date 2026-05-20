@@ -1,0 +1,11 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/activity_1/tables/faculty_participates_in.csv
+output: tests-examples/spider/activity_1/tables/0028.csv
+functions:
+  - count
+columns:
+  - facid
+sql: |-
+  SELECT count(DISTINCT facid)
+  FROM faculty_participates_in

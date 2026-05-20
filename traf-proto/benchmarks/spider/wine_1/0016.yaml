@@ -1,0 +1,17 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/grapes.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0016.csv
+constants:
+- White
+- '90'
+columns:
+- color
+- score
+sql: |-
+  SELECT DISTINCT t1.grape
+  FROM grapes AS t1
+  JOIN wine AS t2 ON t1.grape = t2.grape
+  WHERE t1.color = 'White'
+    AND t2.score > 90

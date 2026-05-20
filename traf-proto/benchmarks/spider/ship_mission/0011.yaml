@@ -1,0 +1,11 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/mission.csv
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0011.csv
+sql: |-
+  SELECT t1.code,
+         t1.fate,
+         t2.name
+  FROM mission AS t1
+  JOIN ship AS t2 ON t1.ship_id = t2.ship_id

@@ -1,0 +1,14 @@
+db: tests-examples/spider/culture_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/culture_company/tables/book_club.csv
+- tests-examples/spider/culture_company/tables/culture_company.csv
+output: tests-examples/spider/culture_company/tables/0017.csv
+constants:
+- Alyson
+columns:
+- publisher
+sql: |-
+  SELECT t1.company_name
+  FROM culture_company AS t1
+  JOIN book_club AS t2 ON t1.book_club_id = t2.book_club_id
+  WHERE t2.publisher = 'Alyson'

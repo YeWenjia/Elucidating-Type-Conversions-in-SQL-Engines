@@ -1,0 +1,12 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/climber.csv
+output: tests-examples/spider/climbing/tables/0003.csv
+constants:
+- Switzerland
+columns:
+- country
+sql: |-
+  SELECT name
+  FROM climber
+  WHERE country != 'Switzerland'

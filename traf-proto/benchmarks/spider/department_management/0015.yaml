@@ -1,0 +1,17 @@
+db: tests-examples/spider/department_management/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_management/tables/department.csv
+- tests-examples/spider/department_management/tables/management.csv
+output: tests-examples/spider/department_management/tables/0015.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.department_id,
+         t1.name,
+         count(*)
+  FROM management AS t2
+  JOIN department AS t1 ON t1.department_id = t2.department_id
+  GROUP BY t1.department_id, t1.name
+  HAVING count(*) > 1

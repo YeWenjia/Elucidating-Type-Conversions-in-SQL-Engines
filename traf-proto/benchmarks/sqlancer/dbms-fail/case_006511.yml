@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t6:
+    - ["", "-929713484"]
+    - ["2090365346", null]
+    - ["-1373274106", null]
+    - ["-1444330415", "-717809554"]
+  database0_t8:
+    - [-883264523, -1887367284]
+    - [-278911135, -1887367284]
+    - [1708405439, 1238427811]
+sql: "SELECT database0_t6.c1, database0_t8.c0, database0_t6.c0 FROM database0_t8, database0_t6 WHERE '}\t7'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"}\t7\"\n  Position: 96"
+traf_columns: [database0_t6.c1, database0_t8.c0, database0_t6.c0]
+traf_rows:
+  - ["-929713484", "-883264523", ""]
+  - ["NULL", "-883264523", "2090365346"]
+  - ["NULL", "-883264523", "-1373274106"]
+  - ["-717809554", "-883264523", "-1444330415"]
+  - ["-929713484", "-278911135", ""]
+  - ["NULL", "-278911135", "2090365346"]
+  - ["NULL", "-278911135", "-1373274106"]
+  - ["-717809554", "-278911135", "-1444330415"]
+  - ["-929713484", "1708405439", ""]
+  - ["NULL", "1708405439", "2090365346"]
+  - ["NULL", "1708405439", "-1373274106"]
+  - ["-717809554", "1708405439", "-1444330415"]

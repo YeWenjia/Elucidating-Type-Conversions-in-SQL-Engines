@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-339580836", 2131576533, -1684923321]
+    - ["980511174", -58167573, -1699962140]
+    - ["cr䠀!ࠇg}fq", -450927165, -1554526165]
+    - ["2俙Y6-", -1794475476, -833856855]
+  database0_t0:
+    - ["TRUE", -2023637008]
+    - ["TRUE", -2023637008]
+    - [null, -2023637008]
+    - ["", -2023637008]
+    - ["1510971853", -2023637008]
+    - ["2147188857", -2023637008]
+    - ["1071937248", -2023637008]
+    - ["-784429255", -2023637008]
+    - ["?X", null]
+    - ["1633079323", null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE 'Nn)/AcB+'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Nn)/AcB+\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["2131576533"]
+  - ["-58167573"]
+  - ["-450927165"]
+  - ["-1794475476"]

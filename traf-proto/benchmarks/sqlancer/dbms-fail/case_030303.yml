@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [1806067613, "443216999"]
+    - [-1998010306, "443216999"]
+    - [2090365346, "-1364971036"]
+    - [-302044784, "-493902756"]
+    - [1517996400, "583887584"]
+sql: "SELECT * FROM database0_t0 WHERE '(AR탾OlG[Z'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"(AR탾OlG[Z\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["1806067613", "443216999"]
+  - ["-1998010306", "443216999"]
+  - ["2090365346", "-1364971036"]
+  - ["-302044784", "-493902756"]
+  - ["1517996400", "583887584"]

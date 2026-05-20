@@ -1,0 +1,15 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+output: tests-examples/spider/college_1/tables/0002.csv
+constants:
+- ACCT-211
+functions:
+- count
+columns:
+- prof_num
+- crs_code
+sql: |-
+  SELECT count(DISTINCT prof_num)
+  FROM class
+  WHERE crs_code = 'ACCT-211'

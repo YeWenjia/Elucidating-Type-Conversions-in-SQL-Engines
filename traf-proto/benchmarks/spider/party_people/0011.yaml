@@ -1,0 +1,15 @@
+db: tests-examples/spider/party_people/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_people/tables/party.csv
+- tests-examples/spider/party_people/tables/member.csv
+output: tests-examples/spider/party_people/tables/0011.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.party_name
+  FROM member AS t1
+  JOIN party AS t2 ON t1.party_id = t2.party_id
+  GROUP BY t1.party_id, t2.party_name
+  ORDER BY count(*) DESC

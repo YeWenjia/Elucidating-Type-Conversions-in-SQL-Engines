@@ -1,0 +1,14 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/party.csv
+output: tests-examples/spider/election/tables/0031.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT comptroller,
+         COUNT(*)
+  FROM party
+  GROUP BY comptroller
+  ORDER BY COUNT(*) DESC

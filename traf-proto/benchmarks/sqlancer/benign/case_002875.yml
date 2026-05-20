@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [1300733341, null]
+  database0_t0:
+    - [739617802, "1968731070"]
+    - [-1775103535, "-354425506"]
+    - [null, ")᱃"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ((database0_t0.c1)<>('9y쌰4]4'))"
+columns:
+  - "c1"
+rows:
+  - ["1968731070"]
+  - ["-354425506"]
+  - [")᱃"]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1968731070"]
+  - ["-354425506"]
+  - [")᱃"]

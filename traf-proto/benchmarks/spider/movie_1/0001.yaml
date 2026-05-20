@@ -1,0 +1,12 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+output: tests-examples/spider/movie_1/tables/0001.csv
+constants:
+- Steven Spielberg
+columns:
+- director
+sql: |-
+  SELECT title
+  FROM movie
+  WHERE director = 'Steven Spielberg'

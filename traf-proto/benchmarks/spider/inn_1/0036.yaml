@@ -1,0 +1,16 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+- tests-examples/spider/inn_1/tables/reservations.csv
+output: tests-examples/spider/inn_1/tables/0036.csv
+constants:
+- ROY
+columns:
+- firstname
+filters:
+- like
+sql: |-
+  SELECT t2.roomname
+  FROM reservations AS t1
+  JOIN rooms AS t2 ON t1.room = t2.roomid
+  WHERE firstname LIKE '%ROY%'

@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["-741020930", 1513913191, "1377701300"]
+    - ["-741020930", 1513913191, "-1831624141"]
+    - ["-741020930", 1513913191, "&23鈺&cfyi"]
+    - ["-741020930", 1513913191, "-1020663942"]
+    - ["-741020930", 1513913191, "-929713484"]
+    - ["-741020930", 1513913191, "-2137320803"]
+    - ["-741020930", 1513913191, ""]
+    - ["-741020930", 1513913191, "-2131618293"]
+    - ["-741020930", 1513913191, "-1408489577"]
+    - ["-741020930", 1513913191, "n3cQO%"]
+    - ["-741020930", 1513913191, "-501811782"]
+    - ["-741020930", 1513913191, "-1794475476"]
+    - ["-741020930", 1513913191, "2119564765"]
+    - ["-741020930", 1513913191, "J?"]
+    - ["-741020930", 1513913191, "-917001586"]
+    - ["-741020930", 1513913191, "Qꏨ"]
+    - ["-741020930", 1513913191, "740075096"]
+    - ["-741020930", 1513913191, "457041911"]
+    - ["-741020930", 1513913191, "-1684923321"]
+    - ["-741020930", 1513913191, "820028101"]
+    - ["-741020930", 1513913191, "O\rP'"]
+sql: "SELECT database0_t0.c0, database0_t0.c2, database0_t0.c1 FROM database0_t0 WHERE ((((((-1722647003)<>('X{')))<=(((database0_t0.c2)<>(945001674))))) IS NULL)"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: invalid input syntax for type integer: \"X{\"\n  Position: 103"
+traf_error: "Best candidate (Int, Int) -> Bool does not match the types String, Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 288, in typecheck_expr\n    t, ep = self.typecheck_expr(schema, T, e.e)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 106, in best_candidate\n    raise TypeError(f\"Best candidate {candidate} does not match the types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Best candidate (Int, Int) -> Bool does not match the types String, Int\n"
+traf_columns: []
+traf_rows: []

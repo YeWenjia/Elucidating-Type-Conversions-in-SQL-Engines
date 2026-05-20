@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["J>", null]
+    - ["-925130025", null]
+  database0_t0: []
+sql: "SELECT * FROM database0_t0 WHERE '+*FVSH3Mu'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"+*FVSH3Mu\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows: []

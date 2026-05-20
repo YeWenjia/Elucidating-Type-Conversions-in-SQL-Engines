@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [976935660, "469607233"]
+    - [-1634185319, "1014163171"]
+    - [-844956731, "1804551272"]
+    - [1110490360, "輪/㟍g"]
+    - [-1402344267, null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '4K7(GV)'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"4K7(GV)\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["976935660"]
+  - ["-1634185319"]
+  - ["-844956731"]
+  - ["1110490360"]
+  - ["-1402344267"]

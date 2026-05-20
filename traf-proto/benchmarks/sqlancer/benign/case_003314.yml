@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [1864215637, "-1980936731"]
+  database0_t0:
+    - ["739524502", 388449173]
+sql: "SELECT database0_t1.c2 FROM database0_t1 WHERE '1'"
+columns:
+  - "c2"
+rows:
+  - ["-1980936731"]
+kind: benign
+traf_columns: [database0_t1.c2]
+traf_rows:
+  - ["-1980936731"]

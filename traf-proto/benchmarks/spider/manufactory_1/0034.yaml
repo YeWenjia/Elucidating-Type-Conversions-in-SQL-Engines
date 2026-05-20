@@ -1,0 +1,9 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0034.csv
+sql: |-
+  SELECT *
+  FROM products AS t1
+  JOIN manufacturers AS t2 ON t1.manufacturer = t2.code

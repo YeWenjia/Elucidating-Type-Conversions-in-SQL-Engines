@@ -1,0 +1,7 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0002.csv
+sql: |-
+  SELECT DISTINCT rank_col
+  FROM faculty

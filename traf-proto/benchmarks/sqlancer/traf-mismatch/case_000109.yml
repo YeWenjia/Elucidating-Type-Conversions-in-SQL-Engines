@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["-512794540", "-1478522586", null]
+    - ["_?", "-1478522586", null]
+    - ["-1721466904", "-1478522586", null]
+    - [".w", "-1478522586", null]
+    - ["1264846530", "-1478522586", null]
+    - ["", "-1478522586", null]
+    - ["1894499120", "-1478522586", null]
+    - ["!-meGWs?9", "-1478522586", null]
+    - ["-684793212", null, null]
+    - ["-639173391", null, null]
+    - ["%~", "jO&1˩3&", null]
+    - ["298258845", null, null]
+    - ["2", "fctY", null]
+    - ["UKb*sPb", "-871132307", 369297413]
+sql: "SELECT * FROM database0_t0 WHERE (('K9Uo')<=(database0_t0.c1))"
+columns:
+  - "c0"
+  - "c1"
+  - "c2"
+rows: []
+kind: traf-mismatch
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows:
+  - ["%~", "jO&1˩3&", "NULL"]
+  - ["2", "fctY", "NULL"]

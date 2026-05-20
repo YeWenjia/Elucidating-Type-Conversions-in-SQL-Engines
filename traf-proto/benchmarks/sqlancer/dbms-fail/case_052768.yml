@@ -1,0 +1,70 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["R]joi", -339580836, null]
+    - ["UM.", null, null]
+    - ["", null, null]
+    - ["1708405439", null, null]
+    - ["lD", 583782443, null]
+    - ["-316874230", null, null]
+    - ["{3bh3O", null, null]
+    - ["-1279472365", null, null]
+    - ["-1242084353", 1174750745, null]
+    - ["_BHwAlGJ2", 1731937909, null]
+    - ["250848919", -360666222, "-1289420016"]
+    - ["M‎NH", 1558322816, null]
+    - ["e튊ug", 826266973, null]
+    - ["1195584752", 787934722, "-1574083986"]
+    - ["1", null, null]
+    - ["-1794531683", null, "-273085966"]
+  database0_t0:
+    - ["F￿", -833856855, null]
+    - ["j", 1894499120, 1242577457]
+sql: "SELECT database0_t1.c2, database0_t1.c0, database0_t0.c2 FROM database0_t1, database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t1.c2, database0_t1.c0, database0_t0.c2]
+traf_rows:
+  - ["NULL", "R]joi", "NULL"]
+  - ["NULL", "R]joi", "1242577457"]
+  - ["NULL", "UM.", "NULL"]
+  - ["NULL", "UM.", "1242577457"]
+  - ["NULL", "", "NULL"]
+  - ["NULL", "", "1242577457"]
+  - ["NULL", "1708405439", "NULL"]
+  - ["NULL", "1708405439", "1242577457"]
+  - ["NULL", "lD", "NULL"]
+  - ["NULL", "lD", "1242577457"]
+  - ["NULL", "-316874230", "NULL"]
+  - ["NULL", "-316874230", "1242577457"]
+  - ["NULL", "{3bh3O", "NULL"]
+  - ["NULL", "{3bh3O", "1242577457"]
+  - ["NULL", "-1279472365", "NULL"]
+  - ["NULL", "-1279472365", "1242577457"]
+  - ["NULL", "-1242084353", "NULL"]
+  - ["NULL", "-1242084353", "1242577457"]
+  - ["NULL", "_BHwAlGJ2", "NULL"]
+  - ["NULL", "_BHwAlGJ2", "1242577457"]
+  - ["-1289420016", "250848919", "NULL"]
+  - ["-1289420016", "250848919", "1242577457"]
+  - ["NULL", "M‎NH", "NULL"]
+  - ["NULL", "M‎NH", "1242577457"]
+  - ["NULL", "e튊ug", "NULL"]
+  - ["NULL", "e튊ug", "1242577457"]
+  - ["-1574083986", "1195584752", "NULL"]
+  - ["-1574083986", "1195584752", "1242577457"]
+  - ["NULL", "1", "NULL"]
+  - ["NULL", "1", "1242577457"]
+  - ["-273085966", "-1794531683", "NULL"]
+  - ["-273085966", "-1794531683", "1242577457"]

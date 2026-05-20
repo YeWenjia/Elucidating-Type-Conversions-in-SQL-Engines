@@ -1,0 +1,15 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/county.csv
+- tests-examples/spider/election/tables/election.csv
+output: tests-examples/spider/election/tables/0027.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.county_name
+  FROM county AS t1
+  JOIN election AS t2 ON t1.county_id = t2.district
+  GROUP BY t1.county_id, t1.county_name
+  HAVING COUNT(*) >= 2

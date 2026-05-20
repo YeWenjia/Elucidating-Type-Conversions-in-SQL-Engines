@@ -1,0 +1,14 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/player.csv
+output: tests-examples/spider/soccer_2/tables/0004.csv
+constants:
+- '1000'
+functions:
+- count
+columns:
+- hs
+sql: |-
+  SELECT count(*)
+  FROM player
+  WHERE hs > 1000

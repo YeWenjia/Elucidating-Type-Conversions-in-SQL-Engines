@@ -1,0 +1,15 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/students.csv
+- tests-examples/spider/student_assessment/tables/courses.csv
+- tests-examples/spider/student_assessment/tables/student_course_registrations.csv
+output: tests-examples/spider/student_assessment/tables/0014.csv
+functions:
+- count
+sql: |-
+  SELECT t3.course_name,
+         count(*)
+  FROM students AS t1
+  JOIN student_course_registrations AS t2 ON t1.student_id = t2.student_id
+  JOIN courses AS t3 ON t2.course_id = t3.course_id
+  GROUP BY t2.course_id, t3.course_name

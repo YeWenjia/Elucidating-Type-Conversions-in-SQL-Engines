@@ -1,0 +1,7 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/election.csv
+output: tests-examples/spider/election/tables/0005.csv
+sql: |-
+  SELECT DISTINCT district
+  FROM election

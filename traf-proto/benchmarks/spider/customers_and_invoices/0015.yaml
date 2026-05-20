@@ -1,0 +1,11 @@
+db: tests-examples/spider/customers_and_invoices/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_invoices/tables/customers.csv
+output: tests-examples/spider/customers_and_invoices/tables/0015.csv
+functions:
+- count
+sql: |-
+  SELECT gender,
+         count(*)
+  FROM customers
+  GROUP BY gender

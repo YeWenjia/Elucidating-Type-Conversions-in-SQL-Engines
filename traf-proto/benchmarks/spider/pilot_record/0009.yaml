@@ -1,0 +1,15 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+output: tests-examples/spider/pilot_record/tables/0009.csv
+constants:
+- '2000'
+- '2005'
+columns:
+- join_year
+sql: |-
+  SELECT position
+  FROM pilot
+  WHERE join_year < 2000 INTERSECT
+    SELECT position
+    FROM pilot WHERE join_year > 2005

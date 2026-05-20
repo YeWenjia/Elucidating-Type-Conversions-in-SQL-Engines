@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["0铬+Q6Q㣀", -1794475476]
+    - ["", 1977257380]
+    - ["1813484176", 1451763432]
+    - [",DxHUm", null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '\\U쀋dS'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\\U쀋dS\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-1794475476"]
+  - ["1977257380"]
+  - ["1451763432"]
+  - ["NULL"]

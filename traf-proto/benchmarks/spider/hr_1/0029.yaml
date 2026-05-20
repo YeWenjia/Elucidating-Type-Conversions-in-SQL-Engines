@@ -1,0 +1,14 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/countries.csv
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/employees.csv
+- tests-examples/spider/hr_1/tables/locations.csv
+output: tests-examples/spider/hr_1/tables/0029.csv
+sql: |-
+  SELECT t1.employee_id,
+         t4.country_name
+  FROM employees AS t1
+  JOIN departments AS t2 ON t1.department_id = t2.department_id
+  JOIN locations AS t3 ON t2.location_id = t3.location_id
+  JOIN countries AS t4 ON t3.country_id = t4.country_id

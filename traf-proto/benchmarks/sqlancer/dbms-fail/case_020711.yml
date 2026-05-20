@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "string"}
+data:
+  database0_t1:
+    - ["1264846530", -1118684320]
+    - ["줁H1p2", null]
+    - ["", null]
+    - ["1065129525", null]
+    - ["388449173", 1708405439]
+  database0_t0: []
+sql: "SELECT * FROM database0_t1 WHERE 'h]>'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"h]>\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["1264846530", "-1118684320"]
+  - ["줁H1p2", "NULL"]
+  - ["", "NULL"]
+  - ["1065129525", "NULL"]
+  - ["388449173", "1708405439"]

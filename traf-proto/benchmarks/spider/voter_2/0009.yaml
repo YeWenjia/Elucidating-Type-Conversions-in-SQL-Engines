@@ -1,0 +1,17 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+output: tests-examples/spider/voter_2/tables/0009.csv
+constants:
+- '600'
+functions:
+- max
+- min
+columns:
+- age
+- major
+sql: |-
+  SELECT max(age),
+         min(age)
+  FROM student
+  WHERE major = 600

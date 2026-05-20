@@ -1,0 +1,8 @@
+db: tests-examples/spider/e_government/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_government/tables/organizations.csv
+output: tests-examples/spider/e_government/tables/0006.csv
+sql: |-
+  SELECT organization_name
+  FROM organizations
+  ORDER BY date_formed ASC

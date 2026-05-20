@@ -1,0 +1,16 @@
+db: tests-examples/spider/party_host/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_host/tables/party.csv
+- tests-examples/spider/party_host/tables/host.csv
+- tests-examples/spider/party_host/tables/party_host.csv
+output: tests-examples/spider/party_host/tables/0012.csv
+constants:
+- '50'
+columns:
+- age
+sql: |-
+  SELECT t3.location
+  FROM party_host AS t1
+  JOIN host AS t2 ON t1.host_id = t2.host_id
+  JOIN party AS t3 ON t1.party_id = t3.party_id
+  WHERE t2.age > 50

@@ -1,0 +1,17 @@
+db: tests-examples/spider/storm_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/storm_record/tables/storm.csv
+output: tests-examples/spider/storm_record/tables/0007.csv
+constants:
+- '1000'
+functions:
+- avg
+- max
+columns:
+- damage_millions_usd
+- max_speed
+sql: |-
+  SELECT avg(damage_millions_usd),
+         max(damage_millions_usd)
+  FROM storm
+  WHERE max_speed > 1000

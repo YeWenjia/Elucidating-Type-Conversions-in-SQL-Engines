@@ -1,0 +1,11 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/plays_games.csv
+output: tests-examples/spider/game_1/tables/0034.csv
+sql: |-
+  SELECT stuid
+  FROM student
+  EXCEPT
+  SELECT stuid
+  FROM plays_games

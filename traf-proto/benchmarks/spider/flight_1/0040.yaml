@@ -1,0 +1,11 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/employee.csv
+- tests-examples/spider/flight_1/tables/certificate.csv
+output: tests-examples/spider/flight_1/tables/0040.csv
+sql: |-
+  SELECT eid
+  FROM employee
+  EXCEPT
+  SELECT eid
+  FROM certificate

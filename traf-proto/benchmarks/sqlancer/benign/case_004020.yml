@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t1:
+    - [null, -1118684320, "wtv", "2?-gnp"]
+    - [null, null, "_wa", null]
+  database0_t0: []
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)<=(database0_t0.c0))"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

@@ -1,0 +1,13 @@
+db: tests-examples/spider/customer_complaints/tables/db.sqlite
+inputs:
+- tests-examples/spider/customer_complaints/tables/customers.csv
+output: tests-examples/spider/customer_complaints/tables/0023.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT state
+  FROM customers
+  GROUP BY state
+  ORDER BY count(*)

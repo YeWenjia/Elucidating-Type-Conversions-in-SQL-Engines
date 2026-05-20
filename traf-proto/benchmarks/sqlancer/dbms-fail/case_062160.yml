@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c46", type: "int"}
+data:
+  database0_t1: []
+sql: "SELECT database0_t1.c46, database0_t1.c0, database0_t1.c1, database0_t1.c2 FROM database0_t1 WHERE 'fb'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"fb\"\n  Position: 100"
+traf_columns: [database0_t1.c46, database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows: []

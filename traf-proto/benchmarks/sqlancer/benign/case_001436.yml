@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+    - ["592170494"]
+  database0_t9:
+    - ["", null]
+    - ["710406446", null]
+    - ["1,Sh\tS", "a"]
+    - ["-1042823525", "-1831624141"]
+sql: "SELECT database0_t0.c1, database0_t9.c0 FROM database0_t9, database0_t0 WHERE ((((((database0_t0.c1)<>(database0_t9.c1))) IS NULL)) IS NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1, database0_t9.c0]
+traf_rows: []

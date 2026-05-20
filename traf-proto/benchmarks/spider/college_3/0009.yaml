@@ -1,0 +1,14 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/student.csv
+output: tests-examples/spider/college_3/tables/0009.csv
+constants:
+- a
+columns:
+- fname
+filters:
+- like
+sql: |-
+  SELECT DISTINCT fname
+  FROM student
+  WHERE fname LIKE '%a%'

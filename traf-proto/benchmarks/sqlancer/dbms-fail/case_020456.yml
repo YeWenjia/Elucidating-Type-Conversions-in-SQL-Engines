@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [".pX쑰Kz凙w", "1822268159", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "1489138842", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "g", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "174837895", "HO^ga쐏qᇄC", -1779974519]
+    - ["-1724310134", "-440124920", "", null]
+    - ["Y", "1804551272", "-2101233819", -1458145455]
+  database0_t0:
+    - ["g", "-1175006649", "-229674567", "璚]\\磬!*7"]
+    - ["", "", "-229674567", "1890199107"]
+    - ["r來", "v37᱇\r~꣇≜t", "-229674567", "-303659226"]
+sql: "SELECT database0_t0.c0, database0_t0.c3 FROM database0_t0 WHERE database0_t0.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c3]
+traf_rows:
+  - ["g", "璚]\\磬!*7"]
+  - ["", "1890199107"]
+  - ["r來", "-303659226"]

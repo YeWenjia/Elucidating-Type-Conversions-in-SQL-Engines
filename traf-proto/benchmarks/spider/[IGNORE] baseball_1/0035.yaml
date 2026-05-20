@@ -1,0 +1,27 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/player.csv
+- tests-examples/spider/baseball_1/tables/salary.csv
+- tests-examples/spider/baseball_1/tables/team.csv
+output: tests-examples/spider/baseball_1/tables/0035.csv
+constants:
+- '2005'
+- Washington Nationals
+- '2007'
+columns:
+- year
+- name
+sql: |-
+  SELECT t2.name_first,
+         t2.name_last
+  FROM salary AS t1
+  JOIN player AS t2 ON t1.player_id = t2.player_id
+  JOIN team AS t3 ON t3.team_id_br = t1.team_id
+  WHERE t1.year = 2005
+    AND t3.name = 'Washington Nationals' INTERSECT
+    SELECT t2.name_first,
+           t2.name_last
+    FROM salary AS t1
+    JOIN player AS t2 ON t1.player_id = t2.player_id
+    JOIN team AS t3 ON t3.team_id_br = t1.team_id WHERE t1.year = 2007
+    AND t3.name = 'Washington Nationals'

@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [786405103, null, 1130750839]
+  database0_t0: []
+sql: "SELECT database0_t1.c2, database0_t1.c0 FROM database0_t1 WHERE 'JlM'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"JlM\"\n  Position: 65"
+traf_columns: [database0_t1.c2, database0_t1.c0]
+traf_rows:
+  - ["1130750839", "786405103"]

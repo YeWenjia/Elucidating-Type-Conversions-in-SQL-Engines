@@ -1,0 +1,56 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["1788184570", "g㔷*7lJ"]
+    - ["tW'_u", "g㔷*7lJ"]
+    - ["90257357", "g㔷*7lJ"]
+    - ["-883264523", "g㔷*7lJ"]
+    - ["6984250", "g㔷*7lJ"]
+    - ["vo\\f4", "g㔷*7lJ"]
+    - ["1139683166", "g㔷*7lJ"]
+    - ["-1457414084", "g㔷*7lJ"]
+    - ["1699565337", "g㔷*7lJ"]
+    - ["M7y", ""]
+    - ["Fx㟍ﴤz|xƺ", null]
+    - ["\nۂ'?~!9l", "!*Rj"]
+    - ["u7", "-1073664262"]
+    - ["239734007", "847687323"]
+    - ["", "1690354427"]
+    - ["1332136977", "-420727782"]
+  database0_t0:
+    - [1018012136, "1777398138"]
+    - [-639173391, "B"]
+    - [2094907951, ""]
+    - [-1298959073, null]
+    - [-1173589415, null]
+    - [945653558, null]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE -713613870"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - ["1788184570"]
+  - ["tW'_u"]
+  - ["90257357"]
+  - ["-883264523"]
+  - ["6984250"]
+  - ["vo\\f4"]
+  - ["1139683166"]
+  - ["-1457414084"]
+  - ["1699565337"]
+  - ["M7y"]
+  - ["Fx㟍ﴤz|xƺ"]
+  - ["\nۂ'?~!9l"]
+  - ["u7"]
+  - ["239734007"]
+  - [""]
+  - ["1332136977"]

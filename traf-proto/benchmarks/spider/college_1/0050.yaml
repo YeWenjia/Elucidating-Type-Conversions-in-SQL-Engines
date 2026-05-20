@@ -1,0 +1,20 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/professor.csv
+output: tests-examples/spider/college_1/tables/0050.csv
+constants:
+- Ph.D.
+- '1'
+functions:
+- count
+columns:
+- prof_high_degree
+sql: |-
+  SELECT t2.dept_name,
+         t1.dept_code
+  FROM professor AS t1
+  JOIN department AS t2 ON t1.dept_code = t2.dept_code
+  WHERE t1.prof_high_degree = 'Ph.D.'
+  GROUP BY t1.dept_code, t2.dept_name
+  ORDER BY count(*) DESC

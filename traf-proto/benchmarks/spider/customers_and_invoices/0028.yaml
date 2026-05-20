@@ -1,0 +1,16 @@
+db: tests-examples/spider/customers_and_invoices/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_invoices/tables/invoices.csv
+- tests-examples/spider/customers_and_invoices/tables/financial_transactions.csv
+output: tests-examples/spider/customers_and_invoices/tables/0028.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.invoice_number,
+         t2.invoice_date
+  FROM financial_transactions AS t1
+  JOIN invoices AS t2 ON t1.invoice_number = t2.invoice_number
+  GROUP BY t2.invoice_number, t2.invoice_date
+  ORDER BY count(*) DESC

@@ -1,0 +1,14 @@
+db: tests-examples/spider/journal_committee/tables/db.sqlite
+inputs:
+- tests-examples/spider/journal_committee/tables/editor.csv
+- tests-examples/spider/journal_committee/tables/journal_committee.csv
+output: tests-examples/spider/journal_committee/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t1.editor_id,
+         t1.name,
+         COUNT(*)
+  FROM editor AS t1
+  JOIN journal_committee AS t2 ON t1.editor_id = t2.editor_id
+  GROUP BY t1.editor_id, t1.name

@@ -1,0 +1,19 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/appellations.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0039.csv
+constants:
+- '2008'
+- Central Coast
+columns:
+- year
+- area
+sql: |-
+  SELECT appelation
+  FROM wine
+  WHERE year > 2008
+  EXCEPT
+  SELECT appelation
+  FROM appellations
+  WHERE area = 'Central Coast'

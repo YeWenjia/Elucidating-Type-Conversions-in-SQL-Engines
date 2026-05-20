@@ -1,0 +1,53 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["3촓ku9"]
+    - ["1218127750"]
+  database0_t0:
+    - ["-1781350639", 285314990]
+    - ["", -1992116680]
+    - ["-1056561715", -263981777]
+    - ["678687013", null]
+    - ["}He/", -1817880771]
+    - ["Bl稬{9uz㊿+", -1887367284]
+    - ["-1128823867", -1264564754]
+    - ["2076419669", 976935660]
+    - ["Z4hd#U", -929713484]
+    - ["Zh[/", -2123641175]
+    - ["-1208351089", null]
+    - ["-595474910", null]
+    - ["eN[﹖m|ᶊ?8", null]
+    - ["sj", null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE 'aMngt-媩'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"aMngt-媩\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["3촓ku9"]
+  - ["1218127750"]

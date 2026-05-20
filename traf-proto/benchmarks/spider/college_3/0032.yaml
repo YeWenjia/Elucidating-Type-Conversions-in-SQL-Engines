@@ -1,0 +1,17 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/faculty.csv
+- tests-examples/spider/college_3/tables/department.csv
+- tests-examples/spider/college_3/tables/member_of.csv
+output: tests-examples/spider/college_3/tables/0032.csv
+constants:
+- Computer Science
+columns:
+- dname
+sql: |-
+  SELECT t2.lname
+  FROM department AS t1,
+  faculty AS t2
+  JOIN member_of AS t3 ON t2.facid = t3.facid
+  WHERE t1.dname = 'Computer Science' AND
+  t1.dno = t3.dno

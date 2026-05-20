@@ -1,0 +1,19 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/genre.csv
+- tests-examples/spider/chinook_1/tables/track.csv
+output: tests-examples/spider/chinook_1/tables/0038.csv
+constants:
+- Pop
+functions:
+- max
+- min
+columns:
+- milliseconds
+- name
+sql: |-
+  SELECT max(milliseconds),
+         min(milliseconds)
+  FROM genre AS t1
+  JOIN track AS t2 ON t1.genreid = t2.genreid
+  WHERE t1.name = 'Pop'

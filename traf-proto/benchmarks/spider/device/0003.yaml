@@ -1,0 +1,12 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/device.csv
+output: tests-examples/spider/device/tables/0003.csv
+constants:
+- Android
+columns:
+- software_platform
+sql: |-
+  SELECT carrier
+  FROM device
+  WHERE software_platform != 'Android'

@@ -1,0 +1,15 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+output: tests-examples/spider/climbing/tables/0020.csv
+constants:
+- '5000'
+- '1000'
+columns:
+- height
+- prominence
+sql: |-
+  SELECT name
+  FROM mountain
+  WHERE height > 5000
+    OR prominence > 1000

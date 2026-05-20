@@ -1,0 +1,16 @@
+db: tests-examples/spider/products_for_hire/tables/db.sqlite
+inputs:
+- tests-examples/spider/products_for_hire/tables/payments.csv
+output: tests-examples/spider/products_for_hire/tables/0003.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- amount_paid
+sql: |-
+  SELECT customer_id,
+         sum(amount_paid)
+  FROM payments
+  GROUP BY customer_id
+  ORDER BY sum(amount_paid) DESC

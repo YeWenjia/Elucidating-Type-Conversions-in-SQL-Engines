@@ -1,0 +1,11 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+output: tests-examples/spider/entrepreneur/tables/0004.csv
+functions:
+- avg
+columns:
+- money_requested
+sql: |-
+  SELECT avg(money_requested)
+  FROM entrepreneur

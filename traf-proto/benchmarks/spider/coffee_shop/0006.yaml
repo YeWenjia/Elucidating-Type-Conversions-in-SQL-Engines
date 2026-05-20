@@ -1,0 +1,13 @@
+db: tests-examples/spider/coffee_shop/tables/db.sqlite
+inputs:
+- tests-examples/spider/coffee_shop/tables/member.csv
+output: tests-examples/spider/coffee_shop/tables/0006.csv
+constants:
+- '5'
+functions:
+- count
+sql: |-
+  SELECT membership_card
+  FROM member
+  GROUP BY membership_card
+  HAVING count(*) > 5

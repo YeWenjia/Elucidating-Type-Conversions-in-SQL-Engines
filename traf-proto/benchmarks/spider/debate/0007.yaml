@@ -1,0 +1,11 @@
+db: tests-examples/spider/debate/tables/db.sqlite
+inputs:
+- tests-examples/spider/debate/tables/people.csv
+output: tests-examples/spider/debate/tables/0007.csv
+functions:
+- count
+sql: |-
+  SELECT party,
+         COUNT(*)
+  FROM people
+  GROUP BY party

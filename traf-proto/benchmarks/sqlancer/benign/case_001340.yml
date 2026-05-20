@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["1264846530"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (('R') IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - ["1264846530"]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1264846530"]

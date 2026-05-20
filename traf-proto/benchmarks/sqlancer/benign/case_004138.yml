@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["j<,\r>j", -1016210909]
+    - ["{>{", 1699565337]
+    - ["", -766597293]
+    - ["66928533", null]
+    - ["440833260", null]
+    - ["759451388", null]
+    - ["-1654011260", 419145833]
+sql: "SELECT * FROM database0_t0 WHERE (('678687013')<=(database0_t0.c0))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["j<,\r>j", -1016210909]
+  - ["759451388", null]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["j<,\r>j", "-1016210909"]
+  - ["{>{", "1699565337"]
+  - ["759451388", "NULL"]

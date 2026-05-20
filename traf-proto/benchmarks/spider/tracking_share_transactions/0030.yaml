@@ -1,0 +1,16 @@
+db: tests-examples/spider/tracking_share_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_share_transactions/tables/transactions.csv
+output: tests-examples/spider/tracking_share_transactions/tables/0030.csv
+constants:
+- SALE
+functions:
+- count
+columns:
+- transaction_type_code
+sql: |-
+  SELECT investor_id,
+         COUNT(*)
+  FROM transactions
+  WHERE transaction_type_code = 'SALE'
+  GROUP BY investor_id

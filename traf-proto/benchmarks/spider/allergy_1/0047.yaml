@@ -1,0 +1,17 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/has_allergy.csv
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0047.csv
+constants:
+- Milk
+- Cat
+columns:
+- allergy
+sql: |-
+  select distinct t1.fname,
+                  t1.city_code
+  from student as t1
+  join has_allergy as t2 on t1.stuid = t2.stuid
+  where t2.allergy = 'Milk'
+    or t2.allergy = 'Cat'

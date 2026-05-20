@@ -1,0 +1,16 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/routes.csv
+- tests-examples/spider/flight_4/tables/airlines.csv
+output: tests-examples/spider/flight_4/tables/0017.csv
+constants:
+- '10'
+functions:
+- count
+sql: |-
+  SELECT t1.name,
+         t2.alid
+  FROM airlines AS t1
+  JOIN routes AS t2 ON t1.alid = t2.alid
+  GROUP BY t2.alid, t1.name
+  ORDER BY count(*) DESC

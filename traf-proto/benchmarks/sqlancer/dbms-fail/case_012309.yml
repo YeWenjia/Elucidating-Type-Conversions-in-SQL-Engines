@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [2090365346]
+    - [-1781350639]
+    - [915954605]
+    - [1486103084]
+    - [-88915418]
+sql: "SELECT * FROM database0_t0 WHERE '1804551272'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1804551272\"\n  Position: 34"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["2090365346"]
+  - ["-1781350639"]
+  - ["915954605"]
+  - ["1486103084"]
+  - ["-88915418"]

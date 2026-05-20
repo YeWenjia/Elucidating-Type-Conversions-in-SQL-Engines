@@ -1,0 +1,13 @@
+db: tests-examples/spider/scientist_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/scientist_1/tables/scientists.csv
+- tests-examples/spider/scientist_1/tables/assignedto.csv
+output: tests-examples/spider/scientist_1/tables/0016.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         t1.name
+  FROM scientists AS t1
+  JOIN assignedto AS t2 ON t1.ssn = t2.scientist
+  GROUP BY t1.name

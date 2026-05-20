@@ -1,0 +1,14 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/student_course_attendance.csv
+output: tests-examples/spider/student_assessment/tables/0018.csv
+constants:
+- '301'
+- '1'
+columns:
+- course_id
+sql: |-
+  SELECT student_id
+  FROM student_course_attendance
+  WHERE course_id = 301
+  ORDER BY date_of_attendance DESC

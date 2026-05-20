@@ -1,0 +1,15 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/files.csv
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0006.csv
+constants:
+- '800'
+columns:
+- resolution
+sql: |-
+  SELECT DISTINCT t1.file_size,
+                  t1.formats
+  FROM files AS t1
+  JOIN song AS t2 ON t1.f_id = t2.f_id
+  WHERE t2.resolution < 800

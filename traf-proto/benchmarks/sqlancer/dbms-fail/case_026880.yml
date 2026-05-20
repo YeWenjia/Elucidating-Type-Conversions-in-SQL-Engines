@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+  database0_t2:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-2052218102, "R*k8(Jh", -1554526165, null]
+    - [-1794475476, null, -2140282135, null]
+    - [-1790883840, "", -420727782, null]
+  database0_t2:
+    - [286337840, "-1298366499"]
+    - [286337840, "-1298366499"]
+    - [286337840, "-1298366499"]
+    - [286337840, "-1298366499"]
+    - [286337840, "-1298366499"]
+    - [286337840, "-190819880"]
+    - [286337840, "eR(!>5"]
+sql: "SELECT * FROM database0_t2 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 34"
+traf_columns: [database0_t2.c0, database0_t2.c1]
+traf_rows: []

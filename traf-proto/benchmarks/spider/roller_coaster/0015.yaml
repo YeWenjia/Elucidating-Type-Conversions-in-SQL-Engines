@@ -1,0 +1,15 @@
+db: tests-examples/spider/roller_coaster/tables/db.sqlite
+inputs:
+- tests-examples/spider/roller_coaster/tables/roller_coaster.csv
+- tests-examples/spider/roller_coaster/tables/country.csv
+output: tests-examples/spider/roller_coaster/tables/0015.csv
+functions:
+- avg
+columns:
+- speed
+sql: |-
+  SELECT t1.name,
+         avg(t2.speed)
+  FROM country AS t1
+  JOIN roller_coaster AS t2 ON t1.country_id = t2.country_id
+  GROUP BY t1.name

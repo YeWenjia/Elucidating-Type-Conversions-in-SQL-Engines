@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c17", type: "string"}
+data:
+  database0_t0:
+    - [")6", "", ""]
+    - ["r쑂㲀'Ra搜", "", ""]
+    - ["-1279472365", "", ""]
+    - ["\nۂ9?g!9l", "", ""]
+    - ["1572343128", "", ""]
+    - ["갗o1_", null, "()"]
+    - ["", null, "2124269976"]
+    - ["-1860230507", "-836120360", null]
+    - ["157369588", "-442361067", "4k7(gv)"]
+    - ["-657850939", "784168152", null]
+    - ["1944653644", "1903936381", "12049412"]
+    - ["-830338799", "", "-1722647003"]
+    - ["1804551272", null, null]
+    - ["-351165976", null, "1250306523"]
+    - ["-1121324975", null, ""]
+    - ["-403094611", null, null]
+sql: "SELECT database0_t0.c1, database0_t0.c17, database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c0)<=(database0_t0.c17))"
+columns:
+  - "c1"
+  - "c17"
+  - "c0"
+rows:
+  - [null, "2124269976", ""]
+  - ["-442361067", "4k7(gv)", "157369588"]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c17, database0_t0.c0]
+traf_rows:
+  - ["NULL", "2124269976", ""]
+  - ["-442361067", "4k7(gv)", "157369588"]
+  - ["NULL", "1250306523", "-351165976"]

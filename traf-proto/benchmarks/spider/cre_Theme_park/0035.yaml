@@ -1,0 +1,16 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+- tests-examples/spider/cre_Theme_park/tables/visits.csv
+output: tests-examples/spider/cre_Theme_park/tables/0035.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.name,
+         t2.tourist_attraction_id
+  FROM tourist_attractions AS t1
+  JOIN visits AS t2 ON t1.tourist_attraction_id = t2.tourist_attraction_id
+  GROUP BY t2.tourist_attraction_id, t1.name
+  HAVING count(*) >= 2

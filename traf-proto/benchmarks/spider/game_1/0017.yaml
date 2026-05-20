@@ -1,0 +1,11 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0017.csv
+functions:
+- count
+columns:
+- stuid
+sql: |-
+  SELECT count(DISTINCT stuid)
+  FROM sportsinfo

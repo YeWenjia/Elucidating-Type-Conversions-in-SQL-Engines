@@ -1,0 +1,8 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/album.csv
+output: tests-examples/spider/chinook_1/tables/0034.csv
+sql: |-
+  SELECT title
+  FROM album
+  ORDER BY title

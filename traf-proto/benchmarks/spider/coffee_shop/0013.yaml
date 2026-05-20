@@ -1,0 +1,15 @@
+db: tests-examples/spider/coffee_shop/tables/db.sqlite
+inputs:
+- tests-examples/spider/coffee_shop/tables/shop.csv
+output: tests-examples/spider/coffee_shop/tables/0013.csv
+functions:
+- avg
+columns:
+- score
+sql: |-
+  SELECT shop_id,
+         address
+  FROM shop
+  WHERE score <
+      (SELECT avg(score)
+       FROM shop)

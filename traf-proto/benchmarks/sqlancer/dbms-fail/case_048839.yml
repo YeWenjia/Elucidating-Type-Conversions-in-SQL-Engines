@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t8: []
+sql: "SELECT database0_t8.c0 FROM database0_t8 WHERE 's0榱(\nO\r '"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"s0榱(\nO\r \"\n  Position: 48"
+traf_columns: [database0_t8.c0]
+traf_rows: []

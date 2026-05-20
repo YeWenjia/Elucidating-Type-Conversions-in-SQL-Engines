@@ -1,0 +1,8 @@
+db: tests-examples/spider/university_basketball/tables/db.sqlite
+inputs:
+- tests-examples/spider/university_basketball/tables/basketball_match.csv
+output: tests-examples/spider/university_basketball/tables/0023.csv
+sql: |-
+  SELECT team_name
+  FROM basketball_match
+  ORDER BY all_home DESC

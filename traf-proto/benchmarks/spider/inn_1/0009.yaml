@@ -1,0 +1,15 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+output: tests-examples/spider/inn_1/tables/0009.csv
+constants:
+- King
+functions:
+- sum
+columns:
+- beds
+- bedtype
+sql: |-
+  SELECT sum(beds)
+  FROM rooms
+  WHERE bedtype = 'King';

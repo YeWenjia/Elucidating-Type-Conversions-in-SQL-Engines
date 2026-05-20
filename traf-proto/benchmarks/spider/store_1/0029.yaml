@@ -1,0 +1,16 @@
+db: tests-examples/spider/store_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_1/tables/employees.csv
+- tests-examples/spider/store_1/tables/customers.csv
+output: tests-examples/spider/store_1/tables/0029.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.first_name,
+         t1.last_name
+  FROM employees AS t1
+  JOIN customers AS t2 ON t1.id = t2.support_rep_id
+  GROUP BY t1.id, t1.first_name, t1.last_name
+  ORDER BY count(*) DESC

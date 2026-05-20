@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [202638822, null]
+    - [null, -1077277231]
+    - [776281846, 1708405439]
+    - [null, -1779974519]
+    - [-368517629, -428151007]
+    - [-2087893705, 227326288]
+    - [null, null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'Ts'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Ts\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["202638822"]
+  - ["NULL"]
+  - ["776281846"]
+  - ["NULL"]
+  - ["-368517629"]
+  - ["-2087893705"]
+  - ["NULL"]

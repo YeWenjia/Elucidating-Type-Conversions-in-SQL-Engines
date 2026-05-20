@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/products.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0024.csv
+functions:
+- avg
+columns:
+- product_price
+sql: |-
+  SELECT product_name,
+         avg(product_price)
+  FROM products
+  GROUP BY product_name

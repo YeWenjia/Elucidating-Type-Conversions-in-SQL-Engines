@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["6984250", 869059798, null]
+    - [")EL.", -639173391, -758717226]
+sql: "SELECT database0_t0.c0, database0_t0.c2 FROM database0_t0 WHERE '#dFᓲkd'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"#dFᓲkd\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["6984250", "NULL"]
+  - [")EL.", "-758717226"]

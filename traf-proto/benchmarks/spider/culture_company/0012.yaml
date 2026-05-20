@@ -1,0 +1,11 @@
+db: tests-examples/spider/culture_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/culture_company/tables/movie.csv
+output: tests-examples/spider/culture_company/tables/0012.csv
+functions:
+- count
+columns:
+- director
+sql: |-
+  SELECT COUNT(DISTINCT director)
+  FROM movie

@@ -1,0 +1,12 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0017.csv
+constants:
+- M
+columns:
+- sex
+sql: |-
+  select stuid
+  from student
+  where sex = 'M'

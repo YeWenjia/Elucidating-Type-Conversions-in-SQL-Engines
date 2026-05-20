@@ -1,0 +1,17 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/airport.csv
+output: tests-examples/spider/aircraft/tables/0005.csv
+constants:
+- London
+functions:
+- sum
+columns:
+- domestic_passengers
+- airport_name
+filters:
+- like
+sql: |-
+  SELECT sum(domestic_passengers)
+  FROM airport
+  WHERE airport_name LIKE '%London%'

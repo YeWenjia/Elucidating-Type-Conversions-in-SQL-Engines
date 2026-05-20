@@ -1,0 +1,11 @@
+db: tests-examples/spider/customers_and_invoices/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_invoices/tables/accounts.csv
+output: tests-examples/spider/customers_and_invoices/tables/0010.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         customer_id
+  FROM accounts
+  GROUP BY customer_id

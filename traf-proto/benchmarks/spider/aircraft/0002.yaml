@@ -1,0 +1,7 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/aircraft.csv
+output: tests-examples/spider/aircraft/tables/0002.csv
+sql: |-
+  SELECT description
+  FROM aircraft

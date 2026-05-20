@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [1823434078, ""]
+    - [-230088062, ""]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '<cUu7Q>\r'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"<cUu7Q>\r\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1823434078"]
+  - ["-230088062"]

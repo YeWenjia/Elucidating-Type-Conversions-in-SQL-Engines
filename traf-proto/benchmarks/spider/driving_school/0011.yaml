@@ -1,0 +1,17 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/addresses.csv
+- tests-examples/spider/driving_school/tables/staff.csv
+output: tests-examples/spider/driving_school/tables/0011.csv
+constants:
+- Janessa
+- Sawayn
+columns:
+- first_name
+- last_name
+sql: |-
+  SELECT t1.city
+  FROM addresses AS t1
+  JOIN staff AS t2 ON t1.address_id = t2.staff_address_id
+  WHERE t2.first_name = 'Janessa'
+    AND t2.last_name = 'Sawayn';

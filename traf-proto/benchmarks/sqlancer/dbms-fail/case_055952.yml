@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-2011765295, -1671034725]
+    - [369297413, null]
+    - [723249712, null]
+    - [-1980936731, null]
+    - [-2087893705, -1684923321]
+    - [-413793697, null]
+    - [-1317155399, null]
+    - [-948742844, null]
+    - [880330817, null]
+    - [1691269110, null]
+    - [1384645680, null]
+    - [-773587990, -934320053]
+    - [-316874230, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'QY1Drs'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"QY1Drs\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-1671034725"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["-1684923321"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["-934320053"]
+  - ["NULL"]

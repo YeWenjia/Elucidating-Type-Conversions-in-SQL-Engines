@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [940308541, -288855402, "-481593787"]
+    - [940308541, -288855402, "-481593787"]
+    - [940308541, -288855402, "-481593787"]
+  database0_t0:
+    - [1972421787, 571900596]
+    - [-1534630625, 571900596]
+    - [-273085966, -152514463]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE ((database0_t1.c2) IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+  - "c2"
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2, database0_t0.c0, database0_t0.c1]
+traf_rows: []

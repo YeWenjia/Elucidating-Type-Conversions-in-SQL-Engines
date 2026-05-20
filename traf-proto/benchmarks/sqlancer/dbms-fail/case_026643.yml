@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["&\n&D1gϤ", "-773587990"]
+    - ["1486103084", "-339580836"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'WHXt껓'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"WHXt껓\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["&\n&D1gϤ"]
+  - ["1486103084"]

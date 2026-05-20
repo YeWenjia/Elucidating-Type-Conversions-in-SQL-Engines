@@ -1,0 +1,13 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+output: tests-examples/spider/farm/tables/0016.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT status
+  FROM city
+  GROUP BY status
+  ORDER BY COUNT(*) DESC

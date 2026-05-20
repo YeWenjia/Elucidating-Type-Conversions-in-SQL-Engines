@@ -1,0 +1,10 @@
+db: tests-examples/spider/roller_coaster/tables/db.sqlite
+inputs:
+- tests-examples/spider/roller_coaster/tables/roller_coaster.csv
+output: tests-examples/spider/roller_coaster/tables/0011.csv
+constants:
+- '1'
+sql: |-
+  SELECT park
+  FROM roller_coaster
+  ORDER BY speed DESC

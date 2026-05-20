@@ -1,0 +1,12 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+output: tests-examples/spider/voter_2/tables/0010.csv
+constants:
+- BAL
+columns:
+- city_code
+sql: |-
+  SELECT advisor
+  FROM student
+  WHERE city_code = 'BAL'

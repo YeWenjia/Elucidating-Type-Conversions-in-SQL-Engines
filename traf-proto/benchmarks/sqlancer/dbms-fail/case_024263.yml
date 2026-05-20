@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t4:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - ["-501811782", -2077083164]
+    - [null, -2077083164]
+    - ["294308099", -2077083164]
+  database0_t4: []
+sql: "SELECT * FROM database0_t4 WHERE database0_t4.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 34"
+traf_columns: [database0_t4.c1, database0_t4.c2, database0_t4.c3]
+traf_rows: []

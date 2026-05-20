@@ -1,0 +1,13 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0034.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT apt_type_code
+  FROM apartments
+  GROUP BY apt_type_code
+  ORDER BY count(*) DESC

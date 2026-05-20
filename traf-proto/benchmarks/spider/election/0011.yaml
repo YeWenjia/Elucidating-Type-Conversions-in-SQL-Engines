@@ -1,0 +1,12 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/party.csv
+output: tests-examples/spider/election/tables/0011.csv
+constants:
+- Eliot Spitzer
+columns:
+- governor
+sql: |-
+  SELECT DISTINCT year
+  FROM party
+  WHERE governor = 'Eliot Spitzer'

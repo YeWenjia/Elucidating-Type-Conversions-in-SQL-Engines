@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-9223372036854775808", "-1509636538", "TG(*(J", ""]
+    - ["245401286", "", "-623579741", "443216999"]
+    - ["-1022129455", "1878073682", "U\\3", "-1980936731"]
+    - ["-185949196", "9223372036854775807", "880330817", null]
+    - ["", "1014163171", "", null]
+  database0_t0:
+    - ["-1731152507", 285314990]
+    - ["jAYX", -459971807]
+    - ["932509395", -1291966778]
+    - ["-1279472365", -428838477]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '1264846530'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1264846530\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["285314990"]
+  - ["-459971807"]
+  - ["-1291966778"]
+  - ["-428838477"]

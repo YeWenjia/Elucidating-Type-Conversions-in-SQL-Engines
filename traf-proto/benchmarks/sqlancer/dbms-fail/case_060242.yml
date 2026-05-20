@@ -1,0 +1,46 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [367823271, null]
+    - [-632382568, -437120375]
+    - [-1257223441, null]
+    - [128686479, null]
+    - [-640597677, null]
+    - [-1790883840, null]
+    - [-1980936731, null]
+    - [-485087559, null]
+  database0_t0:
+    - ["1300733341", -833856855, 285314990]
+    - ["-1056561715", null, 880330817]
+    - ["-1781350639", null, null]
+    - ["Bw", null, null]
+    - ["{ꧧ}Q", null, null]
+    - ["-643757279", null, null]
+    - ["", null, null]
+    - ["-1118684320", 991149750, 915954605]
+    - ["jY", null, null]
+    - ["", null, null]
+    - ["-1455220005", null, null]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1 WHERE ',UnY'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \",UnY\"\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["NULL", "367823271"]
+  - ["-437120375", "-632382568"]
+  - ["NULL", "-1257223441"]
+  - ["NULL", "128686479"]
+  - ["NULL", "-640597677"]
+  - ["NULL", "-1790883840"]
+  - ["NULL", "-1980936731"]
+  - ["NULL", "-485087559"]

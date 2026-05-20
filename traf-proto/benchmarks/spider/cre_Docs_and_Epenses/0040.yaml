@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents_with_expenses.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0040.csv
+functions:
+- count
+columns:
+- document_id
+sql: |-
+  SELECT count(*)
+  FROM documents
+  WHERE document_id NOT IN
+      (SELECT document_id
+       FROM documents_with_expenses)

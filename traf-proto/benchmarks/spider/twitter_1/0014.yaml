@@ -1,0 +1,15 @@
+db: tests-examples/spider/twitter_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/twitter_1/tables/tweets.csv
+- tests-examples/spider/twitter_1/tables/user_profiles.csv
+output: tests-examples/spider/twitter_1/tables/0014.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.name
+  FROM user_profiles AS t1
+  JOIN tweets AS t2 ON t1.uid = t2.uid
+  GROUP BY t2.uid, t1.name
+  HAVING count(*) > 1

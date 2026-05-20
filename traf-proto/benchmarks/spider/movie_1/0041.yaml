@@ -1,0 +1,23 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/reviewer.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0041.csv
+constants:
+- Brittany Harris
+functions:
+- avg
+columns:
+- stars
+- mid
+- name
+sql: |-
+  SELECT mid,
+         avg(stars)
+  FROM rating
+  WHERE mid NOT IN
+      (SELECT t1.mid
+       FROM rating AS t1
+       JOIN reviewer AS t2 ON t1.rid = t2.rid
+       WHERE t2.name = 'Brittany Harris')
+  GROUP BY mid

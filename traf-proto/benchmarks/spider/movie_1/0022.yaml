@@ -1,0 +1,16 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/reviewer.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0022.csv
+constants:
+- Gone with the Wind
+columns:
+- title
+sql: |-
+  SELECT DISTINCT t3.name
+  FROM rating AS t1
+  JOIN movie AS t2 ON t1.mid = t2.mid
+  JOIN reviewer AS t3 ON t1.rid = t3.rid
+  WHERE t2.title = 'Gone with the Wind'

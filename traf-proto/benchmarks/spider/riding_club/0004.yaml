@@ -1,0 +1,13 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+output: tests-examples/spider/riding_club/tables/0004.csv
+constants:
+- Researcher
+columns:
+- occupation
+sql: |-
+  SELECT player_name,
+         residence
+  FROM player
+  WHERE occupation != 'Researcher'

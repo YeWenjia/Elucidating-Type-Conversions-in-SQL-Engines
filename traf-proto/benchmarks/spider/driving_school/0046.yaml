@@ -1,0 +1,12 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/staff.csv
+- tests-examples/spider/driving_school/tables/lessons.csv
+output: tests-examples/spider/driving_school/tables/0046.csv
+sql: |-
+  SELECT first_name
+  FROM staff
+  EXCEPT
+  SELECT t2.first_name
+  FROM lessons AS t1
+  JOIN staff AS t2 ON t1.staff_id = t2.staff_id

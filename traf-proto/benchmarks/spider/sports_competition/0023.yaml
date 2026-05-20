@@ -1,0 +1,16 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/player.csv
+output: tests-examples/spider/sports_competition/tables/0023.csv
+constants:
+- '30'
+functions:
+- count
+columns:
+- points
+sql: |-
+  SELECT count(*),
+         position
+  FROM player
+  WHERE points < 30
+  GROUP BY position

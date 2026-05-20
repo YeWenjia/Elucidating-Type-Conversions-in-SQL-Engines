@@ -1,0 +1,10 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+- tests-examples/spider/wrestler/tables/elimination.csv
+output: tests-examples/spider/wrestler/tables/0007.csv
+sql: |-
+  SELECT t2.name,
+         t1.elimination_move
+  FROM elimination AS t1
+  JOIN wrestler AS t2 ON t1.wrestler_id = t2.wrestler_id

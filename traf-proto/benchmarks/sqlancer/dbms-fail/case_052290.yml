@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t4:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["1906019873", null]
+    - ["-1723658612", null]
+    - ["991149750", null]
+  database0_t4:
+    - [1396324916, "-773587990"]
+    - [-1089599534, "<S"]
+    - [-273085966, "734800198"]
+    - [897917532, "-657850939"]
+sql: "SELECT database0_t4.c0 FROM database0_t0, database0_t4 WHERE '璚)\t'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"璚)\t\"\n  Position: 62"
+traf_columns: [database0_t4.c0]
+traf_rows:
+  - ["1396324916"]
+  - ["-1089599534"]
+  - ["-273085966"]
+  - ["897917532"]
+  - ["1396324916"]
+  - ["-1089599534"]
+  - ["-273085966"]
+  - ["897917532"]
+  - ["1396324916"]
+  - ["-1089599534"]
+  - ["-273085966"]
+  - ["897917532"]

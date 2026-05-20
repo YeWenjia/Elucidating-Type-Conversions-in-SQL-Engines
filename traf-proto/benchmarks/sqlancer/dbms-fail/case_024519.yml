@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["", "440833260"]
+    - ["욛pn6^>I", "440833260"]
+    - ["-910091866", "440833260"]
+    - ["686500883", "440833260"]
+  database0_t0:
+    - ["-1944931769", 1242577457]
+    - ["-1131415902", null]
+sql: "SELECT * FROM database0_t1 WHERE '67|<'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"67|<\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["", "440833260"]
+  - ["욛pn6^>I", "440833260"]
+  - ["-910091866", "440833260"]
+  - ["686500883", "440833260"]

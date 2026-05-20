@@ -1,0 +1,8 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+output: tests-examples/spider/climbing/tables/0006.csv
+sql: |-
+  SELECT name
+  FROM mountain
+  ORDER BY name ASC

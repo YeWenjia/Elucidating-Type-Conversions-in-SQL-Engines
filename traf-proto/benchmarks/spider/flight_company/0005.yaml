@@ -1,0 +1,15 @@
+db: tests-examples/spider/flight_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_company/tables/flight.csv
+output: tests-examples/spider/flight_company/tables/0005.csv
+constants:
+- Thompson
+functions:
+- avg
+columns:
+- velocity
+- pilot
+sql: |-
+  SELECT avg(velocity)
+  FROM flight
+  WHERE pilot = 'Thompson'

@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["nc{iI\\~", "새!%{"]
+    - ["1734558873", "새!%{"]
+    - ["1243773393", "새!%{"]
+    - ["*ZR9!2", "새!%{"]
+    - ["-186716307", "새!%{"]
+    - ["~!", "새!%{"]
+    - ["-1854279367", "새!%{"]
+    - ["KTV", "-773587990"]
+  database0_t0:
+    - [-123440667, 307352875]
+sql: "SELECT database0_t1.c0, database0_t0.c1 FROM database0_t1, database0_t0 WHERE '27,zGX'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"27,zGX\"\n  Position: 79"
+traf_columns: [database0_t1.c0, database0_t0.c1]
+traf_rows:
+  - ["nc{iI\\~", "307352875"]
+  - ["1734558873", "307352875"]
+  - ["1243773393", "307352875"]
+  - ["*ZR9!2", "307352875"]
+  - ["-186716307", "307352875"]
+  - ["~!", "307352875"]
+  - ["-1854279367", "307352875"]
+  - ["KTV", "307352875"]

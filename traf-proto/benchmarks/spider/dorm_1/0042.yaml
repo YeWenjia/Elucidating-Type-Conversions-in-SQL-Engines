@@ -1,0 +1,16 @@
+db: tests-examples/spider/dorm_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/dorm_1/tables/dorm.csv
+- tests-examples/spider/dorm_1/tables/dorm_amenity.csv
+- tests-examples/spider/dorm_1/tables/has_amenity.csv
+output: tests-examples/spider/dorm_1/tables/0042.csv
+constants:
+- Smith Hall
+columns:
+- dorm_name
+sql: |-
+  SELECT t3.amenity_name
+  FROM dorm AS t1
+  JOIN has_amenity AS t2 ON t1.dormid = t2.dormid
+  JOIN dorm_amenity AS t3 ON t2.amenid = t3.amenid
+  WHERE t1.dorm_name = 'Smith Hall'

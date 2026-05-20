@@ -1,0 +1,14 @@
+db: tests-examples/spider/epinions_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/epinions_1/tables/item.csv
+- tests-examples/spider/epinions_1/tables/review.csv
+output: tests-examples/spider/epinions_1/tables/0011.csv
+constants:
+- '10'
+columns:
+- rating
+sql: |-
+  SELECT t1.title
+  FROM item AS t1
+  JOIN review AS t2 ON t1.i_id = t2.i_id
+  WHERE t2.rating = 10

@@ -1,0 +1,12 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/department.csv
+- tests-examples/spider/college_3/tables/minor_in.csv
+output: tests-examples/spider/college_3/tables/0020.csv
+sql: |-
+  SELECT dname
+  FROM department
+  EXCEPT
+  SELECT t1.dname
+  FROM department AS t1
+  JOIN minor_in AS t2 ON t1.dno = t2.dno

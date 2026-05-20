@@ -1,0 +1,53 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["-890416549", null, "-717809554"]
+    - ["1219078821", null, "-717809554"]
+    - ["11912762", null, "-717809554"]
+    - ["-501811782", null, "-717809554"]
+    - ["1411009339", "B7", "-717809554"]
+    - ["-1020663942", "", "-717809554"]
+    - ["-474800012", null, "-285784552"]
+    - ["-426397706", null, "Z赯q޶{p"]
+    - ["XKyc", "520154197", "/#3t鶝UL"]
+    - ["63194971", "513721996", "-790549741"]
+    - ["-254690599", "-1724310134", "-156809031"]
+    - ["d2", "]xsa", ""]
+    - ["", "", null]
+    - ["ࠅ1", "991149750", ""]
+  database0_t0:
+    - [897917532, null]
+    - [-339580836, null]
+    - [23641619, null]
+    - [991149750, "991149750"]
+    - [754476308, "n3cQO%"]
+    - [723249712, null]
+    - [754378437, "aNs"]
+    - [-2017670778, ".<iE"]
+    - [875783218, "nFn"]
+    - [2039102396, "\nPP0◍'"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 625572473"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["991149750"]
+  - ["n3cQO%"]
+  - ["NULL"]
+  - ["aNs"]
+  - [".<iE"]
+  - ["nFn"]
+  - ["\nPP0◍'"]

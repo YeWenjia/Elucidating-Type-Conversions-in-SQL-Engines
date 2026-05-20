@@ -1,0 +1,18 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0034.csv
+constants:
+- Brander
+functions:
+- min
+columns:
+- year
+- winery
+sql: |-
+  SELECT name
+  FROM wine
+  WHERE year <
+      (SELECT min(year)
+       FROM wine
+       WHERE winery = 'Brander')

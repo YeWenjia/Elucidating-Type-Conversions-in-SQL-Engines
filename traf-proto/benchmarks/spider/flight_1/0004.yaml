@@ -1,0 +1,15 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/aircraft.csv
+output: tests-examples/spider/flight_1/tables/0004.csv
+constants:
+- '1000'
+- '5000'
+functions:
+- count
+columns:
+- distance
+sql: |-
+  SELECT count(*)
+  FROM aircraft
+  WHERE distance BETWEEN 1000 AND 5000

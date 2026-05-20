@@ -1,0 +1,14 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/reviewer.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0040.csv
+constants:
+- '3'
+columns:
+- stars
+sql: |-
+  SELECT t2.name
+  FROM rating AS t1
+  JOIN reviewer AS t2 ON t1.rid = t2.rid
+  WHERE t1.stars > 3

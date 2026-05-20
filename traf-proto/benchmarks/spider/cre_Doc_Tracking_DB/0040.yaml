@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/documents_to_be_destroyed.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0040.csv
+functions:
+- count
+sql: |-
+  SELECT destroyed_by_employee_id,
+         count(*)
+  FROM documents_to_be_destroyed
+  GROUP BY destroyed_by_employee_id

@@ -1,0 +1,16 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/course_authors_and_tutors.csv
+- tests-examples/spider/e_learning/tables/courses.csv
+output: tests-examples/spider/e_learning/tables/0019.csv
+constants:
+- operating system
+- data structure
+columns:
+- course_name
+sql: |-
+  SELECT t1.address_line_1
+  FROM course_authors_and_tutors AS t1
+  JOIN courses AS t2 ON t1.author_id = t2.author_id
+  WHERE t2.course_name = 'operating system'
+    OR t2.course_name = 'data structure'

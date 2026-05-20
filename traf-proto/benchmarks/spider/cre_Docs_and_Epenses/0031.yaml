@@ -1,0 +1,9 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents_with_expenses.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0031.csv
+functions:
+- count
+sql: |-
+  SELECT count(*)
+  FROM documents_with_expenses

@@ -1,0 +1,16 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/customers.csv
+- tests-examples/spider/driving_school/tables/customer_payments.csv
+output: tests-examples/spider/driving_school/tables/0037.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t2.first_name,
+         t2.last_name
+  FROM customer_payments AS t1
+  JOIN customers AS t2 ON t1.customer_id = t2.customer_id
+  GROUP BY t1.customer_id, t2.first_name, t2.last_name
+  HAVING count(*) > 2;

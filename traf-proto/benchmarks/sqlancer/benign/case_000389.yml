@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["232191734", "-1073664262"]
+    - ["", "-1073664262"]
+    - ["Il", "-1073664262"]
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)LIKE(database0_t0.c0))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["232191734", "-1073664262"]
+  - ["", "-1073664262"]
+  - ["Il", "-1073664262"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["232191734", "-1073664262"]
+  - ["", "-1073664262"]
+  - ["Il", "-1073664262"]

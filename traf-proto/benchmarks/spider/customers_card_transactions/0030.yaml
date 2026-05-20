@@ -1,0 +1,13 @@
+db: tests-examples/spider/customers_card_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_card_transactions/tables/customers_cards.csv
+output: tests-examples/spider/customers_card_transactions/tables/0030.csv
+functions:
+- count
+columns:
+- customer_id
+sql: |-
+  SELECT card_type_code,
+         count(DISTINCT customer_id)
+  FROM customers_cards
+  GROUP BY card_type_code

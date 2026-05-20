@@ -1,0 +1,13 @@
+db: tests-examples/spider/theme_gallery/tables/db.sqlite
+inputs:
+- tests-examples/spider/theme_gallery/tables/exhibition.csv
+output: tests-examples/spider/theme_gallery/tables/0009.csv
+constants:
+- '15'
+columns:
+- ticket_price
+sql: |-
+  SELECT theme,
+         year
+  FROM exhibition
+  WHERE ticket_price < 15

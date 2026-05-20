@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["zn", -948742844]
+    - ["1635776983", -948742844]
+    - ["1392000157", -948742844]
+    - ["稬", null]
+    - ["", 1274212778]
+    - ["-420727782", -760757233]
+    - ["2?-gnp", null]
+    - ["-948742844", 1826832910]
+sql: "SELECT * FROM database0_t0 WHERE 'tt\t8D.T'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"tt\t8D.T\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["zn", "-948742844"]
+  - ["1635776983", "-948742844"]
+  - ["1392000157", "-948742844"]
+  - ["稬", "NULL"]
+  - ["", "1274212778"]
+  - ["-420727782", "-760757233"]
+  - ["2?-gnp", "NULL"]
+  - ["-948742844", "1826832910"]

@@ -1,0 +1,60 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["^}M n2U", null]
+    - ["1014163171", "161015986"]
+    - ["㊺뺉sF", ""]
+    - ["b3", null]
+    - ["664693729", null]
+    - ["w\r", "6394546"]
+    - ["2>AS", null]
+    - ["1027886027", "ln䷥st-g"]
+  database0_t0:
+    - [661745106, "O-)/6.뜯pK", null]
+    - [-1643640422, "ⷧ媌", null]
+    - [-585228238, "3kp<qkq", null]
+    - [-639173391, "-2087893705", null]
+    - [-642210123, null, null]
+    - [-1042823525, "-284242177", null]
+    - [946214352, "", "-1554526165"]
+    - [1302265430, "gy跈k'>Vf", "-1724310134"]
+    - [-1517965478, "\nPPj◍'", "-58938003"]
+sql: "SELECT database0_t0.c1, database0_t0.c2, database0_t1.c1 FROM database0_t1, database0_t0 WHERE database0_t0.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t0.c1, database0_t0.c2, database0_t1.c1]
+traf_rows:
+  - ["", "-1554526165", "NULL"]
+  - ["gy跈k'>Vf", "-1724310134", "NULL"]
+  - ["\nPPj◍'", "-58938003", "NULL"]
+  - ["", "-1554526165", "161015986"]
+  - ["gy跈k'>Vf", "-1724310134", "161015986"]
+  - ["\nPPj◍'", "-58938003", "161015986"]
+  - ["", "-1554526165", ""]
+  - ["gy跈k'>Vf", "-1724310134", ""]
+  - ["\nPPj◍'", "-58938003", ""]
+  - ["", "-1554526165", "NULL"]
+  - ["gy跈k'>Vf", "-1724310134", "NULL"]
+  - ["\nPPj◍'", "-58938003", "NULL"]
+  - ["", "-1554526165", "NULL"]
+  - ["gy跈k'>Vf", "-1724310134", "NULL"]
+  - ["\nPPj◍'", "-58938003", "NULL"]
+  - ["", "-1554526165", "6394546"]
+  - ["gy跈k'>Vf", "-1724310134", "6394546"]
+  - ["\nPPj◍'", "-58938003", "6394546"]
+  - ["", "-1554526165", "NULL"]
+  - ["gy跈k'>Vf", "-1724310134", "NULL"]
+  - ["\nPPj◍'", "-58938003", "NULL"]
+  - ["", "-1554526165", "ln䷥st-g"]
+  - ["gy跈k'>Vf", "-1724310134", "ln䷥st-g"]
+  - ["\nPPj◍'", "-58938003", "ln䷥st-g"]

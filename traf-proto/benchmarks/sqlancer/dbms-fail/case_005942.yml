@@ -1,0 +1,54 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["1342189099", "1294682843"]
+    - ["CB", "1294682843"]
+    - ["915954605", "1294682843"]
+    - ["(1 \t", "1294682843"]
+    - ["", "1294682843"]
+    - ["-1306634862", "1294682843"]
+    - ["^}M n2U", null]
+    - ["697603514", ""]
+    - [">7Gd?[xJ", null]
+    - ["aqDt'촓ꈳzD", ""]
+    - ["803476746", ""]
+    - ["1974422617", null]
+    - [",l", "0\\?uTr"]
+    - ["1804551272", null]
+    - ["-220308301", null]
+    - ["amngt-媩", "g觋'*"]
+    - ["1741605790", null]
+    - ["%B", null]
+    - ["*b}Q*F<", "-374962031"]
+    - ["-1056561715", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '㨱Y'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"㨱Y\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["1342189099"]
+  - ["CB"]
+  - ["915954605"]
+  - ["(1 \t"]
+  - [""]
+  - ["-1306634862"]
+  - ["^}M n2U"]
+  - ["697603514"]
+  - [">7Gd?[xJ"]
+  - ["aqDt'촓ꈳzD"]
+  - ["803476746"]
+  - ["1974422617"]
+  - [",l"]
+  - ["1804551272"]
+  - ["-220308301"]
+  - ["amngt-媩"]
+  - ["1741605790"]
+  - ["%B"]
+  - ["*b}Q*F<"]
+  - ["-1056561715"]

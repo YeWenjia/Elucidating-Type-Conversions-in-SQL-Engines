@@ -1,0 +1,12 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/locations.csv
+output: tests-examples/spider/cre_Theme_park/tables/0008.csv
+constants:
+- UK Gallery
+columns:
+- location_name
+sql: |-
+  SELECT address
+  FROM locations
+  WHERE location_name = 'UK Gallery'

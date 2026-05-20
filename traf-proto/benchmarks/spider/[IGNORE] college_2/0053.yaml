@@ -1,0 +1,20 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/course.csv
+- tests-examples/spider/college_2/tables/section.csv
+output: tests-examples/spider/college_2/tables/0053.csv
+constants:
+- Chandler
+- Fall
+- '2010'
+columns:
+- building
+- semester
+- year
+sql: |-
+  SELECT t1.title
+  FROM course AS t1
+  JOIN section AS t2 ON t1.course_id = t2.course_id
+  WHERE building = 'Chandler'
+    AND semester = 'Fall'
+    AND year = 2010

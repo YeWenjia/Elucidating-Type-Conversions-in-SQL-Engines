@@ -1,0 +1,9 @@
+db: tests-examples/spider/train_station/tables/db.sqlite
+inputs:
+- tests-examples/spider/train_station/tables/train.csv
+output: tests-examples/spider/train_station/tables/0011.csv
+sql: |-
+  SELECT name,
+         time,
+         service
+  FROM train

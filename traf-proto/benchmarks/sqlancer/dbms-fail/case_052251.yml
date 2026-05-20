@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0: []
+sql: "SELECT database0_t1.c1, database0_t0.c0, database0_t0.c1, database0_t1.c0 FROM database0_t1 INNER  JOIN database0_t0 ON database0_t0.c0 WHERE 520022295"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of JOIN/ON must be type boolean, not type integer\n  Position: 121"
+traf_columns: [database0_t1.c1, database0_t0.c0, database0_t0.c1, database0_t1.c0]
+traf_rows: []

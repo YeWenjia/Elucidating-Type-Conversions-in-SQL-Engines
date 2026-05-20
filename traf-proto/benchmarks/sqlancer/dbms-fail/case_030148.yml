@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0:
+    - [" ", "1264846530", "-2086573347", "㟍-Sᇑ"]
+    - ["", "1264846530", "/*nKt&ղ", "㟍-Sᇑ"]
+    - ["952852189", "1264846530", "?gKU", "㟍-Sᇑ"]
+    - ["-278911135", "1788271902", null, null]
+    - ["", ".~YmSi0", null, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '1428400327'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1428400327\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1264846530"]
+  - ["1264846530"]
+  - ["1264846530"]
+  - ["1788271902"]
+  - [".~YmSi0"]

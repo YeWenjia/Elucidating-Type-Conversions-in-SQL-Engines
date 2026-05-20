@@ -1,0 +1,14 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+output: tests-examples/spider/farm/tables/0019.csv
+constants:
+- '1500'
+- '500'
+columns:
+- population
+sql: |-
+  SELECT official_name
+  FROM city
+  WHERE population > 1500
+    OR population < 500

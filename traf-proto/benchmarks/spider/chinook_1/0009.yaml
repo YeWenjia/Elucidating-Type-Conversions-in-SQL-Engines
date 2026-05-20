@@ -1,0 +1,14 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/album.csv
+- tests-examples/spider/chinook_1/tables/artist.csv
+output: tests-examples/spider/chinook_1/tables/0009.csv
+constants:
+- Balls to the Wall
+columns:
+- title
+sql: |-
+  SELECT t2.name
+  FROM album AS t1
+  JOIN artist AS t2 ON t1.artistid = t2.artistid
+  WHERE t1.title = 'Balls to the Wall'

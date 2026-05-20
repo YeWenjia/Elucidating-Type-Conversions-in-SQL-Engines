@@ -1,0 +1,11 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+output: tests-examples/spider/musical/tables/0014.csv
+functions:
+- count
+sql: |-
+  SELECT nominee,
+         COUNT(*)
+  FROM musical
+  GROUP BY nominee

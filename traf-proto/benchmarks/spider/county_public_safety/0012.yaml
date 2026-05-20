@@ -1,0 +1,16 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0012.csv
+constants:
+- '1'
+columns:
+- county_id
+sql: |-
+  SELECT name
+  FROM city
+  WHERE county_id =
+      (SELECT county_id
+       FROM county_public_safety
+       ORDER BY police_officers DESC LIMIT 1)

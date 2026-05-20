@@ -1,0 +1,19 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/web_client_accelerator.csv
+- tests-examples/spider/browser_web/tables/browser.csv
+- tests-examples/spider/browser_web/tables/accelerator_compatible_browser.csv
+output: tests-examples/spider/browser_web/tables/0007.csv
+constants:
+- CProxy
+- '1998'
+columns:
+- name
+- compatible_since_year
+sql: |-
+  SELECT t1.name
+  FROM browser AS t1
+  JOIN accelerator_compatible_browser AS t2 ON t1.id = t2.browser_id
+  JOIN web_client_accelerator AS t3 ON t2.accelerator_id = t3.id
+  WHERE t3.name = 'CProxy'
+    AND t2.compatible_since_year > 1998

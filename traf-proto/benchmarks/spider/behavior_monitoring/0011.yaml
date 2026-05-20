@@ -1,0 +1,12 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+output: tests-examples/spider/behavior_monitoring/tables/0011.csv
+constants:
+- Medhurst
+columns:
+- last_name
+sql: |-
+  SELECT gender
+  FROM teachers
+  WHERE last_name = 'Medhurst'

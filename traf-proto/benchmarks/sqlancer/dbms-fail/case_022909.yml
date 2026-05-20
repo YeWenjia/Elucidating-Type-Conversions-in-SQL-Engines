@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["-929713484", 897232430]
+    - ["-1247268711", 897232430]
+    - ["-686555749", 897232430]
+    - ["-1864369269", 897232430]
+    - ["3촓ku9", 1661665722]
+    - ["-1104779761", -1998256309]
+    - ["", 625572473]
+sql: "SELECT * FROM database0_t0 WHERE 'ah\\T>8X('"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"ah\\T>8X(\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-929713484", "897232430"]
+  - ["-1247268711", "897232430"]
+  - ["-686555749", "897232430"]
+  - ["-1864369269", "897232430"]
+  - ["3촓ku9", "1661665722"]
+  - ["-1104779761", "-1998256309"]
+  - ["", "625572473"]

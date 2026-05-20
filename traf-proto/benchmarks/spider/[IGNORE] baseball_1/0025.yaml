@@ -1,0 +1,20 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/salary.csv
+- tests-examples/spider/baseball_1/tables/team.csv
+output: tests-examples/spider/baseball_1/tables/0025.csv
+constants:
+- Boston Red Stockings
+- '2010'
+functions:
+- sum
+columns:
+- salary
+- name
+- year
+sql: |-
+  SELECT sum(t1.salary)
+  FROM salary AS t1
+  JOIN team AS t2 ON t1.team_id = t2.team_id_br
+  WHERE t2.name = 'Boston Red Stockings'
+    AND t1.year = 2010

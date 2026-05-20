@@ -1,0 +1,16 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/addresses.csv
+- tests-examples/spider/driving_school/tables/staff.csv
+output: tests-examples/spider/driving_school/tables/0017.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.city,
+         count(*)
+  FROM addresses AS t1
+  JOIN staff AS t2 ON t1.address_id = t2.staff_address_id
+  GROUP BY t1.city
+  ORDER BY count(*) DESC;

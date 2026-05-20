@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Doc_Tracking_DB/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Tracking_DB/tables/ref_locations.csv
+output: tests-examples/spider/cre_Doc_Tracking_DB/tables/0013.csv
+constants:
+- x
+columns:
+- location_code
+sql: |-
+  SELECT location_name,
+         location_description
+  FROM ref_locations
+  WHERE location_code = 'x'

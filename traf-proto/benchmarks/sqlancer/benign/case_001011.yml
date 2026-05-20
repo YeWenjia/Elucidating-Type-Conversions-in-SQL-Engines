@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t2:
+    - ["", "", null]
+    - ["9-", "g^R\rx)9v\r", "-632382568"]
+sql: "SELECT * FROM database0_t2 WHERE (('3_ȘY') IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+  - "c2"
+rows:
+  - ["", "", null]
+  - ["9-", "g^R\rx)9v\r", "-632382568"]
+kind: benign
+traf_columns: [database0_t2.c0, database0_t2.c1, database0_t2.c2]
+traf_rows:
+  - ["", "", "NULL"]
+  - ["9-", "g^R\rx)9v\r", "-632382568"]

@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t4:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - ["-501811782", -2077083164]
+    - [null, -2077083164]
+    - ["294308099", -2077083164]
+  database0_t4: []
+sql: "SELECT database0_t4.c2, database0_t4.c1 FROM database0_t4, database0_t0 WHERE '1428400327'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1428400327\"\n  Position: 79"
+traf_columns: [database0_t4.c2, database0_t4.c1]
+traf_rows: []

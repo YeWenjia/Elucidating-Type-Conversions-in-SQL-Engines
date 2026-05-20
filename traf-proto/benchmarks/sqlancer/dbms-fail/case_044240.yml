@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-1724310134, "312477042"]
+    - [108434982, null]
+  database0_t0:
+    - [-1039077916, null]
+    - [-246670224, "-983413443"]
+    - [-1225136706, "-639173391"]
+    - [-1148152677, null]
+sql: "SELECT * FROM database0_t1 WHERE 'm'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"m\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-1724310134", "312477042"]
+  - ["108434982", "NULL"]

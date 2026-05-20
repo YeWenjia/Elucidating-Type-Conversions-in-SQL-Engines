@@ -1,0 +1,16 @@
+db: tests-examples/spider/architecture/tables/db.sqlite
+inputs:
+- tests-examples/spider/architecture/tables/architect.csv
+- tests-examples/spider/architecture/tables/bridge.csv
+output: tests-examples/spider/architecture/tables/0009.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name
+  FROM architect AS t1
+  JOIN bridge AS t2 ON t1.id = t2.architect_id
+  GROUP BY t1.id, t1.name
+  HAVING count(*) >= 3

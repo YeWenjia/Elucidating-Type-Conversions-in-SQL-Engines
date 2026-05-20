@@ -1,0 +1,15 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0030.csv
+functions:
+- max
+columns:
+- price
+- score
+sql: |-
+  SELECT max(price),
+         max(score),
+         year
+  FROM wine
+  GROUP BY year

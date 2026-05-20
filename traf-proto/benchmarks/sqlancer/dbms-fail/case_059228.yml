@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["9223372036854775807", 976935660]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '}QJ\nu'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"}QJ\nu\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["9223372036854775807"]

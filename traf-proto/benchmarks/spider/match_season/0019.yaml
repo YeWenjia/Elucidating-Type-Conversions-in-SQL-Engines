@@ -1,0 +1,15 @@
+db: tests-examples/spider/match_season/tables/db.sqlite
+inputs:
+- tests-examples/spider/match_season/tables/team.csv
+- tests-examples/spider/match_season/tables/player.csv
+output: tests-examples/spider/match_season/tables/0019.csv
+constants:
+- Columbus Crew
+columns:
+- name
+sql: |-
+  SELECT t1.player,
+         t1.years_played
+  FROM player AS t1
+  JOIN team AS t2 ON t1.team = t2.team_id
+  WHERE t2.name = 'Columbus Crew'

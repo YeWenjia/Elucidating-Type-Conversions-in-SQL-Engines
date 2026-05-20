@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["1874124823", 1304880874, "\r䠀"]
+    - ["-1104779761", 1626904829, "\r䠀"]
+    - ["328732995", -858812041, "\r䠀"]
+    - ["", -915245931, "\r䠀"]
+    - ["|KZ+*5\\?f", 285314990, "\tW?R\rk"]
+    - ["878771492", 1498071704, "!h,X㻃"]
+    - ["783936267", 619795723, "232191734"]
+    - ["}C೥&㊿m.高", -2087893705, ""]
+sql: "SELECT database0_t0.c2, database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE database0_t0.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 82"
+traf_columns: [database0_t0.c2, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["\r䠀", "1874124823", "1304880874"]
+  - ["\r䠀", "-1104779761", "1626904829"]
+  - ["\r䠀", "328732995", "-858812041"]
+  - ["\r䠀", "", "-915245931"]
+  - ["\tW?R\rk", "|KZ+*5\\?f", "285314990"]
+  - ["!h,X㻃", "878771492", "1498071704"]
+  - ["232191734", "783936267", "619795723"]

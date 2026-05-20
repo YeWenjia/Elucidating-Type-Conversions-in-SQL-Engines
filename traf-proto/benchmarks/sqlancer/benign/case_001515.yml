@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1676652934", "-1179205865", "1242577457"]
+    - ["1676652934", "]xsa", "1242577457"]
+    - ["1676652934", "1624917627", "1242577457"]
+  database0_t0:
+    - ["6g+錣", null, null]
+    - ["A.", null, null]
+    - ["1513190171", null, 474819008]
+sql: "SELECT database0_t0.c1, database0_t0.c0, database0_t0.c2 FROM database0_t0 WHERE ((-833856855) IS NOT NULL)"
+columns:
+  - "c1"
+  - "c0"
+  - "c2"
+rows:
+  - [null, "6g+錣", null]
+  - [null, "A.", null]
+  - [null, "1513190171", 474819008]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["NULL", "6g+錣", "NULL"]
+  - ["NULL", "A.", "NULL"]
+  - ["NULL", "1513190171", "474819008"]

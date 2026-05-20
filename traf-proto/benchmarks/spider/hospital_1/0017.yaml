@@ -1,0 +1,15 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/physician.csv
+- tests-examples/spider/hospital_1/tables/patient.csv
+output: tests-examples/spider/hospital_1/tables/0017.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.name
+  FROM physician AS t1
+  JOIN patient AS t2 ON t1.employeeid = t2.pcp
+  GROUP BY t1.employeeid, t1.name
+  HAVING count(*) > 1

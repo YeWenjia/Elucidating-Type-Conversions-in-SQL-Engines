@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["b200b+wsn", 1274267327]
+    - ["157581434", null]
+    - ["q{,an'", null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '(x'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"(x\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["1274267327"]
+  - ["NULL"]
+  - ["NULL"]

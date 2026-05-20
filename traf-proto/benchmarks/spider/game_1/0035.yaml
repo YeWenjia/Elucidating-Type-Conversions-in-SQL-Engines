@@ -1,0 +1,10 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/plays_games.csv
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0035.csv
+sql: |-
+  SELECT stuid
+  FROM sportsinfo INTERSECT
+  SELECT stuid
+  FROM plays_games

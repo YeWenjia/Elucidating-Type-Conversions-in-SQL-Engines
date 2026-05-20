@@ -1,0 +1,21 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/files.csv
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0036.csv
+constants:
+- '3:'
+functions:
+- max
+- min
+columns:
+- resolution
+- duration
+filters:
+- like
+sql: |-
+  SELECT max(t2.resolution),
+         min(t2.resolution)
+  FROM files AS t1
+  JOIN song AS t2 ON t1.f_id = t2.f_id
+  WHERE t1.duration LIKE '3:%'

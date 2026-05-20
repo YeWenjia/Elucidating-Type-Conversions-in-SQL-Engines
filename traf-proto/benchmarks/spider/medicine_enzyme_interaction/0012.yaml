@@ -1,0 +1,18 @@
+db: tests-examples/spider/medicine_enzyme_interaction/tables/db.sqlite
+inputs:
+- tests-examples/spider/medicine_enzyme_interaction/tables/medicine.csv
+- tests-examples/spider/medicine_enzyme_interaction/tables/enzyme.csv
+- tests-examples/spider/medicine_enzyme_interaction/tables/medicine_enzyme_interaction.csv
+output: tests-examples/spider/medicine_enzyme_interaction/tables/0012.csv
+constants:
+- ALA synthase
+- Aripiprazole
+columns:
+- name
+sql: |-
+  SELECT t1.interaction_type
+  FROM medicine_enzyme_interaction AS t1
+  JOIN medicine AS t2 ON t1.medicine_id = t2.id
+  JOIN enzyme AS t3 ON t1.enzyme_id = t3.id
+  WHERE t3.name = 'ALA synthase'
+    AND t2.name = 'Aripiprazole'

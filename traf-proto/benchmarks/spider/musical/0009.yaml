@@ -1,0 +1,10 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+- tests-examples/spider/musical/tables/actor.csv
+output: tests-examples/spider/musical/tables/0009.csv
+sql: |-
+  SELECT t1.name,
+         t2.name
+  FROM actor AS t1
+  JOIN musical AS t2 ON t1.musical_id = t2.musical_id

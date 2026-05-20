@@ -1,0 +1,14 @@
+db: tests-examples/spider/railway/tables/db.sqlite
+inputs:
+- tests-examples/spider/railway/tables/railway.csv
+- tests-examples/spider/railway/tables/train.csv
+output: tests-examples/spider/railway/tables/0010.csv
+constants:
+- Andaman Exp
+columns:
+- name
+sql: |-
+  SELECT t1.builder
+  FROM railway AS t1
+  JOIN train AS t2 ON t1.railway_id = t2.railway_id
+  WHERE t2.name = 'Andaman Exp'

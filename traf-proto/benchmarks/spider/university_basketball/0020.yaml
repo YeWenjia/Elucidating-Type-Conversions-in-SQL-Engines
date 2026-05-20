@@ -1,0 +1,17 @@
+db: tests-examples/spider/university_basketball/tables/db.sqlite
+inputs:
+- tests-examples/spider/university_basketball/tables/university.csv
+output: tests-examples/spider/university_basketball/tables/0020.csv
+constants:
+- '1850'
+functions:
+- sum
+columns:
+- enrollment
+- founded
+sql: |-
+  SELECT sum(enrollment),
+         affiliation
+  FROM university
+  WHERE founded > 1850
+  GROUP BY affiliation

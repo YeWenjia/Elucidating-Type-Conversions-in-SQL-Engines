@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["-444040980", -2135386045, null]
+    - ["+R楙_g", -2135386045, null]
+    - ["-883264523", -2135386045, null]
+    - ["j誃&>|b[E", -2135386045, null]
+    - ["PRᗬ<-!4B}", -2135386045, null]
+    - ["1708405439", -2135386045, null]
+    - ["e튊Ug", -2135386045, null]
+    - ["", -2135386045, null]
+    - ["-1118684320", -2135386045, null]
+    - ["4x(", -2135386045, null]
+    - ["-876441658", -2135386045, null]
+    - ["稬#fi", -2135386045, null]
+    - ["Hi}'iY", -2135386045, null]
+    - ["-1104779761", -2135386045, null]
+    - ["-1791268570", null, null]
+    - ["qTLY\\D-", null, 1506804512]
+    - ["-186716307", null, 402431241]
+    - ["2039814783", null, null]
+    - ["\nB", null, null]
+    - ["-596599025", null, null]
+sql: "SELECT * FROM database0_t1 WHERE CAST('珽N' AS INT)"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: invalid input syntax for type integer: \"珽N\"\n  Position: 39"
+traf_error: "icast fails 珽N to Int"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 210, in typecheck_expr\n    if self.ops.explicit_cast_feasibility(e.e, tp, e.t):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 200, in explicit_cast_feasibility\n    self.cast(e, t)\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 226, in cast\n    return self.icast(v, t)\n           ^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 178, in icast\n    raise TypeError(f\"icast fails {e} to {t}\")\ninterpreter.Typechecker.TypeError: icast fails 珽N to Int\n"
+traf_columns: []
+traf_rows: []

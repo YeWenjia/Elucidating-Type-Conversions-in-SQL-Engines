@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/hotels.csv
+output: tests-examples/spider/cre_Theme_park/tables/0026.csv
+functions:
+- avg
+columns:
+- price_range
+sql: |-
+  SELECT star_rating_code,
+         avg(price_range)
+  FROM hotels
+  GROUP BY star_rating_code

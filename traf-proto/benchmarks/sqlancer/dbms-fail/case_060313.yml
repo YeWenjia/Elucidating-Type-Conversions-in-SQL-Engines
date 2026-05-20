@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t7:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-2087893705, null]
+    - [2123549899, null]
+    - [1699565337, null]
+    - [625572473, null]
+  database0_t7:
+    - [-913599578, "-1344652955"]
+    - [-1241568075, "vm"]
+sql: "SELECT database0_t7.c0 FROM database0_t7 WHERE '^V'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"^V\"\n  Position: 48"
+traf_columns: [database0_t7.c0]
+traf_rows:
+  - ["-913599578"]
+  - ["-1241568075"]

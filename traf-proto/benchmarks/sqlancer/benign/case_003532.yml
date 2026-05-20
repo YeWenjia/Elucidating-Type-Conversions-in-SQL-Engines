@@ -1,0 +1,13 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+data:
+  database0_t7: []
+sql: "SELECT * FROM database0_t7 WHERE (('tL㶯6') IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t7.c0]
+traf_rows: []

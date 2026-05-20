@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["-339580836", null]
+    - ["", null]
+    - ["TJ", null]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE 'Fx㟍ﴤz|xƺ'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Fx㟍ﴤz|xƺ\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["NULL", "-339580836"]
+  - ["NULL", ""]
+  - ["NULL", "TJ"]

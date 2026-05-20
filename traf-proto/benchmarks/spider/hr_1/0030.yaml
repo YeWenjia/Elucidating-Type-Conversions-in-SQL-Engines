@@ -1,0 +1,13 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/employees.csv
+output: tests-examples/spider/hr_1/tables/0030.csv
+functions:
+- count
+sql: |-
+  SELECT t2.department_name,
+         COUNT(*)
+  FROM employees AS t1
+  JOIN departments AS t2 ON t1.department_id = t2.department_id
+  GROUP BY t2.department_name

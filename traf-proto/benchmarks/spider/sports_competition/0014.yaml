@@ -1,0 +1,15 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/player.csv
+output: tests-examples/spider/sports_competition/tables/0014.csv
+constants:
+- '20'
+functions:
+- avg
+columns:
+- points
+sql: |-
+  SELECT position
+  FROM player
+  GROUP BY name, position
+  HAVING avg(points) >= 20

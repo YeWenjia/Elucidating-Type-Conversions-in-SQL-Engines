@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-885962598", "", "-232213025"]
+    - ["-1104779761", "^}M n2U", "-1775103535"]
+  database0_t0:
+    - [-883264523, -1554526165]
+    - [-423461274, null]
+    - [-420727782, null]
+    - [-88915418, -354721519]
+    - [905691011, 1359543952]
+sql: "SELECT database0_t1.c0, database0_t1.c1, database0_t0.c1, database0_t0.c0 FROM database0_t1, database0_t0 WHERE 'KD'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"KD\"\n  Position: 113"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["-885962598", "", "-1554526165", "-883264523"]
+  - ["-885962598", "", "NULL", "-423461274"]
+  - ["-885962598", "", "NULL", "-420727782"]
+  - ["-885962598", "", "-354721519", "-88915418"]
+  - ["-885962598", "", "1359543952", "905691011"]
+  - ["-1104779761", "^}M n2U", "-1554526165", "-883264523"]
+  - ["-1104779761", "^}M n2U", "NULL", "-423461274"]
+  - ["-1104779761", "^}M n2U", "NULL", "-420727782"]
+  - ["-1104779761", "^}M n2U", "-354721519", "-88915418"]
+  - ["-1104779761", "^}M n2U", "1359543952", "905691011"]

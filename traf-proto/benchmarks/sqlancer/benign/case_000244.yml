@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["2090915506", "JK8W?", null]
+    - ["-289869638", "JK8W?", null]
+    - ["671816884", "JK8W?", null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE NULL"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

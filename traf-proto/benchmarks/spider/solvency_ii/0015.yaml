@@ -1,0 +1,13 @@
+db: tests-examples/spider/solvency_ii/tables/db.sqlite
+inputs:
+- tests-examples/spider/solvency_ii/tables/products.csv
+- tests-examples/spider/solvency_ii/tables/products_in_events.csv
+output: tests-examples/spider/solvency_ii/tables/0015.csv
+columns:
+- product_id
+sql: |-
+  SELECT product_name
+  FROM products
+  WHERE product_id NOT IN
+      (SELECT product_id
+       FROM products_in_events)

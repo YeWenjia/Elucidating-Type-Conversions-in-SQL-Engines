@@ -1,0 +1,15 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/farm.csv
+output: tests-examples/spider/farm/tables/0005.csv
+constants:
+- '5000'
+functions:
+- avg
+columns:
+- working_horses
+- total_horses
+sql: |-
+  SELECT avg(working_horses)
+  FROM farm
+  WHERE total_horses > 5000

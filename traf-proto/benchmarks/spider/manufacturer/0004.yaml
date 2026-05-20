@@ -1,0 +1,13 @@
+db: tests-examples/spider/manufacturer/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufacturer/tables/furniture.csv
+output: tests-examples/spider/manufacturer/tables/0004.csv
+constants:
+- '10'
+columns:
+- num_of_component
+sql: |-
+  SELECT num_of_component,
+         name
+  FROM furniture
+  WHERE num_of_component > 10

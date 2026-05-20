@@ -1,0 +1,27 @@
+db: tests-examples/spider/architecture/tables/db.sqlite
+inputs:
+- tests-examples/spider/architecture/tables/architect.csv
+- tests-examples/spider/architecture/tables/bridge.csv
+- tests-examples/spider/architecture/tables/mill.csv
+output: tests-examples/spider/architecture/tables/0011.csv
+constants:
+- '2'
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name,
+         t1.gender
+  FROM architect AS t1
+  JOIN bridge AS t2 ON t1.id = t2.architect_id
+  GROUP BY t1.id, t1.name, t1.gender
+  HAVING count(*) = 2
+  UNION
+  SELECT t1.id,
+         t1.name,
+         t1.gender
+  FROM architect AS t1
+  JOIN mill AS t2 ON t1.id = t2.architect_id
+  GROUP BY t1.id
+  HAVING count(*) = 1

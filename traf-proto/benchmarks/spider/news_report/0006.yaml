@@ -1,0 +1,10 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+output: tests-examples/spider/news_report/tables/0006.csv
+constants:
+- '1'
+sql: |-
+  SELECT nationality
+  FROM journalist
+  ORDER BY years_working DESC

@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [1639124197, null]
+    - [1157427189, null]
+  database0_t0:
+    - ["枱W()dᡮA", "u s\nෑz+"]
+    - ["*僙", null]
+    - ["-1883520188", ">"]
+    - ["1240583567", "-58938003"]
+    - ["s3ྌ7", ""]
+    - ["-835110572", "878771492"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["枱W()dᡮA"]
+  - ["-1883520188"]
+  - ["1240583567"]
+  - ["-835110572"]

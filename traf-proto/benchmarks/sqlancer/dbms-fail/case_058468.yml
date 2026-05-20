@@ -1,0 +1,48 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", "ln䷥ST-G", 1493075867]
+    - ["}T/HzD", "vo\\f4", -316874230]
+    - ["-1722647003", "1856483482", -428151007]
+    - ["-1684923321", "mo1D.*Ti", null]
+  database0_t0:
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - ["1310613687"]
+    - ["1056796311"]
+    - ["W}?Q"]
+    - ["-1101354795"]
+    - ["zsSq*6,/"]
+    - ["-1369659328"]
+    - ["-1882058703"]
+    - ["VO\\F4"]
+    - ["-1753804355"]
+    - ["-1790883840"]
+    - ["40206337"]
+    - ["}YHfjF"]
+    - [""]
+    - ["-1794475476"]
+    - ["-1790883840"]
+    - ["-1554526165"]
+    - ["678687013"]
+    - ["-1936348709"]
+sql: "SELECT * FROM database0_t1 WHERE '440833260'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"440833260\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["", "ln䷥ST-G", "1493075867"]
+  - ["}T/HzD", "vo\\f4", "-316874230"]
+  - ["-1722647003", "1856483482", "-428151007"]
+  - ["-1684923321", "mo1D.*Ti", "NULL"]

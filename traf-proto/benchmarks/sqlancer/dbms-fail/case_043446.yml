@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["-31667871", "-655428004"]
+    - ["lW9pfk!b", "-1930495376"]
+    - ["", "727537755"]
+    - ["915954605", "-1984281649"]
+    - ["1320698346", "-339580836"]
+sql: "SELECT database0_t0.c2, database0_t0.c0 FROM database0_t0 WHERE 'tQ'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"tQ\"\n  Position: 65"
+traf_columns: [database0_t0.c2, database0_t0.c0]
+traf_rows:
+  - ["-655428004", "-31667871"]
+  - ["-1930495376", "lW9pfk!b"]
+  - ["727537755", ""]
+  - ["-1984281649", "915954605"]
+  - ["-339580836", "1320698346"]

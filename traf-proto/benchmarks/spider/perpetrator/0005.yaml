@@ -1,0 +1,10 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+output: tests-examples/spider/perpetrator/tables/0005.csv
+constants:
+- '1'
+sql: |-
+  SELECT location
+  FROM perpetrator
+  ORDER BY killed DESC

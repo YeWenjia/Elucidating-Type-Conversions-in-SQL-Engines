@@ -1,0 +1,12 @@
+db: tests-examples/spider/machine_repair/tables/db.sqlite
+inputs:
+- tests-examples/spider/machine_repair/tables/technician.csv
+output: tests-examples/spider/machine_repair/tables/0004.csv
+constants:
+- NYY
+columns:
+- team
+sql: |-
+  SELECT name
+  FROM technician
+  WHERE team != 'NYY'

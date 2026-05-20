@@ -1,0 +1,11 @@
+db: tests-examples/spider/tracking_share_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_share_transactions/tables/transactions.csv
+output: tests-examples/spider/tracking_share_transactions/tables/0031.csv
+functions:
+- count
+sql: |-
+  SELECT investor_id,
+         COUNT(*)
+  FROM transactions
+  GROUP BY investor_id

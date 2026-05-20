@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [1639124197, null]
+    - [1157427189, null]
+  database0_t0:
+    - ["枱W()dᡮA", "u s\nෑz+"]
+    - ["*僙", null]
+    - ["-1883520188", ">"]
+    - ["1240583567", "-58938003"]
+    - ["s3ྌ7", ""]
+    - ["-835110572", "878771492"]
+sql: "SELECT database0_t0.c0, database0_t1.c1, database0_t1.c0 FROM database0_t0, database0_t1 WHERE '搉%} ,4jz'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"搉%} ,4jz\"\n  Position: 96"
+traf_columns: [database0_t0.c0, database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["枱W()dᡮA", "NULL", "1639124197"]
+  - ["枱W()dᡮA", "NULL", "1157427189"]
+  - ["*僙", "NULL", "1639124197"]
+  - ["*僙", "NULL", "1157427189"]
+  - ["-1883520188", "NULL", "1639124197"]
+  - ["-1883520188", "NULL", "1157427189"]
+  - ["1240583567", "NULL", "1639124197"]
+  - ["1240583567", "NULL", "1157427189"]
+  - ["s3ྌ7", "NULL", "1639124197"]
+  - ["s3ྌ7", "NULL", "1157427189"]
+  - ["-835110572", "NULL", "1639124197"]
+  - ["-835110572", "NULL", "1157427189"]

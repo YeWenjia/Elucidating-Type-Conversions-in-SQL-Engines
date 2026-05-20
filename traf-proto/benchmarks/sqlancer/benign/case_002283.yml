@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+  database0_t8:
+    - {name: "c1", type: "string"}
+data:
+  database0_t0: []
+  database0_t8: []
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (((((('9J縥\t') IS NULL)) IS NOT NULL)) IS NOT NULL)"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

@@ -1,0 +1,8 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0014.csv
+sql: |-
+  SELECT DISTINCT president_vote,
+                  vice_president_vote
+  FROM voting_record

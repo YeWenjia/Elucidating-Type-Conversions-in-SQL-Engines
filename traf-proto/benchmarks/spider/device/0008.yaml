@@ -1,0 +1,13 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/shop.csv
+output: tests-examples/spider/device/tables/0008.csv
+constants:
+- Apple
+columns:
+- shop_name
+sql: |-
+  SELECT open_date,
+         open_year
+  FROM shop
+  WHERE shop_name = 'Apple'

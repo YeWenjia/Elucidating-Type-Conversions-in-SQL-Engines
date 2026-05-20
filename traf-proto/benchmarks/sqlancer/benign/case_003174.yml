@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t8: []
+sql: "SELECT database0_t8.c0 FROM database0_t8 WHERE (('Dx') IS NOT NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t8.c0]
+traf_rows: []

@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - ["W", -1342658846]
+    - ["&kH-", null]
+    - ["", null]
+    - ["2o()m桜SU-", -428151007]
+    - ["-262222555", null]
+    - ["478272883", -1262237582]
+    - ["j+", null]
+    - ["SF", null]
+    - ["-1807022910", 1486103084]
+    - ["-1786233888", -420727782]
+  database0_t0:
+    - ["-773587990", -1684923321, "-316874230", "947957422"]
+sql: "SELECT * FROM database0_t1 WHERE 'Q\t%![f'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Q\t%![f\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["W", "-1342658846"]
+  - ["&kH-", "NULL"]
+  - ["", "NULL"]
+  - ["2o()m桜SU-", "-428151007"]
+  - ["-262222555", "NULL"]
+  - ["478272883", "-1262237582"]
+  - ["j+", "NULL"]
+  - ["SF", "NULL"]
+  - ["-1807022910", "1486103084"]
+  - ["-1786233888", "-420727782"]

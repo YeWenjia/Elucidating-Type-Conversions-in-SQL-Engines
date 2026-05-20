@@ -1,0 +1,13 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+- tests-examples/spider/riding_club/tables/coach.csv
+- tests-examples/spider/riding_club/tables/player_coach.csv
+output: tests-examples/spider/riding_club/tables/0011.csv
+constants:
+- '1'
+columns:
+- rank_col
+sql: "SELECT t3.player_name\nFROM player_coach AS t1\nJOIN coach AS t2 ON t1.coach_id\
+  \ = t2.coach_id\nJOIN player AS t3 ON t1.player_id = t3.player_id\nWHERE t2.rank_col\
+  \ = 1"

@@ -1,0 +1,13 @@
+db: tests-examples/spider/music_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_4/tables/volume.csv
+output: tests-examples/spider/music_4/tables/0008.csv
+functions:
+- max
+- min
+columns:
+- weeks_on_top
+sql: |-
+  SELECT max(weeks_on_top),
+         min(weeks_on_top)
+  FROM volume

@@ -1,0 +1,14 @@
+db: tests-examples/spider/music_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_4/tables/artist.csv
+- tests-examples/spider/music_4/tables/volume.csv
+output: tests-examples/spider/music_4/tables/0017.csv
+constants:
+- '2'
+columns:
+- weeks_on_top
+sql: |-
+  SELECT t1.famous_title
+  FROM artist AS t1
+  JOIN volume AS t2 ON t1.artist_id = t2.artist_id
+  WHERE t2.weeks_on_top > 2

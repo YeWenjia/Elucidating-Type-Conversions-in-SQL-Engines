@@ -1,0 +1,15 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartment_buildings.csv
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0027.csv
+constants:
+- Kyle
+columns:
+- building_manager
+sql: |-
+  SELECT t2.apt_type_code,
+         t2.apt_number
+  FROM apartment_buildings AS t1
+  JOIN apartments AS t2 ON t1.building_id = t2.building_id
+  WHERE t1.building_manager = 'Kyle'

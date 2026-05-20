@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-657987974, 286678795]
+    - [2098564615, 1639124197]
+    - [-1077277231, null]
+  database0_t0:
+    - [null, "734800198"]
+    - [null, "aMngt-媩"]
+    - [null, "-150612258"]
+    - [2059811459, "734800198"]
+    - [1635776983, "-691922506"]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE (('')<>(database0_t0.c1))"
+columns:
+  - "c1"
+rows:
+  - ["734800198"]
+  - ["aMngt-媩"]
+  - ["-150612258"]
+  - ["734800198"]
+  - ["-691922506"]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["734800198"]
+  - ["aMngt-媩"]
+  - ["-150612258"]
+  - ["734800198"]
+  - ["-691922506"]

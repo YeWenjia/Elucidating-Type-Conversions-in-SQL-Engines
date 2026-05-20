@@ -1,0 +1,13 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+- tests-examples/spider/entrepreneur/tables/people.csv
+output: tests-examples/spider/entrepreneur/tables/0017.csv
+columns:
+- people_id
+sql: |-
+  SELECT name
+  FROM people
+  WHERE people_id NOT IN
+      (SELECT people_id
+       FROM entrepreneur)

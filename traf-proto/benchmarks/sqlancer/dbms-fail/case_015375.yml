@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["d5", ""]
+    - ["", ""]
+  database0_t0:
+    - ["1894499120", 239919323, "-1722647003"]
+sql: "SELECT * FROM database0_t1 WHERE '䛕%'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"䛕%\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["d5", ""]
+  - ["", ""]

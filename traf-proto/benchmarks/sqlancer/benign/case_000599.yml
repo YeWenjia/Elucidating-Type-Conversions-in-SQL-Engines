@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["Nx&>", null]
+    - ["髑s맫N", null]
+    - ["&23鈺&cfyi", "稬#FI"]
+    - ["l*", "-989056462"]
+    - ["Oy", "-64780862"]
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["Nx&>", null]
+  - ["髑s맫N", null]
+  - ["&23鈺&cfyi", "稬#FI"]
+  - ["l*", "-989056462"]
+  - ["Oy", "-64780862"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["Nx&>", "NULL"]
+  - ["髑s맫N", "NULL"]
+  - ["&23鈺&cfyi", "稬#FI"]
+  - ["l*", "-989056462"]
+  - ["Oy", "-64780862"]

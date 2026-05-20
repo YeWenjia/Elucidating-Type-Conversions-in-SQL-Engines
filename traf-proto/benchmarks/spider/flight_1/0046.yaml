@@ -1,0 +1,19 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/aircraft.csv
+- tests-examples/spider/flight_1/tables/certificate.csv
+output: tests-examples/spider/flight_1/tables/0046.csv
+constants:
+- '5000'
+- '5'
+functions:
+- count
+columns:
+- distance
+sql: |-
+  SELECT t2.name
+  FROM certificate AS t1
+  JOIN aircraft AS t2 ON t2.aid = t1.aid
+  WHERE t2.distance > 5000
+  GROUP BY t1.aid, t2.name
+  HAVING count(*) >= 5

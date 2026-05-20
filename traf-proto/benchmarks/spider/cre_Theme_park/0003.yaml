@@ -1,0 +1,7 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/locations.csv
+output: tests-examples/spider/cre_Theme_park/tables/0003.csv
+sql: |-
+  SELECT DISTINCT location_name
+  FROM locations

@@ -1,0 +1,20 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/employee.csv
+- tests-examples/spider/college_1/tables/professor.csv
+output: tests-examples/spider/college_1/tables/0068.csv
+constants:
+- History
+- Ph.D.
+columns:
+- dept_name
+- prof_high_degree
+sql: |-
+  SELECT t1.emp_fname,
+         t2.prof_office
+  FROM employee AS t1
+  JOIN professor AS t2 ON t1.emp_num = t2.emp_num
+  JOIN department AS t3 ON t3.dept_code = t2.dept_code
+  WHERE t3.dept_name = 'History'
+    AND t2.prof_high_degree = 'Ph.D.'

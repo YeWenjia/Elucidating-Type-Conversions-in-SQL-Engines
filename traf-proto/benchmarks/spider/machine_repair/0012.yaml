@@ -1,0 +1,16 @@
+db: tests-examples/spider/machine_repair/tables/db.sqlite
+inputs:
+- tests-examples/spider/machine_repair/tables/machine.csv
+- tests-examples/spider/machine_repair/tables/technician.csv
+- tests-examples/spider/machine_repair/tables/repair_assignment.csv
+output: tests-examples/spider/machine_repair/tables/0012.csv
+constants:
+- '70'
+columns:
+- value_points
+sql: |-
+  SELECT t3.name
+  FROM repair_assignment AS t1
+  JOIN machine AS t2 ON t1.machine_id = t2.machine_id
+  JOIN technician AS t3 ON t1.technician_id = t3.technician_id
+  WHERE t2.value_points > 70

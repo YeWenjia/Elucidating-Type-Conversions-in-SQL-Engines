@@ -1,0 +1,13 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0035.csv
+functions:
+- avg
+columns:
+- price
+sql: |-
+  SELECT AVG(price),
+         manufacturer
+  FROM products
+  GROUP BY manufacturer

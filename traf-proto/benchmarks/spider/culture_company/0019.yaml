@@ -1,0 +1,14 @@
+db: tests-examples/spider/culture_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/culture_company/tables/movie.csv
+- tests-examples/spider/culture_company/tables/culture_company.csv
+output: tests-examples/spider/culture_company/tables/0019.csv
+constants:
+- '1999'
+columns:
+- year
+sql: |-
+  SELECT t2.company_name
+  FROM movie AS t1
+  JOIN culture_company AS t2 ON t1.movie_id = t2.movie_id
+  WHERE t1.year = 1999

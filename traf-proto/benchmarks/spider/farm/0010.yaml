@@ -1,0 +1,10 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+- tests-examples/spider/farm/tables/farm_competition.csv
+output: tests-examples/spider/farm/tables/0010.csv
+sql: |-
+  SELECT t2.year,
+         t1.official_name
+  FROM city AS t1
+  JOIN farm_competition AS t2 ON t1.city_id = t2.host_city_id

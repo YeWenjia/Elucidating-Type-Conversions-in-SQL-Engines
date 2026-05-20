@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-58938003, ""]
+    - [440833260, ""]
+    - [-1218573520, null]
+    - [-3890461, "-354425506"]
+    - [723249712, "-753465173"]
+    - [2131576533, "LN䷥ST-G"]
+    - [1723301077, "369297413"]
+    - [-1042823525, null]
+  database0_t0:
+    - ["a4", null]
+    - ["-1779974519", -653396821]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1, database0_t0 WHERE 2043781614"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 79"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["", "-58938003"]
+  - ["", "-58938003"]
+  - ["", "440833260"]
+  - ["", "440833260"]
+  - ["NULL", "-1218573520"]
+  - ["NULL", "-1218573520"]
+  - ["-354425506", "-3890461"]
+  - ["-354425506", "-3890461"]
+  - ["-753465173", "723249712"]
+  - ["-753465173", "723249712"]
+  - ["LN䷥ST-G", "2131576533"]
+  - ["LN䷥ST-G", "2131576533"]
+  - ["369297413", "1723301077"]
+  - ["369297413", "1723301077"]
+  - ["NULL", "-1042823525"]
+  - ["NULL", "-1042823525"]

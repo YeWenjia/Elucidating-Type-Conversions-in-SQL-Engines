@@ -1,0 +1,12 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+output: tests-examples/spider/county_public_safety/tables/0003.csv
+constants:
+- East
+columns:
+- location
+sql: |-
+  SELECT DISTINCT police_force
+  FROM county_public_safety
+  WHERE location != 'East'

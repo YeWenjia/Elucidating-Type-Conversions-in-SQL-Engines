@@ -1,0 +1,14 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+output: tests-examples/spider/movie_1/tables/0003.csv
+constants:
+- '2000'
+functions:
+- count
+columns:
+- year
+sql: |-
+  SELECT count(*)
+  FROM movie
+  WHERE year < 2000

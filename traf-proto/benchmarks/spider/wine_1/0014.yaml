@@ -1,0 +1,15 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/grapes.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0014.csv
+constants:
+- White
+columns:
+- color
+sql: |-
+  SELECT t2.name,
+         t2.score
+  FROM grapes AS t1
+  JOIN wine AS t2 ON t1.grape = t2.grape
+  WHERE t1.color = 'White'

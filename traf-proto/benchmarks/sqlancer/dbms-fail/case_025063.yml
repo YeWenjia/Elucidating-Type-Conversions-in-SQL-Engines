@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+    - {name: "c4", type: "string"}
+data:
+  database0_t0:
+    - [null, 621280516, "-796304569", 586685201, "-842592507"]
+    - [585163657, -852001316, "-796304569", 586685201, "-842592507"]
+    - [-657850939, 460371004, "-796304569", 586685201, "-842592507"]
+    - [null, 1639509839, null, 586685201, "-842592507"]
+    - [null, 1054029900, "-444040980", 586685201, "-842592507"]
+    - [-96402652, -420727782, "1635776983", 586685201, "-842592507"]
+    - [-942105953, 1549940013, "-852433073", 586685201, "-842592507"]
+    - [66621075, -1091064901, "-1724310134", null, null]
+    - [null, 317598852, null, null, "3෻Sp"]
+sql: "SELECT database0_t0.c3 FROM database0_t0 WHERE 354731350"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c3]
+traf_rows:
+  - ["586685201"]
+  - ["586685201"]
+  - ["586685201"]
+  - ["586685201"]
+  - ["586685201"]
+  - ["586685201"]
+  - ["586685201"]
+  - ["NULL"]
+  - ["NULL"]

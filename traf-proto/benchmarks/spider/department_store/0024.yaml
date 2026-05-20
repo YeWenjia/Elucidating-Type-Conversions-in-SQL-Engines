@@ -1,0 +1,18 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/staff_department_assignments.csv
+output: tests-examples/spider/department_store/tables/0024.csv
+constants:
+- Clerical Staff
+functions:
+- max
+columns:
+- date_assigned_to
+- job_title_code
+sql: |-
+  SELECT staff_id
+  FROM staff_department_assignments
+  WHERE date_assigned_to <
+      (SELECT max(date_assigned_to)
+       FROM staff_department_assignments
+       WHERE job_title_code = 'Clerical Staff')

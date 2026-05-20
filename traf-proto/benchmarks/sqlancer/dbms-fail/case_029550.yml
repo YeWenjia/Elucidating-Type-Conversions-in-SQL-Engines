@@ -1,0 +1,46 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [-1889416055, null]
+    - [779309605, "稝"]
+    - [1010749045, null]
+    - [-2081941694, null]
+    - [1496221916, null]
+    - [-718877617, "-2066624767"]
+    - [2131763601, null]
+    - [1825518472, null]
+    - [388449173, "440833260"]
+    - [-773587990, "!8"]
+    - [-1020663942, null]
+  database0_t0:
+    - ["-460659586", "1720775804", 527346923]
+    - ["NlDZ", null, 83665970]
+    - ["-1944931769", null, -672883856]
+    - ["-1407883730", null, -32377274]
+    - ["543985007", "-498211593", null]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE '-0.0'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-0.0\"\n  Position: 48"
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - ["-1889416055"]
+  - ["779309605"]
+  - ["1010749045"]
+  - ["-2081941694"]
+  - ["1496221916"]
+  - ["-718877617"]
+  - ["2131763601"]
+  - ["1825518472"]
+  - ["388449173"]
+  - ["-773587990"]
+  - ["-1020663942"]

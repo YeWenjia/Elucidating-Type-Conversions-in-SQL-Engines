@@ -1,0 +1,16 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0022.csv
+constants:
+- HKG
+- CHI
+functions:
+- count
+columns:
+- city_code
+sql: |-
+  select count(*)
+  from student
+  where city_code = 'HKG'
+    or city_code = 'CHI'

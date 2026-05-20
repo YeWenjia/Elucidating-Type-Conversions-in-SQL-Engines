@@ -1,0 +1,12 @@
+db: tests-examples/spider/game_injury/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_injury/tables/stadium.csv
+output: tests-examples/spider/game_injury/tables/0005.csv
+constants:
+- '100'
+columns:
+- capacity_percentage
+sql: |-
+  SELECT average_attendance
+  FROM stadium
+  WHERE capacity_percentage > 100

@@ -1,0 +1,7 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/course_authors_and_tutors.csv
+output: tests-examples/spider/e_learning/tables/0004.csv
+sql: |-
+  SELECT address_line_1
+  FROM course_authors_and_tutors

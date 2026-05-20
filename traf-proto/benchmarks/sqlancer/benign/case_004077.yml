@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t7: []
+sql: "SELECT database0_t7.c0, database0_t7.c2 FROM database0_t7 WHERE (('6nm4k2') IS NOT NULL)"
+columns:
+  - "c0"
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t7.c0, database0_t7.c2]
+traf_rows: []

@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t0:
+    - ["409752607"]
+    - ["-760757233"]
+    - ["1062414657"]
+sql: "SELECT * FROM database0_t0 WHERE '{}'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"{}\"\n  Position: 34"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["409752607"]
+  - ["-760757233"]
+  - ["1062414657"]

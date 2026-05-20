@@ -1,0 +1,13 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/member.csv
+output: tests-examples/spider/decoration_competition/tables/0006.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT country
+  FROM member
+  GROUP BY country
+  ORDER BY COUNT(*) DESC

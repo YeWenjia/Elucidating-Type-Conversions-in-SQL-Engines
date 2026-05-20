@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c84", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-1779974519, "1207106020", 1489138842]
+    - [-948742844, "1207106020", 1489138842]
+    - [1821595856, "1207106020", 1489138842]
+    - [551369383, "1207106020", 1489138842]
+    - [31562385, "1207106020", 1489138842]
+    - [1278486610, "1207106020", 1489138842]
+    - [-552159078, "1207106020", 1489138842]
+    - [-1989910718, "723249712", 570587776]
+  database0_t0:
+    - ["-639173391", null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ((1486697590) IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - [null]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]

@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["-285784552", "-725115261"]
+    - ["", "-725115261"]
+    - ["?OfY\\a馄0", "-725115261"]
+    - ["퀫s\\觑*7<4", "-725115261"]
+    - [" OuE-y", "-725115261"]
+    - ["輪/㟍g", "-725115261"]
+    - ["232191734", "-725115261"]
+    - ["~D.rF", "1242940738"]
+    - ["AvMeC鈺", "1661665722"]
+sql: "SELECT * FROM database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

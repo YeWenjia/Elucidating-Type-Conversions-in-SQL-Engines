@@ -1,0 +1,12 @@
+db: tests-examples/spider/school_bus/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_bus/tables/driver.csv
+- tests-examples/spider/school_bus/tables/school.csv
+- tests-examples/spider/school_bus/tables/school_bus.csv
+output: tests-examples/spider/school_bus/tables/0012.csv
+sql: |-
+  SELECT t2.school,
+         t3.name
+  FROM school_bus AS t1
+  JOIN school AS t2 ON t1.school_id = t2.school_id
+  JOIN driver AS t3 ON t1.driver_id = t3.driver_id

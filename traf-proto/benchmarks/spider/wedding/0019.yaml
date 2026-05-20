@@ -1,0 +1,11 @@
+db: tests-examples/spider/wedding/tables/db.sqlite
+inputs:
+- tests-examples/spider/wedding/tables/people.csv
+output: tests-examples/spider/wedding/tables/0019.csv
+functions:
+- count
+sql: |-
+  SELECT country,
+         count(*)
+  FROM people
+  GROUP BY country

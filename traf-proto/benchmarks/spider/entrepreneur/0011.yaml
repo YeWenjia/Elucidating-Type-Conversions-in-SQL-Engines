@@ -1,0 +1,16 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+- tests-examples/spider/entrepreneur/tables/people.csv
+output: tests-examples/spider/entrepreneur/tables/0011.csv
+constants:
+- Simon Woodroffe
+- Peter Jones
+columns:
+- investor
+sql: |-
+  SELECT t2.date_of_birth
+  FROM entrepreneur AS t1
+  JOIN people AS t2 ON t1.people_id = t2.people_id
+  WHERE t1.investor = 'Simon Woodroffe'
+    OR t1.investor = 'Peter Jones'

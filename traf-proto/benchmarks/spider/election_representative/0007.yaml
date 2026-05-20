@@ -1,0 +1,14 @@
+db: tests-examples/spider/election_representative/tables/db.sqlite
+inputs:
+- tests-examples/spider/election_representative/tables/representative.csv
+output: tests-examples/spider/election_representative/tables/0007.csv
+constants:
+- New York
+- Indiana
+columns:
+- state
+sql: |-
+  SELECT lifespan
+  FROM representative
+  WHERE state = 'New York'
+    OR state = 'Indiana'

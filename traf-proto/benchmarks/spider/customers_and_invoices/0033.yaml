@@ -1,0 +1,17 @@
+db: tests-examples/spider/customers_and_invoices/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_invoices/tables/customers.csv
+- tests-examples/spider/customers_and_invoices/tables/orders.csv
+output: tests-examples/spider/customers_and_invoices/tables/0033.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.customer_last_name,
+         t1.customer_id,
+         t2.phone_number
+  FROM orders AS t1
+  JOIN customers AS t2 ON t1.customer_id = t2.customer_id
+  GROUP BY t1.customer_id, t2.customer_last_name, t2.phone_number
+  ORDER BY count(*) DESC

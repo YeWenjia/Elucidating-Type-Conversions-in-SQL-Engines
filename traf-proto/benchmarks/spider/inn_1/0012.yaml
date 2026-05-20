@@ -1,0 +1,12 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+output: tests-examples/spider/inn_1/tables/0012.csv
+constants:
+- Recluse and defiance
+columns:
+- roomname
+sql: |-
+  SELECT decor
+  FROM rooms
+  WHERE roomname = 'Recluse and defiance';

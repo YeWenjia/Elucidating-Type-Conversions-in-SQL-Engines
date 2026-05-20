@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-155767286, "oj"]
+    - [1661665722, "Y5"]
+    - [1588128946, null]
+    - [1128279709, null]
+    - [-1459394586, "-273085966"]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE '1894499120'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1894499120\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["oj", "-155767286"]
+  - ["Y5", "1661665722"]
+  - ["NULL", "1588128946"]
+  - ["NULL", "1128279709"]
+  - ["-273085966", "-1459394586"]

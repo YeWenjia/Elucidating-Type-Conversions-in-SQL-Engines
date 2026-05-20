@@ -1,0 +1,14 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/gymnast.csv
+- tests-examples/spider/gymnast/tables/people.csv
+output: tests-examples/spider/gymnast/tables/0012.csv
+constants:
+- '57.5'
+columns:
+- total_points
+sql: |-
+  SELECT DISTINCT t2.hometown
+  FROM gymnast AS t1
+  JOIN people AS t2 ON t1.gymnast_id = t2.people_id
+  WHERE t1.total_points > 57.5

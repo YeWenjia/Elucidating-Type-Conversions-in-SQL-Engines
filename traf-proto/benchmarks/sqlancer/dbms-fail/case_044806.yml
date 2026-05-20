@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c4", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["111795607", "-1940442379", 945001674, null]
+    - ["", "\n2", null, -444040980]
+  database0_t0:
+    - ["-1030529855", null]
+    - ["-1684923321", "847687323"]
+    - ["())룠", "\n_TcR]"]
+sql: "SELECT database0_t1.c4, database0_t1.c1, database0_t1.c2, database0_t0.c1 FROM database0_t1, database0_t0 WHERE 'ࠅ^'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"ࠅ^\"\n  Position: 113"
+traf_columns: [database0_t1.c4, database0_t1.c1, database0_t1.c2, database0_t0.c1]
+traf_rows:
+  - ["NULL", "-1940442379", "945001674", "NULL"]
+  - ["NULL", "-1940442379", "945001674", "847687323"]
+  - ["NULL", "-1940442379", "945001674", "\n_TcR]"]
+  - ["-444040980", "\n2", "NULL", "NULL"]
+  - ["-444040980", "\n2", "NULL", "847687323"]
+  - ["-444040980", "\n2", "NULL", "\n_TcR]"]

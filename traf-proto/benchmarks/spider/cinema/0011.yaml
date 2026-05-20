@@ -1,0 +1,17 @@
+db: tests-examples/spider/cinema/tables/db.sqlite
+inputs:
+- tests-examples/spider/cinema/tables/cinema.csv
+output: tests-examples/spider/cinema/tables/0011.csv
+constants:
+- '2010'
+- '1'
+functions:
+- count
+columns:
+- openning_year
+sql: |-
+  SELECT location
+  FROM cinema
+  WHERE openning_year >= 2010
+  GROUP BY location
+  ORDER BY count(*) DESC

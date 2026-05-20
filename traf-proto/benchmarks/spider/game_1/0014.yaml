@@ -1,0 +1,17 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+output: tests-examples/spider/game_1/tables/0014.csv
+functions:
+- avg
+- min
+- max
+columns:
+- age
+sql: |-
+  SELECT major,
+         avg(age),
+         min(age),
+         max(age)
+  FROM student
+  GROUP BY major

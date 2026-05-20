@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t6:
+    - ["", "-929713484"]
+    - ["2090365346", null]
+    - ["-1373274106", null]
+    - ["-1444330415", "-717809554"]
+  database0_t8:
+    - [-883264523, -1887367284]
+    - [-278911135, -1887367284]
+    - [1708405439, 1238427811]
+sql: "SELECT * FROM database0_t6 WHERE 'oF'"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: traf-mismatch
+traf_columns: [database0_t6.c0, database0_t6.c1]
+traf_rows:
+  - ["", "-929713484"]
+  - ["2090365346", "NULL"]
+  - ["-1373274106", "NULL"]
+  - ["-1444330415", "-717809554"]

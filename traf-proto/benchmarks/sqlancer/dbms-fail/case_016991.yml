@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-1041688005, "0.0", null]
+    - [-1775103535, "", null]
+    - [-1056561715, "2", null]
+  database0_t0:
+    - ["56361325", -2011765295]
+    - ["-2130656369", -2087893705]
+    - ["534452385", null]
+    - ["e\x01 ", null]
+    - ["aMngt-媩", null]
+    - ["1894499120", 1777398138]
+    - ["-1041688005", null]
+    - ["K*'WgN", null]
+    - ["", null]
+    - ["_-", 1937229643]
+    - ["232191734", null]
+    - ["-1831624141", null]
+    - ["1026113678", null]
+    - ["-501811782", null]
+sql: "SELECT database0_t1.c0, database0_t1.c2 FROM database0_t1 WHERE database0_t1.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t1.c0, database0_t1.c2]
+traf_rows: []

@@ -1,0 +1,21 @@
+db: tests-examples/spider/scientist_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/scientist_1/tables/scientists.csv
+- tests-examples/spider/scientist_1/tables/projects.csv
+- tests-examples/spider/scientist_1/tables/assignedto.csv
+output: tests-examples/spider/scientist_1/tables/0010.csv
+constants:
+- Michael Rogers
+- Carol Smith
+functions:
+- sum
+columns:
+- hours
+- name
+sql: |-
+  SELECT sum(t2.hours)
+  FROM assignedto AS t1
+  JOIN projects AS t2 ON t1.project = t2.code
+  JOIN scientists AS t3 ON t1.scientist = t3.ssn
+  WHERE t3.name = 'Michael Rogers'
+    OR t3.name = 'Carol Smith'

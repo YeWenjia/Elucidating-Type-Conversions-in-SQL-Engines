@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [322195528, -1895019473]
+    - [-31667871, 1424578975]
+    - [-333803317, null]
+    - [-1907509333, null]
+    - [-58938003, null]
+    - [1995376532, 2101491117]
+    - [-278911135, null]
+    - [-1104779761, null]
+    - [-1554526165, 1486103084]
+    - [1749572790, null]
+    - [388449173, null]
+    - [1741233631, null]
+sql: "SELECT * FROM database0_t0 WHERE (('M[%') IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

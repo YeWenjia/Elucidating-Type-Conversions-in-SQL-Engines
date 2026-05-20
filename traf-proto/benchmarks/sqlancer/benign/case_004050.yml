@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [1026113678, "1342577525"]
+    - [-1022203625, null]
+    - [678687013, null]
+    - [-656994918, "1777398138"]
+    - [1476053511, null]
+    - [-444040980, "440833260"]
+    - [-685622206, null]
+    - [-1674916489, "}\t7"]
+  database0_t0:
+    - ["E9", 1540871966]
+    - ["E9", 1161815015]
+    - [null, 532961086]
+    - ["0OH>", 1842824675]
+sql: "SELECT database0_t0.c0, database0_t0.c2 FROM database0_t0 WHERE ((database0_t0.c2)<=(1014163171))"
+columns:
+  - "c0"
+  - "c2"
+rows:
+  - [null, 532961086]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["NULL", "532961086"]

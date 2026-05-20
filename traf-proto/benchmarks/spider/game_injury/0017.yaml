@@ -1,0 +1,13 @@
+db: tests-examples/spider/game_injury/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_injury/tables/stadium.csv
+- tests-examples/spider/game_injury/tables/game.csv
+output: tests-examples/spider/game_injury/tables/0017.csv
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         count(*)
+  FROM stadium AS t1
+  JOIN game AS t2 ON t1.id = t2.stadium_id
+  GROUP BY t1.id

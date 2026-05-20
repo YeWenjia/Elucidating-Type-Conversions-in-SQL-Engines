@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "int"}
+data:
+  database0_t0:
+    - ["-1775103535", "-364801524", "-680103774", "U겴\\,_", null]
+    - ["-1775103535", "2104771430", "-680103774", "U겴\\,_", null]
+    - ["-1775103535", "V%\\F\t", "-680103774", "U겴\\,_", null]
+    - ["-1775103535", "-152514463", "-680103774", "U겴\\,_", null]
+    - ["-1775103535", "#'", "-680103774", "U겴\\,_", null]
+    - ["", "-2123641175", null, "-904497283", null]
+    - ["-273085966", "285314990", "-1980936731", "", -1661168971]
+sql: "SELECT * FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2, database0_t0.c3, database0_t0.c4]
+traf_rows:
+  - ["-1775103535", "-364801524", "-680103774", "U겴\\,_", "NULL"]
+  - ["-1775103535", "2104771430", "-680103774", "U겴\\,_", "NULL"]
+  - ["-1775103535", "V%\\F\t", "-680103774", "U겴\\,_", "NULL"]
+  - ["-1775103535", "-152514463", "-680103774", "U겴\\,_", "NULL"]
+  - ["-1775103535", "#'", "-680103774", "U겴\\,_", "NULL"]
+  - ["-273085966", "285314990", "-1980936731", "", "-1661168971"]

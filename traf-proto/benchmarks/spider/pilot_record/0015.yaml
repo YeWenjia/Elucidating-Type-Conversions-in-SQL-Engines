@@ -1,0 +1,13 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+- tests-examples/spider/pilot_record/tables/pilot_record.csv
+output: tests-examples/spider/pilot_record/tables/0015.csv
+columns:
+- pilot_id
+sql: |-
+  SELECT pilot_name
+  FROM pilot
+  WHERE pilot_id NOT IN
+      (SELECT pilot_id
+       FROM pilot_record)

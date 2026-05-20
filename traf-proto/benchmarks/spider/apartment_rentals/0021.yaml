@@ -1,0 +1,15 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/guests.csv
+- tests-examples/spider/apartment_rentals/tables/apartment_bookings.csv
+output: tests-examples/spider/apartment_rentals/tables/0021.csv
+constants:
+- Female
+columns:
+- gender_code
+sql: |-
+  SELECT t1.booking_start_date,
+         t1.booking_start_date
+  FROM apartment_bookings AS t1
+  JOIN guests AS t2 ON t1.guest_id = t2.guest_id
+  WHERE t2.gender_code = 'Female'

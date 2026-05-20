@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t5:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t5:
+    - [3, null, null]
+    - [1588128946, null, null]
+    - [1789999662, null, null]
+    - [1300733341, "1322289472", null]
+sql: "SELECT database0_t5.c1 FROM database0_t5 WHERE 'ࠅ1'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"ࠅ1\"\n  Position: 48"
+traf_columns: [database0_t5.c1]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["1322289472"]

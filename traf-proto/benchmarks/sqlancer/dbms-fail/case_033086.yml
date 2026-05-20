@@ -1,0 +1,49 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["861395623", 369297413]
+    - ["976935660", 369297413]
+    - ["", 369297413]
+    - ["-1724310134", 369297413]
+    - ["p\\KYlkcj", 369297413]
+    - ["750617867", 369297413]
+    - ["-1631354773", 369297413]
+    - ["-1341954380", 369297413]
+    - ["2087506133", null]
+    - ["-354425506", null]
+    - ["232191734", null]
+    - ["p˃^rC", null]
+    - ["-2011765295", -2073124613]
+    - ["1804551272", -185323245]
+    - ["-1459414909", null]
+    - ["483448577", null]
+    - ["-1509089405", null]
+  database0_t8:
+    - [-428372333, null]
+    - [-1995773935, 1727091168]
+    - [-316874230, -164244677]
+    - [-1042261175, -1225783955]
+    - [-1965594230, 31826378]
+    - [-1077277231, null]
+    - [1428400327, -430852534]
+sql: "SELECT database0_t8.c1 FROM database0_t8 WHERE database0_t8.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t8.c1]
+traf_rows:
+  - ["NULL"]
+  - ["1727091168"]
+  - ["-164244677"]
+  - ["-1225783955"]
+  - ["31826378"]
+  - ["NULL"]
+  - ["-430852534"]

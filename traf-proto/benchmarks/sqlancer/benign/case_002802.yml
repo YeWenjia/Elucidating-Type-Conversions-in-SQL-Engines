@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["-31667871", "-655428004"]
+    - ["lW9pfk!b", "-1930495376"]
+    - ["", "727537755"]
+    - ["915954605", "-1984281649"]
+    - ["1320698346", "-339580836"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE (('2090365346')<>(database0_t0.c2))"
+columns:
+  - "c0"
+rows:
+  - ["-31667871"]
+  - ["lW9pfk!b"]
+  - [""]
+  - ["915954605"]
+  - ["1320698346"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-31667871"]
+  - ["lW9pfk!b"]
+  - [""]
+  - ["915954605"]
+  - ["1320698346"]

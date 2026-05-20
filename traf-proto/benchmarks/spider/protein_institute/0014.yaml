@@ -1,0 +1,20 @@
+db: tests-examples/spider/protein_institute/tables/db.sqlite
+inputs:
+- tests-examples/spider/protein_institute/tables/building.csv
+- tests-examples/spider/protein_institute/tables/institution.csv
+output: tests-examples/spider/protein_institute/tables/0014.csv
+constants:
+- '1880'
+- '2'
+functions:
+- count
+columns:
+- founded
+sql: |-
+  SELECT t1.name,
+         t1.height_feet
+  FROM building AS t1
+  JOIN institution AS t2 ON t1.building_id = t2.building_id
+  WHERE t2.founded > 1880
+  GROUP BY t1.building_id, t1.name, t1.height_feet
+  HAVING count(*) >= 2

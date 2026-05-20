@@ -1,0 +1,48 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["-1073664262", "-285784552", "V37᱇\r~꣇≜T"]
+    - ["-1166751481", null, "V37᱇\r~꣇≜T"]
+    - ["n>{V㊿E", null, "V37᱇\r~꣇≜T"]
+    - ["ƺ~", "-295904700", "V37᱇\r~꣇≜T"]
+    - ["BaJ\t", "577546296", "W72"]
+    - ["1036671335", "Q쥔nIRynP(", "-1189860184"]
+    - ["\npp0◍'", "388449173", "Aq,캩"]
+    - ["991149750", null, "-1096446873"]
+    - ["", "aMngt-媩", ""]
+    - ["899791121", "-444040980", ""]
+    - ["1831112607", null, null]
+  database0_t0:
+    - ["㟍-Sᇑ", "388449173", null]
+    - ["+cZuIT", "-1790883840", null]
+    - ["VBX q{.f\t", "543985007", null]
+    - ["T", "1014163171", null]
+    - ["!.Hd", null, null]
+    - ["輪/㟍g", null, null]
+    - ["Fcv", "-1658870911", null]
+    - ["Fx㟍ﴤz|xƺ", "^}M n2U", null]
+    - ["", "-482381508", null]
+sql: "SELECT database0_t1.c2, database0_t1.c0 FROM database0_t1 WHERE database0_t1.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t1.c2, database0_t1.c0]
+traf_rows:
+  - ["V37᱇\r~꣇≜T", "-1073664262"]
+  - ["V37᱇\r~꣇≜T", "-1166751481"]
+  - ["V37᱇\r~꣇≜T", "n>{V㊿E"]
+  - ["V37᱇\r~꣇≜T", "ƺ~"]
+  - ["W72", "BaJ\t"]
+  - ["-1189860184", "1036671335"]
+  - ["Aq,캩", "\npp0◍'"]
+  - ["-1096446873", "991149750"]

@@ -1,0 +1,17 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0033.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- room_count
+sql: |-
+  SELECT apt_type_code,
+         bathroom_count,
+         bedroom_count
+  FROM apartments
+  GROUP BY apt_type_code, bathroom_count, bedroom_count
+  ORDER BY sum(room_count) DESC

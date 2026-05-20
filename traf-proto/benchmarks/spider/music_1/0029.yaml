@@ -1,0 +1,13 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0029.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT languages
+  FROM song
+  GROUP BY languages
+  ORDER BY count(*) DESC

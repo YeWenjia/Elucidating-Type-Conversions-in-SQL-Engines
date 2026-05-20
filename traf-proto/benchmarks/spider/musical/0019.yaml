@@ -1,0 +1,15 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/musical.csv
+output: tests-examples/spider/musical/tables/0019.csv
+constants:
+- Tony Award
+- Drama Desk Award
+columns:
+- award
+sql: |-
+  SELECT nominee
+  FROM musical
+  WHERE award = 'Tony Award' INTERSECT
+    SELECT nominee
+    FROM musical WHERE award = 'Drama Desk Award'

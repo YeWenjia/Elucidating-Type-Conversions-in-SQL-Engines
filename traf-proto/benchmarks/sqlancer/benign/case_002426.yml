@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["-1781350639", 232191734]
+    - ["", -1639913083]
+  database0_t0:
+    - ["_?", null]
+    - ["2075487153", null]
+    - ["m)", -1554526165]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE ((-553057594)<>(database0_t1.c1))"
+columns:
+  - "c1"
+rows:
+  - [232191734]
+  - [-1639913083]
+kind: benign
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["232191734"]
+  - ["-1639913083"]

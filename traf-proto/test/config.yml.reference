@@ -1,0 +1,32 @@
+# config.yml
+postgres:
+  host: localhost
+  port: 5432
+  database: interpreter
+  username: myuser
+  password: myuser
+
+mysql:
+  host: localhost
+  port: 3306
+  database: mysqldb
+  username: root
+  password: password
+
+sqlite:
+  driver: sqlite3
+  database: ../../dockers/mydatabase.db
+
+oracle:
+  password: password
+  user: myuser
+  dsn: localhost:1521/XE
+
+mssql:
+  driver: ODBC Driver 17 for SQL Server
+  server: 127.0.0.1, 1433
+  database: mssqldb
+  username: sa
+  password: reallyStrongPwd123
+
+

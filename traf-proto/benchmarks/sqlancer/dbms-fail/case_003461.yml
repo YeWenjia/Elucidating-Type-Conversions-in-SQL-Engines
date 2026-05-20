@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [1740310923]
+    - [1028420278]
+    - [-1056561715]
+    - [312477042]
+    - [976935660]
+sql: "SELECT * FROM database0_t0 INNER  JOIN  (SELECT 'aPZ-p0N}' AS col0 FROM database0_t0 WHERE (((NOT database0_t0.c0)) IS NOT NULL)) AS sub0  ON -1104779761 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of NOT must be type boolean, not type integer\n  Position: 99"
+traf_columns: [database0_t0.c0, sub0.col0]
+traf_rows:
+  - ["1740310923", "aPZ-p0N}"]
+  - ["1740310923", "aPZ-p0N}"]
+  - ["1740310923", "aPZ-p0N}"]
+  - ["1740310923", "aPZ-p0N}"]
+  - ["1740310923", "aPZ-p0N}"]
+  - ["1028420278", "aPZ-p0N}"]
+  - ["1028420278", "aPZ-p0N}"]
+  - ["1028420278", "aPZ-p0N}"]
+  - ["1028420278", "aPZ-p0N}"]
+  - ["1028420278", "aPZ-p0N}"]
+  - ["-1056561715", "aPZ-p0N}"]
+  - ["-1056561715", "aPZ-p0N}"]
+  - ["-1056561715", "aPZ-p0N}"]
+  - ["-1056561715", "aPZ-p0N}"]
+  - ["-1056561715", "aPZ-p0N}"]
+  - ["312477042", "aPZ-p0N}"]
+  - ["312477042", "aPZ-p0N}"]
+  - ["312477042", "aPZ-p0N}"]
+  - ["312477042", "aPZ-p0N}"]
+  - ["312477042", "aPZ-p0N}"]
+  - ["976935660", "aPZ-p0N}"]
+  - ["976935660", "aPZ-p0N}"]
+  - ["976935660", "aPZ-p0N}"]
+  - ["976935660", "aPZ-p0N}"]
+  - ["976935660", "aPZ-p0N}"]

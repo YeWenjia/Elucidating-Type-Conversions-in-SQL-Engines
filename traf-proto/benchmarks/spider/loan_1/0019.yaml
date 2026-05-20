@@ -1,0 +1,18 @@
+db: tests-examples/spider/loan_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/loan_1/tables/customer.csv
+- tests-examples/spider/loan_1/tables/loan.csv
+output: tests-examples/spider/loan_1/tables/0019.csv
+constants:
+- Mortgages
+- Auto
+columns:
+- loan_type
+sql: |-
+  SELECT t1.cust_name
+  FROM customer AS t1
+  JOIN loan AS t2 ON t1.cust_id = t2.cust_id
+  WHERE loan_type = 'Mortgages' INTERSECT
+    SELECT t1.cust_name
+    FROM customer AS t1
+    JOIN loan AS t2 ON t1.cust_id = t2.cust_id WHERE loan_type = 'Auto'

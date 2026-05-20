@@ -1,0 +1,54 @@
+engine: postgres
+schema:
+  database0_t8:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t8:
+    - ["m뺉T-N1l", "835897271"]
+    - ["yNr?", "835897271"]
+    - ["1699565337", "835897271"]
+    - ["-1790883840", "835897271"]
+    - ["侞Tྌ", "835897271"]
+    - ["", "835897271"]
+    - ["-880065237", "835897271"]
+    - ["382275441", "835897271"]
+    - ["1713365887", "835897271"]
+    - ["<F", "835897271"]
+    - ["_?", "835897271"]
+    - ["1374588416", "835897271"]
+    - ["1050936493", "835897271"]
+    - ["723249712", "835897271"]
+    - ["-293919174", null]
+    - ["-278911135", "1777398138"]
+    - ["1186989646", "905659316"]
+    - ["39335589", "1635776983"]
+    - ["ﴤj", null]
+    - ["G们", null]
+sql: "SELECT * FROM database0_t8 WHERE ((((((database0_t8.c0)<=(database0_t8.c0)))<=(((database0_t8.c1)<>('388449173'))))) IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["m뺉T-N1l", "835897271"]
+  - ["yNr?", "835897271"]
+  - ["1699565337", "835897271"]
+  - ["-1790883840", "835897271"]
+  - ["侞Tྌ", "835897271"]
+  - ["", "835897271"]
+  - ["-880065237", "835897271"]
+  - ["382275441", "835897271"]
+  - ["1713365887", "835897271"]
+  - ["<F", "835897271"]
+  - ["_?", "835897271"]
+  - ["1374588416", "835897271"]
+  - ["1050936493", "835897271"]
+  - ["723249712", "835897271"]
+  - ["-278911135", "1777398138"]
+  - ["1186989646", "905659316"]
+  - ["39335589", "1635776983"]
+kind: traf-crash
+traf_error: "Ambiguous best candidate for the given types Bool, Bool"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 288, in typecheck_expr\n    t, ep = self.typecheck_expr(schema, T, e.e)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 108, in best_candidate\n    raise TypeError(f\"Ambiguous best candidate for the given types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Ambiguous best candidate for the given types Bool, Bool\n"
+traf_columns: []
+traf_rows: []

@@ -1,0 +1,8 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+output: tests-examples/spider/riding_club/tables/0003.csv
+sql: |-
+  SELECT gender,
+         occupation
+  FROM player

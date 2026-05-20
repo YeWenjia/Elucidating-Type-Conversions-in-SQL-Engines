@@ -1,0 +1,13 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT type
+  FROM ship
+  GROUP BY type
+  ORDER BY COUNT(*) DESC

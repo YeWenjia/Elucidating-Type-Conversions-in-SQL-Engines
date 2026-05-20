@@ -1,0 +1,11 @@
+db: tests-examples/spider/customers_and_addresses/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_addresses/tables/order_items.csv
+output: tests-examples/spider/customers_and_addresses/tables/0003.csv
+functions:
+- avg
+columns:
+- order_quantity
+sql: |-
+  SELECT avg(order_quantity)
+  FROM order_items

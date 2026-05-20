@@ -1,0 +1,11 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0032.csv
+functions:
+- count
+sql: |-
+  SELECT election_cycle,
+         count(*)
+  FROM voting_record
+  GROUP BY election_cycle

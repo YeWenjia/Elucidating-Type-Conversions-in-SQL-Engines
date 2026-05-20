@@ -1,0 +1,53 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["", "-210423192", null]
+    - [null, "akEV", null]
+    - ["-1831624141", null, null]
+    - ["Oz_zpaf", null, null]
+    - ["e튊ug", "1264846530", 807577708]
+    - [null, "988242961", null]
+    - [null, "4fI", null]
+    - ["991149750", "뼑m", -163621249]
+    - ["zank", "0", 96763064]
+    - ["%uA/LM2g", "Q>", 616788468]
+    - ["1923711083", "", null]
+    - ["-202120602", "-3890461", null]
+    - ["q{", "(s9p4\\", null]
+    - [null, null, -468903275]
+    - [null, null, 835079313]
+    - ["-1256252638", null, 2090365346]
+    - ["", "543985007", null]
+    - ["-1886725408", null, null]
+    - ["880472650", null, null]
+sql: "SELECT * FROM database0_t0 WHERE -1341630469"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows:
+  - ["", "-210423192", "NULL"]
+  - ["NULL", "akEV", "NULL"]
+  - ["-1831624141", "NULL", "NULL"]
+  - ["Oz_zpaf", "NULL", "NULL"]
+  - ["e튊ug", "1264846530", "807577708"]
+  - ["NULL", "988242961", "NULL"]
+  - ["NULL", "4fI", "NULL"]
+  - ["991149750", "뼑m", "-163621249"]
+  - ["zank", "0", "96763064"]
+  - ["%uA/LM2g", "Q>", "616788468"]
+  - ["1923711083", "", "NULL"]
+  - ["-202120602", "-3890461", "NULL"]
+  - ["q{", "(s9p4\\", "NULL"]
+  - ["NULL", "NULL", "-468903275"]
+  - ["NULL", "NULL", "835079313"]
+  - ["-1256252638", "NULL", "2090365346"]
+  - ["", "543985007", "NULL"]
+  - ["-1886725408", "NULL", "NULL"]
+  - ["880472650", "NULL", "NULL"]

@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["l\\T", null, ""]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((1381347438) IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - ["l\\T"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["l\\T"]

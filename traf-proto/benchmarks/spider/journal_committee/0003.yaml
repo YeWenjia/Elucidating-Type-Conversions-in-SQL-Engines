@@ -1,0 +1,8 @@
+db: tests-examples/spider/journal_committee/tables/db.sqlite
+inputs:
+- tests-examples/spider/journal_committee/tables/editor.csv
+output: tests-examples/spider/journal_committee/tables/0003.csv
+sql: |-
+  SELECT name,
+         age
+  FROM editor

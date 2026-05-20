@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [-1020663942, -421787523]
+    - [-736419377, -421787523]
+    - [-1118684320, -436384851]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE 'k&!][㢡C}j'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"k&!][㢡C}j\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["-421787523", "-1020663942"]
+  - ["-421787523", "-736419377"]
+  - ["-436384851", "-1118684320"]

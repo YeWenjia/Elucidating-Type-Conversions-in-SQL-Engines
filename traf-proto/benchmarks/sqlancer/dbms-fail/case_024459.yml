@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [1777398138, 1639124197, -1944931769]
+    - [1777398138, -672648264, -1944931769]
+    - [-2145906607, -1600134798, -1944931769]
+sql: "SELECT database0_t1.c1, database0_t1.c2 FROM database0_t1 WHERE '{5Pxiz'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"{5Pxiz\"\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c2]
+traf_rows: []

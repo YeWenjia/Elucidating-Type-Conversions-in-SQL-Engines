@@ -1,0 +1,13 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+output: tests-examples/spider/network_2/tables/0021.csv
+constants:
+- male
+columns:
+- gender
+sql: |-
+  SELECT name
+  FROM person
+  WHERE gender = 'male'
+  ORDER BY age

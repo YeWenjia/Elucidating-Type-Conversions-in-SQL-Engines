@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [-572359123, 1192105364, null]
+    - [1672717936, 1192105364, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE ((2019357366)<(-1031004068))"
+columns:
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows: []

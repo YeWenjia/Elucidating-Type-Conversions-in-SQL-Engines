@@ -1,0 +1,12 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+- tests-examples/spider/entrepreneur/tables/people.csv
+output: tests-examples/spider/entrepreneur/tables/0020.csv
+constants:
+- '1'
+sql: |-
+  SELECT t1.company
+  FROM entrepreneur AS t1
+  JOIN people AS t2 ON t1.people_id = t2.people_id
+  ORDER BY t2.height DESC

@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [-829259585, null]
+    - [960411341, -444040980]
+    - [-783396437, -1326173292]
+  database0_t0:
+    - ["3sb\t", -218116391, "-90268742", "-521755599"]
+    - ["3sb\t", 1595463259, "-90268742", "-900235369"]
+    - ["3sb\t", 232191734, "-90268742", "0mLO{H["]
+    - ["3sb\t", 1557171838, "-90268742", "y6"]
+sql: "SELECT database0_t0.c2, database0_t1.c1, database0_t0.c3 FROM database0_t1, database0_t0 WHERE '-1077277231'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-1077277231\"\n  Position: 96"
+traf_columns: [database0_t0.c2, database0_t1.c1, database0_t0.c3]
+traf_rows:
+  - ["-90268742", "NULL", "-521755599"]
+  - ["-90268742", "NULL", "-900235369"]
+  - ["-90268742", "NULL", "0mLO{H["]
+  - ["-90268742", "NULL", "y6"]
+  - ["-90268742", "-444040980", "-521755599"]
+  - ["-90268742", "-444040980", "-900235369"]
+  - ["-90268742", "-444040980", "0mLO{H["]
+  - ["-90268742", "-444040980", "y6"]
+  - ["-90268742", "-1326173292", "-521755599"]
+  - ["-90268742", "-1326173292", "-900235369"]
+  - ["-90268742", "-1326173292", "0mLO{H["]
+  - ["-90268742", "-1326173292", "y6"]

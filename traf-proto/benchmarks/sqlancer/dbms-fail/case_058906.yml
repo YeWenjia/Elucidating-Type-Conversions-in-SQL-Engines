@@ -1,0 +1,76 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "string"}
+data:
+  database0_t1:
+    - ["T", null, null]
+    - ["1428400327", null, null]
+    - ["", 991149750, "y#Fa"]
+    - ["369297413", null, null]
+    - ["u s\nෑz+", -667082437, "2131576533"]
+    - ["-1860230507", -784288697, "-929713484"]
+    - ["uloV", null, ""]
+    - ["-1722647003", null, "1639124197"]
+    - ["519429552", null, null]
+    - ["-889725111", null, null]
+  database0_t0:
+    - [null, "969900523", -788879695, "902425607", null]
+    - [null, "-1380844698", -596599025, "902425607", null]
+    - [null, "~", null, "945001674", null]
+    - ["1300733341", " yR]Qmv", null, "-58938003", "-1035350770"]
+sql: "SELECT database0_t0.c4, database0_t0.c0, database0_t0.c2, database0_t1.c0 FROM database0_t0, database0_t1 WHERE -1887367284"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 113"
+traf_columns: [database0_t0.c4, database0_t0.c0, database0_t0.c2, database0_t1.c0]
+traf_rows:
+  - ["NULL", "NULL", "-788879695", "T"]
+  - ["NULL", "NULL", "-788879695", "1428400327"]
+  - ["NULL", "NULL", "-788879695", ""]
+  - ["NULL", "NULL", "-788879695", "369297413"]
+  - ["NULL", "NULL", "-788879695", "u s\nෑz+"]
+  - ["NULL", "NULL", "-788879695", "-1860230507"]
+  - ["NULL", "NULL", "-788879695", "uloV"]
+  - ["NULL", "NULL", "-788879695", "-1722647003"]
+  - ["NULL", "NULL", "-788879695", "519429552"]
+  - ["NULL", "NULL", "-788879695", "-889725111"]
+  - ["NULL", "NULL", "-596599025", "T"]
+  - ["NULL", "NULL", "-596599025", "1428400327"]
+  - ["NULL", "NULL", "-596599025", ""]
+  - ["NULL", "NULL", "-596599025", "369297413"]
+  - ["NULL", "NULL", "-596599025", "u s\nෑz+"]
+  - ["NULL", "NULL", "-596599025", "-1860230507"]
+  - ["NULL", "NULL", "-596599025", "uloV"]
+  - ["NULL", "NULL", "-596599025", "-1722647003"]
+  - ["NULL", "NULL", "-596599025", "519429552"]
+  - ["NULL", "NULL", "-596599025", "-889725111"]
+  - ["NULL", "NULL", "NULL", "T"]
+  - ["NULL", "NULL", "NULL", "1428400327"]
+  - ["NULL", "NULL", "NULL", ""]
+  - ["NULL", "NULL", "NULL", "369297413"]
+  - ["NULL", "NULL", "NULL", "u s\nෑz+"]
+  - ["NULL", "NULL", "NULL", "-1860230507"]
+  - ["NULL", "NULL", "NULL", "uloV"]
+  - ["NULL", "NULL", "NULL", "-1722647003"]
+  - ["NULL", "NULL", "NULL", "519429552"]
+  - ["NULL", "NULL", "NULL", "-889725111"]
+  - ["-1035350770", "1300733341", "NULL", "T"]
+  - ["-1035350770", "1300733341", "NULL", "1428400327"]
+  - ["-1035350770", "1300733341", "NULL", ""]
+  - ["-1035350770", "1300733341", "NULL", "369297413"]
+  - ["-1035350770", "1300733341", "NULL", "u s\nෑz+"]
+  - ["-1035350770", "1300733341", "NULL", "-1860230507"]
+  - ["-1035350770", "1300733341", "NULL", "uloV"]
+  - ["-1035350770", "1300733341", "NULL", "-1722647003"]
+  - ["-1035350770", "1300733341", "NULL", "519429552"]
+  - ["-1035350770", "1300733341", "NULL", "-889725111"]

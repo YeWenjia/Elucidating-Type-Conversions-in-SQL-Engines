@@ -1,0 +1,16 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/student.csv
+- tests-examples/spider/restaurant_1/tables/visits_restaurant.csv
+output: tests-examples/spider/restaurant_1/tables/0022.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT student.fname,
+         student.lname
+  FROM student
+  JOIN visits_restaurant ON student.stuid = visits_restaurant.stuid
+  GROUP BY student.stuid, student.fname, student.lname
+  ORDER BY count(*) DESC;

@@ -1,0 +1,9 @@
+db: tests-examples/spider/ship_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_1/tables/captain.csv
+output: tests-examples/spider/ship_1/tables/0005.csv
+sql: |-
+  SELECT name,
+         class,
+         rank_col
+  FROM captain

@@ -1,0 +1,16 @@
+db: tests-examples/spider/gas_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/gas_company/tables/company.csv
+- tests-examples/spider/gas_company/tables/gas_station.csv
+- tests-examples/spider/gas_company/tables/station_company.csv
+output: tests-examples/spider/gas_company/tables/0019.csv
+constants:
+- '100'
+columns:
+- market_value
+sql: |-
+  SELECT t3.location
+  FROM station_company AS t1
+  JOIN company AS t2 ON t1.company_id = t2.company_id
+  JOIN gas_station AS t3 ON t1.station_id = t3.station_id
+  WHERE t2.market_value_col > 100

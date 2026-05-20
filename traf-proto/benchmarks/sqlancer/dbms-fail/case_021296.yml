@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t1:
+    - [-358245711, ""]
+    - [-1407250924, "-2123641175"]
+    - [90378813, ""]
+    - [384382126, "-1241827685"]
+    - [-1980936731, ""]
+    - [1991049978, "N귌~6Ak"]
+  database0_t0:
+    - [null]
+    - [878771492]
+    - [440833260]
+    - [-689775935]
+    - [312477042]
+    - [-883264523]
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - [-1684923321]
+    - [155024635]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1 WHERE '312477042'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"312477042\"\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["", "-358245711"]
+  - ["-2123641175", "-1407250924"]
+  - ["", "90378813"]
+  - ["-1241827685", "384382126"]
+  - ["", "-1980936731"]
+  - ["N귌~6Ak", "1991049978"]

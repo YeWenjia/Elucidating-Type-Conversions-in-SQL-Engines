@@ -1,0 +1,11 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0013.csv
+functions:
+- count
+columns:
+- advisor
+sql: |-
+  select count(distinct advisor)
+  from student

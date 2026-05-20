@@ -1,0 +1,17 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/county.csv
+- tests-examples/spider/election/tables/election.csv
+output: tests-examples/spider/election/tables/0015.csv
+constants:
+- '50000'
+functions:
+- count
+columns:
+- delegate
+- population
+sql: |-
+  SELECT count(DISTINCT t2.delegate)
+  FROM county AS t1
+  JOIN election AS t2 ON t1.county_id = t2.district
+  WHERE t1.population > 50000

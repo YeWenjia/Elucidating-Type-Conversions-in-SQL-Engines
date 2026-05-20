@@ -1,0 +1,21 @@
+db: tests-examples/spider/store_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_1/tables/customers.csv
+- tests-examples/spider/store_1/tables/invoices.csv
+- tests-examples/spider/store_1/tables/tracks.csv
+- tests-examples/spider/store_1/tables/invoice_lines.csv
+output: tests-examples/spider/store_1/tables/0052.csv
+constants:
+- Daan
+- Peeters
+columns:
+- first_name
+- last_name
+sql: |-
+  SELECT t1.name
+  FROM tracks AS t1
+  JOIN invoice_lines AS t2 ON t1.id = t2.track_id
+  JOIN invoices AS t3 ON t3.id = t2.invoice_id
+  JOIN customers AS t4 ON t4.id = t3.customer_id
+  WHERE t4.first_name = 'Daan'
+    AND t4.last_name = 'Peeters';

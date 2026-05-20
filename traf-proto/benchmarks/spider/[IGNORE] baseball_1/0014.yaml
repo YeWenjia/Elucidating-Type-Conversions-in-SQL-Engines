@@ -1,0 +1,19 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/player_college.csv
+- tests-examples/spider/baseball_1/tables/player.csv
+- tests-examples/spider/baseball_1/tables/college.csv
+output: tests-examples/spider/baseball_1/tables/0014.csv
+constants:
+- Yale University
+functions:
+- avg
+columns:
+- height
+- name_full
+sql: |-
+  SELECT avg(t1.height)
+  FROM player AS t1
+  JOIN player_college AS t2 ON t1.player_id = t2.player_id
+  JOIN college AS t3 ON t3.college_id = t2.college_id
+  WHERE t3.name_full = 'Yale University';

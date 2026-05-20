@@ -1,0 +1,18 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0021.csv
+constants:
+- John Anthony
+functions:
+- min
+columns:
+- price
+- winery
+sql: |-
+  SELECT DISTINCT name
+  FROM wine
+  WHERE price >
+      (SELECT min(price)
+       FROM wine
+       WHERE winery = 'John Anthony')

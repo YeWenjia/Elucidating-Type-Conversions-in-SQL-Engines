@@ -1,0 +1,13 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+output: tests-examples/spider/news_report/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT nationality
+  FROM journalist
+  GROUP BY nationality
+  ORDER BY COUNT(*) DESC

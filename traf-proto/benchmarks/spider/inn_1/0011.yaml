@@ -1,0 +1,11 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+output: tests-examples/spider/inn_1/tables/0011.csv
+constants:
+- '1'
+sql: |-
+  SELECT roomname,
+         baseprice
+  FROM rooms
+  ORDER BY baseprice ASC;

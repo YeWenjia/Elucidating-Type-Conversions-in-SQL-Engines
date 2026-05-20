@@ -1,0 +1,9 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/shop.csv
+output: tests-examples/spider/device/tables/0006.csv
+sql: |-
+  SELECT shop_name,
+         location
+  FROM shop
+  ORDER BY shop_name ASC

@@ -1,0 +1,19 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0030.csv
+constants:
+- M
+- Football
+columns:
+- sex
+- sportname
+sql: |-
+  SELECT stuid
+  FROM student
+  WHERE sex = 'M'
+  EXCEPT
+  SELECT stuid
+  FROM sportsinfo
+  WHERE sportname = 'Football'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/farm.csv
+output: tests-examples/spider/farm/tables/0006.csv
+functions:
+- max
+- min
+columns:
+- cows
+sql: |-
+  SELECT max(cows),
+         min(cows)
+  FROM farm

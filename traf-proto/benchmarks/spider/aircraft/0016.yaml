@@ -1,0 +1,8 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/pilot.csv
+output: tests-examples/spider/aircraft/tables/0016.csv
+sql: |-
+  SELECT name
+  FROM pilot
+  ORDER BY age DESC

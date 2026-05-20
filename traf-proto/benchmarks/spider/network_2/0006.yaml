@@ -1,0 +1,14 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+output: tests-examples/spider/network_2/tables/0006.csv
+functions:
+- max
+columns:
+- age
+sql: |-
+  SELECT name
+  FROM person
+  WHERE age =
+      (SELECT max(age)
+       FROM person)

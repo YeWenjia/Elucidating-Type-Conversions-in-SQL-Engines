@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c25", type: "int"}
+  database0_t4:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-734959996, -599116877, null]
+    - [388449173, -88915418, null]
+    - [-316874230, null, -1020663942]
+    - [588556800, 1945939106, null]
+  database0_t4:
+    - ["*wK-", null]
+sql: "SELECT database0_t4.c0, database0_t0.c1, database0_t0.c25 FROM database0_t0, database0_t4 WHERE '#[ZM\nFQ\\P'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"#[ZM\nFQ\\P\"\n  Position: 97"
+traf_columns: [database0_t4.c0, database0_t0.c1, database0_t0.c25]
+traf_rows:
+  - ["*wK-", "-599116877", "NULL"]
+  - ["*wK-", "-88915418", "NULL"]
+  - ["*wK-", "NULL", "-1020663942"]
+  - ["*wK-", "1945939106", "NULL"]

@@ -1,0 +1,58 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-1790883840, "x\rV"]
+    - [-432308496, "RG籕50Ɽ,㭠"]
+    - [-1189542774, "1132688273"]
+    - [19066862, "-760757233"]
+    - [-66460078, null]
+    - [-1554526165, "2077246431"]
+    - [-1104779761, null]
+    - [1677369268, "X%5휒"]
+    - [880330817, null]
+    - [-160541949, "1708405439"]
+    - [976935660, null]
+    - [-632382568, null]
+    - [2090365346, null]
+    - [1316177785, "ꈳKL"]
+    - [-138853978, null]
+    - [878771492, "T|B_鳔"]
+    - [625572473, "442063666"]
+    - [-1769467504, "-226366454"]
+    - [-946074683, null]
+    - [-1056561715, "~kx㶰\r6T"]
+    - [-430613252, null]
+    - [443216999, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 861553183"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["x\rV"]
+  - ["RG籕50Ɽ,㭠"]
+  - ["1132688273"]
+  - ["-760757233"]
+  - ["NULL"]
+  - ["2077246431"]
+  - ["NULL"]
+  - ["X%5휒"]
+  - ["NULL"]
+  - ["1708405439"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["ꈳKL"]
+  - ["NULL"]
+  - ["T|B_鳔"]
+  - ["442063666"]
+  - ["-226366454"]
+  - ["NULL"]
+  - ["~kx㶰\r6T"]
+  - ["NULL"]
+  - ["NULL"]

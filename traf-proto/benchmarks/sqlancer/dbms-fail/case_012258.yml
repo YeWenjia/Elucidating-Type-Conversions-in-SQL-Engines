@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [null, 2086878399, -1041688005]
+    - ["-31667871", -2011765295, -1041688005]
+    - ["", -929713484, -1041688005]
+    - ["vSG LV+", -2027877510, -1041688005]
+    - [null, 2079599464, -1041688005]
+    - ["1489138842", -639173391, -1007987539]
+    - ["231697926", -200608168, null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE '-717809554'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-717809554\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["NULL", "2086878399"]
+  - ["-31667871", "-2011765295"]
+  - ["", "-929713484"]
+  - ["vSG LV+", "-2027877510"]
+  - ["NULL", "2079599464"]
+  - ["1489138842", "-639173391"]
+  - ["231697926", "-200608168"]

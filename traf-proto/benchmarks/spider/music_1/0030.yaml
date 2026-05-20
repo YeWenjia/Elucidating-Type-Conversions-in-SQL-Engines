@@ -1,0 +1,17 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0030.csv
+constants:
+- '500'
+- '1'
+functions:
+- count
+columns:
+- resolution
+sql: |-
+  SELECT artist_name
+  FROM song
+  WHERE resolution > 500
+  GROUP BY languages, artist_name
+  ORDER BY count(*) DESC

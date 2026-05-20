@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["2090915506", "JK8W?", null]
+    - ["-289869638", "JK8W?", null]
+    - ["671816884", "JK8W?", null]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE 'B? >'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"B? >\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["JK8W?", "2090915506"]
+  - ["JK8W?", "-289869638"]
+  - ["JK8W?", "671816884"]

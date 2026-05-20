@@ -1,0 +1,11 @@
+db: tests-examples/spider/party_host/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_host/tables/host.csv
+output: tests-examples/spider/party_host/tables/0014.csv
+constants:
+- '1'
+sql: |-
+  SELECT name,
+         nationality
+  FROM host
+  ORDER BY age DESC

@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [1532076373, null]
+    - [-501811782, null]
+    - [369297413, null]
+    - [-301137590, null]
+    - [90257357, -627472638]
+  database0_t0:
+    - [74589875, "-222554371", "#[zm\nfq\\p"]
+    - [-1786755399, "", "y*"]
+    - [239734007, null, "-709381281"]
+    - [878771492, "-1283657873", "1935197725"]
+    - [-392454665, "", ""]
+    - [1845506995, "-1779974519", "312477042"]
+sql: "SELECT * FROM database0_t1 WHERE ',*'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \",*\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["1532076373", "NULL"]
+  - ["-501811782", "NULL"]
+  - ["369297413", "NULL"]
+  - ["-301137590", "NULL"]
+  - ["90257357", "-627472638"]

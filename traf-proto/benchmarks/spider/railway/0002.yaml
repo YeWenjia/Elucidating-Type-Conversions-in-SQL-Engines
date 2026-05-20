@@ -1,0 +1,8 @@
+db: tests-examples/spider/railway/tables/db.sqlite
+inputs:
+- tests-examples/spider/railway/tables/railway.csv
+output: tests-examples/spider/railway/tables/0002.csv
+sql: |-
+  SELECT builder
+  FROM railway
+  ORDER BY builder ASC

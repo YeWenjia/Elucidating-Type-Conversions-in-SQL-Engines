@@ -1,0 +1,14 @@
+db: tests-examples/spider/city_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/city_record/tables/city.csv
+- tests-examples/spider/city_record/tables/temperature.csv
+output: tests-examples/spider/city_record/tables/0006.csv
+constants:
+- Shanghai
+columns:
+- city
+sql: |-
+  SELECT t2.jan
+  FROM city AS t1
+  JOIN temperature AS t2 ON t1.city_id = t2.city_id
+  WHERE t1.city = 'Shanghai'

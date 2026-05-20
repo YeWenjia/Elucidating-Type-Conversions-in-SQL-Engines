@@ -1,0 +1,8 @@
+db: tests-examples/spider/party_people/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_people/tables/region.csv
+output: tests-examples/spider/party_people/tables/0002.csv
+sql: |-
+  SELECT DISTINCT region_name
+  FROM region
+  ORDER BY region_name

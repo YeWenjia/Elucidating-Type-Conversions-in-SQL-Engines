@@ -1,0 +1,15 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/student.csv
+- tests-examples/spider/college_3/tables/minor_in.csv
+output: tests-examples/spider/college_3/tables/0031.csv
+constants:
+- '140'
+columns:
+- dno
+sql: |-
+  SELECT t2.fname,
+         t2.lname
+  FROM minor_in AS t1
+  JOIN student AS t2 ON t1.stuid = t2.stuid
+  WHERE t1.dno = 140

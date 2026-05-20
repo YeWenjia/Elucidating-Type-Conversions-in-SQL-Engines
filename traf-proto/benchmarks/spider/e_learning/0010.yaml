@@ -1,0 +1,14 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/student_tests_taken.csv
+output: tests-examples/spider/e_learning/tables/0010.csv
+constants:
+- Fail
+functions:
+- count
+columns:
+- test_result
+sql: |-
+  SELECT count(*)
+  FROM student_tests_taken
+  WHERE test_result = 'Fail'

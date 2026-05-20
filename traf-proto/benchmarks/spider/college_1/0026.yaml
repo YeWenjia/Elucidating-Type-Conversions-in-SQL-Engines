@@ -1,0 +1,18 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/student.csv
+output: tests-examples/spider/college_1/tables/0026.csv
+constants:
+- '1'
+functions:
+- avg
+columns:
+- stu_gpa
+sql: |-
+  SELECT t2.dept_name,
+         avg(t1.stu_gpa)
+  FROM student AS t1
+  JOIN department AS t2 ON t1.dept_code = t2.dept_code
+  GROUP BY t1.dept_code, t2.dept_name
+  ORDER BY avg(t1.stu_gpa) DESC

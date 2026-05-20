@@ -1,0 +1,10 @@
+db: tests-examples/spider/local_govt_and_lot/tables/db.sqlite
+inputs:
+- tests-examples/spider/local_govt_and_lot/tables/organizations.csv
+output: tests-examples/spider/local_govt_and_lot/tables/0012.csv
+sql: |-
+  SELECT organization_id
+  FROM organizations
+  EXCEPT
+  SELECT parent_organization_id
+  FROM organizations

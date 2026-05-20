@@ -1,0 +1,45 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["?B0", "X"]
+    - ["-760757233", "21118529"]
+    - ["165514851", null]
+    - ["278864663", "-1074613839"]
+    - ["1264846530", null]
+    - ["1728204978", null]
+    - ["1708405439", null]
+    - ["", "-148136119"]
+    - ["-589381183", "-1106044075"]
+  database0_t0:
+    - ["qEV)Ԓ", "1026113678"]
+    - ["2090365346", null]
+    - ["HUxr", null]
+    - ["vnOu{Vbo", null]
+    - ["976935660", null]
+    - ["-1684923321", null]
+    - ["-1673524853", "1661665722"]
+    - ["rO", null]
+    - ["844887889", "-1674286145"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["qEV)Ԓ"]
+  - ["2090365346"]
+  - ["HUxr"]
+  - ["vnOu{Vbo"]
+  - ["976935660"]
+  - ["-1684923321"]
+  - ["-1673524853"]
+  - ["rO"]
+  - ["844887889"]

@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-729994453, 1335110472]
+    - [-1944817537, 1335110472]
+    - [-2057096192, null]
+    - [388449173, null]
+  database0_t0:
+    - ["9J縥5", 232191734]
+    - ["", 232191734]
+    - ["-1729908901", 232191734]
+    - ["2131576533", 232191734]
+    - ["468173676", 232191734]
+    - ["\\urG LpU", 232191734]
+    - ["-1009069659", 232191734]
+    - ["-428151007", 232191734]
+    - ["+D", 232191734]
+    - [">3.", 232191734]
+    - ["U'GC", 232191734]
+    - ["568628174", 232191734]
+    - ["369297413", 232191734]
+    - ["-1118684320", null]
+    - ["-335835816", -1768588016]
+    - ["1183157583", null]
+    - ["-1779974519", null]
+    - ["945001674", null]
+sql: "SELECT * FROM database0_t1 WHERE -1391663799"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-729994453", "1335110472"]
+  - ["-1944817537", "1335110472"]
+  - ["-2057096192", "NULL"]
+  - ["388449173", "NULL"]

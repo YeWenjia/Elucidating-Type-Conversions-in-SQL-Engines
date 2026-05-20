@@ -1,0 +1,17 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+- tests-examples/spider/entrepreneur/tables/people.csv
+output: tests-examples/spider/entrepreneur/tables/0010.csv
+constants:
+- '1.85'
+functions:
+- sum
+columns:
+- money_requested
+- height
+sql: |-
+  SELECT sum(t1.money_requested)
+  FROM entrepreneur AS t1
+  JOIN people AS t2 ON t1.people_id = t2.people_id
+  WHERE t2.height > 1.85

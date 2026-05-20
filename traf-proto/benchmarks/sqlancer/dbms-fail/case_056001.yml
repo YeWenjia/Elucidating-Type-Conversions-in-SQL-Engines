@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["0铬+Q6Q㣀", -1794475476]
+    - ["", 1977257380]
+    - ["1813484176", 1451763432]
+    - [",DxHUm", null]
+sql: "SELECT * FROM database0_t0 WHERE '輪/㟍g'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"輪/㟍g\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["0铬+Q6Q㣀", "-1794475476"]
+  - ["", "1977257380"]
+  - ["1813484176", "1451763432"]
+  - [",DxHUm", "NULL"]

@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["dp", -872809163, null]
+    - ["-1188173375", -872809163, -387554477]
+    - ["1464494921", -872809163, null]
+sql: "SELECT database0_t0.c2, database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE (('%D')<>(database0_t0.c0))"
+columns:
+  - "c2"
+  - "c0"
+  - "c1"
+rows:
+  - [null, "dp", -872809163]
+  - [-387554477, "-1188173375", -872809163]
+  - [null, "1464494921", -872809163]
+kind: benign
+traf_columns: [database0_t0.c2, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["NULL", "dp", "-872809163"]
+  - ["-387554477", "-1188173375", "-872809163"]
+  - ["NULL", "1464494921", "-872809163"]

@@ -1,0 +1,15 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/party.csv
+- tests-examples/spider/election/tables/election.csv
+output: tests-examples/spider/election/tables/0029.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.party
+  FROM election AS t1
+  JOIN party AS t2 ON t1.party = t2.party_id
+  GROUP BY t2.party
+  ORDER BY COUNT(*) DESC

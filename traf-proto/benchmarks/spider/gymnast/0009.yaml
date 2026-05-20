@@ -1,0 +1,10 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/people.csv
+output: tests-examples/spider/gymnast/tables/0009.csv
+constants:
+- '5'
+sql: |-
+  SELECT name
+  FROM people
+  ORDER BY age DESC

@@ -1,0 +1,13 @@
+db: tests-examples/spider/entertainment_awards/tables/db.sqlite
+inputs:
+- tests-examples/spider/entertainment_awards/tables/artwork.csv
+output: tests-examples/spider/entertainment_awards/tables/0017.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT type
+  FROM artwork
+  GROUP BY type
+  ORDER BY COUNT(*) DESC

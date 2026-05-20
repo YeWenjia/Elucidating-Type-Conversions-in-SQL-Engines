@@ -1,0 +1,19 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0038.csv
+constants:
+- Alice
+functions:
+- min
+columns:
+- friend
+- year
+sql: |-
+  SELECT name
+  FROM personfriend
+  WHERE friend = 'Alice'
+    AND year =
+      (SELECT min(year)
+       FROM personfriend
+       WHERE friend = 'Alice')

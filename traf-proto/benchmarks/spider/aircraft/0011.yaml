@@ -1,0 +1,17 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/aircraft.csv
+- tests-examples/spider/aircraft/tables/airport.csv
+- tests-examples/spider/aircraft/tables/airport_aircraft.csv
+output: tests-examples/spider/aircraft/tables/0011.csv
+constants:
+- '10000000'
+columns:
+- total_passengers
+sql: |-
+  SELECT t1.aircraft,
+         t1.description
+  FROM aircraft AS t1
+  JOIN airport_aircraft AS t2 ON t1.aircraft_id = t2.aircraft_id
+  JOIN airport AS t3 ON t2.airport_id = t3.airport_id
+  WHERE t3.total_passengers > 10000000

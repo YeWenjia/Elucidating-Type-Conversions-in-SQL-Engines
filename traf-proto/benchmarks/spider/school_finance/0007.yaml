@@ -1,0 +1,15 @@
+db: tests-examples/spider/school_finance/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_finance/tables/school.csv
+output: tests-examples/spider/school_finance/tables/0007.csv
+functions:
+- avg
+- max
+- min
+columns:
+- enrollment
+sql: |-
+  SELECT avg(enrollment),
+         max(enrollment),
+         min(enrollment)
+  FROM school

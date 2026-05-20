@@ -1,0 +1,8 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+output: tests-examples/spider/entrepreneur/tables/0002.csv
+sql: |-
+  SELECT company
+  FROM entrepreneur
+  ORDER BY money_requested DESC

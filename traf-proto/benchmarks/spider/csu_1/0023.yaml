@@ -1,0 +1,15 @@
+db: tests-examples/spider/csu_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/csu_1/tables/faculty.csv
+output: tests-examples/spider/csu_1/tables/0023.csv
+constants:
+- '2002'
+functions:
+- sum
+columns:
+- faculty
+- year
+sql: |-
+  SELECT sum(faculty)
+  FROM faculty
+  WHERE year = 2002

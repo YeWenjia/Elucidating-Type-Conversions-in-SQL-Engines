@@ -1,0 +1,8 @@
+db: tests-examples/spider/machine_repair/tables/db.sqlite
+inputs:
+- tests-examples/spider/machine_repair/tables/technician.csv
+output: tests-examples/spider/machine_repair/tables/0003.csv
+sql: |-
+  SELECT team,
+         starting_year
+  FROM technician

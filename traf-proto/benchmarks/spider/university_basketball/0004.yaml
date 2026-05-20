@@ -1,0 +1,14 @@
+db: tests-examples/spider/university_basketball/tables/db.sqlite
+inputs:
+- tests-examples/spider/university_basketball/tables/university.csv
+output: tests-examples/spider/university_basketball/tables/0004.csv
+constants:
+- Public
+- '1'
+columns:
+- affiliation
+sql: |-
+  SELECT founded
+  FROM university
+  WHERE affiliation != 'Public'
+  ORDER BY founded DESC

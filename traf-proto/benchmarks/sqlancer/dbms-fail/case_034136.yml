@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [1489138842]
+    - [1242577457]
+    - [399831188]
+    - [-2046514943]
+    - [623156499]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE 'd牔Vej狞% '"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"d牔Vej狞% \"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["1489138842"]
+  - ["1242577457"]
+  - ["399831188"]
+  - ["-2046514943"]
+  - ["623156499"]

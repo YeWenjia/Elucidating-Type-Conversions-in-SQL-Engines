@@ -1,0 +1,19 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/home_game.csv
+- tests-examples/spider/baseball_1/tables/park.csv
+output: tests-examples/spider/baseball_1/tables/0031.csv
+constants:
+- '1907'
+- Columbia Park
+functions:
+- count
+columns:
+- year
+- park_name
+sql: |-
+  SELECT count(*)
+  FROM home_game AS t1
+  JOIN park AS t2 ON t1.park_id = t2.park_id
+  WHERE t1.year = 1907
+    AND t2.park_name = 'Columbia Park';

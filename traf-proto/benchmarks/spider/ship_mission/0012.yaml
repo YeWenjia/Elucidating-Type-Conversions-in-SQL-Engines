@@ -1,0 +1,14 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/mission.csv
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0012.csv
+constants:
+- '1928'
+columns:
+- launched_year
+sql: |-
+  SELECT t2.name
+  FROM mission AS t1
+  JOIN ship AS t2 ON t1.ship_id = t2.ship_id
+  WHERE t1.launched_year > 1928

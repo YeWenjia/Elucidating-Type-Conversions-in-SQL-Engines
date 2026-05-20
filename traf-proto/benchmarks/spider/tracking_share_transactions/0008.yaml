@@ -1,0 +1,12 @@
+db: tests-examples/spider/tracking_share_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_share_transactions/tables/transactions.csv
+output: tests-examples/spider/tracking_share_transactions/tables/0008.csv
+constants:
+- SALE
+columns:
+- transaction_type_code
+sql: |-
+  SELECT date_of_transaction
+  FROM transactions
+  WHERE transaction_type_code = 'SALE'

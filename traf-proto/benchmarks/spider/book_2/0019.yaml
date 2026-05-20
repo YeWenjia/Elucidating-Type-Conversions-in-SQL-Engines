@@ -1,0 +1,11 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+output: tests-examples/spider/book_2/tables/0019.csv
+functions:
+- count
+columns:
+- publication_date
+sql: |-
+  SELECT COUNT (DISTINCT publication_date)
+  FROM publication

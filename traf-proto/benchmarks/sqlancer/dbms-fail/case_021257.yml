@@ -1,0 +1,49 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t1:
+    - [-358245711, ""]
+    - [-1407250924, "-2123641175"]
+    - [90378813, ""]
+    - [384382126, "-1241827685"]
+    - [-1980936731, ""]
+    - [1991049978, "N귌~6Ak"]
+  database0_t0:
+    - [null]
+    - [878771492]
+    - [440833260]
+    - [-689775935]
+    - [312477042]
+    - [-883264523]
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - [-1684923321]
+    - [155024635]
+sql: "SELECT * FROM database0_t0 WHERE 'z~xL'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"z~xL\"\n  Position: 34"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["NULL"]
+  - ["878771492"]
+  - ["440833260"]
+  - ["-689775935"]
+  - ["312477042"]
+  - ["-883264523"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["-1684923321"]
+  - ["155024635"]

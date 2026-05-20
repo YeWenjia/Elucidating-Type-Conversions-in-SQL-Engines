@@ -1,0 +1,13 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+output: tests-examples/spider/game_1/tables/0015.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT advisor
+  FROM student
+  GROUP BY advisor
+  HAVING count(*) >= 2

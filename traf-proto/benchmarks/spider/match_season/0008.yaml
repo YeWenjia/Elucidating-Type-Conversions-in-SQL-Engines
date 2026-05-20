@@ -1,0 +1,11 @@
+db: tests-examples/spider/match_season/tables/db.sqlite
+inputs:
+- tests-examples/spider/match_season/tables/match_season.csv
+output: tests-examples/spider/match_season/tables/0008.csv
+functions:
+- count
+columns:
+- team
+sql: |-
+  SELECT count(DISTINCT team)
+  FROM match_season

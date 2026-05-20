@@ -1,0 +1,13 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/flight.csv
+- tests-examples/spider/flight_1/tables/aircraft.csv
+output: tests-examples/spider/flight_1/tables/0037.csv
+functions:
+- count
+sql: |-
+  SELECT t2.name,
+         count(*)
+  FROM flight AS t1
+  JOIN aircraft AS t2 ON t1.aid = t2.aid
+  GROUP BY t1.aid, t2.name

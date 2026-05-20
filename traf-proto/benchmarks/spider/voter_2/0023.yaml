@@ -1,0 +1,19 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0023.csv
+constants:
+- NYC
+- Spring
+functions:
+- count
+columns:
+- city_code
+- election_cycle
+sql: |-
+  SELECT count(*)
+  FROM student AS t1
+  JOIN voting_record AS t2 ON t1.stuid = class_senator_vote
+  WHERE t1.city_code = 'NYC'
+    AND t2.election_cycle = 'Spring'

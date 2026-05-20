@@ -1,0 +1,14 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+- tests-examples/spider/book_2/tables/book.csv
+output: tests-examples/spider/book_2/tables/0011.csv
+constants:
+- '4000000'
+columns:
+- price
+sql: |-
+  SELECT t1.writer
+  FROM book AS t1
+  JOIN publication AS t2 ON t1.book_id = t2.book_id
+  WHERE t2.price > 4000000

@@ -1,0 +1,12 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+output: tests-examples/spider/pilot_record/tables/0004.csv
+constants:
+- '30'
+columns:
+- age
+sql: |-
+  SELECT DISTINCT position
+  FROM pilot
+  WHERE age > 30

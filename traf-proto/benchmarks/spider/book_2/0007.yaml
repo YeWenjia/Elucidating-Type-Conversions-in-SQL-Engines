@@ -1,0 +1,12 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+output: tests-examples/spider/book_2/tables/0007.csv
+constants:
+- '5000000'
+columns:
+- price
+sql: |-
+  SELECT DISTINCT publisher
+  FROM publication
+  WHERE price > 5000000

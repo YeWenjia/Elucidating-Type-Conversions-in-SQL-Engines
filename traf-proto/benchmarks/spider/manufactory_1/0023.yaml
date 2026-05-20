@@ -1,0 +1,19 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0023.csv
+constants:
+- Sony
+functions:
+- count
+columns:
+- name
+sql: |-
+  SELECT count(DISTINCT name)
+  FROM products
+  WHERE name NOT IN
+      (SELECT t1.name
+       FROM products AS t1
+       JOIN manufacturers AS t2 ON t1.manufacturer = t2.code
+       WHERE t2.name = 'Sony')

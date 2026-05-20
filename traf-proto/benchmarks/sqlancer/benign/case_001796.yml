@@ -1,0 +1,49 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [">}rrm", null, null]
+    - ["-2011765295", null, null]
+    - ["412602178", null, null]
+    - ["Tm", "\\", null]
+    - ["", "D1", null]
+    - ["#vL", "}Ῐgf*", null]
+    - ["3촓KU9", null, null]
+    - ["1095133845", "붑k", null]
+    - ["440833260", null, null]
+    - ["-8699392", null, null]
+    - ["-1738781711", null, null]
+sql: "SELECT database0_t0.c2, database0_t0.c0 FROM database0_t0 WHERE (('') IS NOT NULL)"
+columns:
+  - "c2"
+  - "c0"
+rows:
+  - [null, ">}rrm"]
+  - [null, "-2011765295"]
+  - [null, "412602178"]
+  - [null, "Tm"]
+  - [null, ""]
+  - [null, "#vL"]
+  - [null, "3촓KU9"]
+  - [null, "1095133845"]
+  - [null, "440833260"]
+  - [null, "-8699392"]
+  - [null, "-1738781711"]
+kind: benign
+traf_columns: [database0_t0.c2, database0_t0.c0]
+traf_rows:
+  - ["NULL", ">}rrm"]
+  - ["NULL", "-2011765295"]
+  - ["NULL", "412602178"]
+  - ["NULL", "Tm"]
+  - ["NULL", ""]
+  - ["NULL", "#vL"]
+  - ["NULL", "3촓KU9"]
+  - ["NULL", "1095133845"]
+  - ["NULL", "440833260"]
+  - ["NULL", "-8699392"]
+  - ["NULL", "-1738781711"]

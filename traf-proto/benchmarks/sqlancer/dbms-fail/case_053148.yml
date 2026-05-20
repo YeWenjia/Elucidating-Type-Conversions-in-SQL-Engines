@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [-822502080, -657850939]
+    - [-815869550, -657850939]
+sql: "SELECT database0_t0.c0 FROM database0_t0, database0_t1 WHERE 'H*꺛INK'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"H*꺛INK\"\n  Position: 62"
+traf_columns: [database0_t0.c0]
+traf_rows: []

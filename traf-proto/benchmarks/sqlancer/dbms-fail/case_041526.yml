@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [1161798939, null]
+    - [-632382568, null]
+    - [2090365346, null]
+    - [59859283, null]
+    - [421831615, "1759084337"]
+    - [-639173391, null]
+    - [1408249554, null]
+  database0_t0:
+    - ["-1860230507", -358241405, "1300733341"]
+    - ["", -765031084, "239734007"]
+    - ["1816315552", 232191734, "ߣ0o"]
+    - ["[0SsQY", null, "793296094"]
+    - ["t|t⽦", null, null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE '_ttxPv'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"_ttxPv\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["1759084337"]
+  - ["NULL"]
+  - ["NULL"]

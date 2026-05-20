@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [-1297745372, "y", ""]
+    - [897917532, "", "-1939649544"]
+  database0_t0: []
+sql: "SELECT * FROM database0_t1 WHERE ']XSA'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"]XSA\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["-1297745372", "y", ""]
+  - ["897917532", "", "-1939649544"]

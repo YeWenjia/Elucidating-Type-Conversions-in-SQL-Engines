@@ -1,0 +1,9 @@
+db: tests-examples/spider/theme_gallery/tables/db.sqlite
+inputs:
+- tests-examples/spider/theme_gallery/tables/exhibition.csv
+output: tests-examples/spider/theme_gallery/tables/0015.csv
+sql: |-
+  SELECT theme,
+         year
+  FROM exhibition
+  ORDER BY ticket_price DESC

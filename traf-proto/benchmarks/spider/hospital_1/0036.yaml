@@ -1,0 +1,9 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/procedures.csv
+output: tests-examples/spider/hospital_1/tables/0036.csv
+sql: |-
+  SELECT name,
+         cost
+  FROM procedures
+  ORDER BY cost DESC

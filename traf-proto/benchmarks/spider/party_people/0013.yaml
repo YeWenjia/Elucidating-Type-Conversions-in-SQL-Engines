@@ -1,0 +1,13 @@
+db: tests-examples/spider/party_people/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_people/tables/party.csv
+- tests-examples/spider/party_people/tables/member.csv
+output: tests-examples/spider/party_people/tables/0013.csv
+columns:
+- party_id
+sql: |-
+  SELECT party_name
+  FROM party
+  WHERE party_id NOT IN
+      (SELECT party_id
+       FROM member)

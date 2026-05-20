@@ -1,0 +1,9 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/addresses.csv
+- tests-examples/spider/student_assessment/tables/people_addresses.csv
+output: tests-examples/spider/student_assessment/tables/0019.csv
+sql: |-
+  SELECT DISTINCT t1.city
+  FROM addresses AS t1
+  JOIN people_addresses AS t2 ON t1.address_id = t2.address_id

@@ -1,0 +1,17 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/physician.csv
+- tests-examples/spider/hospital_1/tables/department.csv
+- tests-examples/spider/hospital_1/tables/affiliated_with.csv
+output: tests-examples/spider/hospital_1/tables/0009.csv
+constants:
+- '1'
+columns:
+- primaryaffiliation
+sql: |-
+  SELECT t1.name,
+         t3.name
+  FROM physician AS t1
+  JOIN affiliated_with AS t2 ON t1.employeeid = t2.physician
+  JOIN department AS t3 ON t2.department = t3.departmentid
+  WHERE t2.primaryaffiliation = 1

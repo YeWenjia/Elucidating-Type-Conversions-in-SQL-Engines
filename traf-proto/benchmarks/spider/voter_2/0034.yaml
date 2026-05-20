@@ -1,0 +1,17 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+output: tests-examples/spider/voter_2/tables/0034.csv
+constants:
+- F
+- '1'
+functions:
+- count
+columns:
+- sex
+sql: |-
+  SELECT major
+  FROM student
+  WHERE sex = 'F'
+  GROUP BY major
+  ORDER BY count(*) DESC

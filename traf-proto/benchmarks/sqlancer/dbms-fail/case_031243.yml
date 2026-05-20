@@ -1,0 +1,58 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [-1684923321, "8F국G"]
+    - [-1339408532, "8F국G"]
+    - [880330817, "8F국G"]
+    - [1894499120, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [-1042823525, "8F국G"]
+    - [-1642817017, "8F국G"]
+    - [644331292, "8F국G"]
+    - [-31667871, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [null, "8F국G"]
+    - [-882499732, "y*"]
+    - [-206598926, ""]
+  database0_t0:
+    - ["-339580836", "ᨻ0?"]
+    - ["-717809554", "ᨻ0?"]
+    - ["c8v⓿", "ᨻ0?"]
+    - ["-102494414", "ᨻ0?"]
+    - ["u록wI!?De", ""]
+    - ["-1684923321", "-820224547"]
+    - ["-488805973", "\nۂ'?~!9l"]
+    - ["", ""]
+    - ["^}M n2U", "-717809554"]
+    - ["1588128946", "1708405439"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE -650762952"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-339580836"]
+  - ["-717809554"]
+  - ["c8v⓿"]
+  - ["-102494414"]
+  - ["u록wI!?De"]
+  - ["-1684923321"]
+  - ["-488805973"]
+  - [""]
+  - ["^}M n2U"]
+  - ["1588128946"]

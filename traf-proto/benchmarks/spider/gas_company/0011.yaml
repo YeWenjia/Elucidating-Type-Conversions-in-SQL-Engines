@@ -1,0 +1,10 @@
+db: tests-examples/spider/gas_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/gas_company/tables/gas_station.csv
+output: tests-examples/spider/gas_company/tables/0011.csv
+sql: |-
+  SELECT station_id,
+         location,
+         manager_name
+  FROM gas_station
+  ORDER BY open_year

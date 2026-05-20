@@ -1,0 +1,12 @@
+db: tests-examples/spider/insurance_policies/tables/db.sqlite
+inputs:
+- tests-examples/spider/insurance_policies/tables/customers.csv
+- tests-examples/spider/insurance_policies/tables/customer_policies.csv
+output: tests-examples/spider/insurance_policies/tables/0022.csv
+sql: |-
+  SELECT customer_details
+  FROM customers
+  EXCEPT
+  SELECT t1.customer_details
+  FROM customers AS t1
+  JOIN customer_policies AS t2 ON t1.customer_id = t2.customer_id

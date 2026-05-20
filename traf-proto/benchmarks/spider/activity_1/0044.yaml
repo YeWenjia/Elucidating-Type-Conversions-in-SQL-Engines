@@ -1,0 +1,18 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/activity.csv
+- tests-examples/spider/activity_1/tables/participates_in.csv
+output: tests-examples/spider/activity_1/tables/0044.csv
+constants:
+- Canoeing
+- Kayaking
+columns:
+- activity_name
+sql: |-
+  SELECT t1.stuid
+  FROM participates_in AS t1
+  JOIN activity AS t2 ON t2.actid = t2.actid
+  WHERE t2.activity_name = 'Canoeing' INTERSECT
+    SELECT t1.stuid
+    FROM participates_in AS t1
+    JOIN activity AS t2 ON t2.actid = t2.actid WHERE t2.activity_name = 'Kayaking'

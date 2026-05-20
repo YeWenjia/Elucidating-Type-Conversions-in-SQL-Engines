@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'K翲'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"K翲\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows: []

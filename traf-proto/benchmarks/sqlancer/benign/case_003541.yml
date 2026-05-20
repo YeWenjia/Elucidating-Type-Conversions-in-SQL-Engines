@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - [2005999759, "-1277086295", null]
+    - [880330817, "Q3tt.s '", null]
+sql: "SELECT database0_t0.c3, database0_t0.c1 FROM database0_t0 WHERE (('')<=('VsKd>V~'))"
+columns:
+  - "c3"
+  - "c1"
+rows:
+  - [null, "-1277086295"]
+  - [null, "Q3tt.s '"]
+kind: benign
+traf_columns: [database0_t0.c3, database0_t0.c1]
+traf_rows:
+  - ["NULL", "-1277086295"]
+  - ["NULL", "Q3tt.s '"]

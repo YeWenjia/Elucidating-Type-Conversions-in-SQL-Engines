@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [-226675815, -698938741, null]
+    - [543985007, null, null]
+    - [1960636913, 2089251492, null]
+    - [1, 2125755186, null]
+    - [679369846, 543985007, null]
+    - [1699565337, -632684435, null]
+    - [1633878156, -501811782, "-1781350639"]
+    - [90257357, -1416537295, "ktv"]
+    - [884324776, -1569784969, "-2003129176"]
+    - [2131576533, 678687013, "}c"]
+  database0_t0:
+    - ["0B~e#zE", "1661665722", 2117607574]
+    - ["-1095758613", "-8즥+y", 1989148812]
+sql: "SELECT * FROM database0_t1 WHERE 'df1*촓\nM'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"df1*촓\nM\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["-226675815", "-698938741", "NULL"]
+  - ["543985007", "NULL", "NULL"]
+  - ["1960636913", "2089251492", "NULL"]
+  - ["1", "2125755186", "NULL"]
+  - ["679369846", "543985007", "NULL"]
+  - ["1699565337", "-632684435", "NULL"]
+  - ["1633878156", "-501811782", "-1781350639"]
+  - ["90257357", "-1416537295", "ktv"]
+  - ["884324776", "-1569784969", "-2003129176"]
+  - ["2131576533", "678687013", "}c"]

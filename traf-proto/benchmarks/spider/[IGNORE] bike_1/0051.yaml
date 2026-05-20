@@ -1,0 +1,22 @@
+db: tests-examples/spider/bike_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/bike_1/tables/station.csv
+- tests-examples/spider/bike_1/tables/trip.csv
+output: tests-examples/spider/bike_1/tables/0051.csv
+constants:
+- Mountain View
+- Palo Alto
+functions:
+- count
+columns:
+- city
+sql: |-
+  SELECT count(*)
+  FROM station AS t1
+  JOIN trip AS t2
+  JOIN station AS t3
+  JOIN trip AS t4 ON t1.id = t2.start_station_id
+  AND t2.id = t4.id
+  AND t3.id = t4.end_station_id
+  WHERE t1.city = 'Mountain View'
+    AND t3.city = 'Palo Alto'

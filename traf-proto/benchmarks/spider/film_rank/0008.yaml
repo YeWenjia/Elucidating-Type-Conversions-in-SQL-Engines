@@ -1,0 +1,8 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/market.csv
+output: tests-examples/spider/film_rank/tables/0008.csv
+sql: |-
+  SELECT country
+  FROM market
+  ORDER BY country ASC

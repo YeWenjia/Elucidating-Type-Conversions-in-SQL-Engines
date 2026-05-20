@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["", "9j縥\t"]
+    - ["1486103084", "9j縥\t"]
+    - ["1048325040", "9j縥\t"]
+    - [">c|b#", "9j縥\t"]
+    - ["625572473", "9j縥\t"]
+sql: "SELECT * FROM database0_t0 WHERE '443216999'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"443216999\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["", "9j縥\t"]
+  - ["1486103084", "9j縥\t"]
+  - ["1048325040", "9j縥\t"]
+  - [">c|b#", "9j縥\t"]
+  - ["625572473", "9j縥\t"]

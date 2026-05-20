@@ -1,0 +1,10 @@
+db: tests-examples/spider/school_player/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_player/tables/player.csv
+output: tests-examples/spider/school_player/tables/0008.csv
+constants:
+- '1'
+sql: |-
+  SELECT team
+  FROM player
+  ORDER BY age DESC

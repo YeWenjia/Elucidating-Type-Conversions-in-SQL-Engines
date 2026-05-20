@@ -1,0 +1,22 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/product_suppliers.csv
+output: tests-examples/spider/department_store/tables/0033.csv
+constants:
+- '1'
+functions:
+- avg
+- count
+columns:
+- total_amount_purchased
+- total_value_purchased
+- supplier_id
+sql: |-
+  SELECT avg(total_amount_purchased),
+         avg(total_value_purchased)
+  FROM product_suppliers
+  WHERE supplier_id =
+      (SELECT supplier_id
+       FROM product_suppliers
+       GROUP BY supplier_id
+       ORDER BY count(*) DESC, supplier_id LIMIT 1)

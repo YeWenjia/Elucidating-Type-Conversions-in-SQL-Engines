@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["-584440880", "369297413"]
+    - ["", "-82830539"]
+    - ["N(\tj", null]
+    - ["1302265430", "1894499120"]
+    - ["377552037", "1699565337"]
+    - ["425119740", "|"]
+    - ["-365405835", null]
+    - ["973775399", "-1779974519"]
+    - ["Vo\\F4", "-1554526165"]
+  database0_t0:
+    - [859558875, null, null]
+    - [1014163171, null, null]
+    - [-1633280630, null, ""]
+    - [438856278, 2070152475, null]
+    - [7, -1305984915, "-1779974519"]
+sql: "SELECT database0_t1.c0, database0_t1.c1 FROM database0_t1 WHERE database0_t1.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-584440880", "369297413"]
+  - ["", "-82830539"]
+  - ["1302265430", "1894499120"]
+  - ["377552037", "1699565337"]
+  - ["425119740", "|"]
+  - ["973775399", "-1779974519"]
+  - ["Vo\\F4", "-1554526165"]

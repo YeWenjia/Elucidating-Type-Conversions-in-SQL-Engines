@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["", 1640976928, -1772711115]
+    - ["-273085966", null, -410642814]
+    - ["-1724310134", -1782336443, 1781459840]
+    - ["1699565337", null, null]
+  database0_t0:
+    - [-316874230, "", "Nx"]
+    - [-1790883840, "623156499", "930698208"]
+sql: "SELECT database0_t1.c0, database0_t0.c0 FROM database0_t0, database0_t1 WHERE 'HRY'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"HRY\"\n  Position: 79"
+traf_columns: [database0_t1.c0, database0_t0.c0]
+traf_rows:
+  - ["", "-316874230"]
+  - ["-273085966", "-316874230"]
+  - ["-1724310134", "-316874230"]
+  - ["1699565337", "-316874230"]
+  - ["", "-1790883840"]
+  - ["-273085966", "-1790883840"]
+  - ["-1724310134", "-1790883840"]
+  - ["1699565337", "-1790883840"]

@@ -1,0 +1,12 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/classroom.csv
+output: tests-examples/spider/college_2/tables/0001.csv
+constants:
+- '50'
+columns:
+- capacity
+sql: |-
+  SELECT DISTINCT building
+  FROM classroom
+  WHERE capacity > 50

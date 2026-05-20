@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0:
+    - ["w&3p", "519382160", -543844210, "-1935562191"]
+    - ["|峙", "519382160", -543844210, "-1935562191"]
+    - ["1293639186", "519382160", -543844210, "-1935562191"]
+sql: "SELECT database0_t0.c1, database0_t0.c0, database0_t0.c3 FROM database0_t0 WHERE '1708405439'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1708405439\"\n  Position: 82"
+traf_columns: [database0_t0.c1, database0_t0.c0, database0_t0.c3]
+traf_rows:
+  - ["519382160", "w&3p", "-1935562191"]
+  - ["519382160", "|峙", "-1935562191"]
+  - ["519382160", "1293639186", "-1935562191"]

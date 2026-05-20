@@ -1,0 +1,59 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c86", type: "string"}
+data:
+  database0_t0:
+    - ["p\t7t+O", "f{fE[OcM", "]n"]
+    - [".g幋", "f{fE[OcM", "]n"]
+    - ["1708405439", "f{fE[OcM", "]n"]
+    - ["1421077996", "f{fE[OcM", "]n"]
+    - ["1601331713", "f{fE[OcM", "]n"]
+    - ["", "f{fE[OcM", "]n"]
+    - ["-2105810903", "f{fE[OcM", "]n"]
+    - ["734800198", "f{fE[OcM", "]n"]
+    - ["1873431032", "f{fE[OcM", "]n"]
+    - [".F*,G", "f{fE[OcM", "]n"]
+    - ["-1790883840", "f{fE[OcM", "]n"]
+    - ["6984250", "f{fE[OcM", "]n"]
+    - ["611119605", "f{fE[OcM", "]n"]
+    - ["-632382568", "f{fE[OcM", "]n"]
+    - ["-1194109887", "f{fE[OcM", "]n"]
+    - ["1465333237", "f{fE[OcM", "]n"]
+    - ["543985007", "-1775103535", "紮&TT\tj"]
+    - ["EsfD鼏.&eA", "", "-1881517287"]
+    - ["-256458438", "3g*", null]
+    - ["-710428420", "-1077277231", null]
+    - ["&23鈺&cFyI", "1952061476", null]
+    - ["-832737903", "Yu*l\t2Yv\\", null]
+sql: "SELECT database0_t0.c86, database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE '1161815015'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1161815015\"\n  Position: 83"
+traf_columns: [database0_t0.c86, database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["]n", "f{fE[OcM", "p\t7t+O"]
+  - ["]n", "f{fE[OcM", ".g幋"]
+  - ["]n", "f{fE[OcM", "1708405439"]
+  - ["]n", "f{fE[OcM", "1421077996"]
+  - ["]n", "f{fE[OcM", "1601331713"]
+  - ["]n", "f{fE[OcM", ""]
+  - ["]n", "f{fE[OcM", "-2105810903"]
+  - ["]n", "f{fE[OcM", "734800198"]
+  - ["]n", "f{fE[OcM", "1873431032"]
+  - ["]n", "f{fE[OcM", ".F*,G"]
+  - ["]n", "f{fE[OcM", "-1790883840"]
+  - ["]n", "f{fE[OcM", "6984250"]
+  - ["]n", "f{fE[OcM", "611119605"]
+  - ["]n", "f{fE[OcM", "-632382568"]
+  - ["]n", "f{fE[OcM", "-1194109887"]
+  - ["]n", "f{fE[OcM", "1465333237"]
+  - ["紮&TT\tj", "-1775103535", "543985007"]
+  - ["-1881517287", "", "EsfD鼏.&eA"]
+  - ["NULL", "3g*", "-256458438"]
+  - ["NULL", "-1077277231", "-710428420"]
+  - ["NULL", "1952061476", "&23鈺&cFyI"]
+  - ["NULL", "Yu*l\t2Yv\\", "-832737903"]

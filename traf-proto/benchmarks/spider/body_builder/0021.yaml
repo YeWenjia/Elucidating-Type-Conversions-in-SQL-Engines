@@ -1,0 +1,15 @@
+db: tests-examples/spider/body_builder/tables/db.sqlite
+inputs:
+- tests-examples/spider/body_builder/tables/body_builder.csv
+- tests-examples/spider/body_builder/tables/people.csv
+output: tests-examples/spider/body_builder/tables/0021.csv
+functions:
+- count
+columns:
+- people_id
+sql: |-
+  SELECT count(*)
+  FROM people
+  WHERE people_id NOT IN
+      (SELECT people_id
+       FROM body_builder)

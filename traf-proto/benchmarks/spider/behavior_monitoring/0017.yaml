@@ -1,0 +1,9 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+output: tests-examples/spider/behavior_monitoring/tables/0017.csv
+sql: |-
+  SELECT first_name,
+         last_name
+  FROM teachers
+  ORDER BY last_name

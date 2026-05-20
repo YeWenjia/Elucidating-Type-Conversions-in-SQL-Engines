@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t0:
+    - ["fp*Wu,2"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '-1794475476'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-1794475476\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["fp*Wu,2"]

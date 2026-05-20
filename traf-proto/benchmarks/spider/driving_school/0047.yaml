@@ -1,0 +1,16 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/vehicles.csv
+- tests-examples/spider/driving_school/tables/lessons.csv
+output: tests-examples/spider/driving_school/tables/0047.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.vehicle_id,
+         t1.vehicle_details
+  FROM vehicles AS t1
+  JOIN lessons AS t2 ON t1.vehicle_id = t2.vehicle_id
+  GROUP BY t1.vehicle_id, t1.vehicle_details
+  ORDER BY count(*) DESC

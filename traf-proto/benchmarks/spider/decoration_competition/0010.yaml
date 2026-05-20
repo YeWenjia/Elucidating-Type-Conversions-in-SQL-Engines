@@ -1,0 +1,11 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/college.csv
+- tests-examples/spider/decoration_competition/tables/member.csv
+output: tests-examples/spider/decoration_competition/tables/0010.csv
+sql: |-
+  SELECT t2.name,
+         t1.college_location
+  FROM college AS t1
+  JOIN member AS t2 ON t1.college_id = t2.college_id
+  ORDER BY t2.name ASC

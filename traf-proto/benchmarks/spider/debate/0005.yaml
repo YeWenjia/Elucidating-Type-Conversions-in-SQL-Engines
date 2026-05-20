@@ -1,0 +1,14 @@
+db: tests-examples/spider/debate/tables/db.sqlite
+inputs:
+- tests-examples/spider/debate/tables/people.csv
+output: tests-examples/spider/debate/tables/0005.csv
+constants:
+- '35'
+- '36'
+columns:
+- age
+sql: |-
+  SELECT name
+  FROM people
+  WHERE age = 35
+    OR age = 36

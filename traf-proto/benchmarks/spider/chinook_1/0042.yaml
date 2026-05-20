@@ -1,0 +1,21 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/album.csv
+- tests-examples/spider/chinook_1/tables/genre.csv
+- tests-examples/spider/chinook_1/tables/track.csv
+output: tests-examples/spider/chinook_1/tables/0042.csv
+constants:
+- Reggae
+- Rock
+columns:
+- name
+sql: |-
+  SELECT t1.title
+  FROM album AS t1
+  JOIN track AS t2 ON t1.albumid = t2.albumid
+  JOIN genre AS t3 ON t2.genreid = t3.genreid
+  WHERE t3.name = 'Reggae' INTERSECT
+    SELECT t1.title
+    FROM album AS t1
+    JOIN track AS t2 ON t1.albumid = t2.albumid
+    JOIN genre AS t3 ON t2.genreid = t3.genreid WHERE t3.name = 'Rock'

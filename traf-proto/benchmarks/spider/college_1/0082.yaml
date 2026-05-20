@@ -1,0 +1,21 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/enroll.csv
+- tests-examples/spider/college_1/tables/student.csv
+output: tests-examples/spider/college_1/tables/0082.csv
+constants:
+- ACCT-211
+- S
+columns:
+- crs_code
+- stu_lname
+filters:
+- like
+sql: |-
+  SELECT t1.stu_fname
+  FROM student AS t1
+  JOIN enroll AS t2 ON t1.stu_num = t2.stu_num
+  JOIN class AS t3 ON t2.class_code = t3.class_code
+  WHERE t3.crs_code = 'ACCT-211'
+    AND t1.stu_lname LIKE 'S%'

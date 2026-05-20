@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["lo", ",~J1㚇D", "-152514463"]
+    - ["-759808593", "cr䠀!ࠇg}fq", "1300733341"]
+    - ["-1077277231", "-286206706", "e&yr)#"]
+    - ["O<", "HY'J41>", "-1126735563"]
+    - ["756795626", "k", "輪/㟍g"]
+    - ["-1073664262", "1894499120", "-1555500840"]
+    - ["1194574824", "RQeyO4", "-883264523"]
+    - ["T\\1*", "143568150", ""]
+    - ["9ᶊ27E\t)", "723249712", "-2107229"]
+sql: "SELECT * FROM database0_t0 WHERE ((((((database0_t0.c0)<=(database0_t0.c1))) IS NOT NULL)) IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows: []

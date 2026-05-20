@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["u S\nෑZ+", -948742844, "4k7(gv)"]
+    - ["}qe|P1", -294595303, "E'JWh0!"]
+    - ["1777398138", 1530020466, null]
+    - ["n\nG", 2131576533, "-1088951240"]
+    - ["av5SWO", null, null]
+    - ["-1657577908", null, null]
+    - ["-888677811", -804341004, null]
+  database0_t0:
+    - [-1330192941, null]
+    - [-827854841, null]
+    - [-1745773939, "q{"]
+    - [1302265430, "IPaQ)y"]
+sql: "SELECT database0_t1.c1, database0_t1.c0, database0_t1.c2 FROM database0_t1, database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t1.c1, database0_t1.c0, database0_t1.c2]
+traf_rows:
+  - ["-948742844", "u S\nෑZ+", "4k7(gv)"]
+  - ["-948742844", "u S\nෑZ+", "4k7(gv)"]
+  - ["-294595303", "}qe|P1", "E'JWh0!"]
+  - ["-294595303", "}qe|P1", "E'JWh0!"]
+  - ["1530020466", "1777398138", "NULL"]
+  - ["1530020466", "1777398138", "NULL"]
+  - ["2131576533", "n\nG", "-1088951240"]
+  - ["2131576533", "n\nG", "-1088951240"]
+  - ["NULL", "av5SWO", "NULL"]
+  - ["NULL", "av5SWO", "NULL"]
+  - ["NULL", "-1657577908", "NULL"]
+  - ["NULL", "-1657577908", "NULL"]
+  - ["-804341004", "-888677811", "NULL"]
+  - ["-804341004", "-888677811", "NULL"]

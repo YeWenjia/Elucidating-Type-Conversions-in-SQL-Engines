@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/employee.csv
+output: tests-examples/spider/college_1/tables/0005.csv
+constants:
+- Graztevski
+functions:
+- count
+columns:
+- emp_lname
+sql: |-
+  SELECT count(*)
+  FROM employee AS t1
+  JOIN class AS t2 ON t1.emp_num = t2.prof_num
+  WHERE t1.emp_lname = 'Graztevski'

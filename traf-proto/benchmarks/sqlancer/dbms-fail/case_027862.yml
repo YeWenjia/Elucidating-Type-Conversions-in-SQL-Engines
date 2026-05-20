@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["D_", 1214310062, null]
+    - ["", null, null]
+    - ["je#쭄*(N", null, null]
+    - ["^}M n2U", null, null]
+    - ["-316874230", -1041688005, null]
+    - ["-803759267", -998473893, -265594065]
+    - ["55061168", 1573309848, 1300733341]
+    - ["1004877479", null, -3890461]
+    - ["8iAl", null, -1077277231]
+    - ["-339580836", null, null]
+    - ["-515855997", -632382568, null]
+sql: "SELECT * FROM database0_t0 WHERE 'S/yKGZ'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"S/yKGZ\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows:
+  - ["D_", "1214310062", "NULL"]
+  - ["", "NULL", "NULL"]
+  - ["je#쭄*(N", "NULL", "NULL"]
+  - ["^}M n2U", "NULL", "NULL"]
+  - ["-316874230", "-1041688005", "NULL"]
+  - ["-803759267", "-998473893", "-265594065"]
+  - ["55061168", "1573309848", "1300733341"]
+  - ["1004877479", "NULL", "-3890461"]
+  - ["8iAl", "NULL", "-1077277231"]
+  - ["-339580836", "NULL", "NULL"]
+  - ["-515855997", "-632382568", "NULL"]

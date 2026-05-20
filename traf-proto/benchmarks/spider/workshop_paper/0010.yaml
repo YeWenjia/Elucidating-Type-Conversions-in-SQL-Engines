@@ -1,0 +1,10 @@
+db: tests-examples/spider/workshop_paper/tables/db.sqlite
+inputs:
+- tests-examples/spider/workshop_paper/tables/submission.csv
+- tests-examples/spider/workshop_paper/tables/acceptance.csv
+output: tests-examples/spider/workshop_paper/tables/0010.csv
+sql: |-
+  SELECT t2.author,
+         t1.result
+  FROM acceptance AS t1
+  JOIN submission AS t2 ON t1.submission_id = t2.submission_id

@@ -1,0 +1,13 @@
+db: tests-examples/spider/epinions_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/epinions_1/tables/item.csv
+- tests-examples/spider/epinions_1/tables/review.csv
+output: tests-examples/spider/epinions_1/tables/0020.csv
+constants:
+- '1'
+functions:
+- avg
+columns:
+- rank_col
+sql: "SELECT t1.title,\n       t1.i_id\nFROM item AS t1\nJOIN review AS t2 ON t1.i_id\
+  \ = t2.i_id\nGROUP BY t2.i_id, t1.title\nORDER BY avg(t2.rank_col) DESC"

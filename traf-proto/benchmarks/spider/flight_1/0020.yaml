@@ -1,0 +1,9 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/flight.csv
+output: tests-examples/spider/flight_1/tables/0020.csv
+functions:
+- count
+sql: |-
+  SELECT count(*)
+  FROM flight

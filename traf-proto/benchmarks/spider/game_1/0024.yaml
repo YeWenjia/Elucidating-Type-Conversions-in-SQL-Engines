@@ -1,0 +1,15 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0024.csv
+constants:
+- '10'
+functions:
+- sum
+columns:
+- hoursperweek
+sql: |-
+  SELECT stuid
+  FROM sportsinfo
+  GROUP BY stuid
+  HAVING sum(hoursperweek) > 10

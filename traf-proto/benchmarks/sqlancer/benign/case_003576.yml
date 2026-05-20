@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t8:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t8:
+    - [1982925870, -177621527, null]
+    - [-89852000, 369297413, null]
+    - [775087535, 388449173, null]
+    - [-501811782, -1208763389, null]
+    - [-1528446338, null, null]
+    - [-186716307, 2035848268, null]
+    - [2144334003, null, null]
+sql: "SELECT database0_t8.c2, database0_t8.c1 FROM database0_t8 WHERE (('') IS NULL)"
+columns:
+  - "c2"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t8.c2, database0_t8.c1]
+traf_rows: []

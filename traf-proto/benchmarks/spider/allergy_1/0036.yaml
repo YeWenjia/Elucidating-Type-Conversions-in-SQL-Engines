@@ -1,0 +1,21 @@
+db: tests-examples/spider/allergy_1/tables/db.sqlite
+inputs:
+  - tests-examples/spider/allergy_1/tables/has_allergy.csv
+  - tests-examples/spider/allergy_1/tables/student.csv
+output: tests-examples/spider/allergy_1/tables/0036.csv
+constants:
+  - F
+  - Milk
+  - Eggs
+functions:
+  - count
+columns:
+  - sex
+  - allergy
+sql: |-
+  select count(*)
+  from has_allergy as t1
+  join student as t2 on t1.stuid = t2.stuid
+  where t2.sex = 'F'
+    and (t1.allergy = 'Milk'
+    or t1.allergy = 'Eggs')

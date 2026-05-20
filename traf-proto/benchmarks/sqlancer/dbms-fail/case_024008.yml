@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t9:
+    - ["1804551272", "ln䷥ST-G", "1300733341", "-63640941"]
+    - ["1804551272", "322596655", "1300733341", null]
+    - ["1804551272", "728112712", "1804551272", "S㶯"]
+    - ["1804551272", "388449173", "358318539", "y*"]
+    - ["1804551272", "-2123738433", "", "-2039227553"]
+    - ["ktv", "-447723445", "-1331189205", "%Sgiy"]
+sql: "SELECT database0_t9.c0, database0_t9.c3, database0_t9.c1, database0_t9.c2 FROM database0_t9 WHERE 'Yc崍?2\\>d䛕'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Yc崍?2\\>d䛕\"\n  Position: 99"
+traf_columns: [database0_t9.c0, database0_t9.c3, database0_t9.c1, database0_t9.c2]
+traf_rows:
+  - ["1804551272", "-63640941", "ln䷥ST-G", "1300733341"]
+  - ["1804551272", "NULL", "322596655", "1300733341"]
+  - ["1804551272", "S㶯", "728112712", "1804551272"]
+  - ["1804551272", "y*", "388449173", "358318539"]
+  - ["1804551272", "-2039227553", "-2123738433", ""]
+  - ["ktv", "%Sgiy", "-447723445", "-1331189205"]

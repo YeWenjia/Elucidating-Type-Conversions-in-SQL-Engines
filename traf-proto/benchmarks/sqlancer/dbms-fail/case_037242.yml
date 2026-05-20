@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["iKf<\nd70(", -948742844]
+    - ["623729064", 440833260]
+    - ["-929713484", 247430992]
+    - ["90257357", 915954605]
+    - ["TRUE", null]
+    - ["408048053", null]
+sql: "SELECT * FROM database0_t1 WHERE 'Xg쭭狞'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Xg쭭狞\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["iKf<\nd70(", "-948742844"]
+  - ["623729064", "440833260"]
+  - ["-929713484", "247430992"]
+  - ["90257357", "915954605"]
+  - ["TRUE", "NULL"]
+  - ["408048053", "NULL"]

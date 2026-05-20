@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [">}rrm", null, null]
+    - ["-2011765295", null, null]
+    - ["412602178", null, null]
+    - ["Tm", "\\", null]
+    - ["", "D1", null]
+    - ["#vL", "}Ῐgf*", null]
+    - ["3촓KU9", null, null]
+    - ["1095133845", "붑k", null]
+    - ["440833260", null, null]
+    - ["-8699392", null, null]
+    - ["-1738781711", null, null]
+sql: "SELECT database0_t0.c1, database0_t0.c0, database0_t0.c2 FROM database0_t0 WHERE 'Be尉mA)TO'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Be尉mA)TO\"\n  Position: 82"
+traf_columns: [database0_t0.c1, database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["NULL", ">}rrm", "NULL"]
+  - ["NULL", "-2011765295", "NULL"]
+  - ["NULL", "412602178", "NULL"]
+  - ["\\", "Tm", "NULL"]
+  - ["D1", "", "NULL"]
+  - ["}Ῐgf*", "#vL", "NULL"]
+  - ["NULL", "3촓KU9", "NULL"]
+  - ["붑k", "1095133845", "NULL"]
+  - ["NULL", "440833260", "NULL"]
+  - ["NULL", "-8699392", "NULL"]
+  - ["NULL", "-1738781711", "NULL"]

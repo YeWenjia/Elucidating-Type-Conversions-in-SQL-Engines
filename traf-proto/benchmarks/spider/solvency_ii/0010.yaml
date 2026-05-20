@@ -1,0 +1,15 @@
+db: tests-examples/spider/solvency_ii/tables/db.sqlite
+inputs:
+- tests-examples/spider/solvency_ii/tables/products.csv
+output: tests-examples/spider/solvency_ii/tables/0010.csv
+constants:
+- '4500'
+- '3000'
+columns:
+- product_price
+sql: |-
+  SELECT product_type_code
+  FROM products
+  WHERE product_price > 4500 INTERSECT
+    SELECT product_type_code
+    FROM products WHERE product_price < 3000

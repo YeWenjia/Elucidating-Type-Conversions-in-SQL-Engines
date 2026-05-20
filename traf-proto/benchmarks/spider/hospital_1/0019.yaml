@@ -1,0 +1,14 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/block.csv
+- tests-examples/spider/hospital_1/tables/room.csv
+output: tests-examples/spider/hospital_1/tables/0019.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         t1.blockcode
+  FROM block AS t1
+  JOIN room AS t2 ON t1.blockfloor = t2.blockfloor
+  AND t1.blockcode = t2.blockcode
+  GROUP BY t1.blockcode

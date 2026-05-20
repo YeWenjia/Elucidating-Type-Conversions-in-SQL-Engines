@@ -1,0 +1,10 @@
+db: tests-examples/spider/soccer_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_1/tables/league.csv
+- tests-examples/spider/soccer_1/tables/country.csv
+output: tests-examples/spider/soccer_1/tables/0001.csv
+sql: |-
+  SELECT t1.name,
+         t2.name
+  FROM country AS t1
+  JOIN league AS t2 ON t1.id = t2.country_id

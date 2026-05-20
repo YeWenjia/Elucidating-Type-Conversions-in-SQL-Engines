@@ -1,0 +1,14 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/people.csv
+- tests-examples/spider/student_assessment/tables/candidates.csv
+output: tests-examples/spider/student_assessment/tables/0010.csv
+constants:
+- stanley.monahan@example.org
+columns:
+- email_address
+sql: |-
+  SELECT t2.candidate_id
+  FROM people AS t1
+  JOIN candidates AS t2 ON t1.person_id = t2.candidate_id
+  WHERE t1.email_address = 'stanley.monahan@example.org'

@@ -1,0 +1,20 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/department_stores.csv
+- tests-examples/spider/department_store/tables/departments.csv
+output: tests-examples/spider/department_store/tables/0016.csv
+constants:
+- marketing
+- managing
+columns:
+- department_name
+sql: |-
+  SELECT t2.dept_store_id,
+         t2.store_name
+  FROM departments AS t1
+  JOIN department_stores AS t2 ON t1.dept_store_id = t2.dept_store_id
+  WHERE t1.department_name = 'marketing' INTERSECT
+    SELECT t2.dept_store_id,
+           t2.store_name
+    FROM departments AS t1
+    JOIN department_stores AS t2 ON t1.dept_store_id = t2.dept_store_id WHERE t1.department_name = 'managing'

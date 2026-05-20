@@ -1,0 +1,52 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["ࠅ탎!CQ", "sg_"]
+    - ["", "sg_"]
+    - ["<햄", "sg_"]
+    - ["880330817", "sg_"]
+    - ["73706100", "sg_"]
+    - ["-1741950108", "sg_"]
+    - ["1242577457", "sg_"]
+    - ["-2123641175", "sg_"]
+    - ["tL}?", "sg_"]
+    - ["714203442", "sg_"]
+    - ["W", "sg_"]
+    - ["lG.", "sg_"]
+    - ["1402533931", "sg_"]
+    - ["C?*l", "sg_"]
+    - ["524607185", "sg_"]
+    - ["VsKd>V~", "-1124675273"]
+    - ["觽(Uh!v0", null]
+    - ["-1158448544", null]
+    - ["32317906", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '991149750'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"991149750\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["ࠅ탎!CQ"]
+  - [""]
+  - ["<햄"]
+  - ["880330817"]
+  - ["73706100"]
+  - ["-1741950108"]
+  - ["1242577457"]
+  - ["-2123641175"]
+  - ["tL}?"]
+  - ["714203442"]
+  - ["W"]
+  - ["lG."]
+  - ["1402533931"]
+  - ["C?*l"]
+  - ["524607185"]
+  - ["VsKd>V~"]
+  - ["觽(Uh!v0"]
+  - ["-1158448544"]
+  - ["32317906"]

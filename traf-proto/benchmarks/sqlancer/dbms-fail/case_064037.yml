@@ -1,0 +1,55 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c86", type: "string"}
+data:
+  database0_t0:
+    - ["p\t7t+O", "f{fE[OcM", "]n"]
+    - [".g幋", "f{fE[OcM", "]n"]
+    - ["1708405439", "f{fE[OcM", "]n"]
+    - ["1421077996", "f{fE[OcM", "]n"]
+    - ["1601331713", "f{fE[OcM", "]n"]
+    - ["", "f{fE[OcM", "]n"]
+    - ["-2105810903", "f{fE[OcM", "]n"]
+    - ["734800198", "f{fE[OcM", "]n"]
+    - ["1873431032", "f{fE[OcM", "]n"]
+    - [".F*,G", "f{fE[OcM", "]n"]
+    - ["-1790883840", "f{fE[OcM", "]n"]
+    - ["6984250", "f{fE[OcM", "]n"]
+    - ["611119605", "f{fE[OcM", "]n"]
+    - ["-632382568", "f{fE[OcM", "]n"]
+    - ["-1194109887", "f{fE[OcM", "]n"]
+    - ["1465333237", "f{fE[OcM", "]n"]
+    - ["543985007", "-1775103535", "紮&TT\tj"]
+    - ["EsfD鼏.&eA", "", "-1881517287"]
+    - ["-256458438", "3g*", null]
+    - ["-710428420", "-1077277231", null]
+    - ["&23鈺&cFyI", "1952061476", null]
+    - ["-832737903", "Yu*l\t2Yv\\", null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE database0_t0.c86"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["p\t7t+O", "f{fE[OcM"]
+  - [".g幋", "f{fE[OcM"]
+  - ["1708405439", "f{fE[OcM"]
+  - ["1421077996", "f{fE[OcM"]
+  - ["1601331713", "f{fE[OcM"]
+  - ["", "f{fE[OcM"]
+  - ["-2105810903", "f{fE[OcM"]
+  - ["734800198", "f{fE[OcM"]
+  - ["1873431032", "f{fE[OcM"]
+  - [".F*,G", "f{fE[OcM"]
+  - ["-1790883840", "f{fE[OcM"]
+  - ["6984250", "f{fE[OcM"]
+  - ["611119605", "f{fE[OcM"]
+  - ["-632382568", "f{fE[OcM"]
+  - ["-1194109887", "f{fE[OcM"]
+  - ["1465333237", "f{fE[OcM"]
+  - ["543985007", "-1775103535"]
+  - ["EsfD鼏.&eA", ""]

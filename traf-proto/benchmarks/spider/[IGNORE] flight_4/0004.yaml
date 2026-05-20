@@ -1,0 +1,14 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/airlines.csv
+output: tests-examples/spider/flight_4/tables/0004.csv
+constants:
+- Russia
+functions:
+- count
+columns:
+- country
+sql: |-
+  SELECT count(*)
+  FROM airlines
+  WHERE country = 'Russia'

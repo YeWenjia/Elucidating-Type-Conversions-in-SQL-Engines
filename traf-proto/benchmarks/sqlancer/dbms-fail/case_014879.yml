@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [322195528, -1895019473]
+    - [-31667871, 1424578975]
+    - [-333803317, null]
+    - [-1907509333, null]
+    - [-58938003, null]
+    - [1995376532, 2101491117]
+    - [-278911135, null]
+    - [-1104779761, null]
+    - [-1554526165, 1486103084]
+    - [1749572790, null]
+    - [388449173, null]
+    - [1741233631, null]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE 'fmei*Gj*'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"fmei*Gj*\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["-1895019473", "322195528"]
+  - ["1424578975", "-31667871"]
+  - ["NULL", "-333803317"]
+  - ["NULL", "-1907509333"]
+  - ["NULL", "-58938003"]
+  - ["2101491117", "1995376532"]
+  - ["NULL", "-278911135"]
+  - ["NULL", "-1104779761"]
+  - ["1486103084", "-1554526165"]
+  - ["NULL", "1749572790"]
+  - ["NULL", "388449173"]
+  - ["NULL", "1741233631"]

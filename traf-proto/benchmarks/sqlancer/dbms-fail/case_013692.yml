@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [">", null]
+    - ["678687013", null]
+    - ["-41902032", null]
+    - ["-1077277231", null]
+sql: "SELECT * FROM database0_t0 WHERE '-1781350639'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-1781350639\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - [">", "NULL"]
+  - ["678687013", "NULL"]
+  - ["-41902032", "NULL"]
+  - ["-1077277231", "NULL"]

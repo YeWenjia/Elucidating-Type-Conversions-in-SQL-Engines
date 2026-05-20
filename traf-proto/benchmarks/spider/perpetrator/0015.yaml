@@ -1,0 +1,14 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+output: tests-examples/spider/perpetrator/tables/0015.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT country,
+         COUNT(*)
+  FROM perpetrator
+  GROUP BY country
+  HAVING COUNT(*) >= 2

@@ -1,0 +1,14 @@
+db: tests-examples/spider/scientist_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/scientist_1/tables/projects.csv
+output: tests-examples/spider/scientist_1/tables/0007.csv
+functions:
+- avg
+columns:
+- hours
+sql: |-
+  SELECT name
+  FROM projects
+  WHERE hours >
+      (SELECT avg(hours)
+       FROM projects)

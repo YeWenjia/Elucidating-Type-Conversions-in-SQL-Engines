@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [-1803110686]
+    - [-1742141482]
+    - [232191734]
+    - [1344692751]
+    - [1707556340]
+    - [2058206041]
+    - [-948742844]
+    - [-1]
+sql: "SELECT * FROM database0_t0 WHERE -421898090"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-1803110686"]
+  - ["-1742141482"]
+  - ["232191734"]
+  - ["1344692751"]
+  - ["1707556340"]
+  - ["2058206041"]
+  - ["-948742844"]
+  - ["-1"]

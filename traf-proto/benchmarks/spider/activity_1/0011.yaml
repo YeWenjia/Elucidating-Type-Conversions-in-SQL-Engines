@@ -1,0 +1,11 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0011.csv
+functions:
+- count
+sql: |-
+  SELECT building,
+         count(*)
+  FROM faculty
+  GROUP BY building

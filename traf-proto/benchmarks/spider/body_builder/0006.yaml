@@ -1,0 +1,8 @@
+db: tests-examples/spider/body_builder/tables/db.sqlite
+inputs:
+- tests-examples/spider/body_builder/tables/people.csv
+output: tests-examples/spider/body_builder/tables/0006.csv
+sql: |-
+  SELECT birth_date
+  FROM people
+  ORDER BY height ASC

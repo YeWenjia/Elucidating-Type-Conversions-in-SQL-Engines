@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["䠀3", "543985007", "1461842301"]
+    - ["1939447876", "543985007", "1461842301"]
+    - ["-464941680", "543985007", "1461842301"]
+    - ["", "543985007", "1461842301"]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c1)<=(database0_t0.c1))"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - ["543985007", "䠀3"]
+  - ["543985007", "1939447876"]
+  - ["543985007", "-464941680"]
+  - ["543985007", ""]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["543985007", "䠀3"]
+  - ["543985007", "1939447876"]
+  - ["543985007", "-464941680"]
+  - ["543985007", ""]

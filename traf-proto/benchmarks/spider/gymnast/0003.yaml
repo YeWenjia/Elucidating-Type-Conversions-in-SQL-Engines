@@ -1,0 +1,8 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/gymnast.csv
+output: tests-examples/spider/gymnast/tables/0003.csv
+sql: |-
+  SELECT total_points
+  FROM gymnast
+  ORDER BY floor_exercise_points DESC

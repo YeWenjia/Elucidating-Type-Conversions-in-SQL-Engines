@@ -1,0 +1,8 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/club.csv
+output: tests-examples/spider/sports_competition/tables/0002.csv
+sql: |-
+  SELECT DISTINCT region
+  FROM club
+  ORDER BY region ASC

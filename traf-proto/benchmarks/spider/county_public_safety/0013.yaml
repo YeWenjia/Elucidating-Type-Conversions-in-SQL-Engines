@@ -1,0 +1,19 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/county_public_safety.csv
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0013.csv
+constants:
+- '20000'
+functions:
+- count
+columns:
+- county_id
+- population
+sql: |-
+  SELECT count(*)
+  FROM city
+  WHERE county_id IN
+      (SELECT county_id
+       FROM county_public_safety
+       WHERE population > 20000)

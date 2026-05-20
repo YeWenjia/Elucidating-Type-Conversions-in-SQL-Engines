@@ -1,0 +1,12 @@
+db: tests-examples/spider/csu_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/csu_1/tables/campuses.csv
+output: tests-examples/spider/csu_1/tables/0003.csv
+constants:
+- '1958'
+columns:
+- year
+sql: |-
+  SELECT campus
+  FROM campuses
+  WHERE year = 1958

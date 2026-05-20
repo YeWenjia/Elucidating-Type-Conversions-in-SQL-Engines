@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+data:
+  database0_t7:
+    - [1589366091]
+    - [455120199]
+    - [169597911]
+    - [-735480765]
+    - [-1684923321]
+    - [1565370594]
+    - [1635776983]
+    - [-657850939]
+    - [1510524639]
+    - [1299578065]
+    - [623156499]
+    - [1588128946]
+sql: "SELECT * FROM database0_t7 WHERE ((((database0_t7.c0) IS NULL)) IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t7.c0]
+traf_rows: []

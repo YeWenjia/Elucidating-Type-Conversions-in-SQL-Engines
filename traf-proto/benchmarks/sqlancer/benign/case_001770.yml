@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0: []
+  database0_t9:
+    - ["184814572", 723197510, 1260159117]
+sql: "SELECT * FROM database0_t0, database0_t9 WHERE ((database0_t0.c1)<>(database0_t0.c1))"
+columns:
+  - "c0"
+  - "c1"
+  - "c0"
+  - "c1"
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t9.c0, database0_t9.c1, database0_t9.c2]
+traf_rows: []

@@ -1,0 +1,17 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/employee.csv
+output: tests-examples/spider/college_1/tables/0051.csv
+constants:
+- PROF
+columns:
+- emp_jobcode
+sql: |-
+  SELECT emp_fname
+  FROM employee
+  WHERE emp_jobcode = 'PROF'
+  EXCEPT
+  SELECT t1.emp_fname
+  FROM employee AS t1
+  JOIN class AS t2 ON t1.emp_num = t2.prof_num

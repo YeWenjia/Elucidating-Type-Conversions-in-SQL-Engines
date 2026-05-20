@@ -1,0 +1,14 @@
+db: tests-examples/spider/customers_and_products_contacts/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_products_contacts/tables/addresses.csv
+- tests-examples/spider/customers_and_products_contacts/tables/customers.csv
+- tests-examples/spider/customers_and_products_contacts/tables/customer_address_history.csv
+output: tests-examples/spider/customers_and_products_contacts/tables/0012.csv
+sql: |-
+  SELECT t2.customer_name,
+         t3.city,
+         t1.date_from,
+         t1.date_to
+  FROM customer_address_history AS t1
+  JOIN customers AS t2 ON t1.customer_id = t2.customer_id
+  JOIN addresses AS t3 ON t1.address_id = t3.address_id

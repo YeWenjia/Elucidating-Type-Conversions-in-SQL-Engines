@@ -1,0 +1,18 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/students.csv
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+output: tests-examples/spider/e_learning/tables/0034.csv
+constants:
+- Zieme
+- Bernie
+columns:
+- family_name
+- personal_name
+sql: |-
+  SELECT t1.date_of_enrolment,
+         t1.date_of_completion
+  FROM student_course_enrolment AS t1
+  JOIN students AS t2 ON t1.student_id = t2.student_id
+  WHERE t2.family_name = 'Zieme'
+    AND t2.personal_name = 'Bernie'

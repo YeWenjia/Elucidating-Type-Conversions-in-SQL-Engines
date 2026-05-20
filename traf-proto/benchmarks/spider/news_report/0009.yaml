@@ -1,0 +1,15 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+output: tests-examples/spider/news_report/tables/0009.csv
+constants:
+- '10'
+- '3'
+columns:
+- years_working
+sql: |-
+  SELECT nationality
+  FROM journalist
+  WHERE years_working > 10 INTERSECT
+    SELECT nationality
+    FROM journalist WHERE years_working < 3

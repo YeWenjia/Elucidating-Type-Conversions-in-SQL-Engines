@@ -1,0 +1,12 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+- tests-examples/spider/perpetrator/tables/people.csv
+output: tests-examples/spider/perpetrator/tables/0009.csv
+constants:
+- '1'
+sql: |-
+  SELECT t1.name
+  FROM people AS t1
+  JOIN perpetrator AS t2 ON t1.people_id = t2.people_id
+  ORDER BY t1.weight DESC

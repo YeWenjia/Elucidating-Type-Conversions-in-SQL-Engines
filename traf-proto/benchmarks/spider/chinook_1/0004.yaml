@@ -1,0 +1,13 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/employee.csv
+output: tests-examples/spider/chinook_1/tables/0004.csv
+constants:
+- Calgary
+columns:
+- city
+sql: |-
+  SELECT firstname,
+         lastname
+  FROM employee
+  WHERE city = 'Calgary'

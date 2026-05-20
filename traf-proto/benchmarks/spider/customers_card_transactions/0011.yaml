@@ -1,0 +1,10 @@
+db: tests-examples/spider/customers_card_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_card_transactions/tables/accounts.csv
+- tests-examples/spider/customers_card_transactions/tables/customers.csv
+output: tests-examples/spider/customers_card_transactions/tables/0011.csv
+sql: |-
+  SELECT DISTINCT t1.customer_first_name,
+                  t1.customer_last_name
+  FROM customers AS t1
+  JOIN accounts AS t2 ON t1.customer_id = t2.customer_id

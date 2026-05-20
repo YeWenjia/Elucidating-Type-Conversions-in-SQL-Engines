@@ -1,0 +1,55 @@
+BEGIN;
+
+CREATE TABLE host (
+       "host_id" int,
+       "name" text,
+       "nationality" text,
+       "age" text,
+       primary KEY (host_id)
+);
+
+INSERT INTO host VALUES (1, 'Austin Daye', 'United States', '43');
+INSERT INTO host VALUES (2, 'Lloyd Daniels', 'United States', '37');
+INSERT INTO host VALUES (3, 'Kornel David', 'Hungary', '31');
+INSERT INTO host VALUES (4, 'Antonio Davis', 'United States', '26');
+INSERT INTO host VALUES (5, 'Ed Davis', 'United States', '45');
+INSERT INTO host VALUES (6, 'Hubert Davis', 'United States', '47');
+INSERT INTO host VALUES (7, 'Carlos Delfino', 'Argentina', '30');
+INSERT INTO host VALUES (8, 'Justin Dentmon', 'United States', '40');
+INSERT INTO host VALUES (9, 'DeMar DeRozan', 'United States', '31');
+INSERT INTO host VALUES (10, 'Derrick Dial', 'United States', '60');
+
+CREATE TABLE party (
+       "party_id" int,
+       "party_theme" text,
+       "location" text,
+       "first_year" text,
+       "last_year" text,
+       "number_of_hosts" int,
+       primary KEY (party_id)
+);
+
+INSERT INTO party VALUES (1, 'Spring', 'Hemkade 48 Zaandam', '2000', '2001', 5);
+INSERT INTO party VALUES (2, 'Club Q-BASE', 'Hemkade 48 Zaandam', '2002', '2002', 23);
+INSERT INTO party VALUES (3, 'Hardcore Resurrection', 'Various locations', '2000', '2003', 4);
+INSERT INTO party VALUES (4, 'Teqnology', 'Heineken Music Hall Amsterdam', '2002', '2004', 6);
+INSERT INTO party VALUES (5, 'Qlubtempo', 'Hemkade 48 Zaandam, Heineken Music Hall Amsterdam', '2001', '2007', 31);
+INSERT INTO party VALUES (6, 'QrimeTime', 'Heineken Music Hall Amsterdam', '2004', '2007', 4);
+INSERT INTO party VALUES (7, 'In Qontrol', 'RAI Amsterdam', '2004', '2010', 7);
+INSERT INTO party VALUES (8, 'Houseqlassics', 'Various locations', '1999', '2010', 18);
+
+CREATE TABLE party_host (
+       "party_id" int,
+       "host_id" int,
+       "is_main_in_charge" BOOLEAN,
+       primary KEY (party_id, host_id)
+);
+
+INSERT INTO party_host VALUES (1, 1, 'T');
+INSERT INTO party_host VALUES (8, 7, 'T');
+INSERT INTO party_host VALUES (6, 10, 'F');
+INSERT INTO party_host VALUES (4, 2, 'T');
+INSERT INTO party_host VALUES (2, 5, 'F');
+INSERT INTO party_host VALUES (6, 3, 'T');
+
+COMMIT;

@@ -1,0 +1,8 @@
+db: tests-examples/spider/local_govt_in_alabama/tables/db.sqlite
+inputs:
+- tests-examples/spider/local_govt_in_alabama/tables/events.csv
+output: tests-examples/spider/local_govt_in_alabama/tables/0007.csv
+sql: |-
+  SELECT service_id,
+         event_details
+  FROM events

@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["<7*]졁nGK", "-444040980", null]
+    - ["<7*]졁nGK", "", null]
+    - ["<7*]졁nGK", "-148654081", -1887367284]
+  database0_t0:
+    - ["351224024", 1079222877]
+    - ["830955504", 1079222877]
+    - ["-2033106582", -2120642138]
+    - ["", -902835763]
+    - ["^}m n2u", 1264846530]
+sql: "SELECT database0_t1.c1, database0_t1.c2, database0_t1.c0 FROM database0_t1 WHERE (('IEF{N0}ᇑ>(')<=(database0_t1.c0))"
+columns:
+  - "c1"
+  - "c2"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c1, database0_t1.c2, database0_t1.c0]
+traf_rows: []

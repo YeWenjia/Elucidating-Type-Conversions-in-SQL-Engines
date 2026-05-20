@@ -1,0 +1,13 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/shop.csv
+- tests-examples/spider/device/tables/stock.csv
+output: tests-examples/spider/device/tables/0017.csv
+columns:
+- shop_id
+sql: |-
+  SELECT shop_name
+  FROM shop
+  WHERE shop_id NOT IN
+      (SELECT shop_id
+       FROM stock)

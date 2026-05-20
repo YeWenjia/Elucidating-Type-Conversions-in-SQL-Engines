@@ -1,0 +1,13 @@
+db: tests-examples/spider/coffee_shop/tables/db.sqlite
+inputs:
+- tests-examples/spider/coffee_shop/tables/happy_hour.csv
+output: tests-examples/spider/coffee_shop/tables/0017.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT month
+  FROM happy_hour
+  GROUP BY month
+  ORDER BY count(*) DESC

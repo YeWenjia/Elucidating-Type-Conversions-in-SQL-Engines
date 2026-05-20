@@ -1,0 +1,11 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/player.csv
+output: tests-examples/spider/sports_competition/tables/0021.csv
+functions:
+- count
+columns:
+- position
+sql: |-
+  SELECT count(DISTINCT position)
+  FROM player

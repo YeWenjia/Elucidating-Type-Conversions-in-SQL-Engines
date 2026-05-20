@@ -1,0 +1,14 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/player.csv
+output: tests-examples/spider/sports_competition/tables/0022.csv
+functions:
+- avg
+columns:
+- points
+sql: |-
+  SELECT name
+  FROM player
+  WHERE points >
+      (SELECT avg(points)
+       FROM player)

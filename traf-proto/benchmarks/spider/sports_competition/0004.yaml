@@ -1,0 +1,8 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/competition.csv
+output: tests-examples/spider/sports_competition/tables/0004.csv
+sql: |-
+  SELECT competition_type,
+         country
+  FROM competition

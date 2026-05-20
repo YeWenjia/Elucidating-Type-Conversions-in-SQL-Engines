@@ -1,0 +1,17 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/competition.csv
+output: tests-examples/spider/sports_competition/tables/0024.csv
+constants:
+- Tournament
+- '1'
+functions:
+- count
+columns:
+- competition_type
+sql: |-
+  SELECT country
+  FROM competition
+  WHERE competition_type = 'Tournament'
+  GROUP BY country
+  ORDER BY count(*) DESC

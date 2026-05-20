@@ -1,0 +1,16 @@
+db: tests-examples/spider/scientist_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/scientist_1/tables/projects.csv
+- tests-examples/spider/scientist_1/tables/assignedto.csv
+output: tests-examples/spider/scientist_1/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.name,
+         t1.hours
+  FROM projects AS t1
+  JOIN assignedto AS t2 ON t1.code = t2.project
+  GROUP BY t2.project, t1.name, t1.hours
+  ORDER BY count(*) DESC

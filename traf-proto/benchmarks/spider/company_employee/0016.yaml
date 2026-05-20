@@ -1,0 +1,14 @@
+db: tests-examples/spider/company_employee/tables/db.sqlite
+inputs:
+- tests-examples/spider/company_employee/tables/company.csv
+output: tests-examples/spider/company_employee/tables/0016.csv
+constants:
+- '200'
+columns:
+- sales_in_billion
+sql: |-
+  SELECT name
+  FROM company
+  WHERE sales_in_billion > 200
+  ORDER BY sales_in_billion,
+           profits_in_billion DESC

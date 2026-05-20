@@ -1,0 +1,9 @@
+db: tests-examples/spider/twitter_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/twitter_1/tables/tweets.csv
+output: tests-examples/spider/twitter_1/tables/0006.csv
+functions:
+- count
+sql: |-
+  SELECT count(*)
+  FROM tweets

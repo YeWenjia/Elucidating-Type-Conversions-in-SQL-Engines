@@ -1,0 +1,72 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-186716307, "_WA", null]
+    - [null, "", -484390721]
+    - [null, "9%Uw", 1927230999]
+    - [null, "-354425506", null]
+    - [null, "Wc", null]
+    - [945001674, "Q\n*鶝", -1077277231]
+    - [null, null, -759808593]
+    - [-2123641175, null, null]
+  database0_t3:
+    - ["-1944931769", null]
+    - ["-1096857007", null]
+    - ["-1722647003", null]
+    - ["", null]
+    - ["1639124197", null]
+sql: "SELECT database0_t3.c1, database0_t3.c0, database0_t0.c1, database0_t0.c2, database0_t0.c0 FROM database0_t0, database0_t3 WHERE 1553035467"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 130"
+traf_columns: [database0_t3.c1, database0_t3.c0, database0_t0.c1, database0_t0.c2, database0_t0.c0]
+traf_rows:
+  - ["NULL", "-1944931769", "_WA", "NULL", "-186716307"]
+  - ["NULL", "-1096857007", "_WA", "NULL", "-186716307"]
+  - ["NULL", "-1722647003", "_WA", "NULL", "-186716307"]
+  - ["NULL", "", "_WA", "NULL", "-186716307"]
+  - ["NULL", "1639124197", "_WA", "NULL", "-186716307"]
+  - ["NULL", "-1944931769", "", "-484390721", "NULL"]
+  - ["NULL", "-1096857007", "", "-484390721", "NULL"]
+  - ["NULL", "-1722647003", "", "-484390721", "NULL"]
+  - ["NULL", "", "", "-484390721", "NULL"]
+  - ["NULL", "1639124197", "", "-484390721", "NULL"]
+  - ["NULL", "-1944931769", "9%Uw", "1927230999", "NULL"]
+  - ["NULL", "-1096857007", "9%Uw", "1927230999", "NULL"]
+  - ["NULL", "-1722647003", "9%Uw", "1927230999", "NULL"]
+  - ["NULL", "", "9%Uw", "1927230999", "NULL"]
+  - ["NULL", "1639124197", "9%Uw", "1927230999", "NULL"]
+  - ["NULL", "-1944931769", "-354425506", "NULL", "NULL"]
+  - ["NULL", "-1096857007", "-354425506", "NULL", "NULL"]
+  - ["NULL", "-1722647003", "-354425506", "NULL", "NULL"]
+  - ["NULL", "", "-354425506", "NULL", "NULL"]
+  - ["NULL", "1639124197", "-354425506", "NULL", "NULL"]
+  - ["NULL", "-1944931769", "Wc", "NULL", "NULL"]
+  - ["NULL", "-1096857007", "Wc", "NULL", "NULL"]
+  - ["NULL", "-1722647003", "Wc", "NULL", "NULL"]
+  - ["NULL", "", "Wc", "NULL", "NULL"]
+  - ["NULL", "1639124197", "Wc", "NULL", "NULL"]
+  - ["NULL", "-1944931769", "Q\n*鶝", "-1077277231", "945001674"]
+  - ["NULL", "-1096857007", "Q\n*鶝", "-1077277231", "945001674"]
+  - ["NULL", "-1722647003", "Q\n*鶝", "-1077277231", "945001674"]
+  - ["NULL", "", "Q\n*鶝", "-1077277231", "945001674"]
+  - ["NULL", "1639124197", "Q\n*鶝", "-1077277231", "945001674"]
+  - ["NULL", "-1944931769", "NULL", "-759808593", "NULL"]
+  - ["NULL", "-1096857007", "NULL", "-759808593", "NULL"]
+  - ["NULL", "-1722647003", "NULL", "-759808593", "NULL"]
+  - ["NULL", "", "NULL", "-759808593", "NULL"]
+  - ["NULL", "1639124197", "NULL", "-759808593", "NULL"]
+  - ["NULL", "-1944931769", "NULL", "NULL", "-2123641175"]
+  - ["NULL", "-1096857007", "NULL", "NULL", "-2123641175"]
+  - ["NULL", "-1722647003", "NULL", "NULL", "-2123641175"]
+  - ["NULL", "", "NULL", "NULL", "-2123641175"]
+  - ["NULL", "1639124197", "NULL", "NULL", "-2123641175"]

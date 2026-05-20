@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [null]
+    - [-32977303]
+    - [-1498438495]
+    - [null]
+    - [369297413]
+    - [198770837]
+    - [625572473]
+    - [-1077277231]
+  database0_t0:
+    - ["", "945001674", null]
+    - ["<>yj*]", "-657850939", null]
+    - ["", "-420727782", "1635776983"]
+sql: "SELECT * FROM database0_t1 WHERE '-948742844'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-948742844\"\n  Position: 34"
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - ["NULL"]
+  - ["-32977303"]
+  - ["-1498438495"]
+  - ["NULL"]
+  - ["369297413"]
+  - ["198770837"]
+  - ["625572473"]
+  - ["-1077277231"]

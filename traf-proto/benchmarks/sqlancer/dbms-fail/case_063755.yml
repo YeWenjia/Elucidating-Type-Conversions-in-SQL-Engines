@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t7: []
+sql: "SELECT database0_t7.c1, database0_t7.c0 FROM database0_t7 WHERE database0_t7.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 65"
+traf_columns: [database0_t7.c1, database0_t7.c0]
+traf_rows: []

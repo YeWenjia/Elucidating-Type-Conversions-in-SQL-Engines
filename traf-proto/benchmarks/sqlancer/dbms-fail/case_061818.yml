@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [",s"]
+sql: "SELECT * FROM database0_t0 WHERE 'wPA+.轩'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"wPA+.轩\"\n  Position: 34"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - [",s"]

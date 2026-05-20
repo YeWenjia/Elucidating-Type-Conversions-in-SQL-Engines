@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+- tests-examples/spider/cre_Theme_park/tables/staff.csv
+output: tests-examples/spider/cre_Theme_park/tables/0021.csv
+constants:
+- US museum
+columns:
+- name
+sql: |-
+  SELECT t1.name
+  FROM staff AS t1
+  JOIN tourist_attractions AS t2 ON t1.tourist_attraction_id = t2.tourist_attraction_id
+  WHERE t2.name = 'US museum'

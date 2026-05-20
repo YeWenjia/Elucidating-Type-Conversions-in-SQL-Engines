@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - ["W", -1342658846]
+    - ["&kH-", null]
+    - ["", null]
+    - ["2o()m桜SU-", -428151007]
+    - ["-262222555", null]
+    - ["478272883", -1262237582]
+    - ["j+", null]
+    - ["SF", null]
+    - ["-1807022910", 1486103084]
+    - ["-1786233888", -420727782]
+  database0_t0:
+    - ["-773587990", -1684923321, "-316874230", "947957422"]
+sql: "SELECT database0_t0.c0 FROM database0_t1, database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 62"
+traf_columns: [database0_t0.c0]
+traf_rows: []

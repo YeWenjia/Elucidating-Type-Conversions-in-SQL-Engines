@@ -1,0 +1,12 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/device.csv
+- tests-examples/spider/device/tables/shop.csv
+- tests-examples/spider/device/tables/stock.csv
+output: tests-examples/spider/device/tables/0010.csv
+sql: |-
+  SELECT t3.shop_name,
+         t2.carrier
+  FROM stock AS t1
+  JOIN device AS t2 ON t1.device_id = t2.device_id
+  JOIN shop AS t3 ON t1.shop_id = t3.shop_id

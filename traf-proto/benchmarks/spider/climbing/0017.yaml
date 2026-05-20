@@ -1,0 +1,13 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+- tests-examples/spider/climbing/tables/climber.csv
+output: tests-examples/spider/climbing/tables/0017.csv
+columns:
+- mountain_id
+sql: |-
+  SELECT name
+  FROM mountain
+  WHERE mountain_id NOT IN
+      (SELECT mountain_id
+       FROM climber)

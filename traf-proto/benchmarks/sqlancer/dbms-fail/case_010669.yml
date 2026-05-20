@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [339483659, "1618988715"]
+    - [531722045, "᱇䀽H[BB"]
+  database0_t0:
+    - [-1073945369, null]
+    - [-951628948, null]
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE 'RH~qcT]G'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"RH~qcT]G\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["-1073945369", "NULL", "339483659", "1618988715"]
+  - ["-1073945369", "NULL", "531722045", "᱇䀽H[BB"]
+  - ["-951628948", "NULL", "339483659", "1618988715"]
+  - ["-951628948", "NULL", "531722045", "᱇䀽H[BB"]

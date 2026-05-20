@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [-1831624141, null]
+    - [-76931301, null]
+    - [-550600944, null]
+    - [-1722647003, null]
+    - [-1059697194, 366773026]
+    - [593230286, -1816788107]
+    - [316183528, -717809554]
+    - [7, -1170029041]
+    - [1162177361, null]
+  database0_t0:
+    - [880330817, null, null]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1 WHERE 'O0['"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"O0[\"\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["NULL", "-1831624141"]
+  - ["NULL", "-76931301"]
+  - ["NULL", "-550600944"]
+  - ["NULL", "-1722647003"]
+  - ["366773026", "-1059697194"]
+  - ["-1816788107", "593230286"]
+  - ["-717809554", "316183528"]
+  - ["-1170029041", "7"]
+  - ["NULL", "1162177361"]

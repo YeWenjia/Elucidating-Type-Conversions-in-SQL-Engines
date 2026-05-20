@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t5:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-1892082174, "9<", "false"]
+  database0_t5:
+    - ["90257357", ""]
+sql: "SELECT * FROM database0_t5 WHERE '<{%'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"<{%\"\n  Position: 34"
+traf_columns: [database0_t5.c0, database0_t5.c1]
+traf_rows:
+  - ["90257357", ""]

@@ -1,0 +1,16 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents_with_expenses.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0038.csv
+constants:
+- CV
+columns:
+- document_type_code
+sql: |-
+  SELECT document_id
+  FROM documents
+  WHERE document_type_code = 'CV'
+  EXCEPT
+  SELECT document_id
+  FROM documents_with_expenses

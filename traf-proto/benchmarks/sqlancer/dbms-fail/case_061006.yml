@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["1321878291", "-h*"]
+    - ["-1077277231", "-h*"]
+    - ["+-", "-h*"]
+    - ["", "-h*"]
+    - ["^n", "-h*"]
+    - ["-100440500", "-h*"]
+    - ["1407977901", "-h*"]
+    - ["1489138842", "-h*"]
+    - ["2058821608", null]
+    - ["\rr", null]
+    - ["1104795287", "-270997346"]
+  database0_t0: []
+sql: "SELECT database0_t0.c0 FROM database0_t0, database0_t1 WHERE '945001674'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"945001674\"\n  Position: 62"
+traf_columns: [database0_t0.c0]
+traf_rows: []

@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-329343316, null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE (('-88915418') IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

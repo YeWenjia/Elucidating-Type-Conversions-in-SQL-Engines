@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["", null]
+    - ["ํ&S_vN3", -1831624141]
+    - ["976935660", -285784552]
+  database0_t3:
+    - [null, "380953237"]
+    - [312477042, "380953237"]
+    - [null, "380953237"]
+    - [-657850939, "440833260"]
+    - [-1887367284, ",l"]
+sql: "SELECT database0_t3.c0, database0_t0.c0, database0_t3.c1 FROM database0_t0, database0_t3 WHERE 'b.6C'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"b.6C\"\n  Position: 96"
+traf_columns: [database0_t3.c0, database0_t0.c0, database0_t3.c1]
+traf_rows:
+  - ["NULL", "", "380953237"]
+  - ["312477042", "", "380953237"]
+  - ["NULL", "", "380953237"]
+  - ["-657850939", "", "440833260"]
+  - ["-1887367284", "", ",l"]
+  - ["NULL", "ํ&S_vN3", "380953237"]
+  - ["312477042", "ํ&S_vN3", "380953237"]
+  - ["NULL", "ํ&S_vN3", "380953237"]
+  - ["-657850939", "ํ&S_vN3", "440833260"]
+  - ["-1887367284", "ํ&S_vN3", ",l"]
+  - ["NULL", "976935660", "380953237"]
+  - ["312477042", "976935660", "380953237"]
+  - ["NULL", "976935660", "380953237"]
+  - ["-657850939", "976935660", "440833260"]
+  - ["-1887367284", "976935660", ",l"]

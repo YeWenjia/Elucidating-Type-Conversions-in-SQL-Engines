@@ -1,0 +1,19 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/genre.csv
+- tests-examples/spider/chinook_1/tables/track.csv
+output: tests-examples/spider/chinook_1/tables/0031.csv
+constants:
+- Latin
+- Pop
+functions:
+- avg
+columns:
+- milliseconds
+- name
+sql: |-
+  SELECT AVG(milliseconds)
+  FROM genre AS t1
+  JOIN track AS t2 ON t1.genreid = t2.genreid
+  WHERE t1.name = 'Latin'
+    OR t1.name = 'Pop'

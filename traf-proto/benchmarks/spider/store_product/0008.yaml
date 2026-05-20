@@ -1,0 +1,11 @@
+db: tests-examples/spider/store_product/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_product/tables/store.csv
+output: tests-examples/spider/store_product/tables/0008.csv
+functions:
+- count
+sql: |-
+  SELECT type,
+         count(*)
+  FROM store
+  GROUP BY type

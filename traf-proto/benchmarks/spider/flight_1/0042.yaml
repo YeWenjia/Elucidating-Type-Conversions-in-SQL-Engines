@@ -1,0 +1,16 @@
+db: tests-examples/spider/flight_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_1/tables/aircraft.csv
+- tests-examples/spider/flight_1/tables/employee.csv
+- tests-examples/spider/flight_1/tables/certificate.csv
+output: tests-examples/spider/flight_1/tables/0042.csv
+constants:
+- Boeing 737-800
+columns:
+- name
+sql: |-
+  SELECT t1.name
+  FROM employee AS t1
+  JOIN certificate AS t2 ON t1.eid = t2.eid
+  JOIN aircraft AS t3 ON t3.aid = t2.aid
+  WHERE t3.name = 'Boeing 737-800'

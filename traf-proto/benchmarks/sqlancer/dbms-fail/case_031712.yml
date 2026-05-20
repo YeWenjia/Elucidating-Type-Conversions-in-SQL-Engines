@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c2 FROM database0_t0 WHERE 'Ar-b\tA*'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Ar-b\tA*\"\n  Position: 48"
+traf_columns: [database0_t0.c2]
+traf_rows: []

@@ -1,0 +1,14 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/college.csv
+output: tests-examples/spider/soccer_2/tables/0005.csv
+constants:
+- '15000'
+functions:
+- count
+columns:
+- enr
+sql: |-
+  SELECT count(*)
+  FROM college
+  WHERE enr > 15000

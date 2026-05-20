@@ -1,0 +1,51 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1:
+    - ["1699565337", "av5SWO"]
+    - ["", "av5SWO"]
+    - ["q", "av5SWO"]
+    - ["1727745956", "av5SWO"]
+    - ["-184029689", "av5SWO"]
+    - ["3[쩤蓑v*1^", "av5SWO"]
+    - ["-174915534", "av5SWO"]
+    - ["-152514463", "av5SWO"]
+    - ["-1689876116", "av5SWO"]
+    - ["-1554526165", "av5SWO"]
+    - ["-1042823525", "av5SWO"]
+    - ["輪/㟍g", "av5SWO"]
+    - ["-420727782", null]
+    - ["-804419387", "1897169117"]
+    - ["-1279472365", "LwnC"]
+    - ["k3}BxH!5", "1635776983"]
+  database0_t0: []
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE database0_t1.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["av5SWO"]
+  - ["NULL"]
+  - ["1897169117"]
+  - ["LwnC"]
+  - ["1635776983"]

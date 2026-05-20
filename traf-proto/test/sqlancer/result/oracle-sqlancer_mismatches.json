@@ -1,0 +1,989 @@
+{
+  "summary": {
+    "total": 26,
+    "by_engine": {
+      "oracle": 26
+    },
+    "by_kind": {
+      "both-fail": 24,
+      "dbms-fail": 2
+    },
+    "by_reason": {
+      "interpreter_error_only": 26
+    },
+    "by_engine_kind": {
+      "oracle/both-fail": 24,
+      "oracle/dbms-fail": 2
+    }
+  },
+  "mismatches": [
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_000323",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_000323.yml",
+      "sql": "SELECT * FROM database0_t1 WHERE ((((((database0_t1.c1)>(1635776983)))NOT LIKE(((database0_t1.c0)<(database0_t1.c2)))))<(1242577457));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T1 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T1.c1)>(1635776983)) THEN 'True' WHEN NOT (((Q96623_DATABASE0_T1.c1)>(1635776983))) THEN 'False' ELSE NULL END) NOT LIKE(CASE WHEN ((Q96623_DATABASE0_T1.c0)<(Q96623_DATABASE0_T1.c2)) THEN 'True' WHEN NOT (((Q96623_DATABASE0_T1.c0)<(Q96623_DATABASE0_T1.c2))) THEN 'False' ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T1.c1)>(1635776983)) THEN 'True' WHEN NOT (((Q96623_DATABASE0_T1.c1)>(1635776983))) THEN 'False' ELSE NULL END) NOT LIKE(CASE WHEN ((Q96623_DATABASE0_T1.c0)<(Q96623_DATABASE0_T1.c2)) THEN 'True' WHEN NOT (((Q96623_DATABASE0_T1.c0)<(Q96623_DATABASE0_T1.c2))) THEN 'False' ELSE NULL END))) THEN 0 ELSE NULL END)<(1242577457))",
+      "interpreter_error": "cast fails +R楙_g to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 0,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": []
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_000795",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_000795.yml",
+      "sql": "SELECT database0_t0.c1, database0_t0.c2 FROM database0_t1, database0_t0 WHERE ((((((database0_t0.c2)<>(database0_t0.c1)))<>(((1977327963)<>(database0_t0.c0))))) IS NULL);",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c1, Q96623_DATABASE0_T0.c2 FROM Q96623_DATABASE0_T1, Q96623_DATABASE0_T0 WHERE ((((CASE WHEN ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)<>(CASE WHEN ((1977327963)<>(Q96623_DATABASE0_T0.c0)) THEN 1 WHEN NOT (((1977327963)<>(Q96623_DATABASE0_T0.c0))) THEN 0 ELSE NULL END))) IS NULL)",
+      "interpreter_error": "cast fails \nۂ'?~!9l to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 56,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ],
+        [
+          "483820187",
+          null
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_001142",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_001142.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((((((database0_t0.c0)<>(database0_t0.c2)))<=(((1035284663) IS NULL))))<=(1489138842));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c0)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<=(CASE WHEN ((1035284663) IS NULL) THEN 1 WHEN NOT (((1035284663) IS NULL)) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c0)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<=(CASE WHEN ((1035284663) IS NULL) THEN 1 WHEN NOT (((1035284663) IS NULL)) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<=(1489138842))",
+      "interpreter_error": "cast fails 0E to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 4,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "-354425506",
+          null,
+          -316874230
+        ],
+        [
+          "1314818062",
+          -1056561715,
+          -1424165746
+        ],
+        [
+          "-1399736456",
+          null,
+          -1816544564
+        ],
+        [
+          "-616587074",
+          null,
+          2028223475
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_001147",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_001147.yml",
+      "sql": "SELECT database0_t0.c2, database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c0)<>(database0_t0.c2));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c2, Q96623_DATABASE0_T0.c1, Q96623_DATABASE0_T0.c0 FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c0)<>(Q96623_DATABASE0_T0.c2))",
+      "interpreter_error": "cast fails 0E to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 4,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          -316874230,
+          null,
+          "-354425506"
+        ],
+        [
+          -1424165746,
+          -1056561715,
+          "1314818062"
+        ],
+        [
+          -1816544564,
+          null,
+          "-1399736456"
+        ],
+        [
+          2028223475,
+          null,
+          "-616587074"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_001440",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_001440.yml",
+      "sql": "SELECT database0_t0.c0 FROM database0_t0 WHERE ((((((database0_t0.c1)<>(database0_t0.c2)))<=(((-2038622691)<=(database0_t0.c1)))))<>(((((database0_t0.c2) IS NULL))<>(((database0_t0.c2)<>(database0_t0.c2))))));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c0 FROM Q96623_DATABASE0_T0 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<=(CASE WHEN ((-2038622691)<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((-2038622691)<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<=(CASE WHEN ((-2038622691)<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((-2038622691)<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<>(CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c2) IS NULL) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2) IS NULL)) THEN 0 ELSE NULL END)<>(CASE WHEN ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c2) IS NULL) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2) IS NULL)) THEN 0 ELSE NULL END)<>(CASE WHEN ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END))",
+      "interpreter_error": "cast fails L to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 6,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          1242577457
+        ],
+        [
+          1242577457
+        ],
+        [
+          1242577457
+        ],
+        [
+          1242577457
+        ],
+        [
+          1242577457
+        ],
+        [
+          1242577457
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_001608",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_001608.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((database0_t0.c1)<>(database0_t0.c0));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c0))",
+      "interpreter_error": "cast fails aMngt-媩 to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 2,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          2059811459,
+          "734800198"
+        ],
+        [
+          1635776983,
+          "-691922506"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_001637",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_001637.yml",
+      "sql": "SELECT database0_t1.c1 FROM database0_t1 WHERE ((database0_t1.c0)<>(database0_t1.c1));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T1.c1 FROM Q96623_DATABASE0_T1 WHERE ((Q96623_DATABASE0_T1.c0)<>(Q96623_DATABASE0_T1.c1))",
+      "interpreter_error": "cast fails IG< to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "440833260"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_002056",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_002056.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((database0_t0.c1)<=(((((1835356912)<>(database0_t0.c0)))<=((('312477042')<>('c筴'))))));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c1)<=(CASE WHEN ((CASE WHEN ((1835356912)<>(Q96623_DATABASE0_T0.c0)) THEN 1 WHEN NOT (((1835356912)<>(Q96623_DATABASE0_T0.c0))) THEN 0 ELSE NULL END)<=(CASE WHEN (('312477042')<>('c筴')) THEN 1 WHEN NOT ((('312477042')<>('c筴'))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((1835356912)<>(Q96623_DATABASE0_T0.c0)) THEN 1 WHEN NOT (((1835356912)<>(Q96623_DATABASE0_T0.c0))) THEN 0 ELSE NULL END)<=(CASE WHEN (('312477042')<>('c筴')) THEN 1 WHEN NOT ((('312477042')<>('c筴'))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END))",
+      "interpreter_error": "cast fails a4 to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "-1779974519",
+          -653396821
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_002384",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_002384.yml",
+      "sql": "SELECT * FROM database0_t0 INNER  JOIN database0_t9 ON ((((((database0_t0.c1) IS NULL))<=(((database0_t9.c1)<>(database0_t0.c1)))))<=(((((database0_t9.c1)<>(database0_t0.c1)))<=(database0_t9.c0)))) WHERE ((((((database0_t0.c1)<=('')))<>(((285314990)<=(database0_t9.c0))))) IS NOT NULL);",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 INNER  JOIN Q96623_DATABASE0_T9 ON ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c1) IS NULL) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1) IS NULL)) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c1) IS NULL) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1) IS NULL)) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<=(CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)<=(Q96623_DATABASE0_T9.c0)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T9.c1)<>(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)<=(Q96623_DATABASE0_T9.c0))) THEN 0 ELSE NULL END)) WHERE (1=0)",
+      "interpreter_error": "cast fails 1,Sh\tS to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 0,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": []
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_002934",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_002934.yml",
+      "sql": "SELECT * FROM database0_t0, database0_t1 WHERE ((database0_t0.c2)<>(database0_t0.c3));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0, Q96623_DATABASE0_T1 WHERE ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c3))",
+      "interpreter_error": "cast fails %i>YfR to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 24,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          880330817
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          "-1684534230",
+          48989197
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          915954605
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          null
+        ],
+        [
+          "N",
+          "VsKd>V~",
+          -1684923321,
+          "-587283302",
+          null,
+          880330817
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_002941",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_002941.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)<=(database0_t0.c1));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c1))",
+      "interpreter_error": "cast fails YP&*JwIw to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "1024827185",
+          1161815015
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_002949",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_002949.yml",
+      "sql": "SELECT * FROM database0_t0, database0_t1 WHERE ((database0_t0.c1)<>(database0_t0.c0));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0, Q96623_DATABASE0_T1 WHERE ((Q96623_DATABASE0_T0.c1)<>(Q96623_DATABASE0_T0.c0))",
+      "interpreter_error": "cast fails YP&*JwIw to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 6,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "1024827185",
+          1161815015,
+          1264846530,
+          "244204347"
+        ],
+        [
+          "1024827185",
+          1161815015,
+          -278911135,
+          "244204347"
+        ],
+        [
+          "1024827185",
+          1161815015,
+          -1790883840,
+          "244204347"
+        ],
+        [
+          "1024827185",
+          1161815015,
+          -428151007,
+          "244204347"
+        ],
+        [
+          "1024827185",
+          1161815015,
+          -49075647,
+          "244204347"
+        ],
+        [
+          "1024827185",
+          1161815015,
+          1681391684,
+          "244204347"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004244",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004244.yml",
+      "sql": "SELECT * FROM database0_t1, database0_t0 WHERE ((database0_t0.c1)<=(((((-576092407) IS NOT NULL))<=(((database0_t1.c2)<>(database0_t1.c1))))));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T1, Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c1)<=(CASE WHEN ((CASE WHEN ((-576092407) IS NOT NULL) THEN 1 WHEN NOT (((-576092407) IS NOT NULL)) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T1.c2)<>(Q96623_DATABASE0_T1.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T1.c2)<>(Q96623_DATABASE0_T1.c1))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((-576092407) IS NOT NULL) THEN 1 WHEN NOT (((-576092407) IS NOT NULL)) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T1.c2)<>(Q96623_DATABASE0_T1.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T1.c2)<>(Q96623_DATABASE0_T1.c1))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END))",
+      "interpreter_error": "cast fails ou黮ᶪ to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 18,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "1936467035",
+          940489842,
+          "1777422918",
+          null,
+          -1056561715,
+          "-1724310134"
+        ],
+        [
+          "-1249224048",
+          250341355,
+          "1486103084",
+          "-883264523",
+          -1056561715,
+          "-1724310134"
+        ],
+        [
+          "90257357",
+          443216999,
+          "880330817",
+          "#S",
+          -1056561715,
+          "-1724310134"
+        ],
+        [
+          "1936467035",
+          940489842,
+          "1777422918",
+          null,
+          -44263519,
+          "-1724310134"
+        ],
+        [
+          "-1249224048",
+          250341355,
+          "1486103084",
+          "-883264523",
+          -44263519,
+          "-1724310134"
+        ],
+        [
+          "90257357",
+          443216999,
+          "880330817",
+          "#S",
+          -44263519,
+          "-1724310134"
+        ],
+        [
+          "1936467035",
+          940489842,
+          "1777422918",
+          null,
+          -285784552,
+          "-1724310134"
+        ],
+        [
+          "-1249224048",
+          250341355,
+          "1486103084",
+          "-883264523",
+          -285784552,
+          "-1724310134"
+        ],
+        [
+          "90257357",
+          443216999,
+          "880330817",
+          "#S",
+          -285784552,
+          "-1724310134"
+        ],
+        [
+          "1936467035",
+          940489842,
+          "1777422918",
+          null,
+          -717809554,
+          "-1724310134"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004329",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004329.yml",
+      "sql": "SELECT database0_t5.c1, database0_t5.c0 FROM database0_t5 WHERE ((((((database0_t5.c0)<=(1546758826)))<=(((database0_t5.c1)<>('嫵g淗6D5ys')))))<>(database0_t5.c1));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T5.c1, Q96623_DATABASE0_T5.c0 FROM Q96623_DATABASE0_T5 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T5.c0)<=(1546758826)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c0)<=(1546758826))) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T5.c1)<>('嫵g淗6D5ys')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c1)<>('嫵g淗6D5ys'))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T5.c0)<=(1546758826)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c0)<=(1546758826))) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T5.c1)<>('嫵g淗6D5ys')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c1)<>('嫵g淗6D5ys'))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<>(Q96623_DATABASE0_T5.c1))",
+      "interpreter_error": "cast fails Ჱ嗈]\tNg^ to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 2,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "1426080665",
+          -566613860
+        ],
+        [
+          "-1279472365",
+          -1206694315
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004333",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004333.yml",
+      "sql": "SELECT database0_t5.c0, database0_t5.c1 FROM database0_t5 WHERE ((((((database0_t5.c0)<=(database0_t5.c1)))<>(((NULL) IS NULL))))<>(database0_t5.c1));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T5.c0, Q96623_DATABASE0_T5.c1 FROM Q96623_DATABASE0_T5 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T5.c0)<=(Q96623_DATABASE0_T5.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c0)<=(Q96623_DATABASE0_T5.c1))) THEN 0 ELSE NULL END)<>(CASE WHEN ((NULL) IS NULL) THEN 1 WHEN NOT (((NULL) IS NULL)) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T5.c0)<=(Q96623_DATABASE0_T5.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T5.c0)<=(Q96623_DATABASE0_T5.c1))) THEN 0 ELSE NULL END)<>(CASE WHEN ((NULL) IS NULL) THEN 1 WHEN NOT (((NULL) IS NULL)) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<>(Q96623_DATABASE0_T5.c1))",
+      "interpreter_error": "cast fails Ჱ嗈]\tNg^ to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 2,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          -566613860,
+          "1426080665"
+        ],
+        [
+          -1206694315,
+          "-1279472365"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004393",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004393.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((((((-1530539827)<=(database0_t0.c0)))<=(database0_t0.c2))) IS NOT NULL);",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((((CASE WHEN ((-1530539827)<=(Q96623_DATABASE0_T0.c0)) THEN 1 WHEN NOT (((-1530539827)<=(Q96623_DATABASE0_T0.c0))) THEN 0 ELSE NULL END)<=(Q96623_DATABASE0_T0.c2))) IS NOT NULL)",
+      "interpreter_error": "cast fails 9aeHV\r勨 to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "-1989264905",
+          2047212733,
+          -1031277135
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004746",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004746.yml",
+      "sql": "SELECT database0_t1.c1, database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t0.c2 FROM database0_t0, database0_t1 WHERE ((((((database0_t0.c0)<>('1486103084')))<=('945001674')))<=(database0_t0.c2));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T1.c1, Q96623_DATABASE0_T0.c0, Q96623_DATABASE0_T0.c1, Q96623_DATABASE0_T1.c0, Q96623_DATABASE0_T0.c2 FROM Q96623_DATABASE0_T0, Q96623_DATABASE0_T1 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c0)<>('1486103084')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<>('1486103084'))) THEN 0 ELSE NULL END)<=('945001674')) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c0)<>('1486103084')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<>('1486103084'))) THEN 0 ELSE NULL END)<=('945001674'))) THEN 0 ELSE NULL END)<=(Q96623_DATABASE0_T0.c2))",
+      "interpreter_error": "cast fails Z4#7\\{J<x to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 25,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          null,
+          "-347070202",
+          -966261923,
+          -1019848327,
+          "1661665722"
+        ],
+        [
+          -1790883840,
+          "-347070202",
+          -966261923,
+          -805145108,
+          "1661665722"
+        ],
+        [
+          null,
+          "-347070202",
+          -966261923,
+          -657850939,
+          "1661665722"
+        ],
+        [
+          724622375,
+          "-347070202",
+          -966261923,
+          186550132,
+          "1661665722"
+        ],
+        [
+          -60805373,
+          "-347070202",
+          -966261923,
+          1699565337,
+          "1661665722"
+        ],
+        [
+          null,
+          "-347070202",
+          -929713484,
+          -1019848327,
+          "1661665722"
+        ],
+        [
+          -1790883840,
+          "-347070202",
+          -929713484,
+          -805145108,
+          "1661665722"
+        ],
+        [
+          null,
+          "-347070202",
+          -929713484,
+          -657850939,
+          "1661665722"
+        ],
+        [
+          724622375,
+          "-347070202",
+          -929713484,
+          186550132,
+          "1661665722"
+        ],
+        [
+          -60805373,
+          "-347070202",
+          -929713484,
+          1699565337,
+          "1661665722"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_004966",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_004966.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((database0_t0.c2)<=(database0_t0.c1));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c2)<=(Q96623_DATABASE0_T0.c1))",
+      "interpreter_error": "cast fails 4k7(gv) to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 2,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          136340427,
+          "-1077277231",
+          -1724310134
+        ],
+        [
+          723249712,
+          "945001674",
+          -2087893705
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_005621",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_005621.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((((((database0_t0.c2)<>(database0_t0.c0)))<=(((database0_t0.c0)<=(database0_t0.c3))))) IS NULL);",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((((CASE WHEN ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c0)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c0))) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c3)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c3))) THEN 0 ELSE NULL END))) IS NULL)",
+      "interpreter_error": "cast fails vt to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 3,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          1894499120,
+          "-225394628",
+          null,
+          null
+        ],
+        [
+          -1631311791,
+          "451192132",
+          "837407730",
+          null
+        ],
+        [
+          -759808593,
+          null,
+          null,
+          "vt"
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_005638",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_005638.yml",
+      "sql": "SELECT database0_t0.c1 FROM database0_t0 WHERE ((((((database0_t0.c0)<=(database0_t0.c1)))<>(((-427062869)<>(847687323)))))<=(database0_t0.c1));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c1 FROM Q96623_DATABASE0_T0 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)<>(CASE WHEN ((-427062869)<>(847687323)) THEN 1 WHEN NOT (((-427062869)<>(847687323))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)<>(CASE WHEN ((-427062869)<>(847687323)) THEN 1 WHEN NOT (((-427062869)<>(847687323))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<=(Q96623_DATABASE0_T0.c1))",
+      "interpreter_error": "cast fails S to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          1012313883
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_006011",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_006011.yml",
+      "sql": "SELECT * FROM database0_t0, database0_t1 WHERE ((((((34135512)<=(170247910)))<=(((database0_t0.c0)<=(-1794475476)))))<>(database0_t0.c2));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0, Q96623_DATABASE0_T1 WHERE ((CASE WHEN ((CASE WHEN ((34135512)<=(170247910)) THEN 1 WHEN NOT (((34135512)<=(170247910))) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T0.c0)<=(-1794475476)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=(-1794475476))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((34135512)<=(170247910)) THEN 1 WHEN NOT (((34135512)<=(170247910))) THEN 0 ELSE NULL END)<=(CASE WHEN ((Q96623_DATABASE0_T0.c0)<=(-1794475476)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=(-1794475476))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<>(Q96623_DATABASE0_T0.c2))",
+      "interpreter_error": "cast fails Y& to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 5,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "388449173",
+          1772334001,
+          2,
+          "1843024814",
+          494552054
+        ],
+        [
+          "388449173",
+          1772334001,
+          2,
+          "1843024814",
+          910251209
+        ],
+        [
+          "388449173",
+          1772334001,
+          2,
+          "1843024814",
+          -959699959
+        ],
+        [
+          "388449173",
+          1772334001,
+          2,
+          "1843024814",
+          1777398138
+        ],
+        [
+          "388449173",
+          1772334001,
+          2,
+          null,
+          -353492323
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_006184",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_006184.yml",
+      "sql": "SELECT * FROM database0_t8, database0_t0 WHERE ((((((database0_t8.c0)<>(database0_t8.c1)))<=(-1379845659)))<>(84787957));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T8, Q96623_DATABASE0_T0 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T8.c0)<>(Q96623_DATABASE0_T8.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T8.c0)<>(Q96623_DATABASE0_T8.c1))) THEN 0 ELSE NULL END)<=(-1379845659)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T8.c0)<>(Q96623_DATABASE0_T8.c1)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T8.c0)<>(Q96623_DATABASE0_T8.c1))) THEN 0 ELSE NULL END)<=(-1379845659))) THEN 0 ELSE NULL END)<>(84787957))",
+      "interpreter_error": "cast fails 8F국G to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 24,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "641201096",
+          -2135959525,
+          null
+        ],
+        [
+          "641201096",
+          -2135959525,
+          null
+        ],
+        [
+          "641201096",
+          -2135959525,
+          "NCxcm|0"
+        ],
+        [
+          "641201096",
+          -2135959525,
+          "-1726444358"
+        ],
+        [
+          "641201096",
+          -2135959525,
+          "b7"
+        ],
+        [
+          "641201096",
+          -2135959525,
+          null
+        ],
+        [
+          "641201096",
+          -2135959525,
+          "7!"
+        ],
+        [
+          "641201096",
+          -2135959525,
+          ")6"
+        ],
+        [
+          "-2011765295",
+          -2135959525,
+          null
+        ],
+        [
+          "-2011765295",
+          -2135959525,
+          null
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_006245",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_006245.yml",
+      "sql": "SELECT database0_t0.c0, database0_t0.c1, database0_t0.c2 FROM database0_t0 WHERE ((((((database0_t0.c1)<=(database0_t0.c2)))<>((('1639124197')<=(database0_t0.c1)))))<=(((((-1841384475)<=(906495723)))<>(((database0_t0.c0)<=('T]'))))));",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c0, Q96623_DATABASE0_T0.c1, Q96623_DATABASE0_T0.c2 FROM Q96623_DATABASE0_T0 WHERE ((CASE WHEN ((CASE WHEN ((Q96623_DATABASE0_T0.c1)<=(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1)<=(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<>(CASE WHEN (('1639124197')<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT ((('1639124197')<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((Q96623_DATABASE0_T0.c1)<=(Q96623_DATABASE0_T0.c2)) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c1)<=(Q96623_DATABASE0_T0.c2))) THEN 0 ELSE NULL END)<>(CASE WHEN (('1639124197')<=(Q96623_DATABASE0_T0.c1)) THEN 1 WHEN NOT ((('1639124197')<=(Q96623_DATABASE0_T0.c1))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END)<=(CASE WHEN ((CASE WHEN ((-1841384475)<=(906495723)) THEN 1 WHEN NOT (((-1841384475)<=(906495723))) THEN 0 ELSE NULL END)<>(CASE WHEN ((Q96623_DATABASE0_T0.c0)<=('T]')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=('T]'))) THEN 0 ELSE NULL END)) THEN 1 WHEN NOT (((CASE WHEN ((-1841384475)<=(906495723)) THEN 1 WHEN NOT (((-1841384475)<=(906495723))) THEN 0 ELSE NULL END)<>(CASE WHEN ((Q96623_DATABASE0_T0.c0)<=('T]')) THEN 1 WHEN NOT (((Q96623_DATABASE0_T0.c0)<=('T]'))) THEN 0 ELSE NULL END))) THEN 0 ELSE NULL END))",
+      "interpreter_error": "cast fails jO&1˩3& to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "UKb*sPb",
+          "-871132307",
+          369297413
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "both-fail",
+      "case": "case_006473",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/both-fail/case_006473.yml",
+      "sql": "SELECT * FROM database0_t0 WHERE ((database0_t0.c2)<>(database0_t0.c0));",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 WHERE ((Q96623_DATABASE0_T0.c2)<>(Q96623_DATABASE0_T0.c0))",
+      "interpreter_error": "cast fails TYk7ht to Real",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 1,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": [
+        [
+          "1054209639",
+          "-1944931769",
+          6984250
+        ]
+      ]
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "dbms-fail",
+      "case": "case_028883",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/dbms-fail/case_028883.yml",
+      "sql": "SELECT * FROM database0_t0 INNER  JOIN database0_t1 ON database0_t0.c0 WHERE '';",
+      "engine_sql": "SELECT * FROM Q96623_DATABASE0_T0 INNER  JOIN Q96623_DATABASE0_T1 ON Q96623_DATABASE0_T0.c0 WHERE (1=0)",
+      "interpreter_error": "invalid boolean literal: W9*XU\n[LF",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 0,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": []
+    },
+    {
+      "reason": "interpreter_error_only",
+      "engine": "oracle",
+      "kind": "dbms-fail",
+      "case": "case_041151",
+      "path": "/Users/ywj/Documents/GitHub/traf-prototype/benchmarks/sqlancer/dbms-fail/case_041151.yml",
+      "sql": "SELECT database0_t0.c0 FROM database0_t0 INNER  JOIN database0_t1 ON '2131576533' WHERE database0_t1.c1;",
+      "engine_sql": "SELECT Q96623_DATABASE0_T0.c0 FROM Q96623_DATABASE0_T0 INNER  JOIN Q96623_DATABASE0_T1 ON '2131576533' WHERE (1=0)",
+      "interpreter_error": "invalid boolean literal: 2131576533",
+      "engine_error": null,
+      "materialise_error": null,
+      "interpreter_row_count": null,
+      "engine_row_count": 0,
+      "interpreter_rows_sample": null,
+      "engine_rows_sample": []
+    }
+  ]
+}

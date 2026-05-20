@@ -1,0 +1,14 @@
+db: tests-examples/spider/department_management/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_management/tables/head.csv
+output: tests-examples/spider/department_management/tables/0001.csv
+constants:
+- '56'
+functions:
+- count
+columns:
+- age
+sql: |-
+  SELECT count(*)
+  FROM head
+  WHERE age > 56

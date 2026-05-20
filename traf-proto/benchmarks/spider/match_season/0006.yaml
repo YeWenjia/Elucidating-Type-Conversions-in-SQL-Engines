@@ -1,0 +1,14 @@
+db: tests-examples/spider/match_season/tables/db.sqlite
+inputs:
+- tests-examples/spider/match_season/tables/match_season.csv
+output: tests-examples/spider/match_season/tables/0006.csv
+constants:
+- UCLA
+- Duke
+columns:
+- college
+sql: |-
+  SELECT DISTINCT position
+  FROM match_season
+  WHERE college = 'UCLA'
+    OR college = 'Duke'

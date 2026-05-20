@@ -1,0 +1,11 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0008.csv
+functions:
+- avg
+columns:
+- bedroom_count
+sql: |-
+  SELECT avg(bedroom_count)
+  FROM apartments

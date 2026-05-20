@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-1073664262, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE '|%5Yo0'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"|%5Yo0\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]

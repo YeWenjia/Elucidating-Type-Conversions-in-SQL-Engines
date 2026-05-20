@@ -1,0 +1,51 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [null, -1056561715, 687174470, null]
+    - ["", -1368447507, 1964169077, "-282402"]
+    - [null, 1894499120, null, "429613813"]
+    - [null, -1454832286, null, null]
+  database0_t2:
+    - ["1161798939", "-1073664262", 1489138842]
+    - ["1312425590", "-1073664262", 1489138842]
+    - ["輪/㟍g", "-1073664262", 1489138842]
+    - ["1895939654", "-1073664262", 1489138842]
+    - ["W", "-1073664262", 1489138842]
+    - ["-1348100668", "-1073664262", 1489138842]
+    - ["9o", "-1073664262", 1489138842]
+    - ["]y", "-1073664262", 1489138842]
+    - ["-154451420", "-1073664262", 1489138842]
+    - ["1191893936", "-1073664262", 1489138842]
+    - ["-1841245660", "-1073664262", 1489138842]
+    - ["-3890461", "-1073664262", 1489138842]
+    - ["", "-1073664262", 1489138842]
+    - ["388449173", "-1073664262", 1489138842]
+    - ["434723345", "-1073664262", 1489138842]
+    - ["1588128946", "-1073664262", 1489138842]
+    - ["lD", null, 1489138842]
+    - ["-1912606996", "{]", 1489138842]
+    - ["-1269057842", "1242577457", 1489138842]
+    - ["v捦{ᷖ\tA", "-1004755983", 1489138842]
+    - ["-231457719", "nI>X", 1489138842]
+    - ["1486103084", null, 1489138842]
+    - ["2090365346", "zT/TA7>", 1489138842]
+    - ["-1724310134", null, 1489138842]
+sql: "SELECT database0_t2.c1 FROM database0_t2 WHERE ((((((database0_t2.c2)<=(399262221)))<=(database0_t2.c2)))<>(database0_t2.c0))"
+columns: []
+rows: []
+kind: both-fail
+dbms_error: "ERROR: operator does not exist: boolean <= integer\n  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.\n  Position: 85"
+traf_error: "Best candidate (Int, Int) -> Bool does not match the types Int, Bool"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 215, in typecheck_expr\n    t1, e1p = self.typecheck_expr(schema, T, e.e1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 106, in best_candidate\n    raise TypeError(f\"Best candidate {candidate} does not match the types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Best candidate (Int, Int) -> Bool does not match the types Int, Bool\n"
+traf_columns: []
+traf_rows: []

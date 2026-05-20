@@ -1,0 +1,14 @@
+db: tests-examples/spider/journal_committee/tables/db.sqlite
+inputs:
+- tests-examples/spider/journal_committee/tables/journal.csv
+- tests-examples/spider/journal_committee/tables/editor.csv
+- tests-examples/spider/journal_committee/tables/journal_committee.csv
+output: tests-examples/spider/journal_committee/tables/0011.csv
+sql: |-
+  SELECT t2.name,
+         t2.age,
+         t3.theme
+  FROM journal_committee AS t1
+  JOIN editor AS t2 ON t1.editor_id = t2.editor_id
+  JOIN journal AS t3 ON t1.journal_id = t3.journal_id
+  ORDER BY t3.theme ASC

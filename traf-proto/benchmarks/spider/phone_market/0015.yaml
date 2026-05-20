@@ -1,0 +1,13 @@
+db: tests-examples/spider/phone_market/tables/db.sqlite
+inputs:
+- tests-examples/spider/phone_market/tables/phone.csv
+- tests-examples/spider/phone_market/tables/phone_market.csv
+output: tests-examples/spider/phone_market/tables/0015.csv
+columns:
+- phone_id
+sql: |-
+  SELECT name
+  FROM phone
+  WHERE phone_id NOT IN
+      (SELECT phone_id
+       FROM phone_market)

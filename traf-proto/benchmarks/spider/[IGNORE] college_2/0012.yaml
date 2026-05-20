@@ -1,0 +1,17 @@
+db: tests-examples/spider/college_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_2/tables/course.csv
+- tests-examples/spider/college_2/tables/prereq.csv
+output: tests-examples/spider/college_2/tables/0012.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.title,
+         t1.credits,
+         t1.dept_name
+  FROM course AS t1
+  JOIN prereq AS t2 ON t1.course_id = t2.course_id
+  GROUP BY t2.course_id, t1.title, t1.credits, t1.dept_name
+  HAVING count(*) > 1

@@ -1,0 +1,66 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [1161798939, null]
+    - [-632382568, null]
+    - [2090365346, null]
+    - [59859283, null]
+    - [421831615, "1759084337"]
+    - [-639173391, null]
+    - [1408249554, null]
+  database0_t0:
+    - ["-1860230507", -358241405, "1300733341"]
+    - ["", -765031084, "239734007"]
+    - ["1816315552", 232191734, "ߣ0o"]
+    - ["[0SsQY", null, "793296094"]
+    - ["t|t⽦", null, null]
+sql: "SELECT database0_t1.c1, database0_t0.c0, database0_t0.c2 FROM database0_t0, database0_t1 WHERE '-929713484'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-929713484\"\n  Position: 96"
+traf_columns: [database0_t1.c1, database0_t0.c0, database0_t0.c2]
+traf_rows:
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["1759084337", "-1860230507", "1300733341"]
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["NULL", "-1860230507", "1300733341"]
+  - ["NULL", "", "239734007"]
+  - ["NULL", "", "239734007"]
+  - ["NULL", "", "239734007"]
+  - ["NULL", "", "239734007"]
+  - ["1759084337", "", "239734007"]
+  - ["NULL", "", "239734007"]
+  - ["NULL", "", "239734007"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["1759084337", "1816315552", "ߣ0o"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["NULL", "1816315552", "ߣ0o"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["1759084337", "[0SsQY", "793296094"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["NULL", "[0SsQY", "793296094"]
+  - ["NULL", "t|t⽦", "NULL"]
+  - ["NULL", "t|t⽦", "NULL"]
+  - ["NULL", "t|t⽦", "NULL"]
+  - ["NULL", "t|t⽦", "NULL"]
+  - ["1759084337", "t|t⽦", "NULL"]
+  - ["NULL", "t|t⽦", "NULL"]
+  - ["NULL", "t|t⽦", "NULL"]

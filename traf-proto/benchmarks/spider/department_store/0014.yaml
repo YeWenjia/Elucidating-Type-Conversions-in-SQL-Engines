@@ -1,0 +1,20 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/customers.csv
+- tests-examples/spider/department_store/tables/customer_orders.csv
+output: tests-examples/spider/department_store/tables/0014.csv
+constants:
+- New
+- Pending
+columns:
+- order_status_code
+sql: |-
+  SELECT t1.customer_name,
+         t1.customer_address
+  FROM customers AS t1
+  JOIN customer_orders AS t2 ON t1.customer_id = t2.customer_id
+  WHERE t2.order_status_code = 'New' INTERSECT
+    SELECT t1.customer_name,
+           t1.customer_address
+    FROM customers AS t1
+    JOIN customer_orders AS t2 ON t1.customer_id = t2.customer_id WHERE t2.order_status_code = 'Pending'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/epinions_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/epinions_1/tables/review.csv
+output: tests-examples/spider/epinions_1/tables/0005.csv
+functions:
+- avg
+- max
+columns:
+- rating
+sql: |-
+  SELECT avg(rating),
+         max(rating)
+  FROM review

@@ -1,0 +1,19 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/patient.csv
+- tests-examples/spider/hospital_1/tables/medication.csv
+- tests-examples/spider/hospital_1/tables/prescribes.csv
+output: tests-examples/spider/hospital_1/tables/0047.csv
+constants:
+- Procrastin-X
+columns:
+- name
+sql: |-
+  SELECT name
+  FROM patient
+  EXCEPT
+  SELECT t1.name
+  FROM patient AS t1
+  JOIN prescribes AS t2 ON t2.patient = t1.ssn
+  JOIN medication AS t3 ON t2.medication = t3.code
+  WHERE t3.name = 'Procrastin-X'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+- tests-examples/spider/pilot_record/tables/pilot_record.csv
+output: tests-examples/spider/pilot_record/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t2.pilot_name,
+         COUNT(*)
+  FROM pilot_record AS t1
+  JOIN pilot AS t2 ON t1.pilot_id = t2.pilot_id
+  GROUP BY t2.pilot_name

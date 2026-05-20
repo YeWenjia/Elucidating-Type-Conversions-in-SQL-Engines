@@ -1,0 +1,11 @@
+db: tests-examples/spider/roller_coaster/tables/db.sqlite
+inputs:
+- tests-examples/spider/roller_coaster/tables/roller_coaster.csv
+output: tests-examples/spider/roller_coaster/tables/0008.csv
+functions:
+- count
+sql: |-
+  SELECT status,
+         COUNT(*)
+  FROM roller_coaster
+  GROUP BY status

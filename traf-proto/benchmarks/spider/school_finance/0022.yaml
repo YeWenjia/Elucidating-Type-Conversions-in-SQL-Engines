@@ -1,0 +1,19 @@
+db: tests-examples/spider/school_finance/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_finance/tables/school.csv
+- tests-examples/spider/school_finance/tables/endowment.csv
+output: tests-examples/spider/school_finance/tables/0022.csv
+constants:
+- '8.5'
+- '1'
+functions:
+- count
+columns:
+- amount
+sql: |-
+  SELECT t2.school_name
+  FROM endowment AS t1
+  JOIN school AS t2 ON t1.school_id = t2.school_id
+  WHERE t1.amount > 8.5
+  GROUP BY t1.school_id, t2.school_name
+  HAVING count(*) > 1

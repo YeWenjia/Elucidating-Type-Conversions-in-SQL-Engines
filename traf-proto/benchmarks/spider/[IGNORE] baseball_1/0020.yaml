@@ -1,0 +1,19 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/postseason.csv
+- tests-examples/spider/baseball_1/tables/team.csv
+output: tests-examples/spider/baseball_1/tables/0020.csv
+constants:
+- Boston Red Stockings
+- '2009'
+functions:
+- count
+columns:
+- name
+- year
+sql: |-
+  SELECT count(*)
+  FROM postseason AS t1
+  JOIN team AS t2 ON t1.team_id_loser = t2.team_id_br
+  WHERE t2.name = 'Boston Red Stockings'
+    AND t1.year = 2009;

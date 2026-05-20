@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["<7*]졁nGK", "-444040980", null]
+    - ["<7*]졁nGK", "", null]
+    - ["<7*]졁nGK", "-148654081", -1887367284]
+  database0_t0:
+    - ["351224024", 1079222877]
+    - ["830955504", 1079222877]
+    - ["-2033106582", -2120642138]
+    - ["", -902835763]
+    - ["^}m n2u", 1264846530]
+sql: "SELECT * FROM database0_t1 WHERE 'q{'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"q{\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["<7*]졁nGK", "-444040980", "NULL"]
+  - ["<7*]졁nGK", "", "NULL"]
+  - ["<7*]졁nGK", "-148654081", "-1887367284"]

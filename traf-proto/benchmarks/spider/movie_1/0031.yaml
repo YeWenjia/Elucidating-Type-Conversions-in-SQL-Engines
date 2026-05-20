@@ -1,0 +1,13 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0031.csv
+functions:
+- count
+sql: |-
+  SELECT count(*),
+         t1.director
+  FROM movie AS t1
+  JOIN rating AS t2 ON t1.mid = t2.mid
+  GROUP BY t1.director

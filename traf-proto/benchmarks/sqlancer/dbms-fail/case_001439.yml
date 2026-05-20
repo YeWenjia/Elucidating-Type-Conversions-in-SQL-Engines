@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["y*", 1212706350]
+    - ["3촓ku9", 741203446]
+  database0_t0:
+    - [-420727782, 986825593]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE '-?욛&T!M+'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-?욛&T!M+\"\n  Position: 48"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["y*", "1212706350", "-420727782", "986825593"]
+  - ["3촓ku9", "741203446", "-420727782", "986825593"]

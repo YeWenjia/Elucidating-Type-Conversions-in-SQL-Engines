@@ -1,0 +1,19 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/employee.csv
+- tests-examples/spider/college_1/tables/professor.csv
+output: tests-examples/spider/college_1/tables/0075.csv
+constants:
+- Accounting
+columns:
+- dept_name
+sql: |-
+  SELECT t2.emp_fname,
+         t1.class_room
+  FROM class AS t1
+  JOIN employee AS t2 ON t1.prof_num = t2.emp_num
+  JOIN professor AS t3 ON t2.emp_num = t3.emp_num
+  JOIN department AS t4 ON t4.dept_code = t3.dept_code
+  WHERE t4.dept_name = 'Accounting'

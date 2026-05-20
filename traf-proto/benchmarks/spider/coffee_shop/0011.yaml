@@ -1,0 +1,8 @@
+db: tests-examples/spider/coffee_shop/tables/db.sqlite
+inputs:
+- tests-examples/spider/coffee_shop/tables/shop.csv
+output: tests-examples/spider/coffee_shop/tables/0011.csv
+sql: |-
+  SELECT address
+  FROM shop
+  ORDER BY open_year

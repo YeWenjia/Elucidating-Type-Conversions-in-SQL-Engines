@@ -1,0 +1,8 @@
+db: tests-examples/spider/county_public_safety/tables/db.sqlite
+inputs:
+- tests-examples/spider/county_public_safety/tables/city.csv
+output: tests-examples/spider/county_public_safety/tables/0006.csv
+sql: |-
+  SELECT name
+  FROM city
+  ORDER BY name ASC

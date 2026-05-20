@@ -1,0 +1,16 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/patient.csv
+- tests-examples/spider/hospital_1/tables/stay.csv
+- tests-examples/spider/hospital_1/tables/undergoes.csv
+output: tests-examples/spider/hospital_1/tables/0027.csv
+constants:
+- '111'
+columns:
+- room
+sql: |-
+  SELECT DISTINCT t2.name
+  FROM undergoes AS t1
+  JOIN patient AS t2 ON t1.patient = t2.ssn
+  JOIN stay AS t3 ON t1.stay = t3.stayid
+  WHERE t3.room = 111

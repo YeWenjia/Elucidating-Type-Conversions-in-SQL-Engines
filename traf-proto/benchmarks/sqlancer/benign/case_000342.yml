@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["㲌T|&", -1041688005]
+    - ["v^P", 1857914994]
+    - ["-481747043", -698590860]
+    - ["626137789", null]
+    - ["G2V", null]
+  database0_t0:
+    - ["-638409586", "*U#"]
+sql: "SELECT * FROM database0_t0 WHERE (('퇩')!=(database0_t0.c0))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["-638409586", "*U#"]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-638409586", "*U#"]

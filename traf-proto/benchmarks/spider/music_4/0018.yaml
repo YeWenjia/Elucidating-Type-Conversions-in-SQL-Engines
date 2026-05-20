@@ -1,0 +1,9 @@
+db: tests-examples/spider/music_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_4/tables/artist.csv
+output: tests-examples/spider/music_4/tables/0018.csv
+sql: |-
+  SELECT famous_title,
+         age
+  FROM artist
+  ORDER BY age DESC

@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [976935660, 370802766]
+    - [-729157947, -1279472365]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c1)<=(database0_t0.c1))"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - [370802766, 976935660]
+  - [-1279472365, -729157947]
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["370802766", "976935660"]
+  - ["-1279472365", "-729157947"]

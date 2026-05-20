@@ -1,0 +1,15 @@
+db: tests-examples/spider/e_government/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_government/tables/forms.csv
+- tests-examples/spider/e_government/tables/party_forms.csv
+output: tests-examples/spider/e_government/tables/0003.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.form_name
+  FROM forms AS t1
+  JOIN party_forms AS t2 ON t1.form_id = t2.form_id
+  GROUP BY t2.form_id, t1.form_name
+  ORDER BY count(*) DESC

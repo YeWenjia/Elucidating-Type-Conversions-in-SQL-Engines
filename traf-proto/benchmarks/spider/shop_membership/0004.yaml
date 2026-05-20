@@ -1,0 +1,12 @@
+db: tests-examples/spider/shop_membership/tables/db.sqlite
+inputs:
+- tests-examples/spider/shop_membership/tables/branch.csv
+output: tests-examples/spider/shop_membership/tables/0004.csv
+constants:
+- '100'
+columns:
+- membership_amount
+sql: |-
+  SELECT DISTINCT city
+  FROM branch
+  WHERE membership_amount >= 100

@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-2011765295, null]
+    - [1486103084, null]
+    - [-1196818564, null]
+    - [-1228809753, null]
+    - [-42722743, null]
+    - [-1137492053, null]
+    - [-759808593, null]
+    - [-1769785116, null]
+    - [1699565337, null]
+    - [-930779049, null]
+    - [217332807, null]
+    - [-1794475476, null]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE '1242577457'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"1242577457\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["NULL", "-2011765295"]
+  - ["NULL", "1486103084"]
+  - ["NULL", "-1196818564"]
+  - ["NULL", "-1228809753"]
+  - ["NULL", "-42722743"]
+  - ["NULL", "-1137492053"]
+  - ["NULL", "-759808593"]
+  - ["NULL", "-1769785116"]
+  - ["NULL", "1699565337"]
+  - ["NULL", "-930779049"]
+  - ["NULL", "217332807"]
+  - ["NULL", "-1794475476"]

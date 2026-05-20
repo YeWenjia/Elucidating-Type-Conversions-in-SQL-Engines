@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - ["805036065", "-2097051911", "cr䠀!ࠇg}FQ"]
+    - ["-2035544381", "TRUE", "-1611380400"]
+    - ["1245956902", "756466557", "-320857504"]
+    - ["lD", null, "-58938003"]
+    - ["-1779974519", null, ""]
+    - ["1096346204", null, "1708405439"]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

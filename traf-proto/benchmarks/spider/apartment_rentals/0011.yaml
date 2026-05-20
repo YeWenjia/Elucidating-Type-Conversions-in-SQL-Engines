@@ -1,0 +1,12 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0011.csv
+constants:
+- Flat
+columns:
+- apt_type_code
+sql: |-
+  SELECT apt_number
+  FROM apartments
+  WHERE apt_type_code = 'Flat'

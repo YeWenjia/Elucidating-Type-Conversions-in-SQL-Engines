@@ -1,0 +1,15 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c0, database0_t0.c2 FROM database0_t0 INNER  JOIN  (SELECT database0_t0.c1 AS col0 FROM database0_t0) AS sub0  ON database0_t0.c2 WHERE -27844576"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of JOIN/ON must be type boolean, not type integer\n  Position: 135"
+traf_columns: [database0_t0.c0, database0_t0.c2]
+traf_rows: []

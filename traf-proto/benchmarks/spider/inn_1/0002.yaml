@@ -1,0 +1,16 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+output: tests-examples/spider/inn_1/tables/0002.csv
+constants:
+- '160'
+- '2'
+columns:
+- baseprice
+- maxoccupancy
+sql: |-
+  SELECT roomname,
+         roomid
+  FROM rooms
+  WHERE baseprice > 160
+    AND maxoccupancy > 2;

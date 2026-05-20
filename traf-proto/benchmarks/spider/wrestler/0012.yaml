@@ -1,0 +1,13 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/elimination.csv
+output: tests-examples/spider/wrestler/tables/0012.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT team
+  FROM elimination
+  GROUP BY team
+  HAVING COUNT(*) > 3

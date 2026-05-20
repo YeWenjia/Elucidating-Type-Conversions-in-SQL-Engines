@@ -1,0 +1,13 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/member.csv
+- tests-examples/spider/decoration_competition/tables/round.csv
+output: tests-examples/spider/decoration_competition/tables/0015.csv
+columns:
+- member_id
+sql: |-
+  SELECT name
+  FROM member
+  WHERE member_id NOT IN
+      (SELECT member_id
+       FROM round)

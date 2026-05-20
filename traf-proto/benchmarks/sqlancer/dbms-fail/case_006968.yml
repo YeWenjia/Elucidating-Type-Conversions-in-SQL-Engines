@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [null, -1554526165]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+    - ["x{", -1077277231]
+  database0_t0:
+    - ["ieP", -753303948, null]
+sql: "SELECT * FROM database0_t1 WHERE -391430839"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["NULL", "-1554526165"]
+  - ["x{", "-1077277231"]
+  - ["x{", "-1077277231"]
+  - ["x{", "-1077277231"]
+  - ["x{", "-1077277231"]

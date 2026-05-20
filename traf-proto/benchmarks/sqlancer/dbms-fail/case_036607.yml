@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["9J縥\t", "-759808593", 1957914210]
+    - ["-354425506", "5\tw%~{ꏋ", 1957914210]
+    - ["", "-1674577046", 1957914210]
+    - ["-0.0", " D", 1957914210]
+    - ["o.?", "-773587990", 1957914210]
+    - ["7", null, 1957914210]
+    - ["Vga*JS~}", null, 1957914210]
+    - ["-339580836", null, 1957914210]
+sql: "SELECT database0_t0.c2, database0_t0.c0 FROM database0_t0 WHERE -1020663942"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c2, database0_t0.c0]
+traf_rows:
+  - ["1957914210", "9J縥\t"]
+  - ["1957914210", "-354425506"]
+  - ["1957914210", ""]
+  - ["1957914210", "-0.0"]
+  - ["1957914210", "o.?"]
+  - ["1957914210", "7"]
+  - ["1957914210", "Vga*JS~}"]
+  - ["1957914210", "-339580836"]

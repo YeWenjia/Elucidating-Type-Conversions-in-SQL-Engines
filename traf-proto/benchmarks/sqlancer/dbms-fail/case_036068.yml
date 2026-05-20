@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["2D", "-1020663942"]
+    - ["1489138842", null]
+    - ["", null]
+    - ["-2087893705", "B7"]
+    - ["-339580836", null]
+sql: "SELECT * FROM database0_t0 WHERE 'fx㟍ﴤz|xƺ'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"fx㟍ﴤz|xƺ\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["2D", "-1020663942"]
+  - ["1489138842", "NULL"]
+  - ["", "NULL"]
+  - ["-2087893705", "B7"]
+  - ["-339580836", "NULL"]

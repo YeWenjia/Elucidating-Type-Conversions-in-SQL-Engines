@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [847198242, "489263177"]
+    - [-948742844, "Fx㟍ﴤz|xƺ"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((-884284370)<>(database0_t0.c0))"
+columns:
+  - "c0"
+rows:
+  - [847198242]
+  - [-948742844]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["847198242"]
+  - ["-948742844"]

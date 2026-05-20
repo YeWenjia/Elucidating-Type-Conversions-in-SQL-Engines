@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["mF", -316874230]
+    - ["-2032274875", -316874230]
+    - ["779118101", null]
+    - ["", null]
+    - ["-760757233", 1444987074]
+    - ["3NxuO4U", 460133331]
+    - ["-833856855", 18283023]
+    - ["\rzJoV3뺉 ", null]
+    - ["!d>T", 1418726988]
+    - ["-58938003", -1020663942]
+  database0_t0:
+    - [null]
+    - [null]
+    - [null]
+    - [null]
+    - [-1]
+    - [-299282124]
+    - [822983364]
+    - [-657850939]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'x{'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"x{\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["-1"]
+  - ["-299282124"]
+  - ["822983364"]
+  - ["-657850939"]

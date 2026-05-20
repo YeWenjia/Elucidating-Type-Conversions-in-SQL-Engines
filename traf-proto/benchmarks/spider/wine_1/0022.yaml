@@ -1,0 +1,8 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0022.csv
+sql: |-
+  SELECT DISTINCT name
+  FROM wine
+  ORDER BY name

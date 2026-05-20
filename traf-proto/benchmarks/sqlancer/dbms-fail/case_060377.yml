@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t7:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-2087893705, null]
+    - [2123549899, null]
+    - [1699565337, null]
+    - [625572473, null]
+  database0_t7:
+    - [-913599578, "-1344652955"]
+    - [-1241568075, "vm"]
+sql: "SELECT database0_t0.c0, database0_t7.c1, database0_t0.c1, database0_t7.c0 FROM database0_t7, database0_t0 WHERE 'w)1'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"w)1\"\n  Position: 113"
+traf_columns: [database0_t0.c0, database0_t7.c1, database0_t0.c1, database0_t7.c0]
+traf_rows:
+  - ["-2087893705", "-1344652955", "NULL", "-913599578"]
+  - ["2123549899", "-1344652955", "NULL", "-913599578"]
+  - ["1699565337", "-1344652955", "NULL", "-913599578"]
+  - ["625572473", "-1344652955", "NULL", "-913599578"]
+  - ["-2087893705", "vm", "NULL", "-1241568075"]
+  - ["2123549899", "vm", "NULL", "-1241568075"]
+  - ["1699565337", "vm", "NULL", "-1241568075"]
+  - ["625572473", "vm", "NULL", "-1241568075"]

@@ -1,0 +1,15 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/faculty.csv
+- tests-examples/spider/college_3/tables/course.csv
+output: tests-examples/spider/college_3/tables/0026.csv
+constants:
+- COMPUTER LITERACY
+columns:
+- cname
+sql: |-
+  SELECT t2.fname,
+         t2.lname
+  FROM course AS t1
+  JOIN faculty AS t2 ON t1.instructor = t2.facid
+  WHERE t1.cname = 'COMPUTER LITERACY'

@@ -1,0 +1,13 @@
+db: tests-examples/spider/protein_institute/tables/db.sqlite
+inputs:
+- tests-examples/spider/protein_institute/tables/building.csv
+- tests-examples/spider/protein_institute/tables/institution.csv
+output: tests-examples/spider/protein_institute/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t1.name,
+         count(*)
+  FROM building AS t1
+  JOIN institution AS t2 ON t1.building_id = t2.building_id
+  GROUP BY t1.building_id, t1.name

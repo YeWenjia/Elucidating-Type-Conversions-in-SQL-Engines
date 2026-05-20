@@ -1,0 +1,21 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/postseason.csv
+- tests-examples/spider/baseball_1/tables/team.csv
+output: tests-examples/spider/baseball_1/tables/0021.csv
+constants:
+- '2008'
+- '1'
+functions:
+- count
+columns:
+- year
+sql: |-
+  SELECT t2.name,
+         t1.team_id_winner
+  FROM postseason AS t1
+  JOIN team AS t2 ON t1.team_id_winner = t2.team_id_br
+  WHERE t1.year = 2008
+  GROUP BY t1.team_id_winner
+  ORDER BY count(*) DESC
+  LIMIT 1;

@@ -1,0 +1,14 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+output: tests-examples/spider/book_2/tables/0020.csv
+constants:
+- Person
+- Wiley
+columns:
+- publisher
+sql: |-
+  SELECT price
+  FROM publication
+  WHERE publisher = 'Person'
+    OR publisher = 'Wiley'

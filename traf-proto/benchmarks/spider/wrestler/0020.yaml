@@ -1,0 +1,14 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/elimination.csv
+output: tests-examples/spider/wrestler/tables/0020.csv
+constants:
+- Punk
+- Orton
+columns:
+- eliminated_by
+sql: |-
+  SELECT time
+  FROM elimination
+  WHERE eliminated_by = 'Punk'
+    OR eliminated_by = 'Orton'

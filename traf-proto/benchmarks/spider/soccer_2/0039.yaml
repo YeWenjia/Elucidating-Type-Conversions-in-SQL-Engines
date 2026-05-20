@@ -1,0 +1,18 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/college.csv
+- tests-examples/spider/soccer_2/tables/player.csv
+- tests-examples/spider/soccer_2/tables/tryout.csv
+output: tests-examples/spider/soccer_2/tables/0039.csv
+constants:
+- '1'
+columns:
+- cname
+sql: |-
+  SELECT t2.pname
+  FROM tryout AS t1
+  JOIN player AS t2 ON t1.pid = t2.pid
+  WHERE t1.cname =
+      (SELECT cname
+       FROM college
+       ORDER BY enr DESC LIMIT 1)

@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/addresses.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/drama_workshop_groups.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0033.csv
+functions:
+- count
+sql: |-
+  SELECT t1.city_town,
+         count(*)
+  FROM addresses AS t1
+  JOIN drama_workshop_groups AS t2 ON t1.address_id = t2.address_id
+  GROUP BY t1.city_town

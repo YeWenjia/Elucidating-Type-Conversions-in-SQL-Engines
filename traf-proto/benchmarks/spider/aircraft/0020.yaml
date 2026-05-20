@@ -1,0 +1,10 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/airport.csv
+output: tests-examples/spider/aircraft/tables/0020.csv
+constants:
+- '1'
+sql: |-
+  SELECT *
+  FROM airport
+  ORDER BY international_passengers DESC

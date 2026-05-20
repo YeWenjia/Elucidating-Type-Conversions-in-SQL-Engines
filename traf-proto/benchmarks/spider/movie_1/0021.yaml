@@ -1,0 +1,15 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/reviewer.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0021.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t2.name
+  FROM rating AS t1
+  JOIN reviewer AS t2 ON t1.rid = t2.rid
+  GROUP BY t1.rid, t2.name
+  HAVING COUNT(*) >= 3

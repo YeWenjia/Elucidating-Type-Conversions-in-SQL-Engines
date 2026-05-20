@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["847687323", 537255538, null]
+    - ["-501811782", 537255538, null]
+    - ["232191734", 537255538, null]
+    - ["1489138842", 537255538, null]
+    - ["czE -#\\LR", -509255045, null]
+    - ["1862525605", null, null]
+    - ["{>{", null, null]
+    - ["X㨱", null, null]
+sql: "SELECT database0_t0.c2 FROM database0_t0 WHERE (('-3890461') IS NULL)"
+columns:
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c2]
+traf_rows: []

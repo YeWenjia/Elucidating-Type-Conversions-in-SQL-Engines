@@ -1,0 +1,23 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/features.csv
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+- tests-examples/spider/cre_Theme_park/tables/tourist_attraction_features.csv
+output: tests-examples/spider/cre_Theme_park/tables/0038.csv
+constants:
+- park
+- shopping
+columns:
+- feature_details
+sql: |-
+  SELECT t1.name
+  FROM tourist_attractions AS t1
+  JOIN tourist_attraction_features AS t2 ON t1.tourist_attraction_id = t2.tourist_attraction_id
+  JOIN features AS t3 ON t2.feature_id = t3.feature_id
+  WHERE t3.feature_details = 'park'
+  UNION
+  SELECT t1.name
+  FROM tourist_attractions AS t1
+  JOIN tourist_attraction_features AS t2 ON t1.tourist_attraction_id = t2.tourist_attraction_id
+  JOIN features AS t3 ON t2.feature_id = t3.feature_id
+  WHERE t3.feature_details = 'shopping'

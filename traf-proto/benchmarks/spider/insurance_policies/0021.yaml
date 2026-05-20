@@ -1,0 +1,14 @@
+db: tests-examples/spider/insurance_policies/tables/db.sqlite
+inputs:
+- tests-examples/spider/insurance_policies/tables/payments.csv
+output: tests-examples/spider/insurance_policies/tables/0021.csv
+constants:
+- Visa
+columns:
+- payment_method_code
+sql: |-
+  SELECT payment_id,
+         date_payment_made,
+         amount_payment
+  FROM payments
+  WHERE payment_method_code = 'Visa'

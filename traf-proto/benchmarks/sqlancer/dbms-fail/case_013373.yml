@@ -1,0 +1,14 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t7: []
+sql: "SELECT * FROM database0_t7 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 34"
+traf_columns: [database0_t7.c0, database0_t7.c1]
+traf_rows: []

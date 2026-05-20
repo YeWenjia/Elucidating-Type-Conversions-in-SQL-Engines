@@ -1,0 +1,17 @@
+db: tests-examples/spider/cinema/tables/db.sqlite
+inputs:
+- tests-examples/spider/cinema/tables/film.csv
+- tests-examples/spider/cinema/tables/schedule.csv
+output: tests-examples/spider/cinema/tables/0020.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- show_times_per_day
+sql: |-
+  SELECT t2.directed_by
+  FROM schedule AS t1
+  JOIN film AS t2 ON t1.film_id = t2.film_id
+  GROUP BY t2.directed_by
+  ORDER BY sum(t1.show_times_per_day) DESC

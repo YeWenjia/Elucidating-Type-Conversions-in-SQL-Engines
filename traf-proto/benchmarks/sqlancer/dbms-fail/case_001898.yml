@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-195949404, 723249712]
+    - [-195949404, 966823095]
+sql: "SELECT * FROM database0_t0 WHERE '￿~ckkh'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"￿~ckkh\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-195949404", "723249712"]
+  - ["-195949404", "966823095"]

@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - [-146606376, -1073664262, null]
+    - [1141523942, -2016570689, 1300733341]
+    - [981820370, -428151007, 1777398138]
+    - [100152719, null, null]
+sql: "SELECT * FROM database0_t1 WHERE '稬#FI'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"稬#FI\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows: []

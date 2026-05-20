@@ -1,0 +1,17 @@
+db: tests-examples/spider/school_finance/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_finance/tables/school.csv
+- tests-examples/spider/school_finance/tables/endowment.csv
+output: tests-examples/spider/school_finance/tables/0012.csv
+constants:
+- '10'
+functions:
+- sum
+columns:
+- amount
+sql: |-
+  SELECT t2.school_name
+  FROM endowment AS t1
+  JOIN school AS t2 ON t1.school_id = t2.school_id
+  GROUP BY t1.school_id, t2.school_name
+  HAVING sum(t1.amount) <= 10

@@ -1,0 +1,11 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents_with_expenses.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0037.csv
+sql: |-
+  SELECT document_id
+  FROM documents
+  EXCEPT
+  SELECT document_id
+  FROM documents_with_expenses

@@ -1,0 +1,42 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - ["-512794540", "-1478522586", null]
+    - ["_?", "-1478522586", null]
+    - ["-1721466904", "-1478522586", null]
+    - [".w", "-1478522586", null]
+    - ["1264846530", "-1478522586", null]
+    - ["", "-1478522586", null]
+    - ["1894499120", "-1478522586", null]
+    - ["!-meGWs?9", "-1478522586", null]
+    - ["-684793212", null, null]
+    - ["-639173391", null, null]
+    - ["%~", "jO&1˩3&", null]
+    - ["298258845", null, null]
+    - ["2", "fctY", null]
+    - ["UKb*sPb", "-871132307", 369297413]
+sql: "SELECT database0_t0.c2, database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 82"
+traf_columns: [database0_t0.c2, database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["NULL", "-1478522586", "-512794540"]
+  - ["NULL", "-1478522586", "_?"]
+  - ["NULL", "-1478522586", "-1721466904"]
+  - ["NULL", "-1478522586", ".w"]
+  - ["NULL", "-1478522586", "1264846530"]
+  - ["NULL", "-1478522586", "1894499120"]
+  - ["NULL", "-1478522586", "!-meGWs?9"]
+  - ["NULL", "NULL", "-684793212"]
+  - ["NULL", "NULL", "-639173391"]
+  - ["NULL", "jO&1˩3&", "%~"]
+  - ["NULL", "NULL", "298258845"]
+  - ["NULL", "fctY", "2"]
+  - ["369297413", "-871132307", "UKb*sPb"]

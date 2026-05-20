@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["", "-147033945"]
+    - ["4U^IimGzm", "2069154664"]
+    - ["84ᨻS꼂\\獷!c", "jzs~"]
+sql: "SELECT * FROM database0_t0 WHERE 'Q<H+'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Q<H+\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["", "-147033945"]
+  - ["4U^IimGzm", "2069154664"]
+  - ["84ᨻS꼂\\獷!c", "jzs~"]

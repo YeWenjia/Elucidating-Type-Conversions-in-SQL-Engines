@@ -1,0 +1,11 @@
+db: tests-examples/spider/local_govt_and_lot/tables/db.sqlite
+inputs:
+- tests-examples/spider/local_govt_and_lot/tables/timed_status_of_things.csv
+output: tests-examples/spider/local_govt_and_lot/tables/0011.csv
+functions:
+- count
+columns:
+- status_of_thing_code
+sql: |-
+  SELECT count(DISTINCT status_of_thing_code)
+  FROM timed_status_of_things

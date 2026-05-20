@@ -1,0 +1,16 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/web_client_accelerator.csv
+- tests-examples/spider/browser_web/tables/accelerator_compatible_browser.csv
+output: tests-examples/spider/browser_web/tables/0008.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT t1.id,
+         t1.name
+  FROM web_client_accelerator AS t1
+  JOIN accelerator_compatible_browser AS t2 ON t2.accelerator_id = t1.id
+  GROUP BY t1.id, t1.name
+  HAVING count(*) >= 2

@@ -1,0 +1,8 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+output: tests-examples/spider/network_2/tables/0020.csv
+sql: |-
+  SELECT name
+  FROM person
+  ORDER BY age DESC

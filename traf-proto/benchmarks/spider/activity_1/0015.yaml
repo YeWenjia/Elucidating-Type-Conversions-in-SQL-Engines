@@ -1,0 +1,13 @@
+db: tests-examples/spider/activity_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/activity_1/tables/faculty.csv
+output: tests-examples/spider/activity_1/tables/0015.csv
+functions:
+- count
+sql: |-
+  SELECT rank_col,
+         sex,
+         count(*)
+  FROM faculty
+  GROUP BY rank_col,
+           sex

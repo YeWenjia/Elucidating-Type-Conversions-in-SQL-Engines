@@ -1,0 +1,17 @@
+db: tests-examples/spider/bike_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/bike_1/tables/trip.csv
+- tests-examples/spider/bike_1/tables/weather.csv
+output: tests-examples/spider/bike_1/tables/0024.csv
+constants:
+- '60'
+functions:
+- avg
+columns:
+- mean_temperature_f
+sql: |-
+  SELECT t1.id
+  FROM trip AS t1
+  JOIN weather AS t2 ON t1.zip_code = t2.zip_code
+  GROUP BY t2.zip_code
+  HAVING avg(t2.mean_temperature_f) > 60

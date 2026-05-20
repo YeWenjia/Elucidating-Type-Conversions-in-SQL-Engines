@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t4:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [1659652404, "", -1735142739]
+    - [1663458909, "", -1735142739]
+    - [340069251, "", -1735142739]
+    - [-1779974519, "", -1735142739]
+  database0_t4:
+    - [435144189, "6"]
+    - [897917532, "6"]
+    - [-1073664262, "6"]
+    - [1784603569, "6"]
+    - [285314990, "6"]
+    - [945001674, "6"]
+    - [1743543400, "6"]
+    - [-1213864489, "6"]
+    - [-639173391, "6"]
+    - [-1456910282, null]
+    - [309423792, null]
+    - [34750882, "Gǐ<"]
+    - [1661665722, "625572473"]
+sql: "SELECT database0_t4.c1, database0_t4.c0 FROM database0_t4 WHERE ((database0_t4.c1) IS NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows:
+  - [null, -1456910282]
+  - [null, 309423792]
+kind: benign
+traf_columns: [database0_t4.c1, database0_t4.c0]
+traf_rows:
+  - ["NULL", "-1456910282"]
+  - ["NULL", "309423792"]

@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t2:
+    - ["", "", null]
+    - ["9-", "g^R\rx)9v\r", "-632382568"]
+sql: "SELECT database0_t2.c2 FROM database0_t2 WHERE database0_t2.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t2.c2]
+traf_rows:
+  - ["-632382568"]

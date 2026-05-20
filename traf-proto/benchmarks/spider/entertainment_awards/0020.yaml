@@ -1,0 +1,14 @@
+db: tests-examples/spider/entertainment_awards/tables/db.sqlite
+inputs:
+- tests-examples/spider/entertainment_awards/tables/festival_detail.csv
+output: tests-examples/spider/entertainment_awards/tables/0020.csv
+constants:
+- '2008'
+- '2010'
+columns:
+- year
+sql: |-
+  SELECT num_of_audience
+  FROM festival_detail
+  WHERE year = 2008
+    OR year = 2010

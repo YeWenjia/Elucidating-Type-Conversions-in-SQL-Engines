@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t0:
+    - [1777398138, -1104779761, -721712493]
+    - [1777398138, -1677591788, -721712493]
+    - [1777398138, 1909760267, -721712493]
+    - [1777398138, -31667871, -721712493]
+    - [1777398138, 1069346521, -721712493]
+    - [null, 625572473, -527476051]
+    - [-546689670, 1284422450, null]
+    - [454169332, 1574867916, null]
+sql: "SELECT database0_t0.c1, database0_t0.c2 FROM database0_t0 WHERE '5V?9yCR{'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"5V?9yCR{\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c2]
+traf_rows:
+  - ["-1104779761", "-721712493"]
+  - ["-1677591788", "-721712493"]
+  - ["1909760267", "-721712493"]
+  - ["-31667871", "-721712493"]
+  - ["1069346521", "-721712493"]
+  - ["625572473", "-527476051"]
+  - ["1284422450", "NULL"]
+  - ["1574867916", "NULL"]

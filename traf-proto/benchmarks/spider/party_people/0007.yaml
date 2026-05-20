@@ -1,0 +1,9 @@
+db: tests-examples/spider/party_people/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_people/tables/party.csv
+output: tests-examples/spider/party_people/tables/0007.csv
+sql: |-
+  SELECT minister,
+         party_name
+  FROM party
+  ORDER BY took_office DESC

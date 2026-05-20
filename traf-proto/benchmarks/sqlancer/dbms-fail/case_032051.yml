@@ -1,0 +1,18 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [976935660, 370802766]
+    - [-729157947, -1279472365]
+sql: "SELECT * FROM database0_t0 WHERE 1321238062"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["976935660", "370802766"]
+  - ["-729157947", "-1279472365"]

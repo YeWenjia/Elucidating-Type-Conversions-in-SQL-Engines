@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [976935660, "-203986751"]
+  database0_t0:
+    - [981134107, 232191734]
+    - [1980493181, -1684923321]
+    - [60716641, -1606830212]
+sql: "SELECT database0_t0.c0, database0_t0.c1, database0_t1.c0 FROM database0_t1, database0_t0 WHERE '6CdJ'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"6CdJ\"\n  Position: 96"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0]
+traf_rows:
+  - ["981134107", "232191734", "976935660"]
+  - ["1980493181", "-1684923321", "976935660"]
+  - ["60716641", "-1606830212", "976935660"]

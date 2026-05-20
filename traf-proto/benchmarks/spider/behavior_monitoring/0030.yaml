@@ -1,0 +1,15 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+- tests-examples/spider/behavior_monitoring/tables/detention.csv
+output: tests-examples/spider/behavior_monitoring/tables/0030.csv
+constants:
+- Schultz
+columns:
+- last_name
+sql: |-
+  SELECT t1.datetime_detention_start,
+         datetime_detention_end
+  FROM detention AS t1
+  JOIN teachers AS t2 ON t1.teacher_id = t2.teacher_id
+  WHERE t2.last_name = 'Schultz'

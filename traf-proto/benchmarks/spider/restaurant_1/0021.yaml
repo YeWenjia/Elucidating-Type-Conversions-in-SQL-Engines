@@ -1,0 +1,18 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/restaurant.csv
+- tests-examples/spider/restaurant_1/tables/visits_restaurant.csv
+output: tests-examples/spider/restaurant_1/tables/0021.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- spent
+sql: |-
+  SELECT restaurant.resname,
+         sum(visits_restaurant.spent)
+  FROM visits_restaurant
+  JOIN restaurant ON visits_restaurant.resid = restaurant.resid
+  GROUP BY restaurant.resid, restaurant.resname
+  ORDER BY sum(visits_restaurant.spent) ASC;

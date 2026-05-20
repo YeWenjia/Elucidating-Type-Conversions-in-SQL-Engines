@@ -1,0 +1,17 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/pilot.csv
+- tests-examples/spider/aircraft/tables/match.csv
+output: tests-examples/spider/aircraft/tables/0023.csv
+constants:
+- Australia
+columns:
+- pilot_id
+- country
+sql: |-
+  SELECT name
+  FROM pilot
+  WHERE pilot_id NOT IN
+      (SELECT winning_pilot
+       FROM match
+       WHERE country = 'Australia')

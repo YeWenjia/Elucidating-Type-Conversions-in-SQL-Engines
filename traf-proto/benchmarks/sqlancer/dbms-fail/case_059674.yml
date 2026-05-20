@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [910488386, "1963098189"]
+    - [1486103084, "1963098189"]
+    - [312477042, "1963098189"]
+    - [-152514463, "1963098189"]
+    - [1648677515, "1963098189"]
+    - [1482203189, "m◍CRp9p?N"]
+  database0_t0:
+    - [null, "-693158387", null]
+    - [null, "-1219036091", null]
+sql: "SELECT database0_t0.c0, database0_t1.c0, database0_t0.c1, database0_t1.c1 FROM database0_t0, database0_t1 WHERE -1461512937"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 113"
+traf_columns: [database0_t0.c0, database0_t1.c0, database0_t0.c1, database0_t1.c1]
+traf_rows:
+  - ["NULL", "910488386", "-693158387", "1963098189"]
+  - ["NULL", "1486103084", "-693158387", "1963098189"]
+  - ["NULL", "312477042", "-693158387", "1963098189"]
+  - ["NULL", "-152514463", "-693158387", "1963098189"]
+  - ["NULL", "1648677515", "-693158387", "1963098189"]
+  - ["NULL", "1482203189", "-693158387", "m◍CRp9p?N"]
+  - ["NULL", "910488386", "-1219036091", "1963098189"]
+  - ["NULL", "1486103084", "-1219036091", "1963098189"]
+  - ["NULL", "312477042", "-1219036091", "1963098189"]
+  - ["NULL", "-152514463", "-1219036091", "1963098189"]
+  - ["NULL", "1648677515", "-1219036091", "1963098189"]
+  - ["NULL", "1482203189", "-1219036091", "m◍CRp9p?N"]

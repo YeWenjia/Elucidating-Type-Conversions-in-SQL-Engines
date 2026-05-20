@@ -1,0 +1,8 @@
+db: tests-examples/spider/store_product/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_product/tables/district.csv
+output: tests-examples/spider/store_product/tables/0001.csv
+sql: |-
+  SELECT DISTINCT district_name
+  FROM district
+  ORDER BY district_name DESC

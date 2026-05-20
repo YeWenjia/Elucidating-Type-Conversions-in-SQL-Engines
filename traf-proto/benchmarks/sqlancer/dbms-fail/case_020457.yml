@@ -1,0 +1,43 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [".pX쑰Kz凙w", "1822268159", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "1489138842", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "g", "HO^ga쐏qᇄC", -1779974519]
+    - [".pX쑰Kz凙w", "174837895", "HO^ga쐏qᇄC", -1779974519]
+    - ["-1724310134", "-440124920", "", null]
+    - ["Y", "1804551272", "-2101233819", -1458145455]
+  database0_t0:
+    - ["g", "-1175006649", "-229674567", "璚]\\磬!*7"]
+    - ["", "", "-229674567", "1890199107"]
+    - ["r來", "v37᱇\r~꣇≜t", "-229674567", "-303659226"]
+sql: "SELECT database0_t1.c0, database0_t1.c3, database0_t1.c2, database0_t0.c3, database0_t0.c0, database0_t0.c1, database0_t1.c1 FROM database0_t1, database0_t0 WHERE database0_t0.c0"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 164"
+traf_columns: [database0_t1.c0, database0_t1.c3, database0_t1.c2, database0_t0.c3, database0_t0.c0, database0_t0.c1, database0_t1.c1]
+traf_rows:
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "璚]\\磬!*7", "g", "-1175006649", "1822268159"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "-303659226", "r來", "v37᱇\r~꣇≜t", "1822268159"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "璚]\\磬!*7", "g", "-1175006649", "1489138842"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "-303659226", "r來", "v37᱇\r~꣇≜t", "1489138842"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "璚]\\磬!*7", "g", "-1175006649", "g"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "-303659226", "r來", "v37᱇\r~꣇≜t", "g"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "璚]\\磬!*7", "g", "-1175006649", "174837895"]
+  - [".pX쑰Kz凙w", "-1779974519", "HO^ga쐏qᇄC", "-303659226", "r來", "v37᱇\r~꣇≜t", "174837895"]
+  - ["-1724310134", "NULL", "", "璚]\\磬!*7", "g", "-1175006649", "-440124920"]
+  - ["-1724310134", "NULL", "", "-303659226", "r來", "v37᱇\r~꣇≜t", "-440124920"]
+  - ["Y", "-1458145455", "-2101233819", "璚]\\磬!*7", "g", "-1175006649", "1804551272"]
+  - ["Y", "-1458145455", "-2101233819", "-303659226", "r來", "v37᱇\r~꣇≜t", "1804551272"]

@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t2:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t2:
+    - [-1042823525, -883264523, 1589309458, -3890461]
+    - [-1042823525, -883264523, 1737959731, -3890461]
+    - [-1042823525, -883264523, -901594290, -3890461]
+    - [-1042823525, -1179523355, 1540601884, 2057458696]
+    - [-1042823525, 623156499, -1141558845, null]
+    - [-1042823525, -2121000637, 232191734, null]
+    - [null, -1221927341, 1424991367, 351033743]
+    - [549595964, -567650130, 255865379, null]
+sql: "SELECT database0_t2.c2, database0_t2.c0, database0_t2.c3, database0_t2.c1 FROM database0_t2 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 99"
+traf_columns: [database0_t2.c2, database0_t2.c0, database0_t2.c3, database0_t2.c1]
+traf_rows: []

@@ -1,0 +1,50 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["O4P'", "hW"]
+    - ["", "-1618046334"]
+    - ["h'", null]
+    - ["-1077277231", "-992681133"]
+    - ["443216999", ""]
+    - ["-1020663942", "388449173"]
+    - ["388449173", ""]
+  database0_t0:
+    - ["_ttxPv", -316874230, null]
+    - ["u,?g", -316874230, null]
+    - ["-913047446", -316874230, null]
+    - ["-1377371316", -316874230, null]
+    - ["-760079060", -316874230, null]
+    - ["뢿\n뺶IL^#腻'", -316874230, null]
+    - ["-1858578364", -316874230, null]
+    - ["-1445703575", -316874230, null]
+    - ["1491106580", -316874230, null]
+    - ["721228243", -316874230, null]
+    - ["878771492", -316874230, null]
+    - ["]XsA", 1825467277, 991149750]
+    - ["915954605", null, null]
+    - ["-929713484", 1661529706, 1034706411]
+    - ["-835329356", null, -1790883840]
+    - ["-1020663942", 270865177, -273085966]
+    - ["1414926975", -1781350639, null]
+sql: "SELECT database0_t1.c1 FROM database0_t1 WHERE '-⍱xyZ3'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-⍱xyZ3\"\n  Position: 48"
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["hW"]
+  - ["-1618046334"]
+  - ["NULL"]
+  - ["-992681133"]
+  - [""]
+  - ["388449173"]
+  - [""]

@@ -1,0 +1,15 @@
+db: tests-examples/spider/roller_coaster/tables/db.sqlite
+inputs:
+- tests-examples/spider/roller_coaster/tables/roller_coaster.csv
+output: tests-examples/spider/roller_coaster/tables/0005.csv
+constants:
+- '3300'
+- '100'
+columns:
+- length
+- height
+sql: |-
+  SELECT status
+  FROM roller_coaster
+  WHERE length > 3300
+    OR height > 100

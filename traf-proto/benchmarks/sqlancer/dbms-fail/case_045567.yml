@@ -1,0 +1,21 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-338278495, "萊?", null]
+    - [139213821, "萊?", null]
+  database0_t0: []
+sql: "SELECT database0_t0.c0 FROM database0_t0, database0_t1 WHERE 'a?7'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"a?7\"\n  Position: 62"
+traf_columns: [database0_t0.c0]
+traf_rows: []

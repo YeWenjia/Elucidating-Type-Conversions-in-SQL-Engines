@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+  database0_t5:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t0:
+    - [null]
+    - [715889072]
+    - [-675588189]
+    - [-78526963]
+    - [-1042823525]
+    - [-1048427934]
+    - [-1779974519]
+    - [-420727782]
+    - [625572473]
+    - [1951496777]
+    - [880330817]
+  database0_t5:
+    - [564591596, 2036578093, "!CKT"]
+sql: "SELECT * FROM database0_t0, database0_t5 WHERE database0_t5.c2"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 48"
+traf_columns: [database0_t0.c1, database0_t5.c0, database0_t5.c1, database0_t5.c2]
+traf_rows:
+  - ["NULL", "564591596", "2036578093", "!CKT"]
+  - ["715889072", "564591596", "2036578093", "!CKT"]
+  - ["-675588189", "564591596", "2036578093", "!CKT"]
+  - ["-78526963", "564591596", "2036578093", "!CKT"]
+  - ["-1042823525", "564591596", "2036578093", "!CKT"]
+  - ["-1048427934", "564591596", "2036578093", "!CKT"]
+  - ["-1779974519", "564591596", "2036578093", "!CKT"]
+  - ["-420727782", "564591596", "2036578093", "!CKT"]
+  - ["625572473", "564591596", "2036578093", "!CKT"]
+  - ["1951496777", "564591596", "2036578093", "!CKT"]
+  - ["880330817", "564591596", "2036578093", "!CKT"]

@@ -1,0 +1,13 @@
+db: tests-examples/spider/customers_card_transactions/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_card_transactions/tables/customers_cards.csv
+output: tests-examples/spider/customers_card_transactions/tables/0029.csv
+constants:
+- '5'
+functions:
+- count
+sql: |-
+  SELECT card_type_code
+  FROM customers_cards
+  GROUP BY card_type_code
+  HAVING count(*) >= 5

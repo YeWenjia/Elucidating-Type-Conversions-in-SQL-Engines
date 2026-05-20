@@ -1,0 +1,22 @@
+db: tests-examples/spider/music_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_1/tables/files.csv
+- tests-examples/spider/music_1/tables/song.csv
+output: tests-examples/spider/music_1/tables/0028.csv
+constants:
+- '4:'
+- english
+columns:
+- duration
+- languages
+filters:
+- like
+sql: |-
+  SELECT t2.song_name
+  FROM files AS t1
+  JOIN song AS t2 ON t1.f_id = t2.f_id
+  WHERE t1.duration LIKE '4:%'
+  UNION
+  SELECT song_name
+  FROM song
+  WHERE languages = 'english'

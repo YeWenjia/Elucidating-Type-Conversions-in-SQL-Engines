@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/invoices.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0040.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT product_id
+  FROM invoices
+  GROUP BY product_id
+  ORDER BY COUNT(*) DESC

@@ -1,0 +1,14 @@
+db: tests-examples/spider/body_builder/tables/db.sqlite
+inputs:
+- tests-examples/spider/body_builder/tables/body_builder.csv
+- tests-examples/spider/body_builder/tables/people.csv
+output: tests-examples/spider/body_builder/tables/0011.csv
+constants:
+- '315'
+columns:
+- total
+sql: |-
+  SELECT t2.height
+  FROM body_builder AS t1
+  JOIN people AS t2 ON t1.people_id = t2.people_id
+  WHERE t1.total < 315

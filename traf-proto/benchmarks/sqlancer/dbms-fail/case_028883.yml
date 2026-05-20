@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1:
+    - ["MN", "-833856855"]
+    - ["XR]-誶", "-833856855"]
+    - ["n148⻺z%", "-833856855"]
+    - ["bm䎕", "-833856855"]
+    - ["", "-833856855"]
+    - ["1237838579", "-833856855"]
+    - ["2125372090", "-833856855"]
+    - ["-1767854157", "-833856855"]
+    - ["-255161302", "-833856855"]
+    - ["2131576533", "-833856855"]
+    - ["-501811782", "-833856855"]
+    - ["#-7c'//", "-833856855"]
+    - ["-1020663942", "-833856855"]
+  database0_t0:
+    - ["W9*XU\n[LF", "-31667871", "Q?A㢬", -1279472365]
+    - ["1203957473", "-773587990", "-1604431900", null]
+sql: "SELECT * FROM database0_t0 INNER  JOIN database0_t1 ON database0_t0.c0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of JOIN/ON must be type boolean, not type character varying\n  Position: 56"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2, database0_t0.c3, database0_t1.c0, database0_t1.c1]
+traf_rows: []

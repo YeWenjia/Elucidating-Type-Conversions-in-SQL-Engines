@@ -1,0 +1,11 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+output: tests-examples/spider/perpetrator/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT country,
+         COUNT(*)
+  FROM perpetrator
+  GROUP BY country

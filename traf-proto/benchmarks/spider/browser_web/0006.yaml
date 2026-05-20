@@ -1,0 +1,13 @@
+db: tests-examples/spider/browser_web/tables/db.sqlite
+inputs:
+- tests-examples/spider/browser_web/tables/web_client_accelerator.csv
+output: tests-examples/spider/browser_web/tables/0006.csv
+constants:
+- Broadband
+columns:
+- connection
+sql: |-
+  SELECT name,
+         operating_system
+  FROM web_client_accelerator
+  WHERE connection != 'Broadband'

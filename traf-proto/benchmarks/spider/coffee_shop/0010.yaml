@@ -1,0 +1,15 @@
+db: tests-examples/spider/coffee_shop/tables/db.sqlite
+inputs:
+- tests-examples/spider/coffee_shop/tables/member.csv
+output: tests-examples/spider/coffee_shop/tables/0010.csv
+constants:
+- Black
+columns:
+- membership_card
+sql: |-
+  SELECT address
+  FROM member
+  EXCEPT
+  SELECT address
+  FROM member
+  WHERE membership_card = 'Black'

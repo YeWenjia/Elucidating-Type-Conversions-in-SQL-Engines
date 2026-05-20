@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t2:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t2:
+    - ["", "", null]
+    - ["9-", "g^R\rx)9v\r", "-632382568"]
+sql: "SELECT database0_t2.c2 FROM database0_t2 WHERE NULL"
+columns:
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t2.c2]
+traf_rows: []

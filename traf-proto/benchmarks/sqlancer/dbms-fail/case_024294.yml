@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t4:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - ["-501811782", -2077083164]
+    - [null, -2077083164]
+    - ["294308099", -2077083164]
+  database0_t4: []
+sql: "SELECT database0_t4.c3, database0_t4.c2 FROM database0_t4, database0_t0 WHERE 'tI*zs/'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"tI*zs/\"\n  Position: 79"
+traf_columns: [database0_t4.c3, database0_t4.c2]
+traf_rows: []

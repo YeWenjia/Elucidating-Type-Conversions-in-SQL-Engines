@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - [-88915418, -759808593, "-186716307", null]
+    - [-776133543, 90257357, "", null]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '('"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"(\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-88915418"]
+  - ["-776133543"]

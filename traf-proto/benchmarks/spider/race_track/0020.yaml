@@ -1,0 +1,16 @@
+db: tests-examples/spider/race_track/tables/db.sqlite
+inputs:
+- tests-examples/spider/race_track/tables/race.csv
+- tests-examples/spider/race_track/tables/track.csv
+output: tests-examples/spider/race_track/tables/0020.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.name,
+         t2.location
+  FROM race AS t1
+  JOIN track AS t2 ON t1.track_id = t2.track_id
+  GROUP BY t1.track_id, t2.name, t2.location
+  HAVING count(*) = 1

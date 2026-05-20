@@ -1,0 +1,10 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/employee.csv
+output: tests-examples/spider/college_1/tables/0069.csv
+sql: |-
+  SELECT t2.emp_fname,
+         t1.crs_code
+  FROM class AS t1
+  JOIN employee AS t2 ON t1.prof_num = t2.emp_num

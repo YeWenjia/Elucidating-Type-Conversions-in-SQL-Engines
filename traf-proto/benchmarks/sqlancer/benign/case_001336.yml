@@ -1,0 +1,24 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t6:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0: []
+  database0_t6:
+    - ["^}M n2U", "lD"]
+    - ["1304199792", "2?-gnp"]
+    - ["Fx㟍ﴤz|xƺ", "撲[*["]
+sql: "SELECT database0_t0.c0, database0_t0.c1, database0_t6.c1 FROM database0_t0, database0_t6 WHERE (('312477042')<=(1484232087))"
+columns:
+  - "c0"
+  - "c1"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t6.c1]
+traf_rows: []

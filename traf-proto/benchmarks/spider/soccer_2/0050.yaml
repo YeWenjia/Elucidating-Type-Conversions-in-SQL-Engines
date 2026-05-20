@@ -1,0 +1,18 @@
+db: tests-examples/spider/soccer_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/soccer_2/tables/college.csv
+output: tests-examples/spider/soccer_2/tables/0050.csv
+constants:
+- FL
+functions:
+- max
+columns:
+- enr
+- state
+sql: |-
+  SELECT cname
+  FROM college
+  WHERE enr >
+      (SELECT max(enr)
+       FROM college
+       WHERE state = 'FL')

@@ -1,0 +1,13 @@
+db: tests-examples/spider/pilot_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/pilot_record/tables/pilot.csv
+output: tests-examples/spider/pilot_record/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT nationality
+  FROM pilot
+  GROUP BY nationality
+  ORDER BY COUNT(*) DESC

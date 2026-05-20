@@ -1,0 +1,13 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/plays_games.csv
+output: tests-examples/spider/game_1/tables/0037.csv
+functions:
+- sum
+columns:
+- hours_played
+sql: |-
+  SELECT stuid,
+         sum(hours_played)
+  FROM plays_games
+  GROUP BY stuid

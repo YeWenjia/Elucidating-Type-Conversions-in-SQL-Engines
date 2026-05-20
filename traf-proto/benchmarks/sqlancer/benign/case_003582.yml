@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1843024814", 494552054]
+    - ["1843024814", 910251209]
+    - ["1843024814", -959699959]
+    - ["1843024814", 1777398138]
+    - [null, -353492323]
+  database0_t0:
+    - ["-1104779761", -1781350639, null]
+    - ["Y&", null, null]
+    - ["WZV|0R3", null, null]
+    - ["-1630353875", null, null]
+    - ["388449173", 1772334001, 2]
+sql: "SELECT database0_t1.c0, database0_t1.c1 FROM database0_t1 WHERE NULL"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows: []

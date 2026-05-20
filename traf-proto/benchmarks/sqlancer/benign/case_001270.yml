@@ -1,0 +1,36 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [1428400327, "tE(L9+^O"]
+    - [-948421690, "-1775103535"]
+    - [-482831774, "(S9P4\\"]
+  database0_t0:
+    - [1145511417, null]
+    - [-929713484, null]
+    - [312477042, null]
+    - [-1028431608, 1863607537]
+    - [-657850939, -274820154]
+    - [null, 1588128946]
+    - [212179493, null]
+    - [582928504, null]
+    - [71561153, null]
+    - [null, 241653249]
+    - [null, -1077277231]
+    - [null, 1416790536]
+    - [null, -273085966]
+sql: "SELECT database0_t1.c0, database0_t0.c1, database0_t0.c0 FROM database0_t0, database0_t1 WHERE ((1138652090) IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0, database0_t0.c1, database0_t0.c0]
+traf_rows: []

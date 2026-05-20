@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-1606624943, "㟍\t쇈"]
+    - [1377500188, "㟍\t쇈"]
+    - [847687323, "1bk"]
+    - [-420727782, "847687323"]
+  database0_t0:
+    - ["F羥", -596599025]
+    - ["F羥", -1719549684]
+    - ["F羥", -848861732]
+    - ["F羥", null]
+    - ["F羥", null]
+    - ["F羥", null]
+    - ["F羥", -552703667]
+    - ["F羥", null]
+    - ["F羥", null]
+    - ["F羥", null]
+    - ["<cXh+ )9", 897917532]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["F羥", "-596599025"]
+  - ["F羥", "-1719549684"]
+  - ["F羥", "-848861732"]
+  - ["F羥", "-552703667"]
+  - ["<cXh+ )9", "897917532"]

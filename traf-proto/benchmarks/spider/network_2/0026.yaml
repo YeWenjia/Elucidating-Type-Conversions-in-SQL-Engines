@@ -1,0 +1,17 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0026.csv
+constants:
+- student
+columns:
+- job
+sql: |-
+  SELECT name
+  FROM person
+  EXCEPT
+  SELECT t2.name
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.friend
+  WHERE t1.job = 'student'

@@ -1,0 +1,17 @@
+db: tests-examples/spider/tracking_grants_for_research/tables/db.sqlite
+inputs:
+- tests-examples/spider/tracking_grants_for_research/tables/organisations.csv
+- tests-examples/spider/tracking_grants_for_research/tables/research_staff.csv
+output: tests-examples/spider/tracking_grants_for_research/tables/0021.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.organisation_id,
+         t1.organisation_type,
+         t1.organisation_details
+  FROM organisations AS t1
+  JOIN research_staff AS t2 ON t1.organisation_id = t2.employer_organisation_id
+  GROUP BY t1.organisation_id, t1.organisation_type, t1.organisation_details
+  ORDER BY count(*) DESC

@@ -1,0 +1,14 @@
+db: tests-examples/spider/performance_attendance/tables/db.sqlite
+inputs:
+- tests-examples/spider/performance_attendance/tables/performance.csv
+output: tests-examples/spider/performance_attendance/tables/0004.csv
+constants:
+- TD Garden
+- Bell Centre
+columns:
+- location
+sql: |-
+  SELECT attendance
+  FROM performance
+  WHERE location = 'TD Garden'
+    OR location = 'Bell Centre'

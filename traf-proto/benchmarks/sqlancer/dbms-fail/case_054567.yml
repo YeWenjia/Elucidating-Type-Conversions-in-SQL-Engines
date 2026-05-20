@@ -1,0 +1,13 @@
+engine: postgres
+schema:
+  database0_t7:
+    - {name: "c0", type: "int"}
+data:
+  database0_t7: []
+sql: "SELECT * FROM database0_t7 WHERE -16817272"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t7.c0]
+traf_rows: []

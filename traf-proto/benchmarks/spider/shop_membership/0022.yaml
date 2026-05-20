@@ -1,0 +1,14 @@
+db: tests-examples/spider/shop_membership/tables/db.sqlite
+inputs:
+- tests-examples/spider/shop_membership/tables/member.csv
+output: tests-examples/spider/shop_membership/tables/0022.csv
+constants:
+- Kentucky
+columns:
+- hometown
+filters:
+- like
+sql: |-
+  SELECT card_number
+  FROM member
+  WHERE hometown LIKE '%Kentucky%'

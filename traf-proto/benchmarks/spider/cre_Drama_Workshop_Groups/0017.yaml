@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/addresses.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/stores.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0017.csv
+constants:
+- CA
+columns:
+- marketing_region_code
+sql: |-
+  SELECT t1.state_county
+  FROM addresses AS t1
+  JOIN stores AS t2 ON t1.address_id = t2.address_id
+  WHERE t2.marketing_region_code = 'CA'

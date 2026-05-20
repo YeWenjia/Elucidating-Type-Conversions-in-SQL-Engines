@@ -1,0 +1,17 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0028.csv
+constants:
+- '600'
+- Y
+columns:
+- major
+- onscholarship
+sql: |-
+  SELECT stuid
+  FROM student
+  WHERE major = 600 INTERSECT
+    SELECT stuid
+    FROM sportsinfo WHERE onscholarship = 'Y'

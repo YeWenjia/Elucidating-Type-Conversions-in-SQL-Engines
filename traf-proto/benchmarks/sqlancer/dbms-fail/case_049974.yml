@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["", ""]
+    - ["*\\", ""]
+    - ["q{", ""]
+    - ["#g?dU䀆qx", "-668647241"]
+  database0_t0:
+    - [256693302, "-401421589"]
+    - [369297413, null]
+    - [-1359456530, "p"]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE '991149750'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"991149750\"\n  Position: 48"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["", "", "256693302", "-401421589"]
+  - ["", "", "369297413", "NULL"]
+  - ["", "", "-1359456530", "p"]
+  - ["*\\", "", "256693302", "-401421589"]
+  - ["*\\", "", "369297413", "NULL"]
+  - ["*\\", "", "-1359456530", "p"]
+  - ["q{", "", "256693302", "-401421589"]
+  - ["q{", "", "369297413", "NULL"]
+  - ["q{", "", "-1359456530", "p"]
+  - ["#g?dU䀆qx", "-668647241", "256693302", "-401421589"]
+  - ["#g?dU䀆qx", "-668647241", "369297413", "NULL"]
+  - ["#g?dU䀆qx", "-668647241", "-1359456530", "p"]

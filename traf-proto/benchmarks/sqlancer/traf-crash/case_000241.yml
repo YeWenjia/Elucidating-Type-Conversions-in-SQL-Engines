@@ -1,0 +1,78 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["y*", "-247693158"]
+    - ["9", "-2020519829"]
+    - ["", "543985007"]
+    - ["28034683", "U_"]
+    - ["880330817", "1302265430"]
+    - ["-88915418", null]
+    - ["-1042823525", "-152514463"]
+    - ["3tN30", "Lf'"]
+    - ["1161798939", null]
+    - ["1036025479", null]
+    - ["-1380098479", "2090365346"]
+    - ["-811186145", null]
+    - ["6W", "-929713484"]
+    - ["107989133", "678687013"]
+    - ["1025048397", "3w"]
+    - ["1754012593", "vm"]
+    - ["1242577457", null]
+    - ["-596599025", null]
+  database0_t0:
+    - [1428400327, -2038904022, "-326943157"]
+    - [-2057765224, null, ""]
+sql: "SELECT database0_t1.c1, database0_t0.c1 FROM database0_t1, database0_t0 WHERE ((((((database0_t0.c2) IS NULL))<=(((683410357)<=(1894499120))))) IS NOT NULL)"
+columns:
+  - "c1"
+  - "c1"
+rows:
+  - ["-247693158", -2038904022]
+  - ["-247693158", null]
+  - ["-2020519829", -2038904022]
+  - ["-2020519829", null]
+  - ["543985007", -2038904022]
+  - ["543985007", null]
+  - ["U_", -2038904022]
+  - ["U_", null]
+  - ["1302265430", -2038904022]
+  - ["1302265430", null]
+  - [null, -2038904022]
+  - [null, null]
+  - ["-152514463", -2038904022]
+  - ["-152514463", null]
+  - ["Lf'", -2038904022]
+  - ["Lf'", null]
+  - [null, -2038904022]
+  - [null, null]
+  - [null, -2038904022]
+  - [null, null]
+  - ["2090365346", -2038904022]
+  - ["2090365346", null]
+  - [null, -2038904022]
+  - [null, null]
+  - ["-929713484", -2038904022]
+  - ["-929713484", null]
+  - ["678687013", -2038904022]
+  - ["678687013", null]
+  - ["3w", -2038904022]
+  - ["3w", null]
+  - ["vm", -2038904022]
+  - ["vm", null]
+  - [null, -2038904022]
+  - [null, null]
+  - [null, -2038904022]
+  - [null, null]
+kind: traf-crash
+traf_error: "Ambiguous best candidate for the given types Bool, Bool"
+traf_trace: "Traceback (most recent call last):\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/sqlancer_bridge.py\", line 162, in run\n    TQ = self.engine.typechecker.typecheck_query(self.dbt, RelationType([]), parsed)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 52, in typecheck_query\n    Tpp, Q = self.typecheck_query(schema, T, q.query)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 69, in typecheck_query\n    t, theta = self.typecheck_expr(schema, T.concat(Tp), q.cond)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 288, in typecheck_expr\n    t, ep = self.typecheck_expr(schema, T, e.e)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 206, in typecheck_expr\n    t, bp = self.typecheck_expr(schema, T, e.b)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/Typechecker.py\", line 217, in typecheck_expr\n    t: FuncType = self.ops.resolve(e.e1, t1, e.e2, t2, e.op)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 50, in resolve\n    return self.best_candidate(t1, t2, t3s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/suyang/Projects/wenjia-proj/traf-prototype/interpreter/syntax/engine/Postgres.py\", line 108, in best_candidate\n    raise TypeError(f\"Ambiguous best candidate for the given types {t1}, {t2}\")\ninterpreter.Typechecker.TypeError: Ambiguous best candidate for the given types Bool, Bool\n"
+traf_columns: []
+traf_rows: []

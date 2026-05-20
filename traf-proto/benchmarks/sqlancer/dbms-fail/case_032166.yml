@@ -1,0 +1,44 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t1:
+    - ["1}1Vu", null, -1077277231, null]
+    - ["H(n%cꈳ现", null, null, null]
+    - ["", -1651479652, 2072003122, -1344340063]
+    - ["", null, null, null]
+    - ["-2065273761", null, null, null]
+    - ["k", -737939018, 440833260, 878518297]
+  database0_t0:
+    - ["-1775103535"]
+    - ["1689218741"]
+    - ["1451205701"]
+    - ["-771355472"]
+    - ["-1000456108"]
+    - [">+b"]
+    - [""]
+    - ["-1604235437"]
+    - ["LN"]
+    - ["-423367624"]
+    - ["8F국G"]
+    - ["1777398138"]
+    - ["-1410116010"]
+sql: "SELECT * FROM database0_t1 WHERE '#t#t/WcB戈'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"#t#t/WcB戈\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2, database0_t1.c3]
+traf_rows:
+  - ["1}1Vu", "NULL", "-1077277231", "NULL"]
+  - ["H(n%cꈳ现", "NULL", "NULL", "NULL"]
+  - ["", "-1651479652", "2072003122", "-1344340063"]
+  - ["", "NULL", "NULL", "NULL"]
+  - ["-2065273761", "NULL", "NULL", "NULL"]
+  - ["k", "-737939018", "440833260", "878518297"]

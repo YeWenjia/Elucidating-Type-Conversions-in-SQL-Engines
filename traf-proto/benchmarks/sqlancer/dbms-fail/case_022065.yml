@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [-1781350639, "-18119947"]
+    - [-1041688005, "-18119947"]
+    - [1489138842, "-18119947"]
+  database0_t0:
+    - [1894499120, "-1041688005"]
+    - [1685598459, "-1041688005"]
+    - [956290603, "-1041688005"]
+    - [-2087893705, "-1041688005"]
+    - [-1864874448, "-1041688005"]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE 'C+q'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"C+q\"\n  Position: 48"
+traf_columns: [database0_t1.c0]
+traf_rows:
+  - ["-1781350639"]
+  - ["-1041688005"]
+  - ["1489138842"]

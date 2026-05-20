@@ -1,0 +1,13 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/party.csv
+output: tests-examples/spider/election/tables/0010.csv
+constants:
+- Democratic
+columns:
+- party
+sql: |-
+  SELECT lieutenant_governor,
+         comptroller
+  FROM party
+  WHERE party = 'Democratic'

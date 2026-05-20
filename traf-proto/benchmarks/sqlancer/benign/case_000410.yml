@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [193209080]
+    - [1351353577]
+    - [-1073664262]
+    - [-1944931769]
+    - [1200333879]
+    - [1639124197]
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)!=(database0_t0.c0))"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

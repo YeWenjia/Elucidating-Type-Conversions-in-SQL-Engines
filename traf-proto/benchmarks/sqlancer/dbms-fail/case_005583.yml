@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["e튊Ug", "854675601"]
+    - ["1970729956", "854675601"]
+    - ["*ྌIo6R6摿%", "854675601"]
+    - ["2131576533", "1Z-5Rzk4!"]
+    - ["1195612259", "-420727782"]
+    - ["1428400327", null]
+    - ["", "O\rP'"]
+sql: "SELECT * FROM database0_t0 WHERE 'V37᱇\r~꣇≜T'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"V37᱇\r~꣇≜T\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["e튊Ug", "854675601"]
+  - ["1970729956", "854675601"]
+  - ["*ྌIo6R6摿%", "854675601"]
+  - ["2131576533", "1Z-5Rzk4!"]
+  - ["1195612259", "-420727782"]
+  - ["1428400327", "NULL"]
+  - ["", "O\rP'"]

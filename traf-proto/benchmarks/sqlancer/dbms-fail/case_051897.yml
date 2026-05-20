@@ -1,0 +1,52 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - ["1894499120"]
+    - [""]
+    - ["1428400327"]
+    - ["369297413"]
+    - ["邌I"]
+    - ["-1815146216"]
+  database0_t0:
+    - ["|", null, 6]
+    - [null, "1071061739", 6]
+    - [null, "", 6]
+    - [null, "h(AQ]#Ay%", null]
+sql: "SELECT database0_t0.c0, database0_t0.c2, database0_t1.c0 FROM database0_t0, database0_t1 WHERE 1220603664"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 96"
+traf_columns: [database0_t0.c0, database0_t0.c2, database0_t1.c0]
+traf_rows:
+  - ["|", "6", "1894499120"]
+  - ["|", "6", ""]
+  - ["|", "6", "1428400327"]
+  - ["|", "6", "369297413"]
+  - ["|", "6", "邌I"]
+  - ["|", "6", "-1815146216"]
+  - ["NULL", "6", "1894499120"]
+  - ["NULL", "6", ""]
+  - ["NULL", "6", "1428400327"]
+  - ["NULL", "6", "369297413"]
+  - ["NULL", "6", "邌I"]
+  - ["NULL", "6", "-1815146216"]
+  - ["NULL", "6", "1894499120"]
+  - ["NULL", "6", ""]
+  - ["NULL", "6", "1428400327"]
+  - ["NULL", "6", "369297413"]
+  - ["NULL", "6", "邌I"]
+  - ["NULL", "6", "-1815146216"]
+  - ["NULL", "NULL", "1894499120"]
+  - ["NULL", "NULL", ""]
+  - ["NULL", "NULL", "1428400327"]
+  - ["NULL", "NULL", "369297413"]
+  - ["NULL", "NULL", "邌I"]
+  - ["NULL", "NULL", "-1815146216"]

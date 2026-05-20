@@ -1,0 +1,10 @@
+db: tests-examples/spider/candidate_poll/tables/db.sqlite
+inputs:
+- tests-examples/spider/candidate_poll/tables/candidate.csv
+output: tests-examples/spider/candidate_poll/tables/0004.csv
+constants:
+- '1'
+sql: |-
+  SELECT candidate_id
+  FROM candidate
+  ORDER BY oppose_rate

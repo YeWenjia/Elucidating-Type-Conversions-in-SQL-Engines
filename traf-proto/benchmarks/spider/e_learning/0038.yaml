@@ -1,0 +1,12 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/students.csv
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+output: tests-examples/spider/e_learning/tables/0038.csv
+sql: |-
+  SELECT personal_name
+  FROM students
+  EXCEPT
+  SELECT t1.personal_name
+  FROM students AS t1
+  JOIN student_course_enrolment AS t2 ON t1.student_id = t2.student_id

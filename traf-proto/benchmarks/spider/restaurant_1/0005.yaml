@@ -1,0 +1,12 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/restaurant_type.csv
+output: tests-examples/spider/restaurant_1/tables/0005.csv
+constants:
+- Sandwich
+columns:
+- restypename
+sql: |-
+  SELECT restypedescription
+  FROM restaurant_type
+  WHERE restypename = 'Sandwich';

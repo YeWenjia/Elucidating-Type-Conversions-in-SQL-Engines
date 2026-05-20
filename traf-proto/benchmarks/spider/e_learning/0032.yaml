@@ -1,0 +1,14 @@
+db: tests-examples/spider/e_learning/tables/db.sqlite
+inputs:
+- tests-examples/spider/e_learning/tables/student_course_enrolment.csv
+- tests-examples/spider/e_learning/tables/student_tests_taken.csv
+output: tests-examples/spider/e_learning/tables/0032.csv
+constants:
+- Fail
+columns:
+- test_result
+sql: |-
+  SELECT t1.date_of_completion
+  FROM student_course_enrolment AS t1
+  JOIN student_tests_taken AS t2 ON t1.registration_id = t2.registration_id
+  WHERE t2.test_result = 'Fail'

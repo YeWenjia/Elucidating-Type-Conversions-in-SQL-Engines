@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/projects.csv
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0027.csv
+constants:
+- King Book
+columns:
+- document_name
+sql: |-
+  SELECT t1.project_details
+  FROM projects AS t1
+  JOIN documents AS t2 ON t1.project_id = t2.project_id
+  WHERE t2.document_name = 'King Book'

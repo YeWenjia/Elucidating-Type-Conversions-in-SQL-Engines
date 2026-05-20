@@ -1,0 +1,15 @@
+db: tests-examples/spider/flight_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_4/tables/airports.csv
+output: tests-examples/spider/flight_4/tables/0011.csv
+constants:
+- Greenland
+functions:
+- count
+columns:
+- city
+- country
+sql: |-
+  SELECT count(DISTINCT city)
+  FROM airports
+  WHERE country = 'Greenland'

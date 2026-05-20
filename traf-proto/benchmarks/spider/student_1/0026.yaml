@@ -1,0 +1,20 @@
+db: tests-examples/spider/student_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_1/tables/list.csv
+- tests-examples/spider/student_1/tables/teachers.csv
+output: tests-examples/spider/student_1/tables/0026.csv
+constants:
+- '3'
+- COVIN
+- JEROME
+columns:
+- grade
+- firstname
+- lastname
+sql: |-
+  SELECT DISTINCT t1.lastname
+  FROM list AS t1
+  JOIN teachers AS t2 ON t1.classroom = t2.classroom
+  WHERE t1.grade = 3
+    AND t2.firstname != 'COVIN'
+    AND t2.lastname != 'JEROME'

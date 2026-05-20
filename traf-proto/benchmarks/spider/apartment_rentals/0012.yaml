@@ -1,0 +1,8 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/guests.csv
+output: tests-examples/spider/apartment_rentals/tables/0012.csv
+sql: |-
+  SELECT guest_first_name,
+         guest_last_name
+  FROM guests

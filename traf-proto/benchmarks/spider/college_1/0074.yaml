@@ -1,0 +1,17 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/enroll.csv
+- tests-examples/spider/college_1/tables/student.csv
+output: tests-examples/spider/college_1/tables/0074.csv
+constants:
+- C
+- A
+columns:
+- enroll_grade
+sql: |-
+  SELECT t1.stu_fname,
+         t1.stu_lname
+  FROM student AS t1
+  JOIN enroll AS t2 ON t1.stu_num = t2.stu_num
+  WHERE t2.enroll_grade = 'C'
+    OR t2.enroll_grade = 'A'

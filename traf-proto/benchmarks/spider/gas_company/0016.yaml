@@ -1,0 +1,13 @@
+db: tests-examples/spider/gas_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/gas_company/tables/company.csv
+- tests-examples/spider/gas_company/tables/station_company.csv
+output: tests-examples/spider/gas_company/tables/0016.csv
+functions:
+- count
+sql: |-
+  SELECT t2.company,
+         count(*)
+  FROM station_company AS t1
+  JOIN company AS t2 ON t1.company_id = t2.company_id
+  GROUP BY t1.company_id, t2.company

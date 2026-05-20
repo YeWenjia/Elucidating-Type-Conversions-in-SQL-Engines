@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - ["", null]
+    - ["", null]
+    - ["", null]
+    - ["", 880330817]
+    - ["-1684534230", 48989197]
+    - [null, 915954605]
+  database0_t0:
+    - ["N", "VsKd>V~", -1684923321, "-587283302"]
+    - ["N", "VsKd>V~", -1684923321, "-587283302"]
+    - ["N", "VsKd>V~", -1684923321, "-587283302"]
+    - ["N", "VsKd>V~", -1684923321, "-587283302"]
+    - [null, null, null, "%i>YfR"]
+    - ["-596599025", "331796511", 1420469517, ""]
+    - ["!萳]K,mY", null, 676518059, null]
+sql: "SELECT database0_t0.c3 FROM database0_t0 WHERE '8?u)\ro00'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"8?u)\ro00\"\n  Position: 48"
+traf_columns: [database0_t0.c3]
+traf_rows:
+  - ["-587283302"]
+  - ["-587283302"]
+  - ["-587283302"]
+  - ["-587283302"]
+  - ["%i>YfR"]
+  - [""]
+  - ["NULL"]

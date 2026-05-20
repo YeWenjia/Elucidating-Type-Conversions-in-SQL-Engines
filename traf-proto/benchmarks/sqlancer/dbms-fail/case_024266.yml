@@ -1,0 +1,25 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t4:
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t0:
+    - ["-501811782", -2077083164]
+    - [null, -2077083164]
+    - ["294308099", -2077083164]
+  database0_t4: []
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE '6鏈?&%'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"6鏈?&%\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["-2077083164", "-501811782"]
+  - ["-2077083164", "NULL"]
+  - ["-2077083164", "294308099"]

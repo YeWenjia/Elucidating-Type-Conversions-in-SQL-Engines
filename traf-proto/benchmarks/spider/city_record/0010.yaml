@@ -1,0 +1,12 @@
+db: tests-examples/spider/city_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/city_record/tables/city.csv
+- tests-examples/spider/city_record/tables/temperature.csv
+output: tests-examples/spider/city_record/tables/0010.csv
+constants:
+- '1'
+sql: |-
+  SELECT t1.city
+  FROM city AS t1
+  JOIN temperature AS t2 ON t1.city_id = t2.city_id
+  ORDER BY t2.feb DESC

@@ -1,0 +1,32 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [241621737, -1674721584]
+    - [-1724310134, -1674721584]
+    - [-58938003, -1674721584]
+    - [1635776983, -1674721584]
+    - [-1234640218, -1674721584]
+    - [1708405439, -1674721584]
+    - [-1569443417, -1674721584]
+    - [1946248284, -1674721584]
+    - [1300733341, -1674721584]
+    - [44703329, -1674721584]
+  database0_t0:
+    - [1486103084, null]
+    - [1345127063, null]
+    - [1661665722, -1860230507]
+    - [1182725941, null]
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c0, database0_t1.c1]
+traf_rows: []

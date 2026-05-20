@@ -1,0 +1,15 @@
+db: tests-examples/spider/hr_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hr_1/tables/departments.csv
+- tests-examples/spider/hr_1/tables/employees.csv
+output: tests-examples/spider/hr_1/tables/0042.csv
+constants:
+- Finance
+columns:
+- department_name
+sql: |-
+  SELECT t1.first_name,
+         t1.job_id
+  FROM employees AS t1
+  JOIN departments AS t2 ON t1.department_id = t2.department_id
+  WHERE t2.department_name = 'Finance'

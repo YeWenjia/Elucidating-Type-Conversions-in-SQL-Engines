@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["J>", null]
+    - ["-925130025", null]
+  database0_t0: []
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE (('') IS NOT NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows: []

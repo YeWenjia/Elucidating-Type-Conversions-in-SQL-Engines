@@ -1,0 +1,8 @@
+db: tests-examples/spider/musical/tables/db.sqlite
+inputs:
+- tests-examples/spider/musical/tables/actor.csv
+output: tests-examples/spider/musical/tables/0003.csv
+sql: |-
+  SELECT character,
+         duration
+  FROM actor

@@ -1,0 +1,19 @@
+db: tests-examples/spider/college_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_1/tables/class.csv
+- tests-examples/spider/college_1/tables/course.csv
+- tests-examples/spider/college_1/tables/department.csv
+- tests-examples/spider/college_1/tables/enroll.csv
+output: tests-examples/spider/college_1/tables/0041.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t4.dept_name
+  FROM class AS t1
+  JOIN enroll AS t2 ON t1.class_code = t2.class_code
+  JOIN course AS t3 ON t1.crs_code = t3.crs_code
+  JOIN department AS t4 ON t3.dept_code = t4.dept_code
+  GROUP BY t3.dept_code, t4.dept_name
+  ORDER BY count(*) DESC

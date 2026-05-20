@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+data:
+  database0_t1: []
+sql: "SELECT database0_t1.c2, database0_t1.c0, database0_t1.c3 FROM database0_t1 WHERE 'F늻⻺s4T0|n'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"F늻⻺s4T0|n\"\n  Position: 82"
+traf_columns: [database0_t1.c2, database0_t1.c0, database0_t1.c3]
+traf_rows: []

@@ -1,0 +1,17 @@
+db: tests-examples/spider/game_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/game_1/tables/student.csv
+- tests-examples/spider/game_1/tables/sportsinfo.csv
+output: tests-examples/spider/game_1/tables/0029.csv
+constants:
+- F
+- Football
+columns:
+- sex
+- sportname
+sql: |-
+  SELECT stuid
+  FROM student
+  WHERE sex = 'F' INTERSECT
+    SELECT stuid
+    FROM sportsinfo WHERE sportname = 'Football'

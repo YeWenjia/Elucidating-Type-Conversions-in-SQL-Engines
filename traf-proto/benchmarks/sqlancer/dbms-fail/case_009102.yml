@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [-194244097, null]
+    - [-1980936731, null]
+    - [-428151007, "]rFxi"]
+    - [388449173, null]
+    - [1592784704, "2017042834"]
+    - [1708405439, null]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'oQRy0?eHN'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"oQRy0?eHN\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["NULL"]
+  - ["NULL"]
+  - ["]rFxi"]
+  - ["NULL"]
+  - ["2017042834"]
+  - ["NULL"]

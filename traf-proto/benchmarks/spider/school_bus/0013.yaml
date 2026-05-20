@@ -1,0 +1,15 @@
+db: tests-examples/spider/school_bus/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_bus/tables/school_bus.csv
+output: tests-examples/spider/school_bus/tables/0013.csv
+functions:
+- max
+- min
+- avg
+columns:
+- years_working
+sql: |-
+  SELECT max(years_working),
+         min(years_working),
+         avg(years_working)
+  FROM school_bus

@@ -1,0 +1,12 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0011.csv
+constants:
+- Fall
+columns:
+- election_cycle
+sql: |-
+  SELECT DISTINCT secretary_vote
+  FROM voting_record
+  WHERE election_cycle = 'Fall'

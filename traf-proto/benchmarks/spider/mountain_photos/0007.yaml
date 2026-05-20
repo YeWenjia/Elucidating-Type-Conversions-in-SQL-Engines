@@ -1,0 +1,15 @@
+db: tests-examples/spider/mountain_photos/tables/db.sqlite
+inputs:
+- tests-examples/spider/mountain_photos/tables/mountain.csv
+- tests-examples/spider/mountain_photos/tables/photos.csv
+output: tests-examples/spider/mountain_photos/tables/0007.csv
+constants:
+- '4000'
+columns:
+- height
+sql: |-
+  SELECT t1.id,
+         t1.name
+  FROM mountain AS t1
+  JOIN photos AS t2 ON t1.id = t2.mountain_id
+  WHERE t1.height > 4000

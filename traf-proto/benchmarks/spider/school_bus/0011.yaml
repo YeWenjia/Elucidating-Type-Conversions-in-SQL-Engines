@@ -1,0 +1,13 @@
+db: tests-examples/spider/school_bus/tables/db.sqlite
+inputs:
+- tests-examples/spider/school_bus/tables/school.csv
+output: tests-examples/spider/school_bus/tables/0011.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT type
+  FROM school
+  GROUP BY type
+  HAVING count(*) = 2

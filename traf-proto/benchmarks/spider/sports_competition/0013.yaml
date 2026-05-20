@@ -1,0 +1,13 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/player.csv
+output: tests-examples/spider/sports_competition/tables/0013.csv
+functions:
+- avg
+columns:
+- points
+sql: |-
+  SELECT position,
+         avg(points)
+  FROM player
+  GROUP BY position

@@ -1,0 +1,26 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [""]
+  database0_t0:
+    - [1302265430, 1428400327]
+    - [987276120, -1210575689]
+sql: "SELECT * FROM database0_t1, database0_t0 WHERE ((-2060122896)<>(1356375231))"
+columns:
+  - "c0"
+  - "c0"
+  - "c1"
+rows:
+  - ["", 1302265430, 1428400327]
+  - ["", 987276120, -1210575689]
+kind: benign
+traf_columns: [database0_t1.c0, database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["", "1302265430", "1428400327"]
+  - ["", "987276120", "-1210575689"]

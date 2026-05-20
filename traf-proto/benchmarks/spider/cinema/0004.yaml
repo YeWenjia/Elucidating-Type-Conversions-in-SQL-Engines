@@ -1,0 +1,9 @@
+db: tests-examples/spider/cinema/tables/db.sqlite
+inputs:
+- tests-examples/spider/cinema/tables/cinema.csv
+output: tests-examples/spider/cinema/tables/0004.csv
+sql: |-
+  SELECT name,
+         openning_year,
+         capacity
+  FROM cinema

@@ -1,0 +1,35 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [-632382568, 880330817]
+    - [-1025587604, 880330817]
+    - [-1041688005, 880330817]
+    - [-2049497658, 880330817]
+    - [-990081099, 880330817]
+    - [-1255249200, 880330817]
+    - [1210783590, 880330817]
+    - [-2137367471, null]
+  database0_t0:
+    - ["\nۂ'?~!9l", "483820187", null]
+    - ["e鮘HX鈰b", "483820187", null]
+    - ["", "483820187", null]
+    - ["-88915418", "483820187", "1"]
+    - ["p5K\\x", "483820187", ""]
+    - ["1374524685", "483820187", null]
+    - ["-654929919", "483820187", null]
+    - ["-2102077036", "", null]
+sql: "SELECT * FROM database0_t0 WHERE ''"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t0.c2]
+traf_rows: []

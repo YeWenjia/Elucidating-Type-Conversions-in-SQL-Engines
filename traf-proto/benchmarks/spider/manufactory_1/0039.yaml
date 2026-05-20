@@ -1,0 +1,16 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0039.csv
+functions:
+- max
+columns:
+- price
+sql: |-
+  SELECT t1.name,
+         max(t1.price),
+         t2.name
+  FROM products AS t1
+  JOIN manufacturers AS t2 ON t1.manufacturer = t2.code
+  GROUP BY t2.name, t1.name

@@ -1,0 +1,10 @@
+db: tests-examples/spider/election/tables/db.sqlite
+inputs:
+- tests-examples/spider/election/tables/county.csv
+- tests-examples/spider/election/tables/election.csv
+output: tests-examples/spider/election/tables/0013.csv
+sql: |-
+  SELECT t2.delegate,
+         t1.county_name
+  FROM county AS t1
+  JOIN election AS t2 ON t1.county_id = t2.district

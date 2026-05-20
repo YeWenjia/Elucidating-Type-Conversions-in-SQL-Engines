@@ -1,0 +1,17 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0043.csv
+constants:
+- '2'
+functions:
+- avg
+- count
+columns:
+- stars
+sql: |-
+  SELECT mid,
+         avg(stars)
+  FROM rating
+  GROUP BY mid
+  HAVING count(*) >= 2

@@ -1,0 +1,14 @@
+db: tests-examples/spider/inn_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/inn_1/tables/rooms.csv
+- tests-examples/spider/inn_1/tables/reservations.csv
+output: tests-examples/spider/inn_1/tables/0033.csv
+functions:
+- count
+sql: |-
+  SELECT t2.roomname,
+         count(*),
+         t1.room
+  FROM reservations AS t1
+  JOIN rooms AS t2 ON t1.room = t2.roomid
+  GROUP BY t1.room, t2.roomname

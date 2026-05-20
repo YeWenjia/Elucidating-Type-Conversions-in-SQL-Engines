@@ -1,0 +1,10 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/shop.csv
+output: tests-examples/spider/device/tables/0009.csv
+constants:
+- '1'
+sql: |-
+  SELECT shop_name
+  FROM shop
+  ORDER BY open_year DESC

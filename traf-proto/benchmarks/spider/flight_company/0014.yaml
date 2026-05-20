@@ -1,0 +1,18 @@
+db: tests-examples/spider/flight_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_company/tables/operate_company.csv
+- tests-examples/spider/flight_company/tables/flight.csv
+output: tests-examples/spider/flight_company/tables/0014.csv
+constants:
+- Cargo
+- Catering services
+columns:
+- principal_activities
+sql: |-
+  SELECT t2.pilot
+  FROM operate_company AS t1
+  JOIN flight AS t2 ON t1.id = t2.company_id
+  WHERE t1.principal_activities = 'Cargo' INTERSECT
+    SELECT t2.pilot
+    FROM operate_company AS t1
+    JOIN flight AS t2 ON t1.id = t2.company_id WHERE t1.principal_activities = 'Catering services'

@@ -1,0 +1,47 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [2034248601, null, null]
+    - [1798926726, null, null]
+    - [-1944931769, null, null]
+    - [-1104779761, -1049863823, -632382568]
+    - [1096471048, null, null]
+    - [1360117408, null, null]
+  database0_t0:
+    - [1947052606, "-1"]
+    - [-896415435, "-1"]
+    - [-58938003, "-1"]
+    - [1370866513, "-1"]
+    - [-1834436268, "-1"]
+    - [-285784552, "-1"]
+    - [-1980936731, "-1"]
+    - [-1056561715, null]
+sql: "SELECT database0_t1.c0, database0_t1.c1, database0_t1.c2 FROM database0_t1 WHERE ((' I\t*./]HZ') IS NOT NULL)"
+columns:
+  - "c0"
+  - "c1"
+  - "c2"
+rows:
+  - [2034248601, null, null]
+  - [1798926726, null, null]
+  - [-1944931769, null, null]
+  - [-1104779761, -1049863823, -632382568]
+  - [1096471048, null, null]
+  - [1360117408, null, null]
+kind: benign
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["2034248601", "NULL", "NULL"]
+  - ["1798926726", "NULL", "NULL"]
+  - ["-1944931769", "NULL", "NULL"]
+  - ["-1104779761", "-1049863823", "-632382568"]
+  - ["1096471048", "NULL", "NULL"]
+  - ["1360117408", "NULL", "NULL"]

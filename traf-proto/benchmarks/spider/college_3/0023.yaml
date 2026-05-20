@@ -1,0 +1,16 @@
+db: tests-examples/spider/college_3/tables/db.sqlite
+inputs:
+- tests-examples/spider/college_3/tables/faculty.csv
+- tests-examples/spider/college_3/tables/course.csv
+output: tests-examples/spider/college_3/tables/0023.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t2.fname,
+         t2.lname
+  FROM course AS t1
+  JOIN faculty AS t2 ON t1.instructor = t2.facid
+  GROUP BY t1.instructor, t2.fname, t2.lname
+  ORDER BY count(*) DESC

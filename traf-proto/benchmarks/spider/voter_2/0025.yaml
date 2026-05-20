@@ -1,0 +1,20 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0025.csv
+constants:
+- F
+- Spring
+functions:
+- avg
+columns:
+- age
+- sex
+- election_cycle
+sql: |-
+  SELECT avg(t1.age)
+  FROM student AS t1
+  JOIN voting_record AS t2 ON t1.stuid = secretary_vote
+  WHERE t1.sex = 'F'
+    AND t2.election_cycle = 'Spring'

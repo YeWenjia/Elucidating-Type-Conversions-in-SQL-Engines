@@ -1,0 +1,14 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+output: tests-examples/spider/manufactory_1/tables/0019.csv
+functions:
+- max
+columns:
+- revenue
+sql: |-
+  SELECT name,
+         max(revenue),
+         headquarter
+  FROM manufacturers
+  GROUP BY headquarter, name

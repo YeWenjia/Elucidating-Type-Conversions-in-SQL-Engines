@@ -1,0 +1,38 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["Ra", "", null]
+    - ["kG+SB(", "RGun㒅2Jྌh", "1008539548"]
+    - ["2052598044", null, "71166105"]
+    - ["\nPP0◍'", "1486103084", "-657850939"]
+  database0_t0:
+    - ["೷)閣D0N2絮?", "2081145170"]
+    - ["2080559274", "ꈳKL"]
+    - ["-278911135", null]
+sql: "SELECT database0_t1.c2, database0_t0.c0 FROM database0_t1, database0_t0 WHERE 'Dg'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"Dg\"\n  Position: 79"
+traf_columns: [database0_t1.c2, database0_t0.c0]
+traf_rows:
+  - ["NULL", "೷)閣D0N2絮?"]
+  - ["NULL", "2080559274"]
+  - ["NULL", "-278911135"]
+  - ["1008539548", "೷)閣D0N2絮?"]
+  - ["1008539548", "2080559274"]
+  - ["1008539548", "-278911135"]
+  - ["71166105", "೷)閣D0N2絮?"]
+  - ["71166105", "2080559274"]
+  - ["71166105", "-278911135"]
+  - ["-657850939", "೷)閣D0N2絮?"]
+  - ["-657850939", "2080559274"]
+  - ["-657850939", "-278911135"]

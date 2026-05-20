@@ -1,0 +1,12 @@
+db: tests-examples/spider/race_track/tables/db.sqlite
+inputs:
+- tests-examples/spider/race_track/tables/track.csv
+output: tests-examples/spider/race_track/tables/0004.csv
+constants:
+- '1'
+sql: |-
+  SELECT name,
+         location,
+         seating
+  FROM track
+  ORDER BY year_opened DESC

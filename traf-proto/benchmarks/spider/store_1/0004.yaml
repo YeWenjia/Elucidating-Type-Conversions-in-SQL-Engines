@@ -1,0 +1,13 @@
+db: tests-examples/spider/store_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/store_1/tables/customers.csv
+- tests-examples/spider/store_1/tables/invoices.csv
+output: tests-examples/spider/store_1/tables/0004.csv
+constants:
+- '5'
+sql: |-
+  SELECT t1.first_name,
+         t1.last_name
+  FROM customers AS t1
+  JOIN invoices AS t2 ON t2.customer_id = t1.id
+  ORDER BY t2.invoice_date DESC;

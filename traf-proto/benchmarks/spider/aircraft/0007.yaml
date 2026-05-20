@@ -1,0 +1,12 @@
+db: tests-examples/spider/aircraft/tables/db.sqlite
+inputs:
+- tests-examples/spider/aircraft/tables/pilot.csv
+output: tests-examples/spider/aircraft/tables/0007.csv
+constants:
+- '25'
+columns:
+- age
+sql: |-
+  SELECT name
+  FROM pilot
+  WHERE age >= 25

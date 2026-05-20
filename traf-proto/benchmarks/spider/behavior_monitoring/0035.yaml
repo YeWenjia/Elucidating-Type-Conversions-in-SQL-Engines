@@ -1,0 +1,15 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/addresses.csv
+- tests-examples/spider/behavior_monitoring/tables/student_addresses.csv
+output: tests-examples/spider/behavior_monitoring/tables/0035.csv
+functions:
+- avg
+columns:
+- monthly_rental
+sql: |-
+  SELECT t1.line_1,
+         avg(t2.monthly_rental)
+  FROM addresses AS t1
+  JOIN student_addresses AS t2 ON t1.address_id = t2.address_id
+  GROUP BY t2.address_id, t1.line_1

@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [543985007]
+    - [-1286463555]
+    - [369297413]
+    - [-190784794]
+    - [-444040980]
+    - [564073012]
+sql: "SELECT * FROM database0_t0 WHERE (('2131576533')<=(1822369049))"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

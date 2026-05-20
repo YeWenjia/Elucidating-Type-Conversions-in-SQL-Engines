@@ -1,0 +1,19 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/visitors.csv
+- tests-examples/spider/cre_Theme_park/tables/tourist_attractions.csv
+- tests-examples/spider/cre_Theme_park/tables/visits.csv
+output: tests-examples/spider/cre_Theme_park/tables/0025.csv
+constants:
+- Vincent
+- Vivian
+columns:
+- tourist_details
+sql: |-
+  SELECT t1.name,
+         t3.visit_date
+  FROM tourist_attractions AS t1
+  JOIN visits AS t3 ON t1.tourist_attraction_id = t3.tourist_attraction_id
+  JOIN visitors AS t2 ON t2.tourist_id = t3.tourist_id
+  WHERE t2.tourist_details = 'Vincent'
+    OR t2.tourist_details = 'Vivian'

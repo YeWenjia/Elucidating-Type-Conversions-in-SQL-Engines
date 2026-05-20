@@ -1,0 +1,30 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["116123821", "2?-gnp"]
+    - ["-2130721799", "2?-gnp"]
+sql: "SELECT * FROM database0_t1 WHERE 285314990"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c2]
+traf_rows:
+  - ["443216999", "2?-gnp"]
+  - ["443216999", "2?-gnp"]
+  - ["443216999", "2?-gnp"]
+  - ["443216999", "2?-gnp"]
+  - ["443216999", "2?-gnp"]
+  - ["443216999", "2?-gnp"]
+  - ["116123821", "2?-gnp"]
+  - ["-2130721799", "2?-gnp"]

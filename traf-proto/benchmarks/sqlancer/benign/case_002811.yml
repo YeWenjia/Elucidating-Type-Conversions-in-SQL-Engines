@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0: []
+sql: "SELECT database0_t0.c2 FROM database0_t0 WHERE (('B200B+WSN') IS NOT NULL)"
+columns:
+  - "c2"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c2]
+traf_rows: []

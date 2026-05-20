@@ -1,0 +1,13 @@
+db: tests-examples/spider/ship_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_1/tables/captain.csv
+output: tests-examples/spider/ship_1/tables/0006.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT rank_col
+  FROM captain
+  GROUP BY rank_col
+  ORDER BY count(*) DESC

@@ -1,0 +1,14 @@
+db: tests-examples/spider/student_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_1/tables/list.csv
+- tests-examples/spider/student_1/tables/teachers.csv
+output: tests-examples/spider/student_1/tables/0010.csv
+constants:
+- '5'
+columns:
+- grade
+sql: |-
+  SELECT DISTINCT t2.lastname
+  FROM list AS t1
+  JOIN teachers AS t2 ON t1.classroom = t2.classroom
+  WHERE grade = 5

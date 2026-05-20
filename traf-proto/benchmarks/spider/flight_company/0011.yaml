@@ -1,0 +1,17 @@
+db: tests-examples/spider/flight_company/tables/db.sqlite
+inputs:
+- tests-examples/spider/flight_company/tables/airport.csv
+- tests-examples/spider/flight_company/tables/flight.csv
+output: tests-examples/spider/flight_company/tables/0011.csv
+constants:
+- United States
+- Billund Airport
+columns:
+- country
+- name
+sql: |-
+  SELECT DISTINCT t2.pilot
+  FROM airport AS t1
+  JOIN flight AS t2 ON t1.id = t2.airport_id
+  WHERE t1.country = 'United States'
+    OR t1.name = 'Billund Airport'

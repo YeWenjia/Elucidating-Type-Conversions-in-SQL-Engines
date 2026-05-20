@@ -1,0 +1,13 @@
+db: tests-examples/spider/debate/tables/db.sqlite
+inputs:
+- tests-examples/spider/debate/tables/people.csv
+- tests-examples/spider/debate/tables/debate_people.csv
+output: tests-examples/spider/debate/tables/0015.csv
+columns:
+- people_id
+sql: |-
+  SELECT name
+  FROM people
+  WHERE people_id NOT IN
+      (SELECT affirmative
+       FROM debate_people)

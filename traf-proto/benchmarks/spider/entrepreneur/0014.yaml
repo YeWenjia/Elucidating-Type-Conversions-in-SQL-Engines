@@ -1,0 +1,13 @@
+db: tests-examples/spider/entrepreneur/tables/db.sqlite
+inputs:
+- tests-examples/spider/entrepreneur/tables/entrepreneur.csv
+output: tests-examples/spider/entrepreneur/tables/0014.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT investor
+  FROM entrepreneur
+  GROUP BY investor
+  ORDER BY COUNT(*) DESC

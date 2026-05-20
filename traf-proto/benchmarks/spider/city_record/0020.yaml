@@ -1,0 +1,16 @@
+db: tests-examples/spider/city_record/tables/db.sqlite
+inputs:
+- tests-examples/spider/city_record/tables/city.csv
+- tests-examples/spider/city_record/tables/hosting_city.csv
+output: tests-examples/spider/city_record/tables/0020.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t1.gdp,
+         t1.regional_population
+  FROM city AS t1
+  JOIN hosting_city AS t2 ON t1.city_id = t2.host_city
+  GROUP BY t2.host_city, t1.gdp, t1.regional_population
+  HAVING count(*) > 1

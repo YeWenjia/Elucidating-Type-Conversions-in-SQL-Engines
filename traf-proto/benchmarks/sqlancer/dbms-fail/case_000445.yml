@@ -1,0 +1,49 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [null, -1521226518, "-2087893705", null]
+    - [-1775103535, 239734007, "", null]
+    - [null, 1635776983, "-1", null]
+    - [1180151686, -297955634, "1032638801", -285132105]
+    - [541947030, 880330817, "1486103084", -1118684320]
+    - [-1020663942, -186716307, "991149750", 1091967086]
+  database0_t0:
+    - ["-1077277231", null]
+    - ["-1944931769", 956816844]
+    - ["U7", null]
+    - ["-285784552", null]
+    - ["Jka3LB5-&", null]
+    - ["389844508", null]
+    - ["", -1467063079]
+    - ["-195031652", 734800198]
+    - ["1635609407", null]
+    - ["71391549", null]
+    - ["-1051405438", null]
+    - ["1804551272", null]
+    - ["136956322", 316938879]
+    - ["-316874230", null]
+    - ["割C-/,04/", null]
+    - ["^}M n2U", null]
+    - ["-1794475476", null]
+    - ["1171612921", null]
+    - ["|+", null]
+sql: "SELECT database0_t0.c0, database0_t0.c1 FROM database0_t0 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-1944931769", "956816844"]
+  - ["", "-1467063079"]
+  - ["-195031652", "734800198"]
+  - ["136956322", "316938879"]

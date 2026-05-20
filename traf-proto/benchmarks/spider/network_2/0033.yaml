@@ -1,0 +1,14 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0033.csv
+constants:
+- new york city
+columns:
+- city
+sql: |-
+  SELECT t2.name
+  FROM person AS t1
+  JOIN personfriend AS t2 ON t1.name = t2.friend
+  WHERE t1.city = 'new york city'

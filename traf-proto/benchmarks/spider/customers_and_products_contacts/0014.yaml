@@ -1,0 +1,20 @@
+db: tests-examples/spider/customers_and_products_contacts/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_products_contacts/tables/customers.csv
+- tests-examples/spider/customers_and_products_contacts/tables/customer_orders.csv
+- tests-examples/spider/customers_and_products_contacts/tables/order_items.csv
+output: tests-examples/spider/customers_and_products_contacts/tables/0014.csv
+constants:
+- '1'
+functions:
+- sum
+columns:
+- order_quantity
+sql: |-
+  SELECT t1.customer_name,
+         t1.customer_phone
+  FROM customers AS t1
+  JOIN customer_orders AS t2 ON t1.customer_id = t2.customer_id
+  JOIN order_items AS t3 ON t3.order_id = t2.order_id
+  GROUP BY t1.customer_id, t1.customer_name, t1.customer_phone
+  ORDER BY sum(t3.order_quantity) DESC

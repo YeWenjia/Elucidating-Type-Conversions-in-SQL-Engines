@@ -1,0 +1,14 @@
+db: tests-examples/spider/music_4/tables/db.sqlite
+inputs:
+- tests-examples/spider/music_4/tables/volume.csv
+- tests-examples/spider/music_4/tables/music_festival.csv
+output: tests-examples/spider/music_4/tables/0012.csv
+constants:
+- '2'
+columns:
+- weeks_on_top
+sql: |-
+  SELECT t1.date_of_ceremony
+  FROM music_festival AS t1
+  JOIN volume AS t2 ON t1.volume = t2.volume_id
+  WHERE t2.weeks_on_top > 2

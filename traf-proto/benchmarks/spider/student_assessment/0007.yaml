@@ -1,0 +1,12 @@
+db: tests-examples/spider/student_assessment/tables/db.sqlite
+inputs:
+- tests-examples/spider/student_assessment/tables/students.csv
+- tests-examples/spider/student_assessment/tables/student_course_registrations.csv
+output: tests-examples/spider/student_assessment/tables/0007.csv
+constants:
+- '1'
+sql: |-
+  SELECT t2.student_details
+  FROM student_course_registrations AS t1
+  JOIN students AS t2 ON t1.student_id = t2.student_id
+  ORDER BY t1.registration_date DESC

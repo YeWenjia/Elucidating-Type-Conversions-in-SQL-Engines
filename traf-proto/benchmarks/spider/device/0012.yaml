@@ -1,0 +1,15 @@
+db: tests-examples/spider/device/tables/db.sqlite
+inputs:
+- tests-examples/spider/device/tables/shop.csv
+- tests-examples/spider/device/tables/stock.csv
+output: tests-examples/spider/device/tables/0012.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT t2.shop_name
+  FROM stock AS t1
+  JOIN shop AS t2 ON t1.shop_id = t2.shop_id
+  GROUP BY t1.shop_id, t2.shop_name
+  ORDER BY COUNT(*) DESC

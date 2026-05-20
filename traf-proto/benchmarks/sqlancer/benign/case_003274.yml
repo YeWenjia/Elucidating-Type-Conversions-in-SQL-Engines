@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["443216999", "2?-gnp"]
+    - ["116123821", "2?-gnp"]
+    - ["-2130721799", "2?-gnp"]
+sql: "SELECT database0_t1.c0 FROM database0_t1 WHERE (('DN') IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t1.c0]
+traf_rows: []

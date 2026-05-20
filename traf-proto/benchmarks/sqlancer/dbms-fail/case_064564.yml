@@ -1,0 +1,28 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["j<,\r>j", -1016210909]
+    - ["{>{", 1699565337]
+    - ["", -766597293]
+    - ["66928533", null]
+    - ["440833260", null]
+    - ["759451388", null]
+    - ["-1654011260", 419145833]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE '9j縥\t'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"9j縥\t\"\n  Position: 65"
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows:
+  - ["-1016210909", "j<,\r>j"]
+  - ["1699565337", "{>{"]
+  - ["-766597293", ""]
+  - ["NULL", "66928533"]
+  - ["NULL", "440833260"]
+  - ["NULL", "759451388"]
+  - ["419145833", "-1654011260"]

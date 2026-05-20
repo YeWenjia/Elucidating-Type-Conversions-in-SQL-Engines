@@ -1,0 +1,14 @@
+db: tests-examples/spider/climbing/tables/db.sqlite
+inputs:
+- tests-examples/spider/climbing/tables/mountain.csv
+- tests-examples/spider/climbing/tables/climber.csv
+output: tests-examples/spider/climbing/tables/0013.csv
+constants:
+- West Germany
+columns:
+- country
+sql: |-
+  SELECT DISTINCT t2.name
+  FROM climber AS t1
+  JOIN mountain AS t2 ON t1.mountain_id = t2.mountain_id
+  WHERE t1.country = 'West Germany'

@@ -1,0 +1,15 @@
+db: tests-examples/spider/party_host/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_host/tables/party.csv
+output: tests-examples/spider/party_host/tables/0004.csv
+constants:
+- Spring
+- Teqnology
+columns:
+- party_theme
+sql: |-
+  SELECT first_year,
+         last_year
+  FROM party
+  WHERE party_theme = 'Spring'
+    OR party_theme = 'Teqnology'

@@ -1,0 +1,17 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0: []
+sql: "SELECT * FROM database0_t0, database0_t1 WHERE 'XG꛵#V'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"XG꛵#V\"\n  Position: 48"
+traf_columns: [database0_t0.c0, database0_t0.c1, database0_t1.c1]
+traf_rows: []

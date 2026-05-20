@@ -1,0 +1,14 @@
+db: tests-examples/spider/manufacturer/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufacturer/tables/furniture.csv
+- tests-examples/spider/manufacturer/tables/furniture_manufacte.csv
+output: tests-examples/spider/manufacturer/tables/0015.csv
+columns:
+- furniture_id
+sql: |-
+  SELECT market_rate,
+         name
+  FROM furniture
+  WHERE furniture_id NOT IN
+      (SELECT furniture_id
+       FROM furniture_manufacte)

@@ -1,0 +1,13 @@
+db: tests-examples/spider/wrestler/tables/db.sqlite
+inputs:
+- tests-examples/spider/wrestler/tables/wrestler.csv
+- tests-examples/spider/wrestler/tables/elimination.csv
+output: tests-examples/spider/wrestler/tables/0017.csv
+columns:
+- wrestler_id
+sql: |-
+  SELECT name
+  FROM wrestler
+  WHERE wrestler_id NOT IN
+      (SELECT wrestler_id
+       FROM elimination)

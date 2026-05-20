@@ -1,0 +1,27 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-773587990, 104798178]
+    - [2131576533, null]
+    - [2018106009, null]
+    - [1014163171, null]
+    - [-1684923321, 1777398138]
+    - [3, 285314990]
+    - [348447585, null]
+    - [983089456, 561225381]
+    - [1773861580, -2011765295]
+    - [2090946141, -204698954]
+    - [-1755824100, 915954605]
+    - [-436191470, null]
+sql: "SELECT * FROM database0_t0 WHERE (('-1722647003') IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

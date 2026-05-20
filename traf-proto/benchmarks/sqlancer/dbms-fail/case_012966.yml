@@ -1,0 +1,33 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c92", type: "int"}
+  database0_t4:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [1378082266, -2011765295, -1279472365]
+    - [-639173391, 1407609152, -974611177]
+    - [1264846530, null, 1254033681]
+  database0_t4:
+    - [232191734, null]
+    - [530512580, null]
+    - [-1824996459, null]
+    - [440833260, -626321389]
+    - [980741789, 181808927]
+    - [-1722647003, 1930988840]
+    - [77279163, null]
+    - [-428451114, -339580836]
+sql: "SELECT database0_t0.c1 FROM database0_t0 WHERE 'h!Y'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"h!Y\"\n  Position: 48"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-2011765295"]
+  - ["1407609152"]
+  - ["NULL"]

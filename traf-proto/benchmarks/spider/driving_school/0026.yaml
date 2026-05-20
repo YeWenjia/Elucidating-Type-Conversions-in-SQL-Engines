@@ -1,0 +1,11 @@
+db: tests-examples/spider/driving_school/tables/db.sqlite
+inputs:
+- tests-examples/spider/driving_school/tables/customers.csv
+output: tests-examples/spider/driving_school/tables/0026.csv
+functions:
+- count
+sql: |-
+  SELECT customer_status_code,
+         count(*)
+  FROM customers
+  GROUP BY customer_status_code;

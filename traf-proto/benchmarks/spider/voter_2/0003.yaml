@@ -1,0 +1,11 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/voting_record.csv
+output: tests-examples/spider/voter_2/tables/0003.csv
+functions:
+- count
+columns:
+- president_vote
+sql: |-
+  SELECT count(DISTINCT president_vote)
+  FROM voting_record

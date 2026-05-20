@@ -1,0 +1,13 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/event.csv
+output: tests-examples/spider/news_report/tables/0016.csv
+functions:
+- avg
+- max
+columns:
+- event_attendance
+sql: |-
+  SELECT avg(event_attendance),
+         max(event_attendance)
+  FROM event

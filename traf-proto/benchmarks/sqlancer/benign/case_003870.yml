@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1: []
+  database0_t0:
+    - ["-456590701", 1031222344]
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)<=('T.JAKd'))"
+columns:
+  - "c0"
+  - "c1"
+rows:
+  - ["-456590701", 1031222344]
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["-456590701", "1031222344"]

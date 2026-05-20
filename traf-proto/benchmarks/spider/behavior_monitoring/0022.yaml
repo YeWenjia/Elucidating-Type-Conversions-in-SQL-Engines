@@ -1,0 +1,20 @@
+db: tests-examples/spider/behavior_monitoring/tables/db.sqlite
+inputs:
+- tests-examples/spider/behavior_monitoring/tables/teachers.csv
+- tests-examples/spider/behavior_monitoring/tables/detention.csv
+output: tests-examples/spider/behavior_monitoring/tables/0022.csv
+constants:
+- AFTER
+- '1'
+functions:
+- count
+columns:
+- detention_type_code
+sql: |-
+  SELECT t1.teacher_id,
+         t2.last_name
+  FROM detention AS t1
+  JOIN teachers AS t2 ON t1.teacher_id = t2.teacher_id
+  WHERE t1.detention_type_code = 'AFTER'
+  GROUP BY t1.teacher_id, t2.last_name
+  ORDER BY count(*) DESC

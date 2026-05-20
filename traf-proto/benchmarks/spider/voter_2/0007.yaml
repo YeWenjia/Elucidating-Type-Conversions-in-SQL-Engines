@@ -1,0 +1,12 @@
+db: tests-examples/spider/voter_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/voter_2/tables/student.csv
+output: tests-examples/spider/voter_2/tables/0007.csv
+constants:
+- M
+columns:
+- sex
+sql: |-
+  SELECT major
+  FROM student
+  WHERE sex = 'M'

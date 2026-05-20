@@ -1,0 +1,15 @@
+db: tests-examples/spider/apartment_rentals/tables/db.sqlite
+inputs:
+- tests-examples/spider/apartment_rentals/tables/apartments.csv
+output: tests-examples/spider/apartment_rentals/tables/0032.csv
+constants:
+- '3'
+functions:
+- avg
+columns:
+- room_count
+sql: |-
+  SELECT apt_type_code
+  FROM apartments
+  GROUP BY apt_type_code
+  ORDER BY avg(room_count) DESC

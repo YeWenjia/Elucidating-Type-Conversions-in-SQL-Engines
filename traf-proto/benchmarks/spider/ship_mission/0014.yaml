@@ -1,0 +1,13 @@
+db: tests-examples/spider/ship_mission/tables/db.sqlite
+inputs:
+- tests-examples/spider/ship_mission/tables/mission.csv
+- tests-examples/spider/ship_mission/tables/ship.csv
+output: tests-examples/spider/ship_mission/tables/0014.csv
+columns:
+- ship_id
+sql: |-
+  SELECT name
+  FROM ship
+  WHERE ship_id NOT IN
+      (SELECT ship_id
+       FROM mission)

@@ -1,0 +1,13 @@
+db: tests-examples/spider/news_report/tables/db.sqlite
+inputs:
+- tests-examples/spider/news_report/tables/journalist.csv
+- tests-examples/spider/news_report/tables/news_report.csv
+output: tests-examples/spider/news_report/tables/0015.csv
+columns:
+- journalist_id
+sql: |-
+  SELECT name
+  FROM journalist
+  WHERE journalist_id NOT IN
+      (SELECT journalist_id
+       FROM news_report)

@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+data:
+  database0_t0:
+    - ["fp*Wu,2"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((-1623391432)<=(1327867926))"
+columns:
+  - "c0"
+rows:
+  - ["fp*Wu,2"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["fp*Wu,2"]

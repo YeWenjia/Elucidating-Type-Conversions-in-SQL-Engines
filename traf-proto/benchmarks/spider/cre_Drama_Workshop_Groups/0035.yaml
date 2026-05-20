@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Drama_Workshop_Groups/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/addresses.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/performers.csv
+- tests-examples/spider/cre_Drama_Workshop_Groups/tables/customers.csv
+output: tests-examples/spider/cre_Drama_Workshop_Groups/tables/0035.csv
+sql: |-
+  SELECT t1.city_town
+  FROM addresses AS t1
+  JOIN customers AS t2 ON t1.address_id = t2.address_id
+  EXCEPT
+  SELECT t1.city_town
+  FROM addresses AS t1
+  JOIN performers AS t2 ON t1.address_id = t2.address_id

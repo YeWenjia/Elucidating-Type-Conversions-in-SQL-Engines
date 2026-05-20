@@ -1,0 +1,13 @@
+db: tests-examples/spider/shop_membership/tables/db.sqlite
+inputs:
+- tests-examples/spider/shop_membership/tables/member.csv
+output: tests-examples/spider/shop_membership/tables/0010.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT level
+  FROM member
+  GROUP BY level
+  ORDER BY count(*) DESC

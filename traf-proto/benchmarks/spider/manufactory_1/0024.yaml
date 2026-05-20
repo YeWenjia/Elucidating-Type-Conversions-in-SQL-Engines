@@ -1,0 +1,17 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/manufacturers.csv
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0024.csv
+constants:
+- DVD drive
+columns:
+- name
+sql: |-
+  SELECT name
+  FROM manufacturers
+  EXCEPT
+  SELECT t2.name
+  FROM products AS t1
+  JOIN manufacturers AS t2 ON t1.manufacturer = t2.code
+  WHERE t1.name = 'DVD drive'

@@ -1,0 +1,17 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/appellations.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0018.csv
+constants:
+- Monterey
+- '50'
+columns:
+- county
+- price
+sql: |-
+  SELECT t2.name
+  FROM appellations AS t1
+  JOIN wine AS t2 ON t1.appelation = t2.appelation
+  WHERE t1.county = 'Monterey'
+    AND t2.price < 50

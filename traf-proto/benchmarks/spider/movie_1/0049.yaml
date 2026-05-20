@@ -1,0 +1,18 @@
+db: tests-examples/spider/movie_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/movie_1/tables/movie.csv
+- tests-examples/spider/movie_1/tables/rating.csv
+output: tests-examples/spider/movie_1/tables/0049.csv
+constants:
+- '3'
+- '4'
+columns:
+- stars
+sql: |-
+  SELECT t2.title
+  FROM rating AS t1
+  JOIN movie AS t2 ON t1.mid = t2.mid
+  WHERE t1.stars = 3 INTERSECT
+    SELECT t2.title
+    FROM rating AS t1
+    JOIN movie AS t2 ON t1.mid = t2.mid WHERE t1.stars = 4

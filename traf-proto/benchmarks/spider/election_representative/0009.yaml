@@ -1,0 +1,14 @@
+db: tests-examples/spider/election_representative/tables/db.sqlite
+inputs:
+- tests-examples/spider/election_representative/tables/election.csv
+- tests-examples/spider/election_representative/tables/representative.csv
+output: tests-examples/spider/election_representative/tables/0009.csv
+constants:
+- '10000'
+columns:
+- votes
+sql: |-
+  SELECT t2.name
+  FROM election AS t1
+  JOIN representative AS t2 ON t1.representative_id = t2.representative_id
+  WHERE votes > 10000

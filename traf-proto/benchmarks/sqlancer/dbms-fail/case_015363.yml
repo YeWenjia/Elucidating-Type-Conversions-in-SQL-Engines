@@ -1,0 +1,39 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - ["P&7*vd", -173038125]
+    - ["0(P2nkPn", 1804551272]
+    - ["-1781350639", 403746812]
+    - ["996847962", null]
+    - ["*v", null]
+    - ["|", null]
+    - ["3\teF|䆯m>", null]
+    - ["218181032", null]
+  database0_t0:
+    - ["1635776983", "na61m铬"]
+    - ["977277614", "na61m铬"]
+    - [null, "na61m铬"]
+    - [null, "na61m铬"]
+    - [null, "na61m铬"]
+    - ["", "na61m铬"]
+    - ["1264846530", "na61m铬"]
+    - [" E", "na61m铬"]
+    - ["0.0", "na61m铬"]
+    - ["S", "na61m铬"]
+sql: "SELECT database0_t1.c1, database0_t1.c0 FROM database0_t1 WHERE database0_t1.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 65"
+traf_columns: [database0_t1.c1, database0_t1.c0]
+traf_rows:
+  - ["-173038125", "P&7*vd"]
+  - ["1804551272", "0(P2nkPn"]
+  - ["403746812", "-1781350639"]

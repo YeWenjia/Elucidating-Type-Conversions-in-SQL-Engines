@@ -1,0 +1,8 @@
+db: tests-examples/spider/decoration_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/decoration_competition/tables/college.csv
+output: tests-examples/spider/decoration_competition/tables/0008.csv
+sql: |-
+  SELECT leader_name,
+         college_location
+  FROM college

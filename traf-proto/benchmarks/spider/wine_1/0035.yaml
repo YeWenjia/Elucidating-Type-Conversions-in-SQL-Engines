@@ -1,0 +1,18 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0035.csv
+constants:
+- '2006'
+functions:
+- max
+columns:
+- price
+- year
+sql: |-
+  SELECT name
+  FROM wine
+  WHERE price >
+      (SELECT max(price)
+       FROM wine
+       WHERE year = 2006)

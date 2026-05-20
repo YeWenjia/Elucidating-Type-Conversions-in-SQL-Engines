@@ -1,0 +1,8 @@
+db: tests-examples/spider/party_host/tables/db.sqlite
+inputs:
+- tests-examples/spider/party_host/tables/party.csv
+output: tests-examples/spider/party_host/tables/0003.csv
+sql: |-
+  SELECT party_theme,
+         location
+  FROM party

@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+  database0_t9:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["-647664202"]
+    - [""]
+  database0_t9:
+    - ["sRM", "g"]
+    - ["K䎕J", "g"]
+    - ["", "g"]
+    - ["dI", "g"]
+    - ["-1625349854", "g"]
+    - ["_wa", "g"]
+    - ["-760757233", "g"]
+    - ["1300733341", "g"]
+    - ["1302265430", "g"]
+    - ["1452517550", null]
+    - ["-1860230507", null]
+sql: "SELECT database0_t9.c0 FROM database0_t9 WHERE 'z/辮*^hx'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"z/辮*^hx\"\n  Position: 48"
+traf_columns: [database0_t9.c0]
+traf_rows:
+  - ["sRM"]
+  - ["K䎕J"]
+  - [""]
+  - ["dI"]
+  - ["-1625349854"]
+  - ["_wa"]
+  - ["-760757233"]
+  - ["1300733341"]
+  - ["1302265430"]
+  - ["1452517550"]
+  - ["-1860230507"]

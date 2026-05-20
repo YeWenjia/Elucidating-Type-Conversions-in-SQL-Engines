@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["T㨱玽D/h", 1302265430]
+    - ["%H?Y\rh", null]
+    - ["897917532", -1350152718]
+    - ["116457701", -908003221]
+sql: "SELECT * FROM database0_t0 WHERE '-2123641175'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"-2123641175\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["T㨱玽D/h", "1302265430"]
+  - ["%H?Y\rh", "NULL"]
+  - ["897917532", "-1350152718"]
+  - ["116457701", "-908003221"]

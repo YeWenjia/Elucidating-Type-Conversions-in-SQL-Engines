@@ -1,0 +1,14 @@
+db: tests-examples/spider/cre_Doc_Control_Systems/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Doc_Control_Systems/tables/ref_document_status.csv
+- tests-examples/spider/cre_Doc_Control_Systems/tables/documents.csv
+output: tests-examples/spider/cre_Doc_Control_Systems/tables/0014.csv
+constants:
+- '1'
+columns:
+- document_id
+sql: |-
+  SELECT ref_document_status.document_status_description
+  FROM ref_document_status
+  JOIN documents ON documents.document_status_code = ref_document_status.document_status_code
+  WHERE documents.document_id = 1;

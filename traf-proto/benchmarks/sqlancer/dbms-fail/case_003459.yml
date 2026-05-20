@@ -1,0 +1,23 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [1740310923]
+    - [1028420278]
+    - [-1056561715]
+    - [312477042]
+    - [976935660]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE '7퇊'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"7퇊\"\n  Position: 48"
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["1740310923"]
+  - ["1028420278"]
+  - ["-1056561715"]
+  - ["312477042"]
+  - ["976935660"]

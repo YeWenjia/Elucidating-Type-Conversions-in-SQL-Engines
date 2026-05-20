@@ -1,0 +1,21 @@
+db: tests-examples/spider/department_management/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_management/tables/department.csv
+- tests-examples/spider/department_management/tables/head.csv
+- tests-examples/spider/department_management/tables/management.csv
+output: tests-examples/spider/department_management/tables/0014.csv
+constants:
+- Treasury
+- Homeland Security
+columns:
+- name
+sql: |-
+  SELECT t3.born_state
+  FROM department AS t1
+  JOIN management AS t2 ON t1.department_id = t2.department_id
+  JOIN head AS t3 ON t2.head_id = t3.head_id
+  WHERE t1.name = 'Treasury' INTERSECT
+    SELECT t3.born_state
+    FROM department AS t1
+    JOIN management AS t2 ON t1.department_id = t2.department_id
+    JOIN head AS t3 ON t2.head_id = t3.head_id WHERE t1.name = 'Homeland Security'

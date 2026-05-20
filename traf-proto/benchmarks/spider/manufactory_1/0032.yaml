@@ -1,0 +1,14 @@
+db: tests-examples/spider/manufactory_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/manufactory_1/tables/products.csv
+output: tests-examples/spider/manufactory_1/tables/0032.csv
+constants:
+- '180'
+functions:
+- count
+columns:
+- price
+sql: |-
+  SELECT count(*)
+  FROM products
+  WHERE price >= 180

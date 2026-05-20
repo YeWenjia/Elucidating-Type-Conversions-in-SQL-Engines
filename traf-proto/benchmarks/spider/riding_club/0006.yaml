@@ -1,0 +1,10 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+output: tests-examples/spider/riding_club/tables/0006.csv
+constants:
+- '1'
+sql: |-
+  SELECT player_name
+  FROM player
+  ORDER BY votes DESC

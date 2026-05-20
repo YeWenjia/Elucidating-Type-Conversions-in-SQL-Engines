@@ -1,0 +1,15 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/visitors.csv
+- tests-examples/spider/cre_Theme_park/tables/visits.csv
+output: tests-examples/spider/cre_Theme_park/tables/0042.csv
+functions:
+- count
+columns:
+- tourist_id
+sql: |-
+  SELECT count(*)
+  FROM visitors
+  WHERE tourist_id NOT IN
+      (SELECT tourist_id
+       FROM visits)

@@ -1,0 +1,13 @@
+db: tests-examples/spider/product_catalog/tables/db.sqlite
+inputs:
+- tests-examples/spider/product_catalog/tables/catalogs.csv
+output: tests-examples/spider/product_catalog/tables/0019.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT date_of_latest_revision
+  FROM catalogs
+  GROUP BY date_of_latest_revision
+  HAVING count(*) > 1

@@ -1,0 +1,13 @@
+db: tests-examples/spider/sports_competition/tables/db.sqlite
+inputs:
+- tests-examples/spider/sports_competition/tables/competition.csv
+output: tests-examples/spider/sports_competition/tables/0016.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT competition_type
+  FROM competition
+  GROUP BY competition_type
+  ORDER BY COUNT(*) DESC

@@ -1,0 +1,11 @@
+db: tests-examples/spider/chinook_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/chinook_1/tables/employee.csv
+output: tests-examples/spider/chinook_1/tables/0024.csv
+functions:
+- count
+columns:
+- city
+sql: |-
+  SELECT COUNT(DISTINCT city)
+  FROM employee

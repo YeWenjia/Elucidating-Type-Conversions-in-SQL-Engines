@@ -1,0 +1,13 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0: []
+sql: "SELECT * FROM database0_t0 WHERE ((-1923513644) IS NOT NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

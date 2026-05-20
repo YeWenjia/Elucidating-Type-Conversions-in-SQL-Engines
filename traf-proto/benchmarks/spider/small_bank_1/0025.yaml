@@ -1,0 +1,13 @@
+db: tests-examples/spider/small_bank_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/small_bank_1/tables/accounts.csv
+- tests-examples/spider/small_bank_1/tables/savings.csv
+output: tests-examples/spider/small_bank_1/tables/0025.csv
+constants:
+- '3'
+sql: |-
+  SELECT t1.name,
+         t2.balance
+  FROM accounts AS t1
+  JOIN savings AS t2 ON t1.custid = t2.custid
+  ORDER BY t2.balance DESC

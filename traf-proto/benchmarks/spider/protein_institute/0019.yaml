@@ -1,0 +1,18 @@
+db: tests-examples/spider/protein_institute/tables/db.sqlite
+inputs:
+- tests-examples/spider/protein_institute/tables/building.csv
+- tests-examples/spider/protein_institute/tables/institution.csv
+- tests-examples/spider/protein_institute/tables/protein.csv
+output: tests-examples/spider/protein_institute/tables/0019.csv
+constants:
+- '20'
+functions:
+- count
+columns:
+- floors
+sql: |-
+  SELECT count(*)
+  FROM institution AS t1
+  JOIN protein AS t2 ON t1.institution_id = t2.institution_id
+  JOIN building AS t3 ON t3.building_id = t1.building_id
+  WHERE t3.floors >= 20

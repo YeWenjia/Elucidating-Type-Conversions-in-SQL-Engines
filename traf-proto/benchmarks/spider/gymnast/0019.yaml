@@ -1,0 +1,11 @@
+db: tests-examples/spider/gymnast/tables/db.sqlite
+inputs:
+- tests-examples/spider/gymnast/tables/people.csv
+output: tests-examples/spider/gymnast/tables/0019.csv
+functions:
+- count
+columns:
+- hometown
+sql: |-
+  SELECT count(DISTINCT hometown)
+  FROM people

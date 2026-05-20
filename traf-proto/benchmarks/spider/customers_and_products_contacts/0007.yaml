@@ -1,0 +1,18 @@
+db: tests-examples/spider/customers_and_products_contacts/tables/db.sqlite
+inputs:
+- tests-examples/spider/customers_and_products_contacts/tables/customers.csv
+- tests-examples/spider/customers_and_products_contacts/tables/customer_orders.csv
+output: tests-examples/spider/customers_and_products_contacts/tables/0007.csv
+constants:
+- Completed
+- Part
+columns:
+- order_status_code
+sql: |-
+  SELECT t1.customer_name
+  FROM customers AS t1
+  JOIN customer_orders AS t2 ON t1.customer_id = t2.customer_id
+  WHERE t2.order_status_code = 'Completed' INTERSECT
+    SELECT t1.customer_name
+    FROM customers AS t1
+    JOIN customer_orders AS t2 ON t1.customer_id = t2.customer_id WHERE t2.order_status_code = 'Part'

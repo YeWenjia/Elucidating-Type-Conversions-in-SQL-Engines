@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t0:
+    - ["w&3p", "519382160", -543844210, "-1935562191"]
+    - ["|峙", "519382160", -543844210, "-1935562191"]
+    - ["1293639186", "519382160", -543844210, "-1935562191"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c3) IS NULL)"
+columns:
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows: []

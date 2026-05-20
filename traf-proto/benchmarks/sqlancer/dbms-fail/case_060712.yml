@@ -1,0 +1,34 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - ["1661665722", null, "1161798939"]
+  database0_t0:
+    - ["x_7Fvd{", 1208153196]
+    - ["440833260", 1208153196]
+    - ["-747183637", 1208153196]
+    - ["", 1208153196]
+    - ["-1689685850", 1208153196]
+    - ["1219816016", 1208153196]
+    - ["-1126558347", 1208153196]
+sql: "SELECT * FROM database0_t0 WHERE 'fVlaK]&'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"fVlaK]&\"\n  Position: 34"
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows:
+  - ["x_7Fvd{", "1208153196"]
+  - ["440833260", "1208153196"]
+  - ["-747183637", "1208153196"]
+  - ["", "1208153196"]
+  - ["-1689685850", "1208153196"]
+  - ["1219816016", "1208153196"]
+  - ["-1126558347", "1208153196"]

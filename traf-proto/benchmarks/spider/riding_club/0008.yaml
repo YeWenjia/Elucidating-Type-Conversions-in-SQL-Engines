@@ -1,0 +1,13 @@
+db: tests-examples/spider/riding_club/tables/db.sqlite
+inputs:
+- tests-examples/spider/riding_club/tables/player.csv
+output: tests-examples/spider/riding_club/tables/0008.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT occupation
+  FROM player
+  GROUP BY occupation
+  ORDER BY COUNT(*) DESC

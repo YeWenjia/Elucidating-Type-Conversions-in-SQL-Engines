@@ -1,0 +1,15 @@
+db: tests-examples/spider/film_rank/tables/db.sqlite
+inputs:
+- tests-examples/spider/film_rank/tables/film.csv
+output: tests-examples/spider/film_rank/tables/0020.csv
+constants:
+- Universal
+columns:
+- studio
+filters:
+- like
+sql: |-
+  SELECT title,
+         studio
+  FROM film
+  WHERE studio LIKE '%Universal%'

@@ -1,0 +1,16 @@
+db: tests-examples/spider/hospital_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/hospital_1/tables/physician.csv
+- tests-examples/spider/hospital_1/tables/procedures.csv
+- tests-examples/spider/hospital_1/tables/trained_in.csv
+output: tests-examples/spider/hospital_1/tables/0041.csv
+constants:
+- John Wen
+columns:
+- name
+sql: |-
+  SELECT t3.name
+  FROM physician AS t1
+  JOIN trained_in AS t2 ON t1.employeeid = t2.physician
+  JOIN procedures AS t3 ON t3.code = t2.treatment
+  WHERE t1.name = 'John Wen'

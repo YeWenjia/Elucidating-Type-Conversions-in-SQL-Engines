@@ -1,0 +1,13 @@
+db: tests-examples/spider/debate/tables/db.sqlite
+inputs:
+- tests-examples/spider/debate/tables/people.csv
+- tests-examples/spider/debate/tables/debate_people.csv
+output: tests-examples/spider/debate/tables/0013.csv
+functions:
+- count
+sql: |-
+  SELECT t2.name,
+         COUNT(*)
+  FROM debate_people AS t1
+  JOIN people AS t2 ON t1.affirmative = t2.people_id
+  GROUP BY t2.name

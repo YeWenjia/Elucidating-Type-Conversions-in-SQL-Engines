@@ -1,0 +1,40 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+    - {name: "c4", type: "string"}
+data:
+  database0_t1:
+    - ["T", null, null]
+    - ["1428400327", null, null]
+    - ["", 991149750, "y#Fa"]
+    - ["369297413", null, null]
+    - ["u s\nෑz+", -667082437, "2131576533"]
+    - ["-1860230507", -784288697, "-929713484"]
+    - ["uloV", null, ""]
+    - ["-1722647003", null, "1639124197"]
+    - ["519429552", null, null]
+    - ["-889725111", null, null]
+  database0_t0:
+    - [null, "969900523", -788879695, "902425607", null]
+    - [null, "-1380844698", -596599025, "902425607", null]
+    - [null, "~", null, "945001674", null]
+    - ["1300733341", " yR]Qmv", null, "-58938003", "-1035350770"]
+sql: "SELECT database0_t0.c1, database0_t0.c4, database0_t0.c0, database0_t0.c3, database0_t0.c2 FROM database0_t0 WHERE database0_t0.c3"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 116"
+traf_columns: [database0_t0.c1, database0_t0.c4, database0_t0.c0, database0_t0.c3, database0_t0.c2]
+traf_rows:
+  - ["969900523", "NULL", "NULL", "902425607", "-788879695"]
+  - ["-1380844698", "NULL", "NULL", "902425607", "-596599025"]
+  - ["~", "NULL", "NULL", "945001674", "NULL"]
+  - [" yR]Qmv", "-1035350770", "1300733341", "-58938003", "NULL"]

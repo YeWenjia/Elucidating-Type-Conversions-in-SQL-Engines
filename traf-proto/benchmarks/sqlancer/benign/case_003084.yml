@@ -1,0 +1,55 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c2", type: "int"}
+data:
+  database0_t1:
+    - [-569140463, "G6a"]
+    - [1960083264, null]
+    - [1378330510, "vAl೷*]UXn"]
+    - [1248308169, "945001674"]
+    - [-2087893705, "-510811928"]
+    - [544863491, "]XsA"]
+    - [-1279472365, null]
+  database0_t0:
+    - [385666527, null]
+    - [1699565337, null]
+sql: "SELECT database0_t1.c1 FROM database0_t0, database0_t1 WHERE ((1302265430) IS NOT NULL)"
+columns:
+  - "c1"
+rows:
+  - ["G6a"]
+  - ["G6a"]
+  - [null]
+  - [null]
+  - ["vAl೷*]UXn"]
+  - ["vAl೷*]UXn"]
+  - ["945001674"]
+  - ["945001674"]
+  - ["-510811928"]
+  - ["-510811928"]
+  - ["]XsA"]
+  - ["]XsA"]
+  - [null]
+  - [null]
+kind: benign
+traf_columns: [database0_t1.c1]
+traf_rows:
+  - ["G6a"]
+  - ["NULL"]
+  - ["vAl೷*]UXn"]
+  - ["945001674"]
+  - ["-510811928"]
+  - ["]XsA"]
+  - ["NULL"]
+  - ["G6a"]
+  - ["NULL"]
+  - ["vAl೷*]UXn"]
+  - ["945001674"]
+  - ["-510811928"]
+  - ["]XsA"]
+  - ["NULL"]

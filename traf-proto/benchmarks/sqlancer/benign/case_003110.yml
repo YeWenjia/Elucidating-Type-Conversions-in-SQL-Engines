@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - ["", 2085743908]
+    - ["Es", -2007244631]
+    - ["dhLq\t^b", null]
+    - ["-1547273733", null]
+sql: "SELECT * FROM database0_t0 WHERE (('1804551272') IS NULL)"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

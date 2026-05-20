@@ -1,0 +1,20 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - ["稬#FI", "\n￠\r"]
+    - ["285314990", "1302265430"]
+    - ["-1310504294", "880330817"]
+    - ["-1957040493", "-1944931769"]
+    - ["Q\n*鶝", "5洟Qm"]
+sql: "SELECT database0_t0.c1, database0_t0.c0 FROM database0_t0 WHERE ((((database0_t0.c1)<=(database0_t0.c0))) IS NULL)"
+columns:
+  - "c1"
+  - "c0"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c1, database0_t0.c0]
+traf_rows: []

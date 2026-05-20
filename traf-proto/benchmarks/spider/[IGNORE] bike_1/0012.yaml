@@ -1,0 +1,14 @@
+db: tests-examples/spider/bike_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/bike_1/tables/station.csv
+- tests-examples/spider/bike_1/tables/status.csv
+output: tests-examples/spider/bike_1/tables/0012.csv
+constants:
+- '7'
+columns:
+- bikes_available
+sql: |-
+  SELECT DISTINCT t1.name
+  FROM station AS t1
+  JOIN status AS t2 ON t1.id = t2.station_id
+  WHERE t2.bikes_available = 7

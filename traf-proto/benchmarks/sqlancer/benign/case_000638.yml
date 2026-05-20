@@ -1,0 +1,22 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-657850939]
+    - [null]
+    - [null]
+    - [null]
+    - [1380540600]
+sql: "SELECT * FROM database0_t0 WHERE ((1777398138)<>(database0_t0.c1))"
+columns:
+  - "c1"
+rows:
+  - [-657850939]
+  - [1380540600]
+kind: benign
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["-657850939"]
+  - ["1380540600"]

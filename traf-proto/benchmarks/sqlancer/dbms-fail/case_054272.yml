@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t3:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+    - {name: "c3", type: "string"}
+  database0_t5:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t3:
+    - [1487065752, -160158868, 855711479, null]
+    - [null, -160158868, 2046877882, null]
+    - [null, -160158868, 287375490, null]
+  database0_t5:
+    - ["-650985277", "-1068610129"]
+    - ["-946075446", "-1068610129"]
+    - ["-444040980", "-1068610129"]
+    - ["872653242", "-1068610129"]
+    - ["E远", "-1068610129"]
+    - ["/㕈To", "-1068610129"]
+    - ["1014163171", "-1068610129"]
+sql: "SELECT * FROM database0_t5 WHERE 'V'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"V\"\n  Position: 34"
+traf_columns: [database0_t5.c0, database0_t5.c1]
+traf_rows:
+  - ["-650985277", "-1068610129"]
+  - ["-946075446", "-1068610129"]
+  - ["-444040980", "-1068610129"]
+  - ["872653242", "-1068610129"]
+  - ["E远", "-1068610129"]
+  - ["/㕈To", "-1068610129"]
+  - ["1014163171", "-1068610129"]

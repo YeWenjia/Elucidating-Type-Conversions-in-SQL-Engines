@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [75301302, "6s}RNdo?"]
+    - [239734007, null]
+    - [820306893, ""]
+    - [-2074917418, null]
+    - [-1407024952, null]
+    - [-784741173, null]
+    - [141668050, "-1724310134"]
+    - [521355282, "<y"]
+  database0_t0:
+    - [127391612]
+    - [-345583062]
+    - [null]
+    - [null]
+    - [1161815015]
+    - [143991391]
+    - [null]
+    - [-1686328795]
+sql: "SELECT * FROM database0_t1 WHERE '5{2Ի'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"5{2Ի\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1]
+traf_rows:
+  - ["75301302", "6s}RNdo?"]
+  - ["239734007", "NULL"]
+  - ["820306893", ""]
+  - ["-2074917418", "NULL"]
+  - ["-1407024952", "NULL"]
+  - ["-784741173", "NULL"]
+  - ["141668050", "-1724310134"]
+  - ["521355282", "<y"]

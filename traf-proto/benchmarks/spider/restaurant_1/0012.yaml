@@ -1,0 +1,16 @@
+db: tests-examples/spider/restaurant_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/restaurant_1/tables/student.csv
+output: tests-examples/spider/restaurant_1/tables/0012.csv
+constants:
+- '1'
+functions:
+- count
+columns:
+- advisor
+sql: |-
+  SELECT advisor,
+         count(*)
+  FROM student
+  GROUP BY advisor
+  ORDER BY count(advisor) DESC;

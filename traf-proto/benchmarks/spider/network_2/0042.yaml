@@ -1,0 +1,20 @@
+db: tests-examples/spider/network_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/network_2/tables/person.csv
+- tests-examples/spider/network_2/tables/personfriend.csv
+output: tests-examples/spider/network_2/tables/0042.csv
+constants:
+- Austin
+functions:
+- count
+columns:
+- name
+- friend
+- city
+sql: |-
+  SELECT name
+  FROM personfriend
+  WHERE NOT friend IN
+      (SELECT name
+       FROM person
+       WHERE city = 'Austin')

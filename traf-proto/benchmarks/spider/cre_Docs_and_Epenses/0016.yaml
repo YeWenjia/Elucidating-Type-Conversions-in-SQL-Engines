@@ -1,0 +1,13 @@
+db: tests-examples/spider/cre_Docs_and_Epenses/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Docs_and_Epenses/tables/documents.csv
+output: tests-examples/spider/cre_Docs_and_Epenses/tables/0016.csv
+constants:
+- '2'
+functions:
+- count
+sql: |-
+  SELECT project_id
+  FROM documents
+  GROUP BY project_id
+  HAVING count(*) >= 2

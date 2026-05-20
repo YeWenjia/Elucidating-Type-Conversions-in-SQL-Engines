@@ -1,0 +1,16 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+data:
+  database0_t0:
+    - [-2087893705]
+sql: "SELECT * FROM database0_t0 WHERE ((')ΰ2(h<') IS NOT NULL)"
+columns:
+  - "c0"
+rows:
+  - [-2087893705]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["-2087893705"]

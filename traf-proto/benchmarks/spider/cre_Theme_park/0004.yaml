@@ -1,0 +1,8 @@
+db: tests-examples/spider/cre_Theme_park/tables/db.sqlite
+inputs:
+- tests-examples/spider/cre_Theme_park/tables/staff.csv
+output: tests-examples/spider/cre_Theme_park/tables/0004.csv
+sql: |-
+  SELECT name,
+         other_details
+  FROM staff

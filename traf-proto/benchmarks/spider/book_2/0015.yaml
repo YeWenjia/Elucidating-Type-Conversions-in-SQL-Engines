@@ -1,0 +1,13 @@
+db: tests-examples/spider/book_2/tables/db.sqlite
+inputs:
+- tests-examples/spider/book_2/tables/publication.csv
+output: tests-examples/spider/book_2/tables/0015.csv
+constants:
+- '1'
+functions:
+- count
+sql: |-
+  SELECT publication_date
+  FROM publication
+  GROUP BY publication_date
+  ORDER BY COUNT(*) DESC

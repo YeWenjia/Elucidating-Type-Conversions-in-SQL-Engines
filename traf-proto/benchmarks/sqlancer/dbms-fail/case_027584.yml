@@ -1,0 +1,53 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+data:
+  database0_t1:
+    - [null]
+    - [-32977303]
+    - [-1498438495]
+    - [null]
+    - [369297413]
+    - [198770837]
+    - [625572473]
+    - [-1077277231]
+  database0_t0:
+    - ["", "945001674", null]
+    - ["<>yj*]", "-657850939", null]
+    - ["", "-420727782", "1635776983"]
+sql: "SELECT database0_t0.c0, database0_t1.c0 FROM database0_t1, database0_t0 WHERE '莜Y'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"莜Y\"\n  Position: 79"
+traf_columns: [database0_t0.c0, database0_t1.c0]
+traf_rows:
+  - ["", "NULL"]
+  - ["<>yj*]", "NULL"]
+  - ["", "NULL"]
+  - ["", "-32977303"]
+  - ["<>yj*]", "-32977303"]
+  - ["", "-32977303"]
+  - ["", "-1498438495"]
+  - ["<>yj*]", "-1498438495"]
+  - ["", "-1498438495"]
+  - ["", "NULL"]
+  - ["<>yj*]", "NULL"]
+  - ["", "NULL"]
+  - ["", "369297413"]
+  - ["<>yj*]", "369297413"]
+  - ["", "369297413"]
+  - ["", "198770837"]
+  - ["<>yj*]", "198770837"]
+  - ["", "198770837"]
+  - ["", "625572473"]
+  - ["<>yj*]", "625572473"]
+  - ["", "625572473"]
+  - ["", "-1077277231"]
+  - ["<>yj*]", "-1077277231"]
+  - ["", "-1077277231"]

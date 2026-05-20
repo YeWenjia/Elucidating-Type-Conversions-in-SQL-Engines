@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [-1933765098, "-1790883840", "991149750"]
+    - [-1147758050, null, null]
+    - [-805827060, null, "-1327632749"]
+  database0_t0:
+    - [-1104779761, "-1"]
+    - [-2087893705, null]
+    - [-1073664262, null]
+    - [-773587990, "1264846530"]
+sql: "SELECT * FROM database0_t1 WHERE 'gkRlZJFO'"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: invalid input syntax for type boolean: \"gkRlZJFO\"\n  Position: 34"
+traf_columns: [database0_t1.c0, database0_t1.c1, database0_t1.c2]
+traf_rows:
+  - ["-1933765098", "-1790883840", "991149750"]
+  - ["-1147758050", "NULL", "NULL"]
+  - ["-805827060", "NULL", "-1327632749"]

@@ -1,0 +1,41 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t1:
+    - [75301302, "6s}RNdo?"]
+    - [239734007, null]
+    - [820306893, ""]
+    - [-2074917418, null]
+    - [-1407024952, null]
+    - [-784741173, null]
+    - [141668050, "-1724310134"]
+    - [521355282, "<y"]
+  database0_t0:
+    - [127391612]
+    - [-345583062]
+    - [null]
+    - [null]
+    - [1161815015]
+    - [143991391]
+    - [null]
+    - [-1686328795]
+sql: "SELECT * FROM database0_t0 WHERE -1646361504"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 34"
+traf_columns: [database0_t0.c1]
+traf_rows:
+  - ["127391612"]
+  - ["-345583062"]
+  - ["NULL"]
+  - ["NULL"]
+  - ["1161815015"]
+  - ["143991391"]
+  - ["NULL"]
+  - ["-1686328795"]

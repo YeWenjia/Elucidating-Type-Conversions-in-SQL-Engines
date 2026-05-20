@@ -1,0 +1,15 @@
+db: tests-examples/spider/wine_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/wine_1/tables/appellations.csv
+- tests-examples/spider/wine_1/tables/wine.csv
+output: tests-examples/spider/wine_1/tables/0033.csv
+constants:
+- '3'
+functions:
+- count
+sql: |-
+  SELECT t1.county
+  FROM appellations AS t1
+  JOIN wine AS t2 ON t1.appelation = t2.appelation
+  GROUP BY t2.appelation, t1.county
+  HAVING count(*) <= 3

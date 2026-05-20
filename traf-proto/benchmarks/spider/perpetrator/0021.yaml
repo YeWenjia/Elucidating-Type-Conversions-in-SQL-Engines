@@ -1,0 +1,11 @@
+db: tests-examples/spider/perpetrator/tables/db.sqlite
+inputs:
+- tests-examples/spider/perpetrator/tables/perpetrator.csv
+output: tests-examples/spider/perpetrator/tables/0021.csv
+functions:
+- max
+columns:
+- year
+sql: |-
+  SELECT max(year)
+  FROM perpetrator;

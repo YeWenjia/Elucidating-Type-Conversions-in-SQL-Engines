@@ -1,0 +1,20 @@
+db: tests-examples/spider/department_store/tables/db.sqlite
+inputs:
+- tests-examples/spider/department_store/tables/products.csv
+- tests-examples/spider/department_store/tables/product_suppliers.csv
+output: tests-examples/spider/department_store/tables/0015.csv
+constants:
+- '2'
+functions:
+- avg
+columns:
+- supplier_id
+- product_price
+sql: |-
+  SELECT t1.product_id
+  FROM product_suppliers AS t1
+  JOIN products AS t2 ON t1.product_id = t2.product_id
+  WHERE t1.supplier_id = 2
+    AND t2.product_price >
+      (SELECT avg(product_price)
+       FROM products)

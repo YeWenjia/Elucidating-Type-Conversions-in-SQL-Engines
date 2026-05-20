@@ -1,0 +1,57 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t3:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-1250596785, null]
+    - [-381128447, null]
+    - [915954605, null]
+    - [-632382568, null]
+    - [1891222169, -3890461]
+    - [-1636094194, 535180345]
+    - [-339580836, null]
+  database0_t3:
+    - ["駶|", null]
+    - ["", null]
+    - ["-0.0", null]
+    - ["-2076258273", 134080043]
+    - ["-278911135", null]
+    - ["e튊Ug", null]
+    - ["1547197720", null]
+    - ["1869479299", null]
+    - ["-412528900", null]
+    - ["-1894460089", null]
+    - ["wRZ뼎a", null]
+    - ["N ", -914726699]
+    - ["-1041688005", null]
+    - ["MyJ*5", null]
+    - ["2102189385", null]
+    - ["/t", null]
+sql: "SELECT database0_t3.c0 FROM database0_t3 WHERE -1894960250"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type integer\n  Position: 48"
+traf_columns: [database0_t3.c0]
+traf_rows:
+  - ["駶|"]
+  - [""]
+  - ["-0.0"]
+  - ["-2076258273"]
+  - ["-278911135"]
+  - ["e튊Ug"]
+  - ["1547197720"]
+  - ["1869479299"]
+  - ["-412528900"]
+  - ["-1894460089"]
+  - ["wRZ뼎a"]
+  - ["N "]
+  - ["-1041688005"]
+  - ["MyJ*5"]
+  - ["2102189385"]
+  - ["/t"]

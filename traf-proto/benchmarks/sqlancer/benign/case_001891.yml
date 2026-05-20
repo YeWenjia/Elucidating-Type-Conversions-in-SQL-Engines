@@ -1,0 +1,29 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "string"}
+    - {name: "c3", type: "string"}
+data:
+  database0_t1:
+    - [-829259585, null]
+    - [960411341, -444040980]
+    - [-783396437, -1326173292]
+  database0_t0:
+    - ["3sb\t", -218116391, "-90268742", "-521755599"]
+    - ["3sb\t", 1595463259, "-90268742", "-900235369"]
+    - ["3sb\t", 232191734, "-90268742", "0mLO{H["]
+    - ["3sb\t", 1557171838, "-90268742", "y6"]
+sql: "SELECT database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c1)<=(-84399461))"
+columns:
+  - "c0"
+rows:
+  - ["3sb\t"]
+kind: benign
+traf_columns: [database0_t0.c0]
+traf_rows:
+  - ["3sb\t"]

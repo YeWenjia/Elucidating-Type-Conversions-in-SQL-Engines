@@ -1,0 +1,31 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c1", type: "int"}
+data:
+  database0_t0:
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-444211758]
+    - [-1651238631]
+    - [-1722647003]
+    - [-319971817]
+    - [1221180844]
+    - [-34024671]
+    - [-287979979]
+    - [-444040980]
+    - [1283721510]
+    - [598977596]
+sql: "SELECT * FROM database0_t0 WHERE ((((((database0_t0.c1)+(-632382568)))<=(database0_t0.c1))) IS NULL)"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: integer out of range"
+traf_columns: [database0_t0.c1]
+traf_rows: []

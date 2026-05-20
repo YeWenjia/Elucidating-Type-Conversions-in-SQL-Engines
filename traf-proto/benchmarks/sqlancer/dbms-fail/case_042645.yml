@@ -1,0 +1,75 @@
+engine: postgres
+schema:
+  database0_t1:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "int"}
+    - {name: "c2", type: "int"}
+  database0_t0:
+    - {name: "c0", type: "int"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t1:
+    - [2034248601, null, null]
+    - [1798926726, null, null]
+    - [-1944931769, null, null]
+    - [-1104779761, -1049863823, -632382568]
+    - [1096471048, null, null]
+    - [1360117408, null, null]
+  database0_t0:
+    - [1947052606, "-1"]
+    - [-896415435, "-1"]
+    - [-58938003, "-1"]
+    - [1370866513, "-1"]
+    - [-1834436268, "-1"]
+    - [-285784552, "-1"]
+    - [-1980936731, "-1"]
+    - [-1056561715, null]
+sql: "SELECT database0_t0.c0, database0_t1.c2, database0_t1.c1 FROM database0_t0, database0_t1 WHERE database0_t0.c1"
+columns: []
+rows: []
+kind: dbms-fail
+dbms_error: "ERROR: argument of WHERE must be type boolean, not type character varying\n  Position: 96"
+traf_columns: [database0_t0.c0, database0_t1.c2, database0_t1.c1]
+traf_rows:
+  - ["1947052606", "NULL", "NULL"]
+  - ["1947052606", "NULL", "NULL"]
+  - ["1947052606", "NULL", "NULL"]
+  - ["1947052606", "-632382568", "-1049863823"]
+  - ["1947052606", "NULL", "NULL"]
+  - ["1947052606", "NULL", "NULL"]
+  - ["-896415435", "NULL", "NULL"]
+  - ["-896415435", "NULL", "NULL"]
+  - ["-896415435", "NULL", "NULL"]
+  - ["-896415435", "-632382568", "-1049863823"]
+  - ["-896415435", "NULL", "NULL"]
+  - ["-896415435", "NULL", "NULL"]
+  - ["-58938003", "NULL", "NULL"]
+  - ["-58938003", "NULL", "NULL"]
+  - ["-58938003", "NULL", "NULL"]
+  - ["-58938003", "-632382568", "-1049863823"]
+  - ["-58938003", "NULL", "NULL"]
+  - ["-58938003", "NULL", "NULL"]
+  - ["1370866513", "NULL", "NULL"]
+  - ["1370866513", "NULL", "NULL"]
+  - ["1370866513", "NULL", "NULL"]
+  - ["1370866513", "-632382568", "-1049863823"]
+  - ["1370866513", "NULL", "NULL"]
+  - ["1370866513", "NULL", "NULL"]
+  - ["-1834436268", "NULL", "NULL"]
+  - ["-1834436268", "NULL", "NULL"]
+  - ["-1834436268", "NULL", "NULL"]
+  - ["-1834436268", "-632382568", "-1049863823"]
+  - ["-1834436268", "NULL", "NULL"]
+  - ["-1834436268", "NULL", "NULL"]
+  - ["-285784552", "NULL", "NULL"]
+  - ["-285784552", "NULL", "NULL"]
+  - ["-285784552", "NULL", "NULL"]
+  - ["-285784552", "-632382568", "-1049863823"]
+  - ["-285784552", "NULL", "NULL"]
+  - ["-285784552", "NULL", "NULL"]
+  - ["-1980936731", "NULL", "NULL"]
+  - ["-1980936731", "NULL", "NULL"]
+  - ["-1980936731", "NULL", "NULL"]
+  - ["-1980936731", "-632382568", "-1049863823"]
+  - ["-1980936731", "NULL", "NULL"]
+  - ["-1980936731", "NULL", "NULL"]

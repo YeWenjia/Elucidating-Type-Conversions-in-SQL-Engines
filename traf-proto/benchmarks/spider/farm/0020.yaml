@@ -1,0 +1,12 @@
+db: tests-examples/spider/farm/tables/db.sqlite
+inputs:
+- tests-examples/spider/farm/tables/city.csv
+output: tests-examples/spider/farm/tables/0020.csv
+constants:
+- Village
+columns:
+- status
+sql: |-
+  SELECT census_ranking
+  FROM city
+  WHERE status != 'Village'

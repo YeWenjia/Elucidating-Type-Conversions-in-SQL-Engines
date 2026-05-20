@@ -1,0 +1,19 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+data:
+  database0_t0:
+    - [">", null]
+    - ["678687013", null]
+    - ["-41902032", null]
+    - ["-1077277231", null]
+sql: "SELECT * FROM database0_t0 WHERE ((database0_t0.c0)<>(NULL))"
+columns:
+  - "c0"
+  - "c1"
+rows: []
+kind: benign
+traf_columns: [database0_t0.c0, database0_t0.c1]
+traf_rows: []

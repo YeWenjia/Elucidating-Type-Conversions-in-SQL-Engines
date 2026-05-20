@@ -1,0 +1,37 @@
+engine: postgres
+schema:
+  database0_t0:
+    - {name: "c0", type: "string"}
+    - {name: "c1", type: "string"}
+    - {name: "c2", type: "string"}
+    - {name: "c97", type: "string"}
+data:
+  database0_t0:
+    - ["vW", "Tk", "p7麚", null]
+    - ["^\n^WY", "Tk", "p7麚", null]
+    - ["1161815015", "Tk", "p7麚", null]
+    - ["440833260", "Tk", "p7麚", null]
+    - ["1227795673", "Tk", "p7麚", null]
+    - ["6&", "Tk", "p7麚", null]
+    - [" 㤣Yv?", null, null, "(S9P4\\"]
+    - ["-1980936731", null, null, "-50627290"]
+sql: "SELECT database0_t0.c97, database0_t0.c0 FROM database0_t0 WHERE ((database0_t0.c2) IS NOT NULL)"
+columns:
+  - "c97"
+  - "c0"
+rows:
+  - [null, "vW"]
+  - [null, "^\n^WY"]
+  - [null, "1161815015"]
+  - [null, "440833260"]
+  - [null, "1227795673"]
+  - [null, "6&"]
+kind: benign
+traf_columns: [database0_t0.c97, database0_t0.c0]
+traf_rows:
+  - ["NULL", "vW"]
+  - ["NULL", "^\n^WY"]
+  - ["NULL", "1161815015"]
+  - ["NULL", "440833260"]
+  - ["NULL", "1227795673"]
+  - ["NULL", "6&"]

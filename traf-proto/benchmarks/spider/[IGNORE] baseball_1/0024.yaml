@@ -1,0 +1,17 @@
+db: tests-examples/spider/baseball_1/tables/db.sqlite
+inputs:
+- tests-examples/spider/baseball_1/tables/postseason.csv
+output: tests-examples/spider/baseball_1/tables/0024.csv
+constants:
+- '1885'
+- '1'
+functions:
+- count
+columns:
+- year
+- ties
+sql: |-
+  SELECT count(*)
+  FROM postseason
+  WHERE year = 1885
+    AND ties = 1;
