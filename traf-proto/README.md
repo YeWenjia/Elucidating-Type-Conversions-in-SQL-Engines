@@ -183,3 +183,45 @@ pytest test/sqlancer/ -k "sqlite_traf-crash/case_000010"   -v
 ```bash
 pytest test/sqlancer/ --engine=postgres --sqlancer-mismatch-report reports/sqlancer.json
 ```
+
+## Type-checking benchmark
+
+`scripts/bench_typecheck.py` measures the interpreter's type-checking time on two workloads:
+
+1. Every Spider YAML query (~3469 queries across ~137 folders).
+2. `N` randomly generated queries (default `N = 100000`, from `interpreter/queryGenerator.py`).
+
+Only the call to `typechecker.typecheck_query(...)` is timed. Parsing, YAML loading, schema setup, and query generation are excluded. Both successful and error-raising type-checks are included in the samples (a rejected query also exercises real type-checking work).
+
+No DBMS connection is needed — the Spider schemas are read from the local SQLite cache (`.sqlite_cache/`, auto-created from each folder's `tables/db.sql` if missing).
+
+For each workload the script reports `N`, total time, and min / max / mean / std (in milliseconds and microseconds), along with the host's platform / CPU / Python version.
+
+Run from this directory (`impl/traf-prototype/`):
+
+```bash
+# Both benchmarks (Spider + 100,000 generated queries)
+python -m scripts.bench_typecheck
+
+# Spider only
+python -m scripts.bench_typecheck --spider
+
+# Generated only (custom size / seed)
+python -m scripts.bench_typecheck --generated --n 100000 --seed 42
+
+# Re-run each benchmark 3 times and dump per-query CSVs
+python -m scripts.bench_typecheck --repeat 3 --save-csv-dir reports/bench
+
+# Verbose: per-folder progress and the first few errors
+python -m scripts.bench_typecheck --verbose
+```
+
+CLI flags:
+
+- `--spider` / `--generated` — run only that workload (default: run both).
+- `--n N` — number of generated queries (default `100000`).
+- `--seed S` — random seed for the generator (default `42`).
+- `--repeat R` — run each benchmark `R` times; prints a per-run summary table at the end.
+- `--save-csv-dir DIR` — write per-query timings to CSV files in `DIR`.
+- `--verbose` — print progress and the first few parse / type-check errors.
+
